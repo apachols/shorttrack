@@ -3,7 +3,6 @@ extends layout
 block content
   .col-xs-12
     .well
-      h1 
-        | Admin Console
-        small Welcome #{user.username}
+      h1 Admin Console <small>Welcome <i>#{user.username}</i></small>
+      pre #{humans.inspect}
 

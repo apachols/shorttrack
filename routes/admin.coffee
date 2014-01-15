@@ -1,11 +1,16 @@
 #/admin
-exports.home = (req, res, next) ->
-  if req.isAuthenticated()
 
-    res.render 'admin', {
-      user: req.user
-    }
-  else
-    res.send 'boo-urns'
+User = require '../models/User'
+inspect = require('util').inspect
 
-  next()
+exports.home = (req, res) ->
+  unless req.isAuthenticated() then res.send 'boo-urns', 401
+
+  humans = User.find()
+  res.render 'admin', {
+    user: req.user
+    humans: 
+      data: humans
+      inspect: inspect(humans)
+  }
+
