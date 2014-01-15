@@ -1,2 +1,11 @@
+#/admin
 exports.home = (req, res, next) ->
-  res.render 'admin'
+  if req.isAuthenticated()
+
+    res.render 'admin', {
+      user: req.user
+    }
+  else
+    res.send 'boo-urns'
+
+  next()
