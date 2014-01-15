@@ -3,3 +3,6 @@ extends layout
 block content
   if (user)
     You are currently logged in as #{user.username}
+  else
+    h1 Title
+    p Welcome to #{title}

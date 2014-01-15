@@ -1,26 +1,25 @@
 doctype 5
-html
-  head
-    title Passport Local Mongoose Example
-    link(rel='stylesheet', href='/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/custom.css')
-    block scripts
-      script(src='/js/jquery.min.js')
-      script(src='/js/bootstrap.min.js')
-  body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .container
-          a.brand(href="/") Example
-          ul.nav
-            if (typeof(user) == 'undefined')
-              li
-                a(href="/register") Register
-              li
-                a(href="/login") Log In
-            else
-              li
-                a(href="/logout") Log Out
-    
+//- html (implicit in HTML5)
+//- head (implicit in HTML5)
+title Title
+title Passport Local Mongoose Example
+link(rel='stylesheet', href='/css/bootstrap.css')
+link(rel='stylesheet', href='/css/custom.css')
+block scripts
+  script(src='/js/jquery.min.js')
+  script(src='/js/bootstrap.min.js')
+
+//- body (implicit in HTML5)
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
     .container
-      block content
+      a.brand(href="/") Example
+      ul.nav
+        if (user)
+          li: a(href="/logout") Log Out
+        else
+          li: a(href="/register") Register
+          li: a(href="/login") Log In
+
+.container
+  block content
