@@ -3,11 +3,11 @@ var passport = require('passport'),
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.render('index', { user : req.user });
+        res.render('index', { "user" : req.user });
     });
 
     app.get('/register', function(req, res) {
-        res.render('register', { });
+        res.render('register', { "username" : "" });
     });
 
     app.post('/register', function(req, res) {
@@ -16,8 +16,12 @@ module.exports = function (app) {
         });
         User.register(newUser, req.body.password, function(err, user) {
             if (err) {
-                console.error('WHAT');
-                return res.render('register', { user : req.user });
+console.error('AN ERROR OCCURRED');
+console.dir(err);
+                return res.render('register', {
+                    "username" : req.body.username,
+                    "errormessage" : err.message || "An error occurred"
+                });
             }
 
             res.redirect('/');
@@ -25,7 +29,7 @@ module.exports = function (app) {
     });
 
     app.get('/login', function(req, res) {
-        res.render('login', { user : req.user });
+        res.render('login', { "user" : req.user });
     });
 
     app.post('/login', passport.authenticate('local'), function(req, res) {
