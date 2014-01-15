@@ -8,6 +8,12 @@ var mongoose = require('mongoose'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
 
+var MongoStore = require('connect-mongostore')(express);
+
+// Connect mongoose
+// mongoose.connect('mongodb://localhost/osd');
+mongoose.connect('mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating');
+
 var app = express();
 
 // all environments
@@ -23,7 +29,18 @@ app.use(express.methodOverride());
 // app.use(express.static('public'));
 app.use(express.cookieParser('your secret here'));
 app.use(express.bodyParser());
-app.use(express.session({ secret: 'keyboard cat' }));
+
+// app.use(express.session({ secret: 'keyboard cat' }));
+
+app.use(express.session({
+    secret:'To live and die in LA',
+    maxAge: new Date(Date.now() + 3600000),
+    store: new MongoStore(
+        {'db':mongoose.connection.db},
+        function(err){
+            console.log(err || 'connect-mongodb setup ok');
+        })
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -46,10 +63,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-// Connect mongoose
-// mongoose.connect('mongodb://localhost/osd');
-mongoose.connect('mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating');
 
 // Setup routes
 require('./routes')(app);
