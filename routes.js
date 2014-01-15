@@ -26,6 +26,11 @@ module.exports = function (app) {
         });
     });
 
+
+    require('coffee-script');
+    var admin = require('./routes/admin')
+    app.get('/admin', admin.home)
+
     app.get('/login', function(req, res) {
         res.render('login', { "user" : req.user });
     });
