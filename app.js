@@ -48,7 +48,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Connect mongoose
-mongoose.connect('mongodb://localhost/osd');
+// mongoose.connect('mongodb://localhost/osd');
+mongoose.connect('mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating');
 
 // Setup routes
 require('./routes')(app);
