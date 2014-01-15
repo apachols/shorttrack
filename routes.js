@@ -14,10 +14,8 @@ module.exports = function (app) {
         var newUser = new User({
             username : req.body.username
         });
-        User.register(newUser, req.body.password, function(err, user) {
+        User.register(newUser, req.body.password, function(err) {
             if (err) {
-console.error('AN ERROR OCCURRED');
-console.dir(err);
                 return res.render('register', {
                     "username" : req.body.username,
                     "errormessage" : err.message || "An error occurred"
@@ -32,9 +30,16 @@ console.dir(err);
         res.render('login', { "user" : req.user });
     });
 
-    app.post('/login', passport.authenticate('local'), function(req, res) {
-        res.redirect('/');
-    });
+    app.post('/login', passport.authenticate('local', {
+            successRedirect: '/',
+            failureRedirect: '/login'
+    }));
+
+//
+// NOTE - custom callback like this:  http://passportjs.org/guide/authenticate/
+//
+// app.get('/login', function(req, res, next) {
+//   passport.authenticate('local', function(err, user, info) {
 
     app.get('/logout', function(req, res) {
         req.logout();
