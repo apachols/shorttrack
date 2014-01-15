@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -45,17 +40,15 @@ app.configure('production', function(){
 });
 
 // Configure passport
-var UserSchema = require('./schema').User;
+var User = require('./models/User');
 
-var UserModel = mongoose.model('User', UserSchema);
+passport.use(new LocalStrategy(User.authenticate()));
 
-passport.use(new LocalStrategy(UserModel.authenticate()));
-
-passport.serializeUser(UserModel.serializeUser());
-passport.deserializeUser(UserModel.deserializeUser());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Connect mongoose
-mongoose.connect('mongodb://localhost/passport_local_mongoose_examples');
+mongoose.connect('mongodb://localhost/osd');
 
 // Setup routes
 require('./routes')(app);
