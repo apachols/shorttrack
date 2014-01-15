@@ -8,7 +8,7 @@ block content
       form(action="/register", method="post", role="form")
         .form-group
           if errormessage
-            .alert #{errormessage}
+            .alert.alert-danger #{errormessage}
           label(for="form-username") Username
           input#form-username.form-control(type="text", name="username", value="#{username}", placeholder="Username")
 
