@@ -1,7 +1,5 @@
 var passport = require('passport'),
-    mongoose = require('mongoose'),
-    UserSchema = require('./schema').User,
-    User = mongoose.model('User', UserSchema);
+    User = require('./models/User');
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
