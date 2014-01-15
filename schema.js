@@ -2,21 +2,24 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-exports.UserSchema = new Schema({
+var passportLocalMongoose = require('passport-local-mongoose');
+
+var User = new Schema({
     email: String,
     password: String
-});
+}, { collection: 'user' });
 
-exports.GenderSchema = new Schema({
+User.plugin(passportLocalMongoose);
+
+module.exports.User = User;
+
+module.exports.GenderSchema = new Schema({
     label: String,
     code: String
-});
+}, { collection: 'gender' });
 
-exports.ProfileSchema = new Schema({
-
-
-
-});
+// exports.ProfileSchema = new Schema({
+// });
 
     // label: { type: String, default: null },
     // question: String,
