@@ -1,16 +1,20 @@
 extends layout
 
 block content
-  h2 Log In
-  
-  form(action="/login",method="post")
-    div
-      label Username
-      input(type="text",name="username")
-    
-    div
-      label Password
-      input(type="password",name="password")
-    
-    div
-      input(type="submit",value="Log In")
+  .col-xs-12.col-sm-6.col-sm-offset-3
+    .well
+      h1 Log In
+
+      form(action="/login",method="post", role="form")
+        .form-group
+          label(for="form-username") Username
+          input#form-username.form-control(type="text", name="username", value="", placeholder="Username")
+
+        .form-group
+          label(for="form-password") Password
+          input#form-password.form-control(type="password", name="password" placeholder="Password")
+
+        .row
+          .col-xs-6.col-xs-offset-3
+            button.btn.btn-primary.btn-large.btn-block(type="submit") Login
+
