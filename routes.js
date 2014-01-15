@@ -16,7 +16,8 @@ module.exports = function (app) {
         });
         User.register(newUser, req.body.password, function(err, user) {
             if (err) {
-                return res.render('register', { user : user });
+                console.error('WHAT');
+                return res.render('register', { user : req.user });
             }
 
             res.redirect('/');
