@@ -17,11 +17,11 @@ block scripts
       span.icon-bar
       span.icon-bar
       span.icon-bar
-    a.navbar-brand(href="/") Example
+    a.navbar-brand(href="/") OpenSpeedDating: #{title}
 
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right
-      if (user)
+      if (my)
         li: a(href="/logout") Log Out
       else
         li: a(href="/register") Register

@@ -1,9 +1,14 @@
-var passport = require('passport'),
-    User = require('./models/User');
+var passport = require('passport')
+  , User = require('./models/User')
+  , _ = require('lodash')
+  ;
+
+
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.render('index', { "user" : req.user });
+        res.locals.title = 'Homepage';
+        res.render('index', { my : req.user });
     });
 
     app.get('/register', function(req, res) {
@@ -26,13 +31,15 @@ module.exports = function (app) {
         });
     });
 
-
+    // Admin
     require('coffee-script');
     var admin = require('./routes/admin');
+    app.get('/admin/:username', admin.user);
     app.get('/admin', admin.home);
 
+
     app.get('/login', function(req, res) {
-        res.render('login', { "user" : req.user });
+        res.render('login', { my : req.user });
     });
 
     app.post('/login', passport.authenticate('local', {

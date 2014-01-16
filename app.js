@@ -1,17 +1,17 @@
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-
-var mongoose = require('mongoose'),
-    passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
-
-var MongoStore = require('connect-mongostore')(express);
+var express = require('express')
+  , routes = require('./routes')
+  , user = require('./routes/user')
+  , http = require('http')
+  , path = require('path')
+  , mongoose = require('mongoose')
+  , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy
+  , MongoStore = require('connect-mongostore')(express)
+  , validator = require('express-validator')
+  ;
 
 // Connect mongoose
-// mongoose.connect('mongodb://localhost/osd');
+// mongoose.connect('mongodb://localhost/osd')
 mongoose.connect('mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating');
 
 var app = express();
@@ -29,6 +29,7 @@ app.use(express.methodOverride());
 // app.use(express.static('public'));
 app.use(express.cookieParser('your secret here'));
 app.use(express.bodyParser());
+app.use(validator());
 
 // app.use(express.session({ secret: 'keyboard cat' }));
 

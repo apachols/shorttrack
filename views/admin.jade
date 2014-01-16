@@ -2,7 +2,26 @@ extends layout
 
 block content
   .col-xs-12
-    .well
-      h1 Admin Console <small>Welcome <i>#{user.username}</i></small>
-      pre #{humans.inspect}
+    if errors
+      pre.alert-danger #{errors}
 
+    if singleUser
+        .panel.panel-default
+          .panel-heading User <b>#{user.username}</b>
+          .panel-body
+            pre #{user.inspect}
+
+    else
+      .panel.panel-default
+        .panel-heading Users
+        .panel-body
+          table.table.table-striped
+            thead
+              tr
+                th Username
+                th Salt
+            tbody
+              each user in users
+                tr
+                  td: a(href="/admin/#{user.username}") #{user.username}
+                  td #{user.salt}
