@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading User <b>#{user.username}</b>
+        .panel-body
+          pre #{user.inspect}

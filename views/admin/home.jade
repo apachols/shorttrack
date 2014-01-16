@@ -1,17 +1,8 @@
-extends layout
+extends ../layout
 
 block content
-  .col-xs-12
-    if errors
-      pre.alert-danger #{errors}
-
-    if singleUser
-        .panel.panel-default
-          .panel-heading User <b>#{user.username}</b>
-          .panel-body
-            pre #{user.inspect}
-
-    else
+  .row
+    .col-xs-12
       .panel.panel-default
         .panel-heading Users
         .panel-body

@@ -23,7 +23,7 @@ exports.home = (req, res) ->
     }
 
     req.session.errors = false
-    res.render 'admin'
+    res.render 'admin/home'
 
 exports.user = (req, res) ->
   unless req.isAuthenticated() then res.send 'boo-urns', 401
@@ -46,7 +46,7 @@ exports.user = (req, res) ->
         my: req.user
       }
 
-      res.render 'admin'
+      res.render 'admin/user'
 
   else
     req.session.errors = util.inspect errors
