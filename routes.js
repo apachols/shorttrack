@@ -7,7 +7,7 @@ var passport = require('passport')
 
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.locals.title = 'Homepage';
+        res.locals.brand = 'Homepage';
         res.render('index', { my : req.user });
     });
 

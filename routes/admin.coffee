@@ -6,7 +6,7 @@ _ = require 'lodash'
 util = require 'util'
 
 locals = {
-  title: 'Admin Console'
+  brand: 'Admin Console'
 }
 
 exports.home = (req, res) ->
