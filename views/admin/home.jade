@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading Users
+        .panel-body
+          table.table.table-striped
+            thead
+              tr
+                th Username
+                th Salt
+            tbody
+              each user in users
+                tr
+                  td: a(href="/admin/#{user.username}") #{user.username}
+                  td #{user.salt}
