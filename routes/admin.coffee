@@ -1,53 +1,61 @@
-#/admin
-
 mongoose = require 'mongoose'
 User = mongoose.model 'User', require '../models/User'
 _ = require 'lodash'
 util = require 'util'
 
-locals = {
-  brand: 'Admin Console'
-}
+class Admin
 
-exports.home = (req, res) ->
-  unless req.isAuthenticated() then res.send 'boo-urns', 401
+  @locals:
+    brand: 'Admin Console'
 
-  User.find {}, (err, users) ->
-    throw err if err
+  constructor: (app) ->
+    app.get '/admin/:username', @user
+    app.get '/admin', @home
 
-    res.locals = _.extend locals, {
-      errors: req.session.errors
-      singleUser: false
-      users: users
-      my: req.user
-    }
+  home: (req, res) =>
+    # unless req.isAuthenticated() then res.send 'boo-urns', 401
 
-    req.session.errors = false
-    res.render 'admin/home'
-
-exports.user = (req, res) ->
-  unless req.isAuthenticated() then res.send 'boo-urns', 401
-
-  console.log(res)
-  req.assert('username', 'Must supply a valid username').isAlphanumeric()
-
-  errors = req.validationErrors()
-  unless errors
-    User.findOne {
-      'username': req.params.username
-    }, (err, user) ->
+    User.find {}, (err, users) =>
       throw err if err
 
-      user.inspect = util.inspect(user)
-
-      res.locals = _.extend locals, {
-        singleUser: true
-        user: user
+      _.assign res.locals, @locals, {
+        errors: req.session.errors
+        users: users
         my: req.user
       }
 
-      res.render 'admin/user'
+      req.session.errors = false
+      res.render 'admin/home'
+      # res.send 'good jorb'
 
-  else
-    req.session.errors = util.inspect errors
-    res.redirect 400, '/admin'
+  user: (req, res) ->
+    # unless req.isAuthenticated() then res.send 'boo-urns', 401
+
+    console.log(res)
+    req.assert('username', 'Must supply a valid username').isAlphanumeric()
+
+    errors = req.validationErrors()
+    unless errors
+      User.findOne {
+        'username': req.params.username
+      }, (err, user) ->
+        throw err if err
+
+        user?.inspect = util.inspect user
+
+        _.assign res.locals, @locals, {
+          errors: req.session.errors
+          user: user
+          my: req.user
+        }
+
+        if user
+          res.render 'admin/user'
+        else
+          res.send "<b>#{req.params.username}</b> is <i>not</i> the username you are looking for.", 404
+
+    else
+      req.session.errors = util.inspect errors
+      res.redirect 400, '/admin'
+
+module.exports = new Admin app
