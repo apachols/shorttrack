@@ -12,10 +12,10 @@ class Admin
     app.get '/admin/:username', @user
     app.get '/admin', @home
 
-  home: (req, res) =>
-    # unless req.isAuthenticated() then res.send 'boo-urns', 401
+  home: (req, res) ->
+    unless req.isAuthenticated() then res.send 'boo-urns', 401
 
-    User.find {}, (err, users) =>
+    User.find {}, (err, users) ->
       throw err if err
 
       _.assign res.locals, @locals, {
@@ -26,10 +26,9 @@ class Admin
 
       req.session.errors = false
       res.render 'admin/home'
-      # res.send 'good jorb'
 
   user: (req, res) ->
-    # unless req.isAuthenticated() then res.send 'boo-urns', 401
+    unless req.isAuthenticated() then res.send 'boo-urns', 401
 
     req.assert('username', 'Must supply a valid username').isAlphanumeric()
 
