@@ -1,17 +1,16 @@
-# module.exports = (app) ->
+require './register'
+require './admin'
+require './login'
 
-#Index
-app.get '/', (req, res) ->
-  req.locals =
-    brand: 'Homepage'
-    my: req.user
-
-  res.render 'index'
-
+#Logout
 app.get '/logout', (req, res) ->
   req.logout()
   res.redirect '/'
 
-require './register'
-require './admin'
-require './login'
+#Index
+app.get '/', (req, res) ->
+  res.locals =
+    brand: 'Homepage'
+    my: req.user
+
+  res.render 'index'
