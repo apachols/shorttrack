@@ -9,12 +9,18 @@ class Admin
     brand: 'Admin Console'
 
   constructor: ->
+    # Require authentication for all admin routes
+    app.all /^\/admin/, @auth
+
+    # Route the admin requests.
     app.get '/admin/:username', @user
     app.get '/admin', @home
 
-  home: (req, res) ->
-    unless req.isAuthenticated() then res.send 'boo-urns', 401
+  auth: (req, res, next) ->
+    return res.send 'boo-urns', 401 unless req.isAuthenticated()
+    next()
 
+  home: (req, res) ->
     User.find {}, (err, users) ->
       throw err if err
 
@@ -28,10 +34,7 @@ class Admin
       res.render 'admin/home'
 
   user: (req, res) ->
-    unless req.isAuthenticated() then res.send 'boo-urns', 401
-
     req.assert('username', 'Must supply a valid username').isAlphanumeric()
-
     errors = req.validationErrors()
     unless errors
       User.findOne {
