@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading Genders
+        .panel-body
+          table.table.table-striped
+            thead
+              tr
+                th Display Label
+                th Gender Code
+            tbody
+              each gender in genders
+                tr
+                  td #{gender.label}
+                  td #{gender.code}

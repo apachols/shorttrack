@@ -6,7 +6,7 @@ _ = require 'lodash'
 util = require 'util'
 
 locals = {
-  brand: 'Admin Console'
+  brand: ': Admin Console'
 }
 
 exports.home = (req, res) ->
@@ -28,7 +28,6 @@ exports.home = (req, res) ->
 exports.user = (req, res) ->
   unless req.isAuthenticated() then res.send 'boo-urns', 401
 
-  console.log(res)
   req.assert('username', 'Must supply a valid username').isAlphanumeric()
 
   errors = req.validationErrors()

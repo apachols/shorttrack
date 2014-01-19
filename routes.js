@@ -3,11 +3,9 @@ var passport = require('passport')
   , _ = require('lodash')
   ;
 
-
-
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.locals.brand = 'Homepage';
+        res.locals.brand = ': Homepage';
         res.render('index', { my : req.user });
     });
 
@@ -37,6 +35,8 @@ module.exports = function (app) {
     app.get('/admin/:username', admin.user);
     app.get('/admin', admin.home);
 
+    var genders = require('./routes/genders');
+    app.get('/genders', genders.list);
 
     app.get('/login', function(req, res) {
         res.render('login', { my : req.user });
