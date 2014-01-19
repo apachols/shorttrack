@@ -2,16 +2,13 @@ pass = require 'passport'
 
 class Login
 
-  @locals:
-    brand: 'Login Form'
-
   constructor: ->
     app.get '/login', @get
     app.post '/login', @auth
 
   get: (req, res) -> 
-    
     res.render 'login', {
+      brand: 'Login Form'
       my: req.user
     }
 

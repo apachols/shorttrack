@@ -3,4 +3,5 @@
 , "trailing": true
 , "unused": false
 , "strict": false
+, "eqeqeq": false
 }

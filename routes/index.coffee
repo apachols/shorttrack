@@ -12,6 +12,6 @@ app.get '/logout', (req, res) ->
   req.logout()
   res.redirect '/'
 
-# require './register'
+require './register'
 require './admin'
 require './login'
