@@ -8,7 +8,7 @@ class Admin
   @locals:
     brand: 'Admin Console'
 
-  constructor: (app) ->
+  constructor: ->
     app.get '/admin/:username', @user
     app.get '/admin', @home
 
@@ -31,7 +31,6 @@ class Admin
   user: (req, res) ->
     # unless req.isAuthenticated() then res.send 'boo-urns', 401
 
-    console.log(res)
     req.assert('username', 'Must supply a valid username').isAlphanumeric()
 
     errors = req.validationErrors()
@@ -58,4 +57,4 @@ class Admin
       req.session.errors = util.inspect errors
       res.redirect 400, '/admin'
 
-module.exports = new Admin app
+module.exports = new Admin
