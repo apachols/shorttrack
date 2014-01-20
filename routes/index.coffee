@@ -7,7 +7,7 @@ app.get '/logout', (req, res) ->
   req.logout()
   res.redirect '/'
 
-#Index
+# Index needs to be last!
 app.get '/', (req, res) ->
   res.locals =
     brand: 'Homepage'
