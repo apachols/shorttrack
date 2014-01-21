@@ -28,11 +28,10 @@ app.set 'view engine', 'jade'
 session_settings =
   secret: 'To live and die in LA'
   maxAge: new Date Date.now() + 3600000
-  store: new Mongostore({
+  store: new Mongostore
     'db': mongoose.connection.db
-  }, (err) ->
-    console.log err or 'connect-mongodb setup ok'
-  )
+    , (err) ->
+      console.log err or 'connect-mongodb setup ok'
 
 app.use middleware for middleware in [
   express.favicon()
