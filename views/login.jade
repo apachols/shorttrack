@@ -3,6 +3,11 @@ extends layout
 block content
   .col-xs-12.col-sm-6.col-sm-offset-3
     .well
+
+      if error
+        .alert.alert-error
+          p #{error}
+
       h1 Log In
 
       form(action="/login",method="post", role="form")
