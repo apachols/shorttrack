@@ -2,9 +2,9 @@ pass = require 'passport'
 
 class Login
 
-  constructor: ->
-    app.get '/login', @get
-    app.post '/login', @auth
+  constructor: (@app) ->
+    @app.get '/login', @get
+    @app.post '/login', @auth
 
   get: (req, res) -> 
     res.render 'login', {
@@ -18,4 +18,4 @@ class Login
     failureRedirect: '/login'
   }
 
-module.exports = new Login
+module.exports = (app) -> new Login app

@@ -1,9 +1,9 @@
 User = require '../models/User'
 
 class Register
-  constructor: ->
-    app.get '/register', @get
-    app.post '/register', @post
+  constructor: (@app) ->
+    @app.get '/register', @get
+    @app.post '/register', @post
 
   get: (req, res) ->
     res.render 'register', {
@@ -24,4 +24,4 @@ class Register
 
       res.redirect '/'
 
-module.exports = new Register
+module.exports = (app) -> new Register app

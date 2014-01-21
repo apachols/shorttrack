@@ -8,13 +8,13 @@ class Admin
   @locals:
     brand: 'Admin Console'
 
-  constructor: ->
+  constructor: (@app) ->
     # Require authentication for all admin routes
-    app.all /^\/admin/, @auth
+    @app.all /^\/admin/, @auth
 
     # Route the admin requests.
-    app.get '/admin/:username', @user
-    app.get '/admin', @home
+    @app.get '/admin/:username', @user
+    @app.get '/admin', @home
 
   auth: (req, res, next) ->
     return res.send 'boo-urns', 401 unless req.isAuthenticated()
@@ -59,4 +59,4 @@ class Admin
       req.session.errors = util.inspect errors
       res.redirect 400, '/admin'
 
-module.exports = new Admin
+module.exports = (app) -> new Admin app
