@@ -40,7 +40,6 @@ app.use middleware for middleware in [
   express.urlencoded()
   express.methodOverride()
   express.cookieParser('wow, such secret')
-
   express.bodyParser()
   validator() # first after bodyParser
   express.session session_settings
