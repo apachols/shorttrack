@@ -1,6 +1,6 @@
+require('coffee-script');
+
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
   , mongoose = require('mongoose')
@@ -10,11 +10,12 @@ var express = require('express')
   , validator = require('express-validator')
   ;
 
-// Connect mongoose
-// mongoose.connect('mongodb://localhost/osd')
 mongoose.connect('mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating');
 
-var app = express();
+app = express();
+
+// Connect mongoose
+// mongoose.connect('mongodb://localhost/osd')
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -66,8 +67,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Setup routes
-require('./routes')(app);
+require('./routes')
 
 http.createServer(app).listen(3000, '127.0.0.1', function() {
-    console.log("Express server listening on %s:%d in %s mode", '127.0.0.1', 3000, app.settings.env);
+    console.log('Express server listening on %s:%d in %s mode', '127.0.0.1', 3000, app.settings.env);
 });
