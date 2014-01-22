@@ -64,4 +64,3 @@ passport.deserializeUser User.deserializeUser()
 require('./routes') app
 
 app.listen 3000
-
