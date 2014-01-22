@@ -57,7 +57,7 @@ app.configure 'production', ->
   app.use express.errorHandler()
 
 User = require './models/User'
-passport.use new Passportstore User.authenticate()
+passport.use new Passportstore User.createStrategy()
 passport.serializeUser User.serializeUser()
 passport.deserializeUser User.deserializeUser()
 

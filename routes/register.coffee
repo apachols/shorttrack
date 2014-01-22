@@ -8,17 +8,17 @@ class Register
   get: (req, res) ->
     res.render 'register', {
       brand: 'Register'
-      username: ''
+      email: ''
     }
 
   post: (req, res) ->
     user = new User {
-      username: req.body.username
+      email: req.body.email
     }
 
     User.register user, req.body.password, (err) ->
       if err then res.render 'register', {
-        username: req.body.username
+        email: req.body.email
         error: err.message ? "Generroric"
       }
 
