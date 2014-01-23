@@ -4,11 +4,10 @@ _ = require 'lodash'
 util = require 'util'
 
 class Admin
-
-  @locals:
-    brand: 'Admin Console'
-
   constructor: (@app) ->
+    @locals =
+      brand: 'Admin Console'
+
     # Require authentication for all admin routes
     @app.all /^\/admin/, @auth
 

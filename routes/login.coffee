@@ -14,7 +14,6 @@ class Login
 
   auth: pass.authenticate 'local', {
     successRedirect: '/'
-    failureFlash: true
     failureRedirect: '/login'
   }
 

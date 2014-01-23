@@ -25,6 +25,6 @@ class Register
           errormessage: err.message ? "Unknown error occurred"
         }
 
-      res.redirect '/'
+      res.redirect '/login'
 
 module.exports = (app) -> new Register app
