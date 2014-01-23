@@ -20,6 +20,14 @@ mongoose.connect 'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeed
 # Initalize app
 app = express()
 
+session_settings =
+  secret: 'To live and die in LA'
+  maxAge: new Date Date.now() + 3600000
+  store: new Mongostore
+    'db': mongoose.connection.db
+    , (err) ->
+      console.log err or 'connect-mongodb setup ok'
+
 middleware = [
   express.favicon()
   express.logger 'dev'
@@ -35,14 +43,6 @@ middleware = [
   app.router
   express.static __dirname + '/bower_components'
 ]
-
-session_settings =
-  secret: 'To live and die in LA'
-  maxAge: new Date Date.now() + 3600000
-  store: new Mongostore
-    'db': mongoose.connection.db
-    , (err) ->
-      console.log err or 'connect-mongodb setup ok'
 
 app.configure ->
   app.set 'views', __dirname + '/views'
