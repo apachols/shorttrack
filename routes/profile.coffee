@@ -1,8 +1,35 @@
+User = require('../models/User')
+Profile = require('../models/Profile')
+
 class Profile
   constructor: (@app) ->
-    @app.get '/profile', @home
+    @app.all /^\/profile/, @auth
 
-  home: (req, res) ->
-    res.send 'hello moto'
+    @app.get '/profile', @get
+
+    @app.get '/profile/update', @update
+
+  auth: (req, res, next) ->
+    return res.send 'boo-urns', 401 unless req.isAuthenticated()
+    next()
+
+  get: (req, res) ->
+    res.render 'profile', {
+      brand: 'Profile'
+      user: req.user
+    }
+
+  update: (req, res) ->
+    console.log('UPDATE')
+    console.dir(req.user)
+    # req.user.profile[0] = {
+    #   gender: 'F'
+    #   genderSought: 'F'
+    #   genderSecond: 'F'
+    #   age: 24
+    #   ageSoughtMin: 24
+    #   ageSoughtMax: 24
+    # }
+    # req.user.save()
 
 module.exports = (app) -> new Profile app
