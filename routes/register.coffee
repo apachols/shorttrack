@@ -22,6 +22,6 @@ class Register
         error: err.message ? "Generroric"
       }
 
-      res.redirect '/'
+      res.redirect '/login'
 
 module.exports = (app) -> new Register app
