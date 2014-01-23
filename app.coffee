@@ -4,7 +4,7 @@ validator = require 'express-validator'
 
 # Passport
 passport = require 'passport'
-Passportstore = require('passport-local').Strategy
+LocalStrategy = require('passport-local').Strategy
 
 # Mongodb
 mongoose = require 'mongoose'
@@ -56,7 +56,7 @@ app.configure 'production', ->
   app.use express.errorHandler()
 
 User = require './models/User'
-passport.use new Passportstore User.createStrategy()
+passport.use User.createStrategy()
 passport.serializeUser User.serializeUser()
 passport.deserializeUser User.deserializeUser()
 
