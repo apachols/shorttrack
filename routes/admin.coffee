@@ -48,6 +48,7 @@ class Admin
           errors: req.session.errors
           user: user
           my: req.user
+          brand: user.email
         }
 
         if user
