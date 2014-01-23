@@ -4,7 +4,7 @@ validator = require 'express-validator'
 
 # Passport
 passport = require 'passport'
-Passportstore = require('passport-local').Strategy
+LocalStrategy = require('passport-local').Strategy
 
 # Mongodb
 mongoose = require 'mongoose'
@@ -40,7 +40,6 @@ app.use middleware for middleware in [
   express.urlencoded()
   express.methodOverride()
   express.cookieParser('wow, such secret')
-
   express.bodyParser()
   validator() # first after bodyParser
   express.session session_settings
@@ -57,7 +56,7 @@ app.configure 'production', ->
   app.use express.errorHandler()
 
 User = require './models/User'
-passport.use new Passportstore User.authenticate()
+passport.use User.createStrategy()
 passport.serializeUser User.serializeUser()
 passport.deserializeUser User.deserializeUser()
 

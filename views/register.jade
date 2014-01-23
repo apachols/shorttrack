@@ -6,11 +6,13 @@ block content
       h1 Register
 
       form(action="/register", method="post", role="form")
+
+        if errormessage
+          .alert.alert-danger #{errormessage}
+
         .form-group
-          if errormessage
-            .alert.alert-danger #{errormessage}
-          label(for="form-username") Username
-          input#form-username.form-control(type="text", name="username", value="#{username}", placeholder="Username")
+          label(for="form-email") E-Mail Address
+          input#form-email.form-control(type="email", name="email", value=locals.email, placeholder="E-Mail Address")
 
         .form-group
           label(for="form-password") Password
