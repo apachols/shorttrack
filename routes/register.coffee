@@ -1,4 +1,5 @@
-User = require '../models/User'
+User = require('../models/User')
+Profile = require('../models/Profile')
 
 class Register
   constructor: (@app) ->
@@ -17,11 +18,13 @@ class Register
     }
 
     User.register user, req.body.password, (err) ->
-      if err then res.render 'register', {
-        email: req.body.email
-        error: err.message ? "Generroric"
-      }
+      if err
+        console.error(err)
+        return res.render 'register', {
+          email: req.body.email
+          errormessage: err.message ? "Unknown error occurred"
+        }
 
-      res.redirect '/'
+      res.redirect '/login'
 
 module.exports = (app) -> new Register app

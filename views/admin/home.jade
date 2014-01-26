@@ -9,10 +9,10 @@ block content
           table.table.table-striped
             thead
               tr
-                th Username
+                th Email
                 th Salt
             tbody
               each user in users
                 tr
-                  td: a(href="/admin/#{user.username}") #{user.username}
+                  td: a(href="/admin/#{user.email}") #{user.email}
                   td #{user.salt}

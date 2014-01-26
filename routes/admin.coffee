@@ -1,19 +1,18 @@
 mongoose = require 'mongoose'
-User = mongoose.model 'User', require '../models/User'
+User = require('../models/User')
 _ = require 'lodash'
 util = require 'util'
 
 class Admin
-
-  @locals:
-    brand: 'Admin Console'
-
   constructor: (@app) ->
+    @locals =
+      brand: 'Admin Console'
+
     # Require authentication for all admin routes
     @app.all /^\/admin/, @auth
 
     # Route the admin requests.
-    @app.get '/admin/:username', @user
+    @app.get '/admin/:email', @user
     @app.get '/admin', @home
 
   auth: (req, res, next) ->
@@ -34,11 +33,11 @@ class Admin
       res.render 'admin/home'
 
   user: (req, res) ->
-    req.assert('username', 'Must supply a valid username').isAlphanumeric()
+    # req.assert('username', 'Must supply a valid username').isAlphanumeric()
     errors = req.validationErrors()
     unless errors
       User.findOne {
-        'username': req.params.username
+        'email': req.params.email
       }, (err, user) ->
         throw err if err
 
@@ -48,12 +47,13 @@ class Admin
           errors: req.session.errors
           user: user
           my: req.user
+          brand: user.email
         }
 
         if user
           res.render 'admin/user'
         else
-          res.send "<b>#{req.params.username}</b> is <i>not</i> the username you are looking for.", 404
+          res.send "<b>#{req.params.email}</b> is <i>not</i> the email you are looking for.", 404
 
     else
       req.session.errors = util.inspect errors

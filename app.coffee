@@ -20,11 +20,6 @@ mongoose.connect 'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeed
 # Initalize app
 app = express()
 
-# Settings
-app.set 'port',  process.env.PORT or 3000
-app.set 'views', path.join __dirname, 'views'
-app.set 'view engine', 'jade'
-
 session_settings =
   secret: 'To live and die in LA'
   maxAge: new Date Date.now() + 3600000
@@ -33,7 +28,7 @@ session_settings =
     , (err) ->
       console.log err or 'connect-mongodb setup ok'
 
-app.use middleware for middleware in [
+middleware = [
   express.favicon()
   express.logger 'dev'
   express.json()
@@ -46,8 +41,13 @@ app.use middleware for middleware in [
   passport.initialize()
   passport.session()
   app.router
-  express.static path.join __dirname, 'bower_components'
+  express.static __dirname + '/bower_components'
 ]
+
+app.configure ->
+  app.set 'views', __dirname + '/views'
+  app.set 'view engine', 'jade'
+  app.use m for m in middleware
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}
@@ -55,11 +55,11 @@ app.configure 'development', ->
 app.configure 'production', ->
   app.use express.errorHandler()
 
-User = require './models/User'
+User = require('./models/User')
 passport.use User.createStrategy()
 passport.serializeUser User.serializeUser()
 passport.deserializeUser User.deserializeUser()
 
 require('./routes') app
 
-app.listen 3000
+app.listen 3000, -> console.log 'OpenSpeedDating listening on port 3000'
