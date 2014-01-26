@@ -19,10 +19,17 @@ module.exports = (grunt) ->
       options:
         cmd: 'coffee'
         delay: 1
+        script: 'src/app.coffee'
 
-      dev:
+      dev: {}
+
+      inspect:
         options:
-          script: 'src/app.coffee'
+          debug: true
+          args: ['--nodejs']
+
+    'node-inspector':
+      dev: {}
 
     watch:
       options:
@@ -43,11 +50,15 @@ module.exports = (grunt) ->
           spawn: false
 
   # Load Tasks
-  grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-contrib-connect'
-  grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-express-server'
+  require('load-grunt-tasks') grunt
+
+  # grunt.loadNpmTasks 'grunt-coffeelint'
+  # grunt.loadNpmTasks 'grunt-contrib-connect'
+  # grunt.loadNpmTasks 'grunt-contrib-watch'
+  # grunt.loadNpmTasks 'grunt-express-server'
+  # grunt.loadNpmTasks 'grunt-node-inspector'
 
   # Register Tasks
   grunt.registerTask 'default', ['coffeelint']
-  grunt.registerTask 'dev', ['default', 'express', 'watch']
+  grunt.registerTask 'dev', ['default', 'express:dev', 'watch']
+  grunt.registerTask 'inspect', ['default', 'express:inspect', 'node-inspector']
