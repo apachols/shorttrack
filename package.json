@@ -25,6 +25,7 @@
     "grunt-express-server": "~0.4.11",
     "grunt-contrib-connect": "~0.6.0",
     "grunt-node-inspector": "~0.1.2",
-    "load-grunt-tasks": "~0.3.0"
+    "load-grunt-tasks": "~0.3.0",
+    "should": "~3.1.0"
   }
 }
