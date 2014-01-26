@@ -10,15 +10,13 @@ LocalStrategy = require('passport-local').Strategy
 mongoose = require 'mongoose'
 Mongostore = require('connect-mongostore') express
 
-# Node
-path = require 'path'
-_ = require 'lodash'
-
-# @todo hmmm...
-mongoose.connect 'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
-
 # Initalize app
 app = express()
+
+# @todo hmmm...
+mongoose.connect(
+  'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
+)
 
 session_settings =
   secret: 'To live and die in LA'
@@ -33,10 +31,9 @@ middleware = [
   express.logger 'dev'
   express.json()
   express.urlencoded()
+  validator() # first after bodyParser
   express.methodOverride()
   express.cookieParser('wow, such secret')
-  express.bodyParser()
-  validator() # first after bodyParser
   express.session session_settings
   passport.initialize()
   passport.session()
@@ -47,7 +44,9 @@ middleware = [
 app.configure ->
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
+
   app.use m for m in middleware
+
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}
@@ -62,4 +61,5 @@ passport.deserializeUser User.deserializeUser()
 
 require('./routes') app
 
-app.listen 3000, -> console.log 'OpenSpeedDating listening on port 3000'
+app.listen 3000
+console.log 'Listenting on port 3000'

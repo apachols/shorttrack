@@ -5,14 +5,14 @@ passportLocalMongoose = require 'passport-local-mongoose'
 Profile = require './Profile'
 
 User = new mongoose.Schema {
-    email: String
-    profile: [Profile.schema]
+  email: String
+  profile: [Profile.schema]
 }, {
-    collection: 'user'
+  collection: 'user'
 }
 
 User.plugin passportLocalMongoose, {
-    usernameField: "email"
+  usernameField: "email"
 }
 
 module.exports = mongoose.model 'User', User
