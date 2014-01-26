@@ -6,7 +6,7 @@ class Login
     @app.get '/login', @get
     @app.post '/login', @auth
 
-  get: (req, res) -> 
+  get: (req, res) ->
     res.render 'login', {
       brand: 'Login Form'
       my: req.user

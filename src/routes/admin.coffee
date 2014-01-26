@@ -53,7 +53,7 @@ class Admin
         if user
           res.render 'admin/user'
         else
-          res.send "<b>#{req.params.email}</b> is <i>not</i> the email you are looking for.", 404
+          res.send "unknown user: <b>#{req.params.username}</b>", 404
 
     else
       req.session.errors = util.inspect errors
