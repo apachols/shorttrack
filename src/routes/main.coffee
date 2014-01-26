@@ -10,11 +10,12 @@ class Main
       next()
 
     # Logout
-    @app.get '/logout', (req, res) ->
-      req.logout(); res.redirect '/'
+    @app.get '/logout', @logout
 
     # Index
-    @app.get '/', (req, res) ->
-      res.render 'index'
+    @app.get '/', @index
+
+  index: (i, o) -> o.render 'index'
+  logout: (i, o) -> i.logout(); o.redirect '/'
 
 module.exports = (app) -> new Main app
