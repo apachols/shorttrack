@@ -10,6 +10,8 @@ LocalStrategy = require('passport-local').Strategy
 mongoose = require 'mongoose'
 Mongostore = require('connect-mongostore') express
 
+path = require 'path'
+
 # Initalize app
 app = express()
 
@@ -38,7 +40,7 @@ middleware = [
   passport.initialize()
   passport.session()
   app.router
-  express.static __dirname + '/bower_components'
+  express.static path.join __dirname, '../bower_components'
 ]
 
 app.configure ->
