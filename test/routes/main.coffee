@@ -1,6 +1,15 @@
-Main = require('../src/routes/main') {get: ->}
+# Requirements for testing
 require 'should'
 
+# Mock app
+app = {
+  get: ->
+}
+
+# Test route
+Main = require('../../src/routes/main') app
+
+# Test suite
 describe 'Main', ->
   req = res = {}
 

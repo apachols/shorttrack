@@ -15,7 +15,7 @@ class Main
     # Index
     @app.get '/', @index
 
-  index: (i, o) -> o.render 'index'
-  logout: (i, o) -> i.logout(); o.redirect '/'
+  index: (req, res) -> res.render 'index'
+  logout: (req, res) -> req.logout(); res.redirect '/'
 
 module.exports = (app) -> new Main app
