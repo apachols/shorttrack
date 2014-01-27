@@ -10,7 +10,7 @@ app = {
 Main = require('../../src/routes/main') app
 
 # Test suite
-describe 'Main', ->
+describe 'src/routes/main.coffee', ->
   req = res = {}
 
   beforeEach ->
@@ -21,7 +21,7 @@ describe 'Main', ->
       redirect: ->
       render: ->
 
-  describe 'index', ->
+  describe '#get /index', ->
     it 'should display a welcome message', (done) ->
       res.render = (view, vars) ->
         view.should.equal 'index'
@@ -29,7 +29,7 @@ describe 'Main', ->
 
       Main.index req, res
 
-  describe 'logout', ->
+  describe '#get /logout', ->
     it 'should call req.logout', (done) ->
       req.logout = ->
         done()

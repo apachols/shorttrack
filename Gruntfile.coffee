@@ -31,6 +31,14 @@ module.exports = (grunt) ->
     'node-inspector':
       dev: {}
 
+    mochaTest:
+      test:
+        options:
+          reporter: 'spec'
+          require: 'coffee-script'
+
+        src: ['test/**/*.coffee']
+
     watch:
       options:
         live_reload: true
@@ -59,6 +67,6 @@ module.exports = (grunt) ->
   # grunt.loadNpmTasks 'grunt-node-inspector'
 
   # Register Tasks
-  grunt.registerTask 'default', ['coffeelint']
+  grunt.registerTask 'default', ['coffeelint', 'mochaTest']
   grunt.registerTask 'dev', ['default', 'express:dev', 'watch']
   grunt.registerTask 'inspect', ['default', 'express:inspect', 'node-inspector']
