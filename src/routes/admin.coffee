@@ -1,6 +1,5 @@
 mongoose = require 'mongoose'
 User = require('../models/User')
-_ = require 'lodash'
 util = require 'util'
 
 class Admin
@@ -19,19 +18,6 @@ class Admin
     return res.send 'boo-urns', 401 unless req.isAuthenticated()
     next()
 
-  home: (req, res) ->
-    User.find {}, (err, users) ->
-      throw err if err
-
-      _.assign res.locals, @locals, {
-        errors: req.session.errors
-        users: users
-        my: req.user
-      }
-
-      req.session.errors = false
-      res.render 'admin/home'
-
   user: (req, res) ->
     # req.assert('username', 'Must supply a valid username').isAlphanumeric()
     errors = req.validationErrors()
@@ -43,7 +29,8 @@ class Admin
 
         user?.inspect = util.inspect user
 
-        _.assign res.locals, @locals, {
+        res.locals @locals
+        res.locals {
           errors: req.session.errors
           user: user
           my: req.user
@@ -58,5 +45,19 @@ class Admin
     else
       req.session.errors = util.inspect errors
       res.redirect 400, '/admin'
+
+  home: (req, res) ->
+    User.find {}, (err, users) ->
+      throw err if err
+
+      res.locals @locals
+      res.locals {
+        errors: req.session.errors
+        users: users
+        my: req.user
+      }
+
+      req.session.errors = false
+      res.render 'admin/home'
 
 module.exports = (app) -> new Admin app

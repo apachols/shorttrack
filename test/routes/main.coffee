@@ -2,16 +2,16 @@
 require 'should'
 
 # Mock app
-app = {
+req =
+res =
+app =
   get: ->
-}
 
 # Test route
 Main = require('../../src/routes/main') app
 
 # Test suite
 describe 'src/routes/main.coffee', ->
-  req = res = {}
 
   beforeEach ->
     req =
