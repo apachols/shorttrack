@@ -16,10 +16,21 @@ describe 'src/routes/main.coffee', ->
   beforeEach ->
     req =
       logout: ->
+      user: 'test'
 
     res =
+      locals: ->
       redirect: ->
       render: ->
+
+  describe '#get *', ->
+    it 'should set up common vars for all routes', (done) ->
+      res.locals = (args) ->
+        args.brand.should.equal 'Homepage'
+        args.my.should.equal 'test'
+        done()
+
+      Main.setup req, res, ->
 
   describe '#get /index', ->
     it 'should display a welcome message', (done) ->
