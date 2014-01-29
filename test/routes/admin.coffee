@@ -48,4 +48,3 @@ describe 'src/routes/admin.coffee', ->
       Admin.auth req, res, done
 
   describe '#get /admin/user', ->
-

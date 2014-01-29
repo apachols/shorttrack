@@ -10,5 +10,4 @@ class Routes
 
     require("./#{m}") @app for m in modules
 
-
 module.exports = (app) -> new Routes app

@@ -49,11 +49,11 @@ module.exports = (grunt) ->
 
       jade:
         files: '<%= jade.src %>'
-        tasks: ['express']
+        tasks: ['express:dev']
 
       express:
         files: ['<%= coffeelint.src %>', '<%= jade.src %>']
-        tasks: ['express']
+        tasks: ['express:dev']
         options:
           spawn: false
 
