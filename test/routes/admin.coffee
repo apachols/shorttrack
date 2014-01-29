@@ -1,5 +1,7 @@
 # Requirements for testing
 should = require 'should'
+util = require 'util'
+gently = new(require 'gently')
 
 req =
 res =
@@ -38,7 +40,6 @@ describe 'src/routes/admin.coffee', ->
 
       next = ->
         should.fail 'do not call next unless authenticated'
-        done()
 
       Admin.auth req, res, next
 
@@ -48,3 +49,34 @@ describe 'src/routes/admin.coffee', ->
       Admin.auth req, res, done
 
   describe '#get /admin/user', ->
+    it 'should return 400 if errors', (done) ->
+
+      dummyErrors = [{"errcode" : "error message"}]
+
+      req.validationErrors = -> dummyErrors
+
+      next = ->
+        should.fail 'do not call next if errors'
+
+      res.redirect = (code, location) ->
+        req.session.errors.should.equal util.inspect dummyErrors
+        location.should.equal '/admin'
+        code.should.equal 400
+        done()
+
+      Admin.user req, res, next
+
+    it 'should call User.findUserByEmail with showUser as callback if no errors', (done) ->
+      req.validationErrors = -> false
+
+      req.params =
+        email: 'test@test.com'
+
+      gently.expect Admin, 'findUser', (email, callback) ->
+        email.should.equal 'test@test.com'
+        callback.should.equal Admin.showUser
+        done()
+
+      next = ->
+
+      Admin.user req, res, next

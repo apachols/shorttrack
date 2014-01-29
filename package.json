@@ -27,6 +27,7 @@
     "grunt-node-inspector": "~0.1.2",
     "load-grunt-tasks": "~0.3.0",
     "should": "~3.1.0",
-    "grunt-mocha-test": "~0.8.2"
+    "grunt-mocha-test": "~0.8.2",
+    "gently": "~0.9.2"
   }
 }

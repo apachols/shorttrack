@@ -1,5 +1,4 @@
 User = require('../models/User')
-Profile = require('../models/Profile')
 
 class Profile
   constructor: (@app) ->
