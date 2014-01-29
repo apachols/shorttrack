@@ -22,18 +22,17 @@ class Profile
   update: (req, res) ->
     console.log('UPDATE')
 
-    User.findOne
-      email: req.user.email
-    , (err, userdoc) ->
-      console.dir(userdoc)
-      userdoc.profile =
-        gender: 'F'
-        genderSought: 'F'
-        genderSecond: 'F'
-        age: 24
-        ageSoughtMin: 24
-        ageSoughtMax: 24
-      userdoc.save()
+    dummyProfile =
+      gender: 'F'
+      genderSought: 'F'
+      genderSecond: 'M'
+      age: 24
+      ageSoughtMin: 22
+      ageSoughtMax: 32
+
+    req.user.profile = dummyProfile
+
+    req.user.save()
 
     res.redirect '/profile'
 
