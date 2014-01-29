@@ -19,10 +19,25 @@ module.exports = (grunt) ->
       options:
         cmd: 'coffee'
         delay: 1
+        script: 'src/app.coffee'
 
-      dev:
+      dev: {}
+
+      inspect:
         options:
-          script: 'src/app.coffee'
+          debug: true
+          args: ['--nodejs']
+
+    'node-inspector':
+      dev: {}
+
+    mochaTest:
+      test:
+        options:
+          reporter: 'spec'
+          require: 'coffee-script'
+
+        src: ['test/**/*.coffee']
 
     watch:
       options:
@@ -34,20 +49,24 @@ module.exports = (grunt) ->
 
       jade:
         files: '<%= jade.src %>'
-        tasks: ['express']
+        tasks: ['express:dev']
 
       express:
         files: ['<%= coffeelint.src %>', '<%= jade.src %>']
-        tasks: ['express']
+        tasks: ['express:dev']
         options:
           spawn: false
 
   # Load Tasks
-  grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-contrib-connect'
-  grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-express-server'
+  require('load-grunt-tasks') grunt
+
+  # grunt.loadNpmTasks 'grunt-coffeelint'
+  # grunt.loadNpmTasks 'grunt-contrib-connect'
+  # grunt.loadNpmTasks 'grunt-contrib-watch'
+  # grunt.loadNpmTasks 'grunt-express-server'
+  # grunt.loadNpmTasks 'grunt-node-inspector'
 
   # Register Tasks
-  grunt.registerTask 'default', ['coffeelint']
-  grunt.registerTask 'dev', ['default', 'express', 'watch']
+  grunt.registerTask 'default', ['coffeelint', 'mochaTest']
+  grunt.registerTask 'dev', ['default', 'express:dev', 'watch']
+  grunt.registerTask 'inspect', ['default', 'express:inspect', 'node-inspector']
