@@ -6,11 +6,14 @@ class Admin
     @locals =
       brand: 'Admin Console'
 
+    # @TODO Move to after @auth when working
+    @app.all '/admin/update', @update
+
     # Require authentication for all admin routes
     @app.all /^\/admin/, @auth
 
     # Route the admin requests.
-    @app.get '/admin/:email', @validate, @user
+    @app.get '/admin/user/:email', @validate, @user
     @app.get '/admin', @home
 
   auth: (req, res, next) ->
@@ -30,18 +33,23 @@ class Admin
   user: (req, res) ->
     {email} = req.params
     User.findOne {email}, (err, user) ->
-      throw err if err
-      res.redirect 404, '/admin' unless user
 
-      user?.inspect = util.inspect user
-      res.render 'admin/user', {user}
+      if user
+        user?.inspect = util.inspect user
+        res.render 'admin/user', {user}
+
+      else res.send 404, err
 
   home: (req, res) ->
     User.find {}, (err, users) ->
-      throw err if err
-      res.render 'admin/home', {users}
+      if users then res.render 'admin/home', {users}
+      else res.send 500, err
 
   update: (req, res) ->
-
+    {email} = req.body #post
+    {email} = req.query unless email #get
+    User.findOne {email}, (err, user) ->
+      if user then res.send 200, user
+      else res.send 500, err
 
 module.exports = (app) -> new Admin app

@@ -6,8 +6,9 @@ gently = new(require 'gently')
 req =
 res =
 app =
-  get: ->
   all: ->
+  get: ->
+  post: ->
 
 # Test route
 Admin = require('../../src/routes/admin') app
