@@ -12,8 +12,8 @@ class Main
 
   setup: (req, res, next) ->
     res.locals {
-      brand: 'Homepage'
       my: req.user
+      brand: 'Homepage'
     }
     next()
 
