@@ -58,7 +58,6 @@ module.exports = (grunt) ->
 
       jade:
         files: '<%= jade.src %>'
-        tasks: ['express:watch']
 
       express:
         files: ['<%= coffeelint.src %>', '<%= jade.src %>']
