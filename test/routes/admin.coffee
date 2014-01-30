@@ -28,55 +28,60 @@ describe 'src/routes/admin.coffee', ->
       send: ->
       redirect: ->
 
-  describe '#all ^/auth', ->
-    it 'should return a 401 without authentication', (done) ->
-      req.isAuthenticated = ->
-        false
-
-      res.send = (message, code) ->
-        message.should.be.type 'string'
-        code.should.equal 401
-        done()
-
-      next = ->
-        should.fail 'do not call next unless authenticated'
-
-      Admin.auth req, res, next
-
+  describe 'auth', ->
     it 'should run next() when authenticated', (done) ->
       req.isAuthenticated = -> true
 
       Admin.auth req, res, done
 
-  describe '#get /admin/user', ->
-    it 'should return 400 if errors', (done) ->
+  describe 'validate', ->
+    it 'should run next() if there are no errors', (done) ->
+      req.isEmail = ->
+      req.assert = -> return req
 
-      dummyErrors = [{"errcode" : "error message"}]
-
-      req.validationErrors = -> dummyErrors
-
-      next = ->
-        should.fail 'do not call next if errors'
-
-      res.redirect = (code, location) ->
-        req.session.errors.should.equal util.inspect dummyErrors
-        location.should.equal '/admin'
-        code.should.equal 400
-        done()
-
-      Admin.user req, res, next
-
-    it 'should call User.findUserByEmail with showUser as callback if no errors', (done) ->
       req.validationErrors = -> false
 
-      req.params =
-        email: 'test@test.com'
+      Admin.validate req, res, done
 
-      gently.expect Admin, 'findUser', (email, callback) ->
-        email.should.equal 'test@test.com'
-        callback.should.equal Admin.showUser
-        done()
+    it 'should add errors to the session'
+    it 'shold redirect to admin'
 
-      next = ->
+  describe 'user', ->
+    it 'should 404 without a valid user'
+    it 'should render the admin/user view'
 
-      Admin.user req, res, next
+  describe 'home', ->
+    it 'should reder the admin/home view'
+
+  # describe '#get /admin/:email', ->
+  #   it 'should return 400 if errors', (done) ->
+
+  #     dummyErrors = [{"errcode" : "error message"}]
+
+  #     req.validationErrors = -> dummyErrors
+
+  #     next = ->
+  #       should.fail 'do not call next if errors'
+
+  #     res.redirect = (code, location) ->
+  #       req.session.errors.should.equal util.inspect dummyErrors
+  #       location.should.equal '/admin'
+  #       code.should.equal 400
+  #       done()
+
+  #     Admin.user req, res, next
+
+  #   it 'should call User.findUserByEmail with showUser as callback if no errors', (done) ->
+  #     req.validationErrors = -> false
+
+  #     req.params =
+  #       email: 'test@test.com'
+
+  #     gently.expect Admin, 'findUser', (email, callback) ->
+  #       email.should.equal 'test@test.com'
+  #       callback.should.equal Admin.showUser
+  #       done()
+
+  #     next = ->
+
+  #     Admin.user req, res, next
