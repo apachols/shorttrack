@@ -7,9 +7,12 @@ module.exports = (grunt) ->
 
     coffeelint:
       src: ['src/**/*.coffee']
+      test: ['test/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
 
     jade:
+      options:
+        pretty: true
       src: ['src/**/*.jade']
 
     connect:
@@ -18,13 +21,16 @@ module.exports = (grunt) ->
     express:
       options:
         cmd: 'coffee'
-        delay: 1
         script: 'src/app.coffee'
 
       dev: {}
 
+      watch:
+        delay: '<%= express.inspect.delay %>'
+
       inspect:
         options:
+          delay: 1
           debug: true
           args: ['--nodejs']
 
@@ -43,17 +49,20 @@ module.exports = (grunt) ->
       options:
         live_reload: true
 
-      coffee:
-        files: ['<%= coffeelint.src %>', '<%= coffeelint.gruntfile %>']
-        tasks: ['coffeelint']
+      default:
+        files: [
+          '<%= mochaTest.test.src %>'
+          '<%= coffeelint.src %>'
+          '<%= coffeelint.gruntfile %>'
+        ]
+        tasks: ['dev']
 
       jade:
         files: '<%= jade.src %>'
-        tasks: ['express:dev']
 
       express:
         files: ['<%= coffeelint.src %>', '<%= jade.src %>']
-        tasks: ['express:dev']
+        tasks: ['express:watch']
         options:
           spawn: false
 
@@ -67,6 +76,22 @@ module.exports = (grunt) ->
   # grunt.loadNpmTasks 'grunt-node-inspector'
 
   # Register Tasks
+  grunt.registerTask 'use-the-force', 'enables --force', ->
+    unless grunt.option 'force'
+      grunt.config.set 'forceStatus', true
+      grunt.option 'force', true
+
+  grunt.registerTask 'not-the-droids', 'disables --force', ->
+    grunt.option 'force', false if grunt.config.get 'forceStatus'
+
   grunt.registerTask 'default', ['coffeelint', 'mochaTest']
-  grunt.registerTask 'dev', ['default', 'express:dev', 'watch']
-  grunt.registerTask 'inspect', ['default', 'express:inspect', 'node-inspector']
+
+  grunt.registerTask 'dev', [
+    'use-the-force'
+    'default'
+    'express:watch'
+  ]
+
+  grunt.registerTask 'live', ['dev', 'watch']
+
+  grunt.registerTask 'inspect', ['express:inspect', 'node-inspector']

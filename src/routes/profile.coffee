@@ -1,5 +1,4 @@
 User = require('../models/User')
-Profile = require('../models/Profile')
 
 class Profile
   constructor: (@app) ->
@@ -23,6 +22,7 @@ class Profile
     console.log('UPDATE')
 
     dummyProfile =
+      fakeKeyBadness: 'Lame!'
       gender: 'F'
       genderSought: 'F'
       genderSecond: 'M'
@@ -32,7 +32,8 @@ class Profile
 
     req.user.profile = dummyProfile
 
-    req.user.save()
+    req.user.save (err, profile) ->
+      console.log(err) if err
 
     res.redirect '/profile'
 

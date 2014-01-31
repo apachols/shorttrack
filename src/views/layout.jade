@@ -29,9 +29,9 @@ block scripts
         li: a(href="/login") Log In
 
 .container
-  if errors
+  if messages.error
     .row
       .col-xs-12
-        pre.alert-danger #{errors}
+        pre.alert-danger #{messages.error}
 
   block content

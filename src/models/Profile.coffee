@@ -9,6 +9,7 @@ Profile = new mongoose.Schema {
   ageSoughtMax: Number
 }, {
   collection: 'profile'
+  strict: 'throw'
 }
 
 module.exports = mongoose.model 'Profile', Profile

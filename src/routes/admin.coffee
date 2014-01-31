@@ -1,5 +1,4 @@
-mongoose = require 'mongoose'
-User = require('../models/User')
+User = require '../models/User'
 util = require 'util'
 
 class Admin
@@ -7,57 +6,50 @@ class Admin
     @locals =
       brand: 'Admin Console'
 
+    # @TODO Move to after @auth when working
+    @app.all '/admin/update', @update
+
     # Require authentication for all admin routes
     @app.all /^\/admin/, @auth
 
     # Route the admin requests.
-    @app.get '/admin/:email', @user
+    @app.get '/admin/user/:email', @validate, @user
     @app.get '/admin', @home
 
   auth: (req, res, next) ->
     return res.send 'boo-urns', 401 unless req.isAuthenticated()
     next()
 
-  user: (req, res) ->
-    # req.assert('username', 'Must supply a valid username').isAlphanumeric()
+  validate: (req, res, next) ->
+    req.assert('email', 'Must supply a valid email').isEmail()
     errors = req.validationErrors()
-    unless errors
-      User.findOne {
-        'email': req.params.email
-      }, (err, user) ->
-        throw err if err
 
+    if errors
+      req.flash 'error', util.inspect errors
+      res.redirect '/admin'
+
+    else next()
+
+  user: (req, res) ->
+    {email} = req.params
+    User.findOne {email}, (err, user) ->
+
+      if user
         user?.inspect = util.inspect user
+        res.render 'admin/user', {user}
 
-        res.locals @locals
-        res.locals {
-          errors: req.session.errors
-          user: user
-          my: req.user
-          brand: user.email
-        }
-
-        if user
-          res.render 'admin/user'
-        else
-          res.send "unknown user: <b>#{req.params.username}</b>", 404
-
-    else
-      req.session.errors = util.inspect errors
-      res.redirect 400, '/admin'
+      else res.send 404, err
 
   home: (req, res) ->
     User.find {}, (err, users) ->
-      throw err if err
+      if users then res.render 'admin/home', {users}
+      else res.send 500, err
 
-      res.locals @locals
-      res.locals {
-        errors: req.session.errors
-        users: users
-        my: req.user
-      }
-
-      req.session.errors = false
-      res.render 'admin/home'
+  update: (req, res) ->
+    {email} = req.body #post
+    {email} = req.query unless email #get
+    User.findOne {email}, (err, user) ->
+      if user then res.send 200, user
+      else res.send 500, err
 
 module.exports = (app) -> new Admin app
