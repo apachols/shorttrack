@@ -7,6 +7,7 @@ module.exports = (grunt) ->
 
     coffeelint:
       src: ['src/**/*.coffee']
+      test: ['test/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
 
     jade:

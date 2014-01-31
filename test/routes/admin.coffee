@@ -72,7 +72,8 @@ describe 'src/routes/admin.coffee', ->
 
   #     Admin.user req, res, next
 
-  #   it 'should call User.findUserByEmail with showUser as callback if no errors', (done) ->
+  #   it 'should call User.findUserByEmail with showUser as
+  #   callback if no errors', (done) ->
   #     req.validationErrors = -> false
 
   #     req.params =
