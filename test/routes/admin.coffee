@@ -44,8 +44,27 @@ describe 'src/routes/admin.coffee', ->
 
       Admin.validate req, res, done
 
-    it 'should add errors to the session'
-    it 'shold redirect to admin'
+    it 'should redirect to admin if errors', (done) ->
+      errors = [{"code", "message"}]
+
+      req.isEmail = ->
+      req.assert = -> return req
+      req.validationErrors = -> errors
+
+      next = ->
+
+      # req.flash = -> console.log "FLASH!"
+      # req.redirect = -> console.log "REDIRECT!"
+
+      gently.expect req, 'flash', (errorMessage, errorList) ->
+        errorMessage.should.equal 'error'
+        errorList.should.equal util.inspect errors
+
+      gently.expect res, 'redirect', (redirectRoute) ->
+        redirectRoute.should.be.equal '/admin'
+        done()
+
+      Admin.validate req, res, next
 
   describe 'user', ->
     it 'should 404 without a valid user'
