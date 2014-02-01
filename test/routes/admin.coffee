@@ -11,6 +11,7 @@ app =
   post: ->
 
 # Test route
+User = require '../models/User'
 Admin = require('../../src/routes/admin') app
 
 # Test suite
@@ -53,9 +54,6 @@ describe 'src/routes/admin.coffee', ->
 
       next = ->
 
-      # req.flash = -> console.log "FLASH!"
-      # req.redirect = -> console.log "REDIRECT!"
-
       gently.expect req, 'flash', (errorMessage, errorList) ->
         errorMessage.should.equal 'error'
         errorList.should.equal util.inspect errors
@@ -68,10 +66,11 @@ describe 'src/routes/admin.coffee', ->
 
   describe 'user', ->
     it 'should 404 without a valid user'
+
     it 'should render the admin/user view'
 
   describe 'home', ->
-    it 'should reder the admin/home view'
+    it 'should render the admin/home view'
 
   # describe '#get /admin/:email', ->
   #   it 'should return 400 if errors', (done) ->
