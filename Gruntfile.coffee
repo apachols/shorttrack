@@ -23,14 +23,15 @@ module.exports = (grunt) ->
         cmd: 'coffee'
         script: 'src/app.coffee'
 
-      dev: {}
+      dev:
+        options:
+          background: false
 
       watch:
         delay: '<%= express.inspect.delay %>'
 
       inspect:
         options:
-          delay: 1
           debug: true
           args: ['--nodejs']
 
@@ -82,16 +83,24 @@ module.exports = (grunt) ->
       grunt.option 'force', true
 
   grunt.registerTask 'not-the-droids', 'disables --force', ->
-    grunt.option 'force', false if grunt.config.get 'forceStatus'
+    grunt.option 'force', false
 
-  grunt.registerTask 'default', ['coffeelint', 'mochaTest']
+  grunt.registerTask 'default', ['express:dev']
+
+  grunt.registerTask 'test', ['coffeelint', 'mochaTest']
 
   grunt.registerTask 'dev', [
     'use-the-force'
+    'test'
+    'not-the-droids'
     'default'
-    'express:watch'
   ]
 
-  grunt.registerTask 'live', ['dev', 'watch']
+  grunt.registerTask 'live', [
+    'use-the-force'
+    'test'
+    'express:watch'
+    'watch'
+  ]
 
   grunt.registerTask 'inspect', ['express:inspect', 'node-inspector']
