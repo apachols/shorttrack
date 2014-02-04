@@ -11,7 +11,7 @@ app =
   post: ->
 
 # Test route
-User = require '../models/User'
+User = require '../../src/models/User'
 Admin = require('../../src/routes/admin') app
 
 # Test suite

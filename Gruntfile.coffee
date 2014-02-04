@@ -33,6 +33,7 @@ module.exports = (grunt) ->
       inspect:
         options:
           debug: true
+          delay: 1
           args: ['--nodejs']
 
     'node-inspector':
