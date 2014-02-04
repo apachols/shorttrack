@@ -6,7 +6,7 @@ class Profile
 
     @app.get '/profile', @get
 
-    @app.get '/profile/update', @update
+    @app.post '/profile/update', @update
 
   auth: (req, res, next) ->
     return res.send 'boo-urns', 401 unless req.isAuthenticated()
@@ -19,24 +19,25 @@ class Profile
     }
 
   update: (req, res) ->
-    console.log('UPDATE')
+    return res.send 'Invalid update request', 403 unless req.body.pk == req.user.email
 
-    dummyProfile =
-      fakeKeyBadness: 'Lame!'
-      gender: 'F'
-      genderSought: 'F'
-      genderSecond: 'M'
-      age: 24
-      ageSoughtMin: 22
-      ageSoughtMax: 32
+    console.log 'UPDATE'
 
-    req.user.profile = dummyProfile
+    findSpec =
+      email: req.body.pk
 
-    req.user.save (err, profile) ->
-      console.log(err) if err
+    User.findOne findSpec, (err,user) ->
+      if err then res.send 'DB error', 500
 
-    res.redirect '/profile'
+      if user == null then res.send 'Invalid user', 400
 
+      try
+        user.profile[0][req.body.name] = req.body.value
+        user.save()
+        res.send 200
 
+      catch e
+        console.error e
+        res.send 'Invalid update request', 400
 
 module.exports = (app) -> new Profile app
