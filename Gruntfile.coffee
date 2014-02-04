@@ -15,9 +15,6 @@ module.exports = (grunt) ->
         pretty: true
       src: ['src/**/*.jade']
 
-    connect:
-      uses_defaults: {}
-
     express:
       options:
         cmd: 'coffee'
@@ -40,31 +37,34 @@ module.exports = (grunt) ->
       dev: {}
 
     mochaTest:
-      test:
-        options:
-          reporter: 'spec'
-          require: 'coffee-script'
+      options:
+        reporter: 'spec'
+        require: 'coffee-script'
 
-        src: ['test/**/*.coffee']
+      src: '<%= coffeelint.test %>'
 
     watch:
-      options:
-        live_reload: true
-
-      default:
+      src:
         files: [
-          '<%= mochaTest.test.src %>'
           '<%= coffeelint.src %>'
           '<%= coffeelint.gruntfile %>'
         ]
-        tasks: ['dev']
+        tasks: [
+          'use-the-force'
+          'test'
+          'not-the-droids'
+        ]
+
+      test:
+        files: '<%= coffeelint.test %>'
+        tasks: '<%= watch.src.tasks %>'
 
       jade:
         files: '<%= jade.src %>'
 
       express:
-        files: ['<%= coffeelint.src %>', '<%= jade.src %>']
-        tasks: ['express:watch']
+        files: '<%= coffeelint.src %>'
+        tasks: 'express:watch'
         options:
           spawn: false
 
@@ -84,7 +84,8 @@ module.exports = (grunt) ->
       grunt.option 'force', true
 
   grunt.registerTask 'not-the-droids', 'disables --force', ->
-    grunt.option 'force', false
+    grunt.option 'force', false if grunt.config.get 'forceStatus'
+    true
 
   grunt.registerTask 'default', ['express:dev']
 
@@ -100,6 +101,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'live', [
     'use-the-force'
     'test'
+    'not-the-droids'
     'express:watch'
     'watch'
   ]
