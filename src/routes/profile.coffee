@@ -19,12 +19,13 @@ class Profile
     }
 
   update: (req, res) ->
-    return res.send 'Invalid update request', 403 unless req.body.pk == req.user.email
+    {pk, name, value} = req.body
+    return res.send 'Invalid update request', 403 unless pk == req.user.email
 
     console.log 'UPDATE'
 
     findSpec =
-      email: req.body.pk
+      email: pk
 
     User.findOne findSpec, (err,user) ->
       if err then res.send 'DB error', 500
@@ -32,7 +33,7 @@ class Profile
       if user == null then res.send 'Invalid user', 400
 
       try
-        user.profile[0][req.body.name] = req.body.value
+        user.profile[0][name] = value
         user.save()
         res.send 200
 
