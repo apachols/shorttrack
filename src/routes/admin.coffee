@@ -16,6 +16,10 @@ class Admin
     @app.get '/admin/user/:email', @validate, @user
     @app.get '/admin', @home
 
+    @app.post '/admin/user/profile/update/:email', @validate, @updateUserProfile
+
+    @app.post '/admin/user/update/:email', @validate, @updateUser
+
   auth: (req, res, next) ->
     return res.send 'boo-urns', 401 unless req.isAuthenticated()
     next()
@@ -51,5 +55,29 @@ class Admin
     User.findOne {email}, (err, user) ->
       if user then res.send 200, user
       else res.send 500, err
+
+  updateUserProfile: (req, res) ->
+    {pk, name, value} = req.body
+
+    findSpec =
+      email: pk
+
+    User.findOne findSpec, (err,user) ->
+      if err then res.send 'DB error', 500
+
+      if user == null then res.send 'Invalid user', 400
+
+      try
+        user.profile[0][name] = value
+        user.save()
+        res.send 200
+
+      catch e
+        console.error e
+        res.send 'Invalid update request', 400
+
+  updateUser: (req, res) ->
+    console.log 'updateUser'
+
 
 module.exports = (app) -> new Admin app
