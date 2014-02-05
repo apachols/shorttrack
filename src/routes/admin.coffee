@@ -16,7 +16,7 @@ class Admin
     User = require('./User') @app
 
   auth: (req, res, next) ->
-    return res.send 'boo-urns', 401 unless req.isAuthenticated()
+    return res.send 401, 'boo-urns' unless req.isAuthenticated()
     next()
 
   home: (req, res) ->

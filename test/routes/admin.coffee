@@ -3,6 +3,7 @@ should = require 'should'
 util = require 'util'
 gently = new(require 'gently')
 
+# Set up mock objects for express
 req =
 res =
 app =
@@ -17,21 +18,19 @@ Admin = require('../../src/routes/admin') app
 # Test suite
 describe 'src/routes/admin.coffee', ->
 
-  beforeEach ->
-    req =
-      isAuthenticated: ->
-      validationErrors: ->
-      session: {}
-      user: 'test'
-
-    res =
-      render: ->
-      send: ->
-      redirect: ->
-
   describe 'auth', ->
     it 'should run next() when authenticated', (done) ->
       req.isAuthenticated = -> true
+
+      Admin.auth req, res, done
+
+    it 'should send an error when not authenticated', (done) ->
+      req.isAuthenticated = -> false
+
+      gently.expect res, 'send', (code, message) ->
+        code.should.equal(401)
+        message.should.equal('boo-urns')
+        done()
 
       Admin.auth req, res, done
 

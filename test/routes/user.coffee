@@ -3,6 +3,7 @@ should = require 'should'
 util = require 'util'
 gently = new(require 'gently')
 
+# Set up mock objects for express
 req =
 res =
 app =
@@ -16,17 +17,6 @@ User = require('../../src/routes/user') app
 
 # Test suite
 describe 'src/routes/user.coffee', ->
-
-  beforeEach ->
-    req =
-      validationErrors: ->
-      session: {}
-      user: 'test'
-
-    res =
-      render: ->
-      send: ->
-      redirect: ->
 
   describe 'validate', ->
     it 'should run next() if there are no errors', (done) ->
