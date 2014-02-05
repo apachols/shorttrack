@@ -21,7 +21,7 @@ class Profile
   update: (req, res) ->
     {pk, name, value} = req.body
 
-    req.user.profile[0][name] = value;
+    req.user.profile[0][name] = value
     req.user.save (err) ->
       if err then res.send 'Invalid update request', 400
       else res.send 200

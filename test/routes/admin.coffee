@@ -3,6 +3,7 @@ should = require 'should'
 util = require 'util'
 gently = new(require 'gently')
 
+# Set up mock objects for express
 req =
 res =
 app =
@@ -11,24 +12,11 @@ app =
   post: ->
 
 # Test route
-User = require '../../src/models/User'
+UserModel = require '../../src/models/User'
 Admin = require('../../src/routes/admin') app
 
 # Test suite
 describe 'src/routes/admin.coffee', ->
-  # req = res = {}
-
-  beforeEach ->
-    req =
-      isAuthenticated: ->
-      validationErrors: ->
-      session: {}
-      user: 'test'
-
-    res =
-      render: ->
-      send: ->
-      redirect: ->
 
   describe 'auth', ->
     it 'should run next() when authenticated', (done) ->
@@ -36,72 +24,45 @@ describe 'src/routes/admin.coffee', ->
 
       Admin.auth req, res, done
 
-  describe 'validate', ->
-    it 'should run next() if there are no errors', (done) ->
-      req.isEmail = ->
-      req.assert = -> return req
+    it 'should send an error when not authenticated', (done) ->
+      req.isAuthenticated = -> false
 
-      req.validationErrors = -> false
-
-      Admin.validate req, res, done
-
-    it 'should redirect to admin if errors', (done) ->
-      errors = [{"code", "message"}]
-
-      req.isEmail = ->
-      req.assert = -> return req
-      req.validationErrors = -> errors
-
-      next = ->
-
-      gently.expect req, 'flash', (errorMessage, errorList) ->
-        errorMessage.should.equal 'error'
-        errorList.should.equal util.inspect errors
-
-      gently.expect res, 'redirect', (redirectRoute) ->
-        redirectRoute.should.be.equal '/admin'
+      gently.expect res, 'send', (code, message) ->
+        code.should.equal(401)
+        message.should.equal('boo-urns')
         done()
 
-      Admin.validate req, res, next
-
-  describe 'user', ->
-    it 'should 404 without a valid user'
-
-    it 'should render the admin/user view'
+      Admin.auth req, res, done
 
   describe 'home', ->
-    it 'should render the admin/home view'
+    it 'should send a 500 error if error on users query', (done) ->
+      gently.expect UserModel, 'find', (findSpec, callback) ->
+        callback('Error dude!', null)
 
-  # describe '#get /admin/:email', ->
-  #   it 'should return 400 if errors', (done) ->
+      gently.expect res, 'send', (code, message) ->
+        code.should.equal(500)
+        message.should.equal('Error dude!')
+        done()
 
-  #     dummyErrors = [{"errcode" : "error message"}]
+      Admin.home req, res, ->
 
-  #     req.validationErrors = -> dummyErrors
+    it 'should render the admin/home view if no error on users query', (done) ->
+      users = [
+        {
+          email: 'one@one.com'
+        }
+        {
+          email: 'two@two.com'
+        }
+      ]
+      gently.expect UserModel, 'find', (findSpec, callback) ->
+        callback(null, users)
 
-  #     next = ->
-  #       should.fail 'do not call next if errors'
+      gently.expect res, 'render', (route, object) ->
+        route.should.equal('admin/home')
+        object.users.should.equal(users)
+        done()
 
-  #     res.redirect = (code, location) ->
-  #       req.session.errors.should.equal util.inspect dummyErrors
-  #       location.should.equal '/admin'
-  #       code.should.equal 400
-  #       done()
+      Admin.home req, res, ->
 
-  #     Admin.user req, res, next
 
-  #   it 'should call User.findUserByEmail with showUser as
-  #   callback if no errors', (done) ->
-  #     req.validationErrors = -> false
-
-  #     req.params =
-  #       email: 'test@test.com'
-
-  #     gently.expect Admin, 'findUser', (email, callback) ->
-  #       email.should.equal 'test@test.com'
-  #       callback.should.equal Admin.showUser
-  #       done()
-
-  #     next = ->
-
-  #     Admin.user req, res, next
