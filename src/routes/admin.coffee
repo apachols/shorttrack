@@ -52,4 +52,5 @@ class Admin
       if user then res.send 200, user
       else res.send 500, err
 
+
 module.exports = (app) -> new Admin app
