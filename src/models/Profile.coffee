@@ -3,7 +3,7 @@ Questions = new mongoose.Schema
 
 Profile = new mongoose.Schema
   name: String
-  handle: String
+  nickname: String
 
   gender: {
     my: String
@@ -20,6 +20,5 @@ Profile = new mongoose.Schema
   questions: [Questions.schema]
 ,
   collection: 'profile'
-  strict: 'throw'
 
 module.exports = mongoose.model 'Profile', Profile

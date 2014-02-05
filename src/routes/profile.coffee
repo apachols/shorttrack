@@ -23,10 +23,9 @@ class Profile
 
   update: (req, res) ->
     {name, value} = req.body
-    {p: [profile]} = req.user
 
-    if typeof value is 'object' then _.merge profile[name], value
-    else profile[name] = value
+    if typeof value is 'object' then _.merge req.user.profile[0][name], value
+    else req.user.profile[0][name] = value
 
     req.user.save (err) ->
       if err then res.send err, 400

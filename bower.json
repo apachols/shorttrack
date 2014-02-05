@@ -10,7 +10,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.0.3",
-    "x-editable": "~1.5.1"
+    "bootstrap": "~3.1.0"
   }
 }

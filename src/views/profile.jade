@@ -5,4 +5,54 @@ block content
     .panel.panel-default
       .panel-heading HAI DENNY <b>#{user.email}</b>
       .panel-body
-        pre #{user.profile}
+        form.js-form.form-horizontal(role='form')
+
+          .form-group
+            label.col-sm-2.control-label(for='form-name') Name
+            .col-sm-10
+              div.has-feedback
+                input#form-name.form-control.js-input(type='text', name='name', value='#{user.profile[0].name}')
+                span.glyphicon.glyphicon-ok.form-control-feedback.hide
+                span.input-group-btn.hide
+                  a.js-update.btn.btn-primary(type='button') Save
+
+          .form-group
+            label.col-sm-2.control-label(for='#form-nickname') Nickname
+            .col-sm-10
+              div.has-feedback
+                input#form-nickname.form-control.js-input(type='text', name='nickname', value='#{user.profile[0].nickname}')
+                span.glyphicon.glyphicon-ok.form-control-feedback.hide
+                span.input-group-btn.hide
+                  a.js-update.btn.btn-primary(type='button') Save
+
+  script.
+    $(function () {
+      $('.js-input').on('focus', function (e) {
+        $(this)
+          .parent().addClass('input-group').end()
+          .siblings('.input-group-btn').removeClass('hide')
+      });
+
+      $('.js-update').on('click', function (e) {
+        $this = $(this);
+        $input = $this.parent().siblings('input')
+        $.post('/profile/update/', {name: $input.attr('name'), value: $input.val()})
+          .done(function () {
+            $input
+              .siblings('.form-control-feedback').removeClass('hide').end()
+              .parents('.form-group').addClass('has-success').end()
+              .parent().removeClass('input-group').end()
+              .siblings('.input-group-btn').addClass('hide')
+
+            setTimeout(function () {
+              $input
+                .siblings('.form-control-feedback').addClass('hide').end()
+                .parents('.form-group').removeClass('has-success');
+            }, 3000);
+          });
+      });
+
+      $('.js-form').on('submit', function (e) {
+        e.preventDefault();
+      });
+    });
