@@ -1,6 +1,7 @@
 UserModel = require '../models/User'
 util = require 'util'
 
+# routes for /admin/user/*
 class User
   constructor: (@app) ->
     @locals =
@@ -8,6 +9,7 @@ class User
 
     @app.get '/admin/user/:email', @validate, @user
 
+  # validate that url parameter email is valid
   validate: (req, res, next) ->
     req.assert('email', 'Must supply a valid email').isEmail()
     errors = req.validationErrors()
@@ -18,6 +20,7 @@ class User
 
     else next()
 
+  # display a single user for editing - /admin/user/:email
   user: (req, res) ->
     {email} = req.params
     UserModel.findOne {email}, (err, user) ->
