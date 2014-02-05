@@ -52,8 +52,6 @@ describe 'src/routes/admin.coffee', ->
       req.assert = -> return req
       req.validationErrors = -> errors
 
-      next = ->
-
       gently.expect req, 'flash', (errorMessage, errorList) ->
         errorMessage.should.equal 'error'
         errorList.should.equal util.inspect errors
@@ -62,46 +60,70 @@ describe 'src/routes/admin.coffee', ->
         redirectRoute.should.be.equal '/admin'
         done()
 
+      next = ->
       Admin.validate req, res, next
 
   describe 'user', ->
-    it 'should 404 without a valid user'
+    it 'should 404 without a valid user', (done) ->
+      req.params =
+        email: 'test@lame.wut'
 
-    it 'should render the admin/user view'
+      gently.expect User, 'findOne', (findSpec, callback) ->
+        callback('User not found', null)
+
+      gently.expect res, 'send', (code, message) ->
+        code.should.equal(404)
+        message.should.equal('User not found')
+        done()
+
+      Admin.user req, res, ->
+
+    it 'should render the admin/user view', (done) ->
+      req.params =
+        email: 'test@lame.wut'
+
+      user =
+        email: 'test@lame.wut'
+
+      gently.expect User, 'findOne', (findSpec, callback) ->
+        callback(null, user)
+
+      gently.expect res, 'render', (route, object) ->
+        route.should.equal('admin/user')
+        object.user.should.equal(user)
+        done()
+
+      Admin.user req, res, ->
 
   describe 'home', ->
-    it 'should render the admin/home view'
+    it 'should send a 500 error if error on users query', (done) ->
+      gently.expect User, 'find', (findSpec, callback) ->
+        callback('Error dude!', null)
 
-  # describe '#get /admin/:email', ->
-  #   it 'should return 400 if errors', (done) ->
+      gently.expect res, 'send', (code, message) ->
+        code.should.equal(500)
+        message.should.equal('Error dude!')
+        done()
 
-  #     dummyErrors = [{"errcode" : "error message"}]
+      Admin.home req, res, ->
 
-  #     req.validationErrors = -> dummyErrors
+    it 'should render the admin/home view if no error on users query', (done) ->
+      users = [
+        {
+          email: 'one@one.com'
+        }
+        {
+          email: 'two@two.com'
+        }
+      ]
+      gently.expect User, 'find', (findSpec, callback) ->
+        callback(null, users)
 
-  #     next = ->
-  #       should.fail 'do not call next if errors'
+      gently.expect res, 'render', (route, object) ->
+        route.should.equal('admin/home')
+        object.users.should.equal(users)
+        done()
 
-  #     res.redirect = (code, location) ->
-  #       req.session.errors.should.equal util.inspect dummyErrors
-  #       location.should.equal '/admin'
-  #       code.should.equal 400
-  #       done()
+      Admin.home req, res, ->
 
-  #     Admin.user req, res, next
 
-  #   it 'should call User.findUserByEmail with showUser as
-  #   callback if no errors', (done) ->
-  #     req.validationErrors = -> false
-
-  #     req.params =
-  #       email: 'test@test.com'
-
-  #     gently.expect Admin, 'findUser', (email, callback) ->
-  #       email.should.equal 'test@test.com'
-  #       callback.should.equal Admin.showUser
-  #       done()
-
-  #     next = ->
-
-  #     Admin.user req, res, next
