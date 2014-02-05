@@ -14,6 +14,7 @@ class Admin
 
     # Set up all the /admin/user routes!
     User = require('./User') @app
+    Gender = require('./Gender') @app
 
   auth: (req, res, next) ->
     return res.send 401, 'boo-urns' unless req.isAuthenticated()

@@ -47,20 +47,13 @@ describe 'src/routes/admin.coffee', ->
       Admin.home req, res, ->
 
     it 'should render the admin/home view if no error on users query', (done) ->
-      users = [
-        {
-          email: 'one@one.com'
-        }
-        {
-          email: 'two@two.com'
-        }
-      ]
+      users = [{email: 'one@one.com'}, { email: 'two@two.com'}]
       gently.expect UserModel, 'find', (findSpec, callback) ->
-        callback(null, users)
+        callback null, users
 
       gently.expect res, 'render', (route, object) ->
-        route.should.equal('admin/home')
-        object.users.should.equal(users)
+        route.should.equal 'admin/home'
+        object.users.should.equal users
         done()
 
       Admin.home req, res, ->

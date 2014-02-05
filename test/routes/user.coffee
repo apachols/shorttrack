@@ -51,11 +51,14 @@ describe 'src/routes/user.coffee', ->
         email: 'test@lame.wut'
 
       gently.expect UserModel, 'findOne', (findSpec, callback) ->
-        callback('User not found', null)
+        findSpec.email.should.equal 'test@lame.wut'
+        callback 'User not found', null
 
-      gently.expect res, 'send', (code, message) ->
-        code.should.equal(404)
-        message.should.equal('User not found')
+      gently.expect req, 'flash', (type, message) ->
+        type.should.equal 'error'
+
+      gently.expect res, 'redirect', (route) ->
+        route.should.equal '/admin'
         done()
 
       User.user req, res, ->
@@ -68,11 +71,12 @@ describe 'src/routes/user.coffee', ->
         email: 'test@lame.wut'
 
       gently.expect UserModel, 'findOne', (findSpec, callback) ->
-        callback(null, user)
+        findSpec.email.should.equal 'test@lame.wut'
+        callback null, user
 
       gently.expect res, 'render', (route, object) ->
-        route.should.equal('admin/user')
-        object.user.should.equal(user)
+        route.should.equal 'admin/user'
+        object.user.should.equal user
         done()
 
       User.user req, res, ->

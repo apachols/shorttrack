@@ -29,6 +29,8 @@ class User
         user?.inspect = util.inspect user
         res.render 'admin/user', {user}
 
-      else res.send 404, err
+      else
+        req.flash 'error', 'User not found: ' + email
+        res.redirect '/admin'
 
 module.exports = (app) -> new User app
