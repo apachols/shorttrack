@@ -1,4 +1,4 @@
-UserModel = require '../models/User'
+UserModel = require '../../models/User'
 util = require 'util'
 
 class Admin

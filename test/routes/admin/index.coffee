@@ -12,8 +12,8 @@ app =
   post: ->
 
 # Test route
-UserModel = require '../../src/models/User'
-Admin = require('../../src/routes/admin') app
+UserModel = require '../../../src/models/User'
+Admin = require('../../../src/routes/admin') app
 
 # Test suite
 describe 'src/routes/admin.coffee', ->
