@@ -1,4 +1,4 @@
-GenderModel = require '../models/Gender'
+GenderModel = require '../../models/Gender'
 util = require 'util'
 
 # routes for /admin/gender/*

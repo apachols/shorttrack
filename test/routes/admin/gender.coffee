@@ -12,8 +12,8 @@ app =
   post: ->
 
 # Test route
-GenderModel = require '../../src/models/Gender'
-Gender = require('../../src/routes/admin/gender') app
+GenderModel = require '../../../src/models/Gender'
+Gender = require('../../../src/routes/admin/gender') app
 
 # Test suite
 describe 'src/routes/gender.coffee', ->
