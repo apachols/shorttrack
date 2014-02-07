@@ -22,7 +22,7 @@ class Profile
     {user} = req
     res.render 'profile', {user}
 
-  update: (req, res) =>
+  update: (req, res) ->
     {name, value} = req.body
     props.set req.user.profile[0], name, value
 

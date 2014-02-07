@@ -1,6 +1,8 @@
 mongoose = require 'mongoose'
-Questions = new mongoose.Schema
 Gender = require './Gender'
+
+# Temp
+Questions = new mongoose.Schema
 
 Profile = new mongoose.Schema
   name: String

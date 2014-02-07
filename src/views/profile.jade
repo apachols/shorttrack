@@ -4,24 +4,24 @@ block content
   .row: .col-xs-12
     .panel.panel-default
       .panel-heading HAI DENNY <b>#{user.email}</b>
-      .panel-body: .row: .col-sm-10.col-sm-offset-1
+      .panel-body
         form.js-form.form-horizontal(role='form')
 
           fieldset
             legend Basic Info
             .form-group
-              label.col-sm-2.control-label(for='form-name') Name
-              .col-sm-10
+              label.col-sm-2.col-sm-offset-1.control-label(for='form-name') Name
+              .col-sm-8
                 input#form-name.form-control.js-input(type='text', name='name', value='#{user.profile[0].name}')
 
             .form-group
-              label.col-sm-2.control-label(for='#form-nickname') Nickname
-              .col-sm-10
+              label.col-sm-2.col-sm-offset-1.control-label(for='#form-nickname') Nickname
+              .col-sm-8
                 input#form-nickname.form-control.js-input(type='text', name='nickname', value='#{user.profile[0].nickname}')
 
             .form-group
-              label.col-sm-2.control-label(for='#form-age-my') Age
-              .col-sm-10
+              label.col-sm-2.col-sm-offset-1.control-label(for='#form-age-my') Age
+              .col-sm-8
                 .row.form-control-static
                   .col-sm-2.text-center: b 18
                   .col-sm-8: div
@@ -40,9 +40,9 @@ block content
 
   script.
     $(function () {
-      //- postUpdate(name, value, callback) {
-      //-   $.post('/profile/update', {name: name, value: value}).done(callback)
-      //- }
+      function postUpdate(name, value, callback) {
+        $.post('/profile/update', {name: name, value: value}).done(callback)
+      }
 
       $('#form-age-my')
         .slider()
@@ -50,36 +50,36 @@ block content
           var $this = $(this);
 
           postUpdate($this.attr('name'), $this.val(), function () {
-            consoe.log('success');
+            console.log('success');
           });
         });
 
-      $('.js-input').on('focus', function (e) {
-        $(this)
-          .parent().addClass('input-group').end()
-          .siblings('.input-group-btn').removeClass('hide')
-      });
+      //- $('.js-input').on('focus', function (e) {
+      //-   $(this)
+      //-     .parent().addClass('input-group').end()
+      //-     .siblings('.input-group-btn').removeClass('hide')
+      //- });
 
-      $('.js-update').on('click', function (e) {
-        $this = $(this);
-        $input = $this.parent().siblings('input')
-        $.post('/profile/update/', {name: $input.attr('name'), value: $input.val()})
-          .done(function () {
-            $input
-              .siblings('.form-control-feedback').removeClass('hide').end()
-              .parents('.form-group').addClass('has-success').end()
-              .parent().removeClass('input-group').end()
-              .siblings('.input-group-btn').addClass('hide')
+      //- $('.js-update').on('click', function (e) {
+      //-   $this = $(this);
+      //-   $input = $this.parent().siblings('input')
+      //-   $.post('/profile/update/', {name: $input.attr('name'), value: $input.val()})
+      //-     .done(function () {
+      //-       $input
+      //-         .siblings('.form-control-feedback').removeClass('hide').end()
+      //-         .parents('.form-group').addClass('has-success').end()
+      //-         .parent().removeClass('input-group').end()
+      //-         .siblings('.input-group-btn').addClass('hide')
 
-            setTimeout(function () {
-              $input
-                .siblings('.form-control-feedback').addClass('hide').end()
-                .parents('.form-group').removeClass('has-success');
-            }, 3000);
-          });
-      });
+      //-       setTimeout(function () {
+      //-         $input
+      //-           .siblings('.form-control-feedback').addClass('hide').end()
+      //-           .parents('.form-group').removeClass('has-success');
+      //-       }, 3000);
+      //-     });
+      //- });
 
-      $('.js-form').on('submit', function (e) {
-        e.preventDefault();
-      });
+      //- $('.js-form').on('submit', function (e) {
+      //-   e.preventDefault();
+      //- });
     });
