@@ -1,5 +1,6 @@
 User = require '../models/User'
 _ = require 'lodash'
+props = require 'tea-properties'
 
 class Profile
   constructor: (@app) ->
@@ -21,11 +22,9 @@ class Profile
     {user} = req
     res.render 'profile', {user}
 
-  update: (req, res) ->
+  update: (req, res) =>
     {name, value} = req.body
-
-    if typeof value is 'object' then _.merge req.user.profile[0][name], value
-    else req.user.profile[0][name] = value
+    props.set req.user.profile[0], name, value
 
     req.user.save (err) ->
       if err then res.send err, 400

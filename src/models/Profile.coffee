@@ -1,5 +1,6 @@
 mongoose = require 'mongoose'
 Questions = new mongoose.Schema
+Gender = require './Gender'
 
 Profile = new mongoose.Schema
   name: String
@@ -7,8 +8,8 @@ Profile = new mongoose.Schema
 
   gender: {
     my: String
-    seeking: []
-    avoid: []
+    seeking: [Gender]
+    avoid: [Gender]
   }
 
   age: {

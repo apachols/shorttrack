@@ -1,14 +1,17 @@
 doctype html
 //- html (implicit in HTML5)
 //- head (implicit in HTML5)
-title Title
-title Passport Local Mongoose Example
-link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
-//- link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap-theme.css')
-//- link(rel='stylesheet', href='/css/custom.css')
+block head
+  title Title
+  title Passport Local Mongoose Example
+
+  link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
+  link(rel='stylesheet', href='/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css')
+
 block scripts
   script(src='/jquery/jquery.js')
   script(src='/bootstrap/dist/js/bootstrap.js')
+  script(src='/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js')
 
 //- body (implicit in HTML5)
 .navbar.navbar-default(role="navigation")
