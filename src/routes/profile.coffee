@@ -1,6 +1,9 @@
 User = require '../models/User'
+Gender = require '../models/Gender'
+
 _ = require 'lodash'
-props = require 'tea-properties'
+tp = require 'tea-properties'
+async = require 'async'
 
 class Profile
   constructor: (@app) ->
@@ -20,11 +23,18 @@ class Profile
 
   get: (req, res) ->
     {user} = req
-    res.render 'profile', {user}
+
+    async.parallel
+      # easy mode future proof.
+      # questions, events, whatever else we want goes here.
+      genders: (cb) -> Gender.find {}, cb
+    , (err, results) ->
+      {genders} = results
+      res.render 'profile', {user, genders}
 
   update: (req, res) ->
     {name, value} = req.body
-    props.set req.user.profile[0], name, value
+    tp.set req.user.profile[0], name, value
 
     req.user.save (err) ->
       if err then res.send err, 400
