@@ -7,13 +7,13 @@ async = require 'async'
 
 class Profile
   constructor: (@app) ->
-    @app.all /^\/profile/, @auth, @brand
+    @app.all /^\/profile/, @auth, @setup
 
     @app.get '/profile', @get
 
     @app.post '/profile/update', @update
 
-  brand: (req, res, next) ->
+  setup: (req, res, next) ->
     res.locals { brand: 'Profile' }
     next()
 
