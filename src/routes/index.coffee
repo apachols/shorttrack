@@ -5,6 +5,7 @@ class Routes
       'admin'
       'login'
       'profile'
+      'meetup'
       'main'
     ]
 

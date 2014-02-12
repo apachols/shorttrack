@@ -1,5 +1,3 @@
-Meetup = require '../models/Meetup'
-
 class Main
   constructor: (@app) ->
 
