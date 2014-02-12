@@ -1,3 +1,5 @@
+Meetup = require '../models/Meetup'
+
 class Main
   constructor: (@app) ->
 
@@ -17,7 +19,18 @@ class Main
     }
     next()
 
-  index: (req, res) -> res.render 'index'
+  index: (req, res) ->
+    # Meetup.create
+    #   name: 'String'
+    #   date: new Date()
+    #   time: [ new Date(), new Date() ]
+    #   registration: [ new Date() ]
+    #   description: 'String'
+    #   location: 'String'
+    #   registered: [ 'String' ]
+
+    res.render 'index'
+
   logout: (req, res) -> req.logout(); res.redirect '/'
 
 module.exports = (app) -> new Main app
