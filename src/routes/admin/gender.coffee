@@ -16,7 +16,7 @@ class Gender
     GenderModel.findOne {code}, (err, gender) ->
 
       if gender
-        gender?.inspect = util.inspect gender
+        gender.inspect = util.inspect gender
         res.render 'admin/gender', {gender}
 
       else

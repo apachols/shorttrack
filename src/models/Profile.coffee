@@ -1,15 +1,27 @@
 mongoose = require 'mongoose'
+Gender = require './Gender'
 
-Profile = new mongoose.Schema(
-  gender: String
-  genderSought: String
-  genderSecond: String
-  age: Number
-  ageSoughtMin: Number
-  ageSoughtMax: Number
+# Temp
+Questions = new mongoose.Schema
+
+Profile = new mongoose.Schema
+  name: String
+  nickname: String
+
+  gender: {
+    my: String
+    seeking: [Gender]
+    avoid: [Gender]
+  }
+
+  age: {
+    my: Number
+    min: Number
+    max: Number
+  }
+
+  questions: [Questions.schema]
 ,
   collection: 'profile'
-  strict: 'throw'
-)
 
 module.exports = mongoose.model 'Profile', Profile

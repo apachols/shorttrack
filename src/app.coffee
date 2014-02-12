@@ -43,6 +43,7 @@ middleware = [
   passport.session()
   flash()
   app.router
+  express.static path.join __dirname, '../public'
   express.static path.join __dirname, '../bower_components'
 ]
 
@@ -54,6 +55,7 @@ app.configure ->
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}
+  app.locals.pretty = true
 
 app.configure 'production', ->
   app.use express.errorHandler()

@@ -16,7 +16,9 @@
     "jade": "~1.1.5",
     "coffee-script": "~1.6.3",
     "lodash": "~2.4.1",
-    "express-flash": "~0.0.2"
+    "express-flash": "~0.0.2",
+    "tea-properties": "~0.1.1",
+    "async": "~0.2.10"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
