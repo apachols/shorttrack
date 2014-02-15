@@ -9,6 +9,7 @@ class Matcher
   # we expect stanadard (error, result) args on callback
   execute: (callback) ->
     console.log '@execute'
+
     @getUsers (err, users) =>
       console.log '@getUsers callback'
       callback err, null if err
@@ -33,7 +34,6 @@ class Matcher
     matches = []
     while users.length
       left = users.pop()
-      console.log left?.profile[0]?.gender
       iter = users.length
       while iter--
         right = users[iter]
@@ -48,18 +48,32 @@ class Matcher
       console.log 'MatchModel.create callback'
       callback err, arguments.length-1
 
-  okToMatch: (left, right) ->
-    if left?.profile[0]?.gender && right?.profile[0]?.gender
+  okToMatch: (leftUser, rightUser) ->
+    gender1 = leftUser.profile[0]?.gender
+    gender2 = rightUser.profile[0]?.gender
 
-      if left.profile[0].gender?.seeking?.length > 0
-        console.dir left.profile[0].gender.seeking
-        return true
+    age1 = leftUser.profile[0]?.age
+    age2 = rightUser.profile[0]?.age
 
-      if right.profile[0].gender?.seeking?.length > 0
-        console.dir right.profile[0].gender.seeking
-        return true
+    # bail if we are missing the required fields
+    # will eventually need some error reporting here...
+    return false if !gender1?.my or !gender1?.seeking
+    return false if !gender2?.my or !gender2?.seeking
+    return false if !(age1?.my) or !(age1?.seeking)
+    return false if !(age2?.my) or !(age2?.seeking)
 
+    return false if -1 == gender1.seeking.indexOf(gender2.my)
+    return false if -1 == gender2.seeking.indexOf(gender1.my)
+
+    if age1.my < age2.seeking[0] or age1.my > age2.seeking[1]
+      console.log age1.my + ' ! ' + age2.seeking[0] + '-' + age2.seeking[1]
       return false
+
+    if age2.my < age1.seeking[0] or age2.my > age1.seeking[1]
+      console.log age2.my + ' ! ' + age1.seeking[0] + '-' + age1.seeking[1]
+      return false
+
+    return true
 
   score: (left, right) ->
     return 2

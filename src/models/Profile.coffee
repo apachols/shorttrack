@@ -10,14 +10,13 @@ Profile = new mongoose.Schema
 
   gender: {
     my: String
-    seeking: [Gender]
-    avoid: [Gender]
+    seeking: [String]
+    avoid: [String]
   }
 
   age: {
     my: Number
-    min: Number
-    max: Number
+    seeking: [Number]
   }
 
   questions: [Questions.schema]
