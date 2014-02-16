@@ -20,7 +20,7 @@ class Matcher
     console.log '@getUsers'
 
     # @meetup.getRegisteredUsers()
-    UserModel.find {'profile.0.gender.seeking' : { $exists : true } }, (err, users) ->
+    UserModel.find {}, (err, users) ->
       console.log 'model.find callback'
       console.log users.length if users?.length
       callback err, users
