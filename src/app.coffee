@@ -29,7 +29,6 @@ session_settings =
     , (err) ->
       console.log err or 'connect-mongodb setup ok'
 
-
 middleware = [
   express.favicon()
   express.logger 'dev'
@@ -52,6 +51,15 @@ app.configure ->
   app.set 'view engine', 'jade'
 
   app.use m for m in middleware
+
+  args =
+    base: __dirname
+    schemas: [
+      'models/user'
+      'models/meetup'
+    ]
+
+  universeb = require('universeb') app, args
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}

@@ -16,4 +16,5 @@ User.plugin passportLocalMongoose, {
   usernameField: "email"
 }
 
-module.exports = mongoose.model 'User', User
+try module.exports = mongoose.model 'User', User
+catch e then module.exports = mongoose.model 'User'

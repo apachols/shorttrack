@@ -63,7 +63,10 @@ module.exports = (grunt) ->
         files: '<%= jade.src %>'
 
       express:
-        files: '<%= coffeelint.src %>'
+        files: [
+          '<%= coffeelint.src %>'
+          'node_modules/universeb/**/*.coffee'
+        ]
         tasks: 'express:watch'
         options:
           spawn: false
