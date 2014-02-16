@@ -26,7 +26,7 @@ class User
     UserModel.findOne {email}, (err, user) ->
 
       if user
-        user?.inspect = util.inspect user
+        user?.inspect = util.inspect user, {depth: 5}
         res.render 'admin/user', {user}
 
       else

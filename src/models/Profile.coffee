@@ -2,24 +2,24 @@ mongoose = require 'mongoose'
 Gender = require './Gender'
 
 # Temp
-Questions = new mongoose.Schema
-
 Profile = new mongoose.Schema
   name: String
   nickname: String
 
-  gender: {
-    my: String
-    seeking: [String]
-    avoid: [String]
-  }
+  gender:[
+    new mongoose.Schema
+      my: String
+      seeking: [String]
+      avoid: [String]
+  ]
 
-  age: {
-    my: Number
-    range: [Number]
-  }
+  age: [
+    new mongoose.Schema
+      my: Number
+      range: [Number]
+  ]
 
-  questions: [Questions.schema]
+  questions: [new mongoose.Schema]
 ,
   collection: 'profile'
 

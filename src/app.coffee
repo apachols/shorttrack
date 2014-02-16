@@ -56,7 +56,7 @@ app.configure ->
     base: __dirname
     schemas: [
       'models/user'
-      'models/meetup'
+      # 'models/meetup'
     ]
 
   universeb = require('universeb') app, args

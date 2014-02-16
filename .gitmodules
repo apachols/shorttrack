@@ -1,0 +1,3 @@
+[submodule "public/prettyPrint.js"]
+	path = public/prettyPrint.js
+	url = git://github.com/RReverser/prettyPrint.js.git
