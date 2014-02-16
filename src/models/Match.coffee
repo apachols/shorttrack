@@ -3,7 +3,7 @@ mongoose = require 'mongoose'
 Match = new mongoose.Schema
   user1: String
   user2: String
-  score: 
+  score:
     type: [ Number ], index: true
 ,
   collection: 'match'

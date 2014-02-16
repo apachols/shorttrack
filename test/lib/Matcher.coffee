@@ -24,4 +24,4 @@ testExecute = (next) ->
 
 testClear () ->
   testExecute () ->
-    console.log 'FIN'
+    console.log 'Match calculation complete'
