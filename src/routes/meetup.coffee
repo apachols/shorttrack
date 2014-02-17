@@ -1,4 +1,5 @@
 meetupModel = require '../models/meetup'
+_ = require 'lodash'
 
 class Meetup
   constructor: (@app) ->
@@ -22,6 +23,8 @@ class Meetup
     meetupModel.findOneAndUpdate {name}
     , query
     , (err, meetup) ->
+      meetup.registered = _.uniq meetup.registered
+      meetup.save()
       res.redirect "/meetup/#{name}"
 
 module.exports = (app) -> new Meetup app

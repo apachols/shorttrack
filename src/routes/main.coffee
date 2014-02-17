@@ -21,6 +21,7 @@ class Main
     # Meetup.create
     #   name: 'String'
     #   date: new Date()
+    #   cap: 75
     #   time: [ new Date(), new Date() ]
     #   registration: [ new Date() ]
     #   description: 'String'
