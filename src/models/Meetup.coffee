@@ -3,6 +3,7 @@ mongoose = require 'mongoose'
 Meetup = new mongoose.Schema
   name: String
   date: Date
+  cap: Number
   time: [ String ]
   registration: [ Date ]
   description: String
