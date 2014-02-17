@@ -7,7 +7,7 @@ mongoose.connect(
 
 Matcher = require '../../src/lib/Matcher'
 
-m = new Matcher()
+m = new Matcher({"this object" : "should be a meetup :|"})
 
 testClear = (next) ->
   console.log 'testClear'
@@ -25,3 +25,5 @@ testExecute = (next) ->
 testClear () ->
   testExecute () ->
     console.log 'Match calculation complete'
+    for error in m.getErrors()
+      console.dir error
