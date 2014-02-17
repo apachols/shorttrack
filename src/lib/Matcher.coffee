@@ -5,6 +5,7 @@ QuestionModel = require '../../src/models/Question'
 class Matcher
   constructor: (meetup) ->
     @meetup = meetup
+    @errors = []
 
   # we expect stanadard (error, result) args on callback
   execute: (callback) ->
@@ -76,7 +77,15 @@ class Matcher
     return true
 
   score: (left, right) ->
-    return 2
+    score1 = left.profile[0].computeScore(right.profile[0])
+    score2 = right.profile[0].computeScore(left.profile[0])
+
+    if score1.common != score2.common
+      @errors.push 'NUMBER OF QUESTIONS IN COMMON DOES NOT MATCH; PANIC'
+
+    result = Math.pow(score1.score * score2.score, 1/score1.common)
+    console.log 'result = ' + result + ' common1 = ' + score1.common + ' common2 = ' + score2.common + ' pow = ' + 1/score1.common + ' score1 = ' + score1.score + ' score2 = ' + score2.score
+    return result
 
   # remove all matches from the DB
   clearMatches: (callback) ->
