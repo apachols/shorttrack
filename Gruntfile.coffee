@@ -7,7 +7,8 @@ module.exports = (grunt) ->
 
     coffeelint:
       src: ['src/**/*.coffee']
-      test: ['test/**/*.coffee']
+      unittest: ['test/unit/**/*.coffee']
+      integrationtest: ['test/integration/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
 
     jade:
@@ -41,7 +42,7 @@ module.exports = (grunt) ->
         reporter: 'spec'
         require: 'coffee-script'
 
-      src: '<%= coffeelint.test %>'
+      src: '<%= coffeelint.unittest %>'
 
     watch:
       src:
@@ -56,7 +57,7 @@ module.exports = (grunt) ->
         ]
 
       test:
-        files: '<%= coffeelint.test %>'
+        files: '<%= coffeelint.unittest %>'
         tasks: '<%= watch.src.tasks %>'
 
       jade:
