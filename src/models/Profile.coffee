@@ -16,7 +16,7 @@ Profile = new mongoose.Schema
 
   age: {
     my: Number
-    range: [Number]
+    seeking: [Number]
   }
 
   questions: [Questions.schema]
