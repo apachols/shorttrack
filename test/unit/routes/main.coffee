@@ -8,7 +8,7 @@ app =
   get: ->
 
 # Test route
-Main = require('../../src/routes/main') app
+Main = require('../../../src/routes/main') app
 
 # Test suite
 describe 'src/routes/main.coffee', ->
