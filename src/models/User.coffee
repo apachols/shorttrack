@@ -9,7 +9,7 @@ User = new mongoose.Schema {
   profile: [Profile.schema]
 }, {
   collection: 'user'
-  strict: 'throw'
+  strict: false
 }
 
 User.plugin passportLocalMongoose, {

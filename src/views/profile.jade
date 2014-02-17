@@ -43,7 +43,8 @@ block content
     .panel.panel-default
       .panel-heading DEBUG
       .panel-body
-        pre#js-debug-panel get(user, 'profile[0]')
+        pre#js-debug-panel.
+          #{user.inspect}
 
 
   script.

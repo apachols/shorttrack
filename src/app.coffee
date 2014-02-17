@@ -3,6 +3,7 @@ express = require 'express'
 validator = require 'express-validator'
 flash = require 'express-flash'
 tp = require 'tea-properties'
+util = require 'util'
 
 # Passport
 passport = require 'passport'
@@ -30,7 +31,6 @@ session_settings =
     , (err) ->
       console.log err or 'connect-mongodb setup ok'
 
-
 middleware = [
   express.favicon()
   express.logger 'dev'
@@ -54,9 +54,6 @@ app.configure ->
 
   app.use m for m in middleware
   app.locals.get = tp.get
-
-
-
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}

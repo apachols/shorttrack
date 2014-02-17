@@ -22,5 +22,7 @@ Profile = new mongoose.Schema
   questions: [Questions.schema]
 ,
   collection: 'profile'
+  strict: 'throw'
 
-module.exports = mongoose.model 'Profile', Profile
+try module.exports = mongoose.model 'Profile', Profile
+catch e then module.exports = mongoose.mongoose 'Profile'

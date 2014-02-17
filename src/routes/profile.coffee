@@ -1,9 +1,11 @@
 User = require '../models/User'
 Gender = require '../models/Gender'
+ProfileModel = require '../models/Profile'
 
 _ = require 'lodash'
 tp = require 'tea-properties'
 async = require 'async'
+util = require 'util'
 
 class Profile
   constructor: (@app) ->
@@ -34,9 +36,13 @@ class Profile
 
   update: (req, res) ->
     {name, value} = req.body
-    tp.set req.user.profile[0], name, value
 
-    req.user.save (err) ->
+    p = req.user.profile[0] or new ProfileModel
+
+    tp.set p, name, value
+    req.user.profile.push p
+
+    req.user.save (err, p, n) ->
       if err then res.send err, 400
       else res.send 200
 
