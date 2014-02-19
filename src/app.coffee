@@ -55,7 +55,7 @@ app.configure ->
 
   app.use m for m in middleware
   app.locals
-    get:tp.get
+    get: (obj, path, def = undefined) -> tp.get(obj, path) ? def
     inspect: util.inspect
     df: df
 
