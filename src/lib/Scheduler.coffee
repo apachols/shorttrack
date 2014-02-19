@@ -1,6 +1,12 @@
 MatchModel = require '../../src/models/Match'
 _ = require "lodash"
 
+# are the same people being forgotten multiple rounds in a row?
+# do the forgotten have any matches inside between themselves (no)?
+# if we pick the BEST first round, do we win all the things?
+# how do we evaluate whether we have found the best possible first round for a data set?
+# we tried to match 60 people, and two of them had zero matches.  can we find them?
+
 class Scheduler
   constructor: () ->
 
@@ -17,7 +23,7 @@ class Scheduler
     console.log '@getMatches'
 
     # @meetup.getRegisteredUsers()
-    MatchModel.find({}).sort({ score: -1 }).exec (err, matches) ->
+    MatchModel.find({}).sort({ 'arity.total': 1 }).exec (err, matches) ->
       console.log 'MatchModel.find callback'
       callback err, matches
 
@@ -43,7 +49,7 @@ class Scheduler
 
         iter++
         if !match.round
-          # console.log iter, 'MATCH', match.user1, match.user2
+          console.log iter, 'MATCH', match.user1, match.user2, match.arity.total
 
           okUser1 = -1 == unavailable.indexOf match.user1
           okUser2 = -1 == unavailable.indexOf match.user2
@@ -67,11 +73,18 @@ class Scheduler
             roundTotal++
             match.round = roundTotal
 
-      # how do we get these people to the front?  requery?  array.sort? yeahhhh.
+      # sort the list again by arity descending - seems to perform almost as well as forgotten->top
+      matches.sort (left, right) ->
+        if left.arity.total > right.arity.total
+          return 1
+        if left.arity.total < right.arity.total
+          return -1
+        return 0
+
       forgotten = _.difference Object.keys(personlog), _.uniq unavailable
+      # console.dir forgotten
 
-      console.dir forgotten
-
+      # sort by whether they were forgotten, with forgotten people on top
       matches.sort (left, right) ->
         sumleft = (-1 != forgotten.indexOf(left.user1)) or (-1 != forgotten.indexOf(left.user2))
         sumright = (-1 != forgotten.indexOf(right.user1)) or (-1 != forgotten.indexOf(right.user2))

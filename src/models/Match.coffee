@@ -4,6 +4,10 @@ Match = new mongoose.Schema
   user1: String
   user2: String
   round: Number
+  arity:
+    user1: Number
+    user2: Number
+    total: Number
   score:
     type: [ Number ], index: true
 ,

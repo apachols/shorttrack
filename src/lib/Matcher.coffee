@@ -34,6 +34,7 @@ class Matcher
 
     return callback 'No users found', null if !users
 
+    arity = {}
     matches = []
     # left side: pop each user out and try to match them with all the
     #            remaining users
@@ -48,6 +49,12 @@ class Matcher
         # if our left side is ok to match with our right side
         if @okToMatch left, right
 
+          if !arity[left.email] then arity[left.email] = 1
+          else arity[left.email]++
+
+          if !arity[right.email] then arity[right.email] = 1
+          else arity[right.email]++
+
           # Calculate match percent score
           score = @score left, right
           # Save the match info for batch db insert
@@ -56,6 +63,14 @@ class Matcher
             user2: right.email
             score: score
             round: 0
+
+    for match in matches
+      match.arity =
+        user1: arity[match.user1]
+        user2: arity[match.user2]
+        total: arity[match.user1]+arity[match.user2]
+
+    console.dir arity
 
     # insert all the matches into the database, and send the number of
     # matches created back in the callback's success argument
