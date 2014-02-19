@@ -1,10 +1,39 @@
 meetupModel = require '../models/meetup'
 _ = require 'lodash'
+{inspect} = require 'util'
 
 class Meetup
   constructor: (@app) ->
-    @app.get '/meetup/:name', @get
-    @app.get '/meetup/:name/:action', @action
+    @app.get  '/meetups', @index
+
+    @app.get  '/meetups/add', @add
+    @app.post '/meetups/create', @create
+
+    @app.get  '/meetup/:name', @get
+    @app.get  '/meetup/:name/:action', @action
+
+  index: (req, res) ->
+    meetupModel.find {}, (err, meetups) ->
+      res.send 200, {meetups}
+
+  add: (req, res) ->
+    res.render 'meetups/add', {schema: meetupModel.schema}
+
+  create: (req, res) ->
+    # Meetup.create
+    #   name: 'String'
+    #   date: new Date()
+    #   cap: 75
+    #   time: [ new Date() ]
+    #   registration: [ new Date() ]
+    #   description: 'String'
+    #   location: 'String'
+    #   registered: [ 'String' ]
+
+    meetup = new meetupModel req.body
+    meetup.save (err, m) ->
+      if err then res.send err, 400
+      else res.redirect "/meetup/#{m.name}"
 
   get: (req, res) ->
     {name} = req.params
@@ -19,6 +48,7 @@ class Meetup
     switch action
       when 'register' then query = {$push: data}
       when 'unregister' then query = {$pull: data}
+      else res.send 404; return
 
     meetupModel.findOneAndUpdate {name}
     , query

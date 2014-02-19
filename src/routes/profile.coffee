@@ -37,7 +37,7 @@ class Profile
   update: (req, res) ->
     {name, value} = req.body
 
-    p = req.user.profile[0] or new ProfileModel
+    p = req.user.profile.pop() or new ProfileModel
 
     tp.set p, name, value
     req.user.profile.push p
