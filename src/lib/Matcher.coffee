@@ -55,6 +55,7 @@ class Matcher
             user1: left.email
             user2: right.email
             score: score
+            round: 0
 
     # insert all the matches into the database, and send the number of
     # matches created back in the callback's success argument

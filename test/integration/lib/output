@@ -1,0 +1,2981 @@
+@getMatches
+MatchModel.find callback
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+3 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+4 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+5 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+6 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+7 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+8 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+9 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+10 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+11 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+12 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+13 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+14 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+15 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+16 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+17 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+18 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+19 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+20 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+21 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+22 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+23 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+24 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+25 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+26 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+27 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+28 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+29 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+30 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+31 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+32 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+33 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+34 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+35 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+36 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+37 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+38 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+39 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+40 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+41 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+42 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+43 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 26 toUpdate 13
+44 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+45 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+46 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+47 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+48 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+49 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+50 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+51 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+52 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+53 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+54 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+55 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+56 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+57 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+58 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+59 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+60 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+61 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+62 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+63 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+64 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+65 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+66 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+67 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 28 toUpdate 14
+68 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+69 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+70 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+71 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+72 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+73 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+74 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+75 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+76 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+77 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+78 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+79 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+80 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+81 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+82 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+83 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+84 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+85 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 30 toUpdate 15
+86 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+87 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+88 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+89 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+90 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+91 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+92 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+93 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+94 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+95 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+96 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+97 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+98 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+99 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+100 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+101 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+102 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+103 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+104 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+105 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 32 toUpdate 16
+106 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+107 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+108 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+109 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+110 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 34 toUpdate 17
+111 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+112 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+113 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+114 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+115 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+116 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+117 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+118 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+119 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+120 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+121 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+122 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+123 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+124 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+125 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+126 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+127 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+128 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+129 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+130 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 36 toUpdate 18
+131 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+132 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+133 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+134 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 36 toUpdate 18
+135 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+136 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 36 toUpdate 18
+137 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 36 toUpdate 18
+138 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 38 toUpdate 19
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+1 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+1 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+1 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+1 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+1 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+1 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+2 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+2 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+3 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+4 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+5 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+5 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+6 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 6 toUpdate 3
+7 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+8 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+9 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+10 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+11 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 12 toUpdate 6
+12 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+13 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+13 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+14 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+15 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+16 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+16 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+16 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+17 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+18 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+19 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+20 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+21 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+22 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+23 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+24 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+25 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+26 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+27 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+28 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+29 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+30 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+30 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+31 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+32 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+33 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+34 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+35 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+36 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+37 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+38 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+39 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+40 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+41 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+42 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+43 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+44 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+45 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+46 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+47 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+48 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+49 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+50 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+51 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+52 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+53 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+53 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+54 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+55 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+56 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 26 toUpdate 13
+57 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+58 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+59 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+60 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+61 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+62 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+63 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+64 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+65 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+66 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+67 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+68 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+69 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+70 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+70 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+71 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+72 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+73 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+74 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+75 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+76 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+77 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+78 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+79 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+80 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+81 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+82 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+83 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 28 toUpdate 14
+84 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+85 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+86 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+87 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+88 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+89 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+89 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+90 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+91 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+92 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+93 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+93 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+94 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+95 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 30 toUpdate 15
+96 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+97 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+98 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+99 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 32 toUpdate 16
+100 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+101 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+102 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+103 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+104 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+105 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+106 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+107 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+108 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+109 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+110 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+111 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+112 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+113 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+114 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+115 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+116 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+117 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+118 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+119 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+119 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+1 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+1 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+1 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+2 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 4 toUpdate 2
+3 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+4 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+4 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+4 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+4 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+5 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+6 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+7 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+7 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+7 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+8 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+9 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+9 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+9 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+9 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+10 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+11 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+12 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+13 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+14 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+15 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+16 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+17 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+18 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+18 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+19 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+20 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+21 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+21 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+22 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+23 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+24 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+24 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+25 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+26 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+27 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+28 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+29 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+30 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+31 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+32 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+33 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+34 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+35 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+36 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+37 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+38 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+38 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+39 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+40 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+41 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+42 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+42 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+42 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+42 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+43 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+43 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+44 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+45 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+46 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+47 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+48 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+49 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+50 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+51 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 26 toUpdate 13
+52 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 26 toUpdate 13
+53 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+54 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+55 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+56 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+56 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 28 toUpdate 14
+57 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+58 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+59 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+60 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+61 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+62 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+63 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+64 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+65 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+66 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+67 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+68 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+69 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+69 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+70 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+71 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+72 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+73 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 30 toUpdate 15
+74 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+74 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+75 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+76 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+77 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+78 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+78 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+79 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+80 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+80 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+81 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+82 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+83 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+83 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+84 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+85 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+86 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+87 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+88 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 32 toUpdate 16
+89 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+90 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+91 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+92 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+93 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+94 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+95 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 34 toUpdate 17
+96 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+97 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+98 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+99 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 34 toUpdate 17
+100 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+101 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+102 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+102 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 34 toUpdate 17
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+1 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+1 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+1 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+1 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+1 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+3 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+3 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+3 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+3 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+3 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+3 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+3 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+3 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+3 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+4 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+5 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+5 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+6 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+6 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+7 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+8 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 12 toUpdate 6
+9 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+9 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+10 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+11 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 12 toUpdate 6
+12 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+12 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+13 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 12 toUpdate 6
+14 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+15 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+15 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+16 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+17 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+18 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+19 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+20 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+21 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+22 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+23 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+23 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+24 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+24 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+25 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+26 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+27 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+27 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+28 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+28 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+29 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+30 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+30 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+30 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+30 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+31 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+31 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+32 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+32 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+33 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+34 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+35 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+36 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+37 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+38 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+39 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+39 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+40 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+41 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+42 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+42 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+42 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+43 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+44 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+45 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+46 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+47 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+48 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+49 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+50 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+51 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+52 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 22 toUpdate 11
+53 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+54 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+54 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+55 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+56 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+57 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+58 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+58 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+58 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 26 toUpdate 13
+59 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+60 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+61 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 28 toUpdate 14
+62 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+62 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 28 toUpdate 14
+63 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+64 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+64 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+65 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+66 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+67 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+67 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+68 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+69 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+70 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+71 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 30 toUpdate 15
+72 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+72 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 30 toUpdate 15
+73 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+74 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+75 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 30 toUpdate 15
+76 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+77 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+78 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+79 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+80 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+81 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+82 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+83 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 32 toUpdate 16
+84 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 32 toUpdate 16
+85 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+85 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 32 toUpdate 16
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+3 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+3 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+4 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+5 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+6 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+6 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+7 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+8 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+9 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+9 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+10 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 12 toUpdate 6
+11 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+11 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+12 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+13 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+14 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+15 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+16 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+16 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+17 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+17 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+18 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+18 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+19 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+19 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+20 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+20 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+21 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+22 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+22 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+22 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+22 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+23 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+23 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+23 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+23 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+24 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+25 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+26 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+26 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+27 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+28 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+29 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+29 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+30 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+31 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 22 toUpdate 11
+32 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+32 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+32 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 22 toUpdate 11
+33 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+33 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+34 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+35 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+36 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+37 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+38 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+39 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+40 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+41 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+42 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+43 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+43 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+43 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+44 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+44 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+45 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+45 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+45 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+45 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+46 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+47 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+48 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+48 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+48 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+49 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+49 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+50 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+51 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+52 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+52 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+53 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+54 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+55 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+56 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+57 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+57 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 24 toUpdate 12
+58 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+59 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+60 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+60 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 26 toUpdate 13
+61 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 26 toUpdate 13
+62 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 26 toUpdate 13
+63 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+64 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+65 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 28 toUpdate 14
+66 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+67 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 28 toUpdate 14
+68 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 28 toUpdate 14
+69 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+69 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 30 toUpdate 15
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 4 toUpdate 2
+3 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+3 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+4 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+5 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+5 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+5 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+6 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+6 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+6 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+7 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+7 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+7 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+7 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+8 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+8 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+9 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+9 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+10 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+10 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+11 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+12 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+12 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+12 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+12 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+13 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+13 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+13 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+13 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+14 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+15 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+16 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+16 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+16 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+17 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+18 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+18 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+19 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+20 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+21 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+21 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+21 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+22 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+22 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+22 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+23 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+24 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+25 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+26 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+27 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+28 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+29 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+30 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+31 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+31 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+31 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+32 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+32 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+33 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+33 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+33 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+33 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 16 toUpdate 8
+34 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+35 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+36 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+36 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+36 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+37 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+37 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+38 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+39 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+40 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+40 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+41 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+42 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+43 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+44 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+45 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+45 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+46 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+47 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+47 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+47 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+48 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 20 toUpdate 10
+49 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+49 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 22 toUpdate 11
+50 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+51 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+52 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 24 toUpdate 12
+53 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 24 toUpdate 12
+54 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+54 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+54 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 24 toUpdate 12
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+1 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+1 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+1 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+1 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+1 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+2 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+2 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+2 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+2 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+2 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+2 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+2 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+2 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+2 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+2 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+3 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+3 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+4 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+5 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+5 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+5 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+5 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+6 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+6 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+6 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+6 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+6 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+7 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+8 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+8 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+8 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+9 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+10 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+10 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+11 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+12 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+13 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+13 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+13 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+14 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+14 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+14 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+15 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+16 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+17 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+18 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+19 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+20 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+21 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+22 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+23 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+23 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+23 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+24 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+24 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+25 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+25 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+25 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+25 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+26 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+27 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+27 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+27 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+27 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+28 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+28 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+28 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 16 toUpdate 8
+29 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 16 toUpdate 8
+30 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+30 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 18 toUpdate 9
+31 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 18 toUpdate 9
+32 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 18 toUpdate 9
+33 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 18 toUpdate 9
+34 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+35 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+35 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 20 toUpdate 10
+36 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+37 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+37 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+37 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+38 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+38 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+38 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+38 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+39 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+40 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 20 toUpdate 10
+41 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 20 toUpdate 10
+42 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+42 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+42 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+1 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+1 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+1 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+2 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+2 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+2 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+2 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+2 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+3 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 4 toUpdate 2
+4 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+4 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+4 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+4 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+4 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+4 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+4 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 4 toUpdate 2
+5 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+6 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+6 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+6 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+7 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+7 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+7 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+8 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+9 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 10 toUpdate 5
+10 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 12 toUpdate 6
+11 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 12 toUpdate 6
+12 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+13 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+14 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+15 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+16 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+16 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+16 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+17 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+17 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+18 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+18 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+18 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+18 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+19 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+20 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+20 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+20 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+20 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+20 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+20 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+20 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+21 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+21 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+21 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+22 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+23 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+24 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+24 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+25 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+25 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 14 toUpdate 7
+26 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+27 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+27 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+27 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+28 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+28 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+28 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+28 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 14 toUpdate 7
+29 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 14 toUpdate 7
+30 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 14 toUpdate 7
+31 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 16 toUpdate 8
+32 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+32 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+32 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+1 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+1 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+1 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+1 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+1 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 2 toUpdate 1
+2 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+2 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+2 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+2 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+2 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+2 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+2 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+3 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+3 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+3 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+3 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+3 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+3 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+3 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+3 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+4 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+4 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 6 toUpdate 3
+5 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+5 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 6 toUpdate 3
+6 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+7 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+8 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 6 toUpdate 3
+9 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+9 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+9 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+10 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+10 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+11 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+11 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+11 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+11 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 6 toUpdate 3
+12 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+13 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+13 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+13 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+13 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+13 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+13 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+13 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+14 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+14 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+14 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+15 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+16 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+17 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+17 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+18 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+18 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+19 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+20 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+20 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+20 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+21 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+21 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+21 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+21 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+22 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+23 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+23 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 10 toUpdate 5
+24 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+24 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+24 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+1 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+1 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+1 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+1 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+1 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+1 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+1 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+1 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+1 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+1 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+1 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+1 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+1 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+1 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+1 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+1 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+2 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+2 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 4 toUpdate 2
+3 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+4 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+5 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 4 toUpdate 2
+6 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+6 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+6 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+7 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+7 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+8 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+8 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+8 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+8 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+9 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+9 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+9 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+9 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+9 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+9 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+9 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+9 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+10 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+10 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+10 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+11 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+12 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 8 toUpdate 4
+13 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+13 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 8 toUpdate 4
+14 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+14 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+14 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+15 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+15 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+15 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+16 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+16 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+16 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+16 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+17 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+18 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+18 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 10 toUpdate 5
+19 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+19 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+19 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+2 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+3 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 2 toUpdate 1
+4 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+4 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+4 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+5 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+5 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 4 toUpdate 2
+6 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+6 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+6 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+6 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+6 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+6 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+6 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+6 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+6 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+6 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+6 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+6 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+7 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+7 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+7 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+7 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 6 toUpdate 3
+8 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 6 toUpdate 3
+9 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+9 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+10 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+10 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+10 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+10 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+10 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+10 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 8 toUpdate 4
+11 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+11 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+11 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+11 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+12 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 10 toUpdate 5
+13 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+13 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 10 toUpdate 5
+14 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+14 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+14 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 11
+0 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+2 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 2 toUpdate 1
+3 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+3 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+3 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 11
+3 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+3 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+4 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+4 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+4 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+4 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+4 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+4 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+4 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+4 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+4 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+4 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+4 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+4 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 11
+4 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+4 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+4 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+4 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+5 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+6 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+6 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 11
+6 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+6 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+6 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+6 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+6 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+6 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 11
+6 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+6 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+6 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+6 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 false OK2 false unavailable 6 toUpdate 3
+7 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 6 toUpdate 3
+8 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+8 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 8 toUpdate 4
+9 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+9 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+9 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 11
+0 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 12
+0 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 false OK2 true unavailable 2 toUpdate 1
+2 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+2 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+2 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 11
+2 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+2 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+3 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+3 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+3 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+3 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+3 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+3 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+3 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+3 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+3 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+3 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+3 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+3 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 11
+3 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+3 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+3 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+3 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 12
+3 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 12
+3 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+3 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 11
+3 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+3 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+3 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+3 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+3 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+3 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 11
+3 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+3 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+3 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+3 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 2 toUpdate 1
+4 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 12
+4 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+4 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 4 toUpdate 2
+5 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+5 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+5 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 11
+0 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 12
+0 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 13
+0 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+1 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+1 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 11
+1 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+1 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 false unavailable 2 toUpdate 1
+2 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+2 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+2 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+2 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+2 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+2 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+2 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+2 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+2 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+2 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+2 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+2 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 11
+2 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+2 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+2 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+2 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 12
+2 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 12
+2 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+2 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 11
+2 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+2 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+2 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+2 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+2 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+2 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 11
+2 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+2 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+2 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+2 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 13
+2 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 12
+2 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+2 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 13
+2 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+2 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+2 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 11
+0 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 12
+0 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 13
+0 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 14
+0 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+0 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+0 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 11
+0 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+0 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 0
+OK1 true OK2 true unavailable 0 toUpdate 0
+1 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+1 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+1 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+1 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+1 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+1 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+1 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+1 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+1 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+1 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+1 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+1 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 11
+1 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+1 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+1 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+1 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 12
+1 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 12
+1 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+1 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 11
+1 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+1 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+1 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+1 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+1 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+1 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 11
+1 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+1 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+1 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+1 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 13
+1 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 12
+1 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+1 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 13
+1 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+1 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+1 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+0 'velasquezporter@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 1
+0 'deannewyatt@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 1
+0 'alishamurphy@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 2
+0 'gingerdavenport@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 1
+0 'janenash@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 1
+0 'dodsonsoto@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 1
+0 'jacobssalazar@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'alishamurphy@sloganaut.com' 'ROUND' 3
+0 'pattonholden@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 2
+0 'chasemeadows@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 2
+0 'cashcortez@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'shawnbass@sloganaut.com' 'ROUND' 1
+0 'sylviaholcomb@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 2
+0 'garrettjenkins@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 2
+0 'sylviaholcomb@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 2
+0 'jacobssalazar@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 3
+0 'holcombolson@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 4
+0 'pattonholden@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 1
+0 'ballardholman@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 2
+0 'flowersyork@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 3
+0 'camilleweber@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 3
+0 'petersonhoffman@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 1
+0 'leesnyder@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 1
+0 'cookhogan@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 2
+0 'adelewatts@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 3
+0 'adelewatts@sloganaut.com' 'petersonhoffman@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 4
+0 'chasemeadows@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 5
+0 'gladysmartin@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 5
+0 'pattonholden@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'saundragraves@sloganaut.com' 'ROUND' 2
+0 'cooleycastaneda@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'masseyoneal@sloganaut.com' 'ROUND' 5
+0 'petersonhoffman@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 5
+0 'masseyoneal@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 1
+0 'pattonholden@sloganaut.com' 'flowersyork@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'adelewatts@sloganaut.com' 'ROUND' 6
+0 'garrettjenkins@sloganaut.com' 'gladysmartin@sloganaut.com' 'ROUND' 7
+0 'gladysmartin@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 2
+0 'blanchardhyde@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'bartonnavarro@sloganaut.com' 'ROUND' 6
+0 'flowersyork@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 4
+0 'deannewyatt@sloganaut.com' 'camilleweber@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'deannewyatt@sloganaut.com' 'ROUND' 7
+0 'garrettjenkins@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 5
+0 'sylviaholcomb@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 6
+0 'joycemayo@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 3
+0 'bairdrosario@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'carmellahartman@sloganaut.com' 'ROUND' 4
+0 'eloisehuff@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 6
+0 'shawnbass@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 2
+0 'ballardholman@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 7
+0 'morenokim@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 3
+0 'sylviaholcomb@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 7
+0 'joycemayo@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 8
+0 'flowersyork@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'gwendolynriddle@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'eloisehuff@sloganaut.com' 'ROUND' 2
+0 'pattonholden@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 9
+0 'janenash@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 2
+0 'whitleymason@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 4
+0 'bartonnavarro@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'morenokim@sloganaut.com' 'ROUND' 6
+0 'sylviaholcomb@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 10
+0 'cooleycastaneda@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'frenchcarrillo@sloganaut.com' 'ROUND' 5
+0 'tanishadavidson@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 7
+0 'flowersyork@sloganaut.com' 'odomashley@sloganaut.com' 'ROUND' 7
+0 'shawnbass@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 3
+0 'leannawiggins@sloganaut.com' 'chasemeadows@sloganaut.com' 'ROUND' 7
+0 'sylviaholcomb@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 9
+0 'terrabruce@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 8
+0 'cashcortez@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 3
+0 'garrettjenkins@sloganaut.com' 'ettacarlson@sloganaut.com' 'ROUND' 8
+0 'sosakirk@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 4
+0 'stellaerickson@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 5
+0 'adelewatts@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 8
+0 'ballardholman@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 9
+0 'gretadillon@sloganaut.com' 'holcombolson@sloganaut.com' 'ROUND' 8
+0 'sylviaholcomb@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'sosakirk@sloganaut.com' 'ROUND' 8
+0 'joycemayo@sloganaut.com' 'gingerdavenport@sloganaut.com' 'ROUND' 11
+0 'cooleycastaneda@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 12
+0 'bartonnavarro@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 13
+0 'joycemayo@sloganaut.com' 'thelmaconley@sloganaut.com' 'ROUND' 14
+0 'contrerasmalone@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 2
+0 'careyhood@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 4
+0 'cashcortez@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 11
+0 'deannewyatt@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 4
+0 'terrabruce@sloganaut.com' 'joycemayo@sloganaut.com' 'ROUND' 15
+0 'janenash@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 3
+0 'gladysmartin@sloganaut.com' 'chandracooley@sloganaut.com' 'ROUND' 1
+0 'gladysmartin@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 4
+0 'ballardholman@sloganaut.com' 'cookhogan@sloganaut.com' 'ROUND' 10
+0 'leannawiggins@sloganaut.com' 'hodgescampos@sloganaut.com' 'ROUND' 9
+0 'masonfields@sloganaut.com' 'leesnyder@sloganaut.com' 'ROUND' 6
+0 'feliciapowers@sloganaut.com' 'ruizgallegos@sloganaut.com' 'ROUND' 1
+0 'masonfields@sloganaut.com' 'ericafuller@sloganaut.com' 'ROUND' 4
+0 'bairdrosario@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 7
+0 'petersonhoffman@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 2
+0 'dodsonsoto@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 6
+0 'dodsonsoto@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 11
+0 'petersonhoffman@sloganaut.com' 'blanchardhyde@sloganaut.com' 'ROUND' 7
+0 'camilleweber@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 2
+0 'masonfields@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 10
+0 'bairdrosario@sloganaut.com' 'ballardholman@sloganaut.com' 'ROUND' 12
+0 'sylviaholcomb@sloganaut.com' 'lancasterhudson@sloganaut.com' 'ROUND' 12
+0 'masonfields@sloganaut.com' 'stellaerickson@sloganaut.com' 'ROUND' 7
+0 'stellaerickson@sloganaut.com' 'leannawiggins@sloganaut.com' 'ROUND' 11
+0 'gladysmartin@sloganaut.com' 'marisolmyers@sloganaut.com' 'ROUND' 3
+0 'whitleymason@sloganaut.com' 'garrettjenkins@sloganaut.com' 'ROUND' 9
+0 'garrettjenkins@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 10
+0 'masonfields@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 5
+0 'alishamurphy@sloganaut.com' 'contrerasmalone@sloganaut.com' 'ROUND' 4
+0 'garrettjenkins@sloganaut.com' 'janenash@sloganaut.com' 'ROUND' 11
+0 'shawnbass@sloganaut.com' 'mcmillansuarez@sloganaut.com' 'ROUND' 6
+0 'weissnunez@sloganaut.com' 'feliciapowers@sloganaut.com' 'ROUND' 5
+0 'deannewyatt@sloganaut.com' 'tanishadavidson@sloganaut.com' 'ROUND' 6
+0 'ballardholman@sloganaut.com' 'cooleycastaneda@sloganaut.com' 'ROUND' 13
+0 'garrettjenkins@sloganaut.com' 'gretadillon@sloganaut.com' 'ROUND' 12
+0 'masonfields@sloganaut.com' 'pruittheath@sloganaut.com' 'ROUND' 8
+0 'masonfields@sloganaut.com' 'sylviaholcomb@sloganaut.com' 'ROUND' 13
+0 'janenash@sloganaut.com' 'jacobssalazar@sloganaut.com' 'ROUND' 5
+0 'weissnunez@sloganaut.com' 'careyhood@sloganaut.com' 'ROUND' 1
+0 'feliciapowers@sloganaut.com' 'kimtodd@sloganaut.com' 'ROUND' 6
+16 results
+'round 1 total 19'
+length 16
+'round 2 total 17'
+length 16
+'round 3 total 17'
+length 16
+'round 4 total 16'
+length 16
+'round 5 total 15'
+length 16
+'round 6 total 13'
+length 16
+'round 7 total 10'
+length 16
+'round 8 total 8'
+length 15
+'round 9 total 5'
+length 15
+'round 10 total 5'
+length 16
+'round 11 total 5'
+length 16
+'round 12 total 4'
+length 16
+'round 13 total 3'
+length 16
+'round 14 total 1'
+length 16
+'round 15 total 1'
+length 16
+'round 16 total 0'
+length 16
+Test Schedule Rounds Complete

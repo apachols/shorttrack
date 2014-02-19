@@ -1,6 +1,5 @@
 mongoose = require 'mongoose'
 
-
 mongoose.connect(
   'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
 )
@@ -25,5 +24,5 @@ testExecute = (next) ->
 testClear () ->
   testExecute () ->
     console.log 'Match calculation complete'
-    for error in m.getErrors()
-      console.dir error
+    # for error in m.getErrors()
+    #   console.dir error
