@@ -1,0 +1,58 @@
+extends ../layout
+
+block head
+  script(src='/bootstrap-datepicker/js/bootstrap-datepicker.js', type='text/javascript')
+  link(rel='stylesheet', href='/bootstrap-datepicker/css/datepicker3.css')
+
+block content
+  .row: .col-sm-8.col-sm-offset-2
+    .panel.panel-default
+      .panel-heading: b Create a new Meetup
+      .panel-body
+        form(role='form')
+          .form-group
+            label Meetup Name
+            input#form-name.form-control(type='text', name='name', placeholder='Meetup Name')
+
+          .form-group
+            label Meetup Date
+            .row: .col-xs-6.col-sm-3
+              input#form-date.form-control(type='text', name='date', data-provide='datepicker', placeholder=df(now, 'mm/dd/yyyy'))
+
+          .form-group
+            label Maximum Combatants
+            .row
+              .col-sm-2
+                input#js-form-cap-out.form-control(type='text', disabled, value='50')
+
+              .col-sm-10.form-horizontal
+                .form-control-static.has-feedback
+                  input#js-form-cap.form-control(type='text', data-slider-min='0', data-slider-max='100',
+                    data-slider-value='50', name='cap', value='50')
+
+          .form-group
+            label Registration Dates
+            .col-sm-6.input-daterange.input-group
+              input.form-control(type='text', name='registration.open', data-provide='datepicker')
+              span.input-group-addon to
+              input.form-control(type='text', name='registration.close', data-provide='datepicker')
+
+          .form-group
+            label Location
+            input#form-location.form-control(type='text', name='location', placeholder='742 Evergreen Terrace')
+
+
+          .form-group
+            label Description
+            textarea.form-control(rows=5)
+  pre #{inspect(schema)}
+
+block scripts
+  script.
+    $(function () {
+      $('#js-form-cap')
+        .slider()
+        .on('slide', function (e) {
+          $('#js-form-cap-out').val(e.value)
+        })
+    })
