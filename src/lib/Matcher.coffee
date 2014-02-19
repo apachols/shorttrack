@@ -42,18 +42,19 @@ class Matcher
       left = users.pop()
       iter = users.length
 
+      if !arity[left.email] then arity[left.email] = 0
+
       # right side: each of the remaining users in the list
       while iter--
         right = users[iter]
 
+        if !arity[right.email] then arity[right.email] = 0
+
         # if our left side is ok to match with our right side
         if @okToMatch left, right
 
-          if !arity[left.email] then arity[left.email] = 1
-          else arity[left.email]++
-
-          if !arity[right.email] then arity[right.email] = 1
-          else arity[right.email]++
+          arity[left.email]++
+          arity[right.email]++
 
           # Calculate match percent score
           score = @score left, right
