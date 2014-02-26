@@ -3,20 +3,16 @@ _ = require "lodash"
 
 shuffle = require '../../src/lib/shuffle'
 
-
-
-# how do we evaluate whether we have found the best possible first round for a data set?
-#
 # Maybe the way to make this testable is to have an object be responsible for all stats tracking
 #   for all matches
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
+# Next refactor:  put all this stuff inside of meetup
+#
 # If we implement the other algorithm too, it may not be easy to do it this way
 # But we can definitely do different versions of greedy!  Perfect.
 #
-# are the same people being forgotten multiple rounds in a row?
-# 
 # how do we get individual schedules out of here?
 #     meetup.getSchedule(user)
 #       pull all meetups for user by round
