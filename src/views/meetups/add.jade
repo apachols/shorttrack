@@ -19,7 +19,7 @@ block content
             label Meetup Date
             .row: .col-xs-6.col-sm-3
               input#form-date.form-control(type='text', name='date', data-provide='datepicker',
-                placeholder=df(now, 'mm/dd/yyyy'), value=get(meetup, 'date'))
+                placeholder=df(now, 'mm/dd/yyyy'), value=get(meetup, 'date'), data-date-today-highlight='true')
 
           .form-group
             label Maximum Combatants
@@ -35,9 +35,11 @@ block content
           .form-group
             label Registration Dates
             .col-sm-6.input-daterange.input-group
-              input.form-control(type='text', name='registration.open', data-provide='datepicker', placeholder=df(now, 'mm/dd/yyyy'))
+              input.form-control(type='text', name='registration.open', data-provide='datepicker',
+                placeholder=df(now, 'mm/dd/yyyy'), data-date-today-highlight='true')
               span.input-group-addon to
-              input.form-control(type='text', name='registration.close', data-provide='datepicker', placeholder=df(now, 'mm/dd/yyyy'))
+              input.form-control(type='text', name='registration.close', data-provide='datepicker',
+                placeholder=df(now, 'mm/dd/yyyy'), data-date-today-highlight='true')
 
           .form-group
             label Location
@@ -48,7 +50,7 @@ block content
             label Description
             textarea.form-control(rows=5, name='description')=get(meetup, 'description')
 
-  pre= inspect(schema)
+  pre= inspect(schema.paths)
 
 block scripts
   script.
