@@ -8,8 +8,8 @@ Meetup = new mongoose.Schema
   cap: Number
 
   time:
-    start: Date
-    stop: Date
+    start: String
+    stop: String
 
   registration:
     open: Date
