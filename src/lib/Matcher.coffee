@@ -1,5 +1,6 @@
 UserModel = require '../../src/models/User'
 MatchModel = require '../../src/models/Match'
+MeetupModel = require '../../src/models/Meetup'
 
 # The matcher takes a meetup record, pulls all users registered for that meetup,
 # and generates Match records for all users who are able to match
@@ -71,13 +72,12 @@ class Matcher
         user2: arity[match.user2]
         total: arity[match.user1]+arity[match.user2]
 
-    console.dir arity
-
-    # insert all the matches into the database, and send the number of
-    # matches created back in the callback's success argument
-    MatchModel.create matches, (err) ->
-      console.log 'MatchModel.create callback'
-      callback err, arguments.length-1
+    MeetupModel.findOneAndUpdate
+      name: @meetup.name
+    , matches: matches
+    , (err, meetup) ->
+      console.log 'MeetupModel.findOneAndUpdate'
+      callback err, matches.length
 
   # returns true if left and right users are both
   # seeking the other's specified gender and age
@@ -111,9 +111,13 @@ class Matcher
   # remove all match records from the DB
   clearMatches: (callback) ->
     console.log '@clearMatches'
-    MatchModel.remove {}, (err, count) ->
-      console.log 'MatchModel.remove callback'
-      callback err, count
+    numberOfMatchesToClear = @meetup.matches.length
+    MeetupModel.findOneAndUpdate
+      name: @meetup.name
+    , matches: []
+    , (err, meetup) ->
+      console.log 'MeetupModel.findOneAndUpdate'
+      callback err, numberOfMatchesToClear
 
   # return errors generated during the matching process
   getErrors: () -> @errors

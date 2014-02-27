@@ -6,23 +6,13 @@ mongoose.connect(
 
 Matcher = require '../../../src/lib/Matcher'
 
-m = new Matcher({"this object" : "should be a meetup :|"})
+MeetupModel = require '../../../src/models/Meetup'
 
-testClear = (next) ->
-  console.log 'testClear'
+MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
+  m = new Matcher(meetup)
   m.clearMatches (err, count) ->
     console.error err if err
     console.log 'Cleared ' + count + ' matches'
-    next()
-
-testExecute = (next) ->
-  m.execute (err, count) ->
-    console.error err if err
-    console.log 'Created ' + count + ' matches'
-    next()
-
-testClear () ->
-  testExecute () ->
-    console.log 'Match calculation complete'
-    # for error in m.getErrors()
-    #   console.dir error
+    m.execute (err, count) ->
+      console.error err if err
+      console.log 'Created ' + count + ' matches'

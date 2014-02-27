@@ -4,24 +4,18 @@ mongoose.connect(
   'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
 )
 
+MeetupModel = require '../../../src/models/Meetup'
+
 Scheduler = require '../../../src/lib/Scheduler'
 
-s = new Scheduler()
-
-testGetMatches = (next) ->
-  s.getMatches (err, matches) ->
+MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
+  console.error err if err
+  s = new Scheduler(meetup)
+  s.getMatches (matches) ->
     console.error err if err
-    s.scheduleRounds matches, (err, result) -> 
+    s.scheduleRounds matches, (err, result) ->
       console.log result.length + ' rounds'
       for r in result
         console.dir r
-      next()
+      console.log 'Test Schedule Rounds Complete'
 
-# testScheduleRounds = (next) ->
-#   s.execute (err, count) ->
-#     console.error err if err
-#     console.log 'Created ' + count + ' matches'
-#     next()
-
-testGetMatches () ->
-  console.log 'Test Schedule Rounds Complete'

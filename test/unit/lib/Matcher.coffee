@@ -4,10 +4,13 @@ gently = new(require 'gently')
 
 Matcher = require '../../../src/lib/Matcher'
 MatchModel = require '../../../src/models/Match'
+MeetupModel = require '../../../src/models/Meetup'
 
 describe 'src/lib/Matcher.coffee', ->
 
-  testMeetup = {}
+  testMeetup =
+    name: 'blah'
+    matches: [1,2,3]
 
   describe 'execute', ->
     it 'should callback with error if error', (done) ->
@@ -54,16 +57,17 @@ describe 'src/lib/Matcher.coffee', ->
       done()
 
   describe 'clearMatches', ->
-    it 'should call MatchModel.remove; callback returns count', (done) ->
+    it 'should update the meetup with cleared matches', (done) ->
       m = new Matcher(testMeetup)
-      e = {'fake' : 'error`'}
+      e = {'fake' : 'error'}
 
-      gently.expect MatchModel, 'remove', (findSpec, callback) ->
-        callback e, 321
+      gently.expect MeetupModel, 'findOneAndUpdate',
+      (findSpec, updateSpec, callback) ->
+        callback e, testMeetup
 
       m.clearMatches (err, count) ->
         err.should.equal e
-        count.should.equal 321
+        count.should.equal 3
         done()
 
   describe 'getErrors', ->

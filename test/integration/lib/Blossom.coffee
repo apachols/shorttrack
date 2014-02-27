@@ -11,7 +11,7 @@ b = new BlossomScheduler()
 testGetMatches = (next) ->
   b.getMatches (err, matches) ->
     console.error err if err
-    b.constructGraph matches, (err, result) -> 
+    b.constructGraph matches, (err, result) ->
       console.dir Object.keys(result)
       console.dir result.roster
 

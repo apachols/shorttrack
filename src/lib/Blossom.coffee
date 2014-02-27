@@ -14,7 +14,7 @@ class BlossomScheduler
       callback err, null if err
       @scheduleRounds matches, callback
 
-  # pull in all match records in order of 
+  # pull in all match records in order of
   getMatches: (callback) ->
     console.log '@getMatches'
 

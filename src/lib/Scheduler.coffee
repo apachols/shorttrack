@@ -1,9 +1,10 @@
-MatchModel = require '../../src/models/Match'
+MeetupModel = require '../../src/models/Meetup'
 _ = require "lodash"
 
 shuffle = require '../../src/lib/shuffle'
 
-# Maybe the way to make this testable is to have an object be responsible for all stats tracking
+# Maybe the way to make this testable is to have an
+# object be responsible for all stats tracking
 #   for all matches
 #     if schedule.pick(match)
 #       schedule.update(match)
@@ -23,7 +24,9 @@ shuffle = require '../../src/lib/shuffle'
 #       display organized by round
 
 class Scheduler
-  constructor: () ->
+  constructor: (meetup) ->
+    @meetup = meetup
+    @errors = []
 
   execute: (callback) ->
     console.log '@execute'
@@ -33,15 +36,15 @@ class Scheduler
       callback err, null if err
       @scheduleRounds matches, callback
 
-  # pull in all match records in order of 
+  # pull in all match records in order of
   getMatches: (callback) ->
     console.log '@getMatches'
 
-    # @meetup.getRegisteredUsers()
-    MatchModel.find({}).sort({ 'arity.total': 1 }).exec (err, matches) ->
-      console.log 'MatchModel.find callback'
-      # shuffle.shuffle(matches)
-      callback err, matches
+    shuffle.shuffle(@meetup.matches)
+    callback @meetup.matches.sort (a,b)->
+      return -1 if a.arity.total < b.arity.total
+      return 1 if a.arity.total > b.arity.total
+      return 0
 
   scheduleRounds: (matches, callback) ->
     # value returned to caller - right now full of gooey debug info
@@ -52,10 +55,10 @@ class Scheduler
 
     round = 1
     while true
-      console.error 'ROUND ' + round + ': FIGHT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+      console.error 'ROUND ' + round + ': FIGHT!!!!!!!!!!!!!!!!!!!!!!!'
       roundTotal = 0
 
-      # list of match records to tag as being part of this round (match.round = round)
+      # list of match records to tag as being part of this round
       toUpdate = []
 
       # list of people participating in this round
@@ -96,7 +99,7 @@ class Scheduler
             # temporary - while we are entirely in memory we need this
             match.round = round
 
-      # sort the list again by arity descending - seems to perform almost as well as forgotten->top
+      # sort the list again by arity descending
       # matches.sort (left, right) ->
       #   if left.arity.total > right.arity.total
       #     return 1
@@ -109,15 +112,20 @@ class Scheduler
 
       # sort by whether they were forgotten, with forgotten people on top
       matches.sort (left, right) ->
-        sumleft = (-1 != forgotten.indexOf(left.user1)) + (-1 != forgotten.indexOf(left.user2))
-        sumright = (-1 != forgotten.indexOf(right.user1)) + (-1 != forgotten.indexOf(right.user2))
+        sumleft =   (-1 != forgotten.indexOf(left.user1))
+        sumleft +=  (-1 != forgotten.indexOf(left.user2))
+        sumright =  (-1 != forgotten.indexOf(right.user1))
+        sumright += (-1 != forgotten.indexOf(right.user2))
         if sumleft < sumright
           return 1
         if sumleft > sumright
           return -1
         return 0
 
-      result.push "round " + round + " totalMatches " + roundTotal + ' unavailable ' + unavailable.length + " forgotten " + forgotten.length
+      resultstr = "round " + round + " totalMatches " + roundTotal
+      resultstr += ' unavailable ' + unavailable.length
+      resultstr += " forgotten " + forgotten.length
+      result.push resultstr
       round++
 
       # while number added during last round > 0
@@ -132,9 +140,17 @@ class Scheduler
       return 0
 
     for person in personarray
-      console.log 'arity', personlog[person].arity, 'datescount', personlog[person].datescount, 'person', person
+      console.log 'arity', personlog[person].arity, 'datescount',
+      personlog[person].datescount, 'person', person
 
-    callback null, result
+    MeetupModel.findOne
+      name: @meetup.name
+    # , matches: @meetup.matches
+    , (err, meetup) ->
+      console.log 'saving matches to the database' 
+      meetup.matches = matches
+      meetup.save()
+      callback null, result
 
   # return errors generated during the scheduling process
   getErrors: () -> @errors
