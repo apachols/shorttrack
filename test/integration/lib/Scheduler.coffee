@@ -19,3 +19,4 @@ MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
         console.dir r
       console.log 'Test Schedule Rounds Complete'
 
+mongoose.connection.close()

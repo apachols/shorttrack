@@ -12,10 +12,7 @@ module.exports = (grunt) ->
       gruntfile: ['Gruntfile.coffee']
 
     coffeelint:
-      src: '<%= targets.src %>'
-      unittest: '<%= targets.unittest %>'
-      integrationtest: '<%= targets.integrationtest %>'
-      gruntfile: '<%= targets.gruntfile %>'
+      all: '<%= targets %>'
 
     jade:
       options:
@@ -44,15 +41,14 @@ module.exports = (grunt) ->
       dev: {}
 
     mochaTest:
+      options:
+        reporter: 'spec'
+        require: 'coffee-script'
+
       integration:
-        options:
-          reporter: 'spec'
-          require: 'coffee-script'
-        src: '<%= targets.integration %>'
+        src: '<%= targets.integrationtest %>'
+
       unit:
-        options:
-          reporter: 'spec'
-          require: 'coffee-script'
         src: '<%= targets.unittest %>'
 
     watch:
