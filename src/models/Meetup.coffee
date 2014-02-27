@@ -1,5 +1,7 @@
 mongoose = require 'mongoose'
 
+Match = require './Match'
+
 Meetup = new mongoose.Schema
   name: String
   date: Date
@@ -9,8 +11,10 @@ Meetup = new mongoose.Schema
   description: String
   location: String
   registered: [ String ]
+  matches: [ Match.schema ]
 ,
   collection: 'meetup'
   strict: 'throw'
 
-module.exports = mongoose.model 'Meetup', Meetup
+try module.exports = mongoose.model 'Meetup', Meetup
+catch e then module.exports = mongoose.model 'Meetup'

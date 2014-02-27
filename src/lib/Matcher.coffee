@@ -1,5 +1,6 @@
 UserModel = require '../../src/models/User'
 MatchModel = require '../../src/models/Match'
+MeetupModel = require '../../src/models/Meetup'
 
 # The matcher takes a meetup record, pulls all users registered for that meetup,
 # and generates Match records for all users who are able to match
@@ -34,6 +35,7 @@ class Matcher
 
     return callback 'No users found', null if !users
 
+    arity = {}
     matches = []
     # left side: pop each user out and try to match them with all the
     #            remaining users
@@ -41,12 +43,19 @@ class Matcher
       left = users.pop()
       iter = users.length
 
+      if !arity[left.email] then arity[left.email] = 0
+
       # right side: each of the remaining users in the list
       while iter--
         right = users[iter]
 
+        if !arity[right.email] then arity[right.email] = 0
+
         # if our left side is ok to match with our right side
         if @okToMatch left, right
+
+          arity[left.email]++
+          arity[right.email]++
 
           # Calculate match percent score
           score = @score left, right
@@ -55,12 +64,20 @@ class Matcher
             user1: left.email
             user2: right.email
             score: score
+            round: 0
 
-    # insert all the matches into the database, and send the number of
-    # matches created back in the callback's success argument
-    MatchModel.create matches, (err) ->
-      console.log 'MatchModel.create callback'
-      callback err, arguments.length-1
+    for match in matches
+      match.arity =
+        user1: arity[match.user1]
+        user2: arity[match.user2]
+        total: arity[match.user1]+arity[match.user2]
+
+    MeetupModel.findOneAndUpdate
+      name: @meetup.name
+    , matches: matches
+    , (err, meetup) ->
+      console.log 'MeetupModel.findOneAndUpdate'
+      callback err, matches.length
 
   # returns true if left and right users are both
   # seeking the other's specified gender and age
@@ -94,9 +111,13 @@ class Matcher
   # remove all match records from the DB
   clearMatches: (callback) ->
     console.log '@clearMatches'
-    MatchModel.remove {}, (err, count) ->
-      console.log 'MatchModel.remove callback'
-      callback err, count
+    numberOfMatchesToClear = @meetup.matches.length
+    MeetupModel.findOneAndUpdate
+      name: @meetup.name
+    , matches: []
+    , (err, meetup) ->
+      console.log 'MeetupModel.findOneAndUpdate'
+      callback err, numberOfMatchesToClear
 
   # return errors generated during the matching process
   getErrors: () -> @errors

@@ -68,4 +68,4 @@ Profile.methods.computeScore = (profile) ->
   }
 
 try module.exports = mongoose.model 'Profile', Profile
-catch e then module.exports = mongoose.mongoose 'Profile'
+catch e then module.exports = mongoose.model 'Profile'

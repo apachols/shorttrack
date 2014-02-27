@@ -1,5 +1,4 @@
 // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-// 30 seconds to shuffle array 12! times (479001600)
 exports.shuffle = function(array) {
   var currentIndex = array.length
     , temporaryValue
