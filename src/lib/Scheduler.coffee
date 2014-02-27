@@ -9,8 +9,6 @@ shuffle = require '../../src/lib/shuffle'
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
-# Next refactor:  put all this stuff inside of meetup
-#
 # If we implement the other algorithm too, it may not be easy to do it this way
 # But we can definitely do different versions of greedy!  Perfect.
 #
@@ -40,7 +38,7 @@ class Scheduler
   getMatches: (callback) ->
     console.log '@getMatches'
 
-    shuffle.shuffle(@meetup.matches)
+    # shuffle.shuffle(@meetup.matches)
     callback @meetup.matches.sort (a,b)->
       return -1 if a.arity.total < b.arity.total
       return 1 if a.arity.total > b.arity.total
@@ -81,7 +79,6 @@ class Scheduler
             datescount: 0
 
         if !match.round
-
           okUser1 = -1 == unavailable.indexOf match.user1
           okUser2 = -1 == unavailable.indexOf match.user2
           if okUser1 and okUser2
@@ -129,7 +126,7 @@ class Scheduler
       round++
 
       # while number added during last round > 0
-      break if !roundTotal or round > 4
+      break if !roundTotal # or round > 4, need to put round limiting on meetup
 
     # Display all of our participants at the end of scheduling
     personarray = Object.keys(personlog).sort (left, right) ->
@@ -145,9 +142,8 @@ class Scheduler
 
     MeetupModel.findOne
       name: @meetup.name
-    # , matches: @meetup.matches
     , (err, meetup) ->
-      console.log 'saving matches to the database' 
+      console.log 'saving matches to the database'
       meetup.matches = matches
       meetup.save()
       callback null, result

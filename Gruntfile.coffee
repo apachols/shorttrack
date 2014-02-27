@@ -5,11 +5,17 @@ module.exports = (grunt) ->
     pkg: '<json:package.json>'
     bower: '<json:bower.json>'
 
-    coffeelint:
+    targets:
       src: ['src/**/*.coffee']
       unittest: ['test/unit/**/*.coffee']
       integrationtest: ['test/integration/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
+
+    coffeelint:
+      src: '<%= targets.src %>'
+      unittest: '<%= targets.unittest %>'
+      integrationtest: '<%= targets.integrationtest %>'
+      gruntfile: '<%= targets.gruntfile %>'
 
     jade:
       options:
@@ -38,17 +44,22 @@ module.exports = (grunt) ->
       dev: {}
 
     mochaTest:
-      options:
-        reporter: 'spec'
-        require: 'coffee-script'
-
-      src: '<%= coffeelint.unittest %>'
+      integration:
+        options:
+          reporter: 'spec'
+          require: 'coffee-script'
+        src: '<%= targets.integration %>'
+      unit:
+        options:
+          reporter: 'spec'
+          require: 'coffee-script'
+        src: '<%= targets.unittest %>'
 
     watch:
       src:
         files: [
-          '<%= coffeelint.src %>'
-          '<%= coffeelint.gruntfile %>'
+          '<%= targets.src %>'
+          '<%= targets.gruntfile %>'
         ]
         tasks: [
           'use-the-force'
@@ -57,14 +68,14 @@ module.exports = (grunt) ->
         ]
 
       test:
-        files: '<%= coffeelint.unittest %>'
+        files: '<%= targets.unittest %>'
         tasks: '<%= watch.src.tasks %>'
 
       jade:
         files: '<%= jade.src %>'
 
       express:
-        files: '<%= coffeelint.src %>'
+        files: '<%= targets.src %>'
         tasks: 'express:watch'
         options:
           spawn: false
@@ -90,7 +101,9 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['express:dev']
 
-  grunt.registerTask 'test', ['coffeelint', 'mochaTest']
+  grunt.registerTask 'integration', ['coffeelint', 'mochaTest:integration']
+
+  grunt.registerTask 'test', ['coffeelint', 'mochaTest:unit']
 
   grunt.registerTask 'dev', [
     'use-the-force'

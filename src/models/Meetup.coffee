@@ -16,4 +16,5 @@ Meetup = new mongoose.Schema
   collection: 'meetup'
   strict: 'throw'
 
-module.exports = mongoose.model 'Meetup', Meetup
+try module.exports = mongoose.model 'Meetup', Meetup
+catch e then module.exports = mongoose.model 'Meetup'
