@@ -16,5 +16,4 @@ MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
     m.execute (err, count) ->
       console.error err if err
       console.log 'Created ' + count + ' matches'
-
-mongoose.connection.close()
+      mongoose.connection.close()
