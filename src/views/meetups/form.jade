@@ -51,16 +51,23 @@
 block scripts
   script
     :coffee
+      Number::pad = (digits, signed) ->
+        s = Math.abs(@).toString()
+        s = "0" + s while s.length < digits
+        (if @ < 0 then "-" else (if signed then "+" else "")) + s
+
       $ ->
         $('#js-form-cap')
           .slider()
           .on 'slide', (e) -> $('#js-form-cap-out').val e.value
 
-        $('#js-form-timespan').slider()
-        //- formater: (value) ->
-        //-   hours = "#{value}".slice 0, 2
-        //-   minutes = "#{value}".slice 2
-        //-   console.log new Date("2000-01-01 #{hours}:#{minutes}").getHours()
+        $('#js-form-timespan').slider
+          formater: (value) ->
+            value = value.pad 4
+            hours = +(value.slice 0, 2)
+            minutes = +(value.slice 2) / 100 * 60
+
+            "#{hours.pad 2}:#{minutes.pad 2}"
 
         $(window)
           .on 'resize', (e) ->

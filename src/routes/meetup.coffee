@@ -73,5 +73,4 @@ class Meetup
       else
         console.log err
 
-
 module.exports = (app) -> new Meetup app

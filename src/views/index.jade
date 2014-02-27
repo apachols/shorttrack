@@ -1,11 +1,13 @@
 extends layout
 
 block content
-  .row
-    .col-xs-12
-      .well
-        if my
-          | You are currently logged in as #{my.email}
-        else
-          h1 Title
-          p Welcome to Open Speed Dating
+  .row: .col-xs-12
+    .jumbotron
+      h1 Short Track
+
+    .well
+      if my
+        | You are currently logged in as #{my.email}
+      else
+        h1 Title
+        p Welcome to Open Speed Dating
