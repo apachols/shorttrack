@@ -61,7 +61,7 @@ class Meetup
       meetup.save()
       res.redirect "/meetup/#{name}"
 
-  update: (req, res) =>
+  update: (req, res) ->
     {name} = req.params
 
     meetupModel.findOneAndUpdate {name}
