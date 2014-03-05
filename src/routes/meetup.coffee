@@ -38,9 +38,12 @@ class Meetup
   edit: (args...) => @name args...
   name: (req, res) =>
     {params: {name}, route: {path}} = req
+
     meetupModel.findOne {name}, (err, meetup) =>
-      view = @stripView path
-      res.render "meetups/#{view}", {meetup}
+      if meetup
+        res.render "meetups/#{@stripView path}", {meetup}
+      else
+        res.send 404, err
 
   stripView: (path) -> "#{p.basename path}".replace /\:/, ''
 
@@ -64,13 +67,12 @@ class Meetup
   update: (req, res) ->
     {name} = req.params
 
-    meetupModel.findOneAndUpdate {name}
-    , {$set: req.body}
+    meetupModel.findOneAndUpdate {name}, {$set: req.body}
     , (err, meetup) ->
       unless err
         meetup.save()
         res.redirect "/meetup/#{meetup.name}"
       else
-        console.log err
+        res.send err, 400
 
 module.exports = (app) -> new Meetup app

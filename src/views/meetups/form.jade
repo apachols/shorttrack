@@ -48,29 +48,28 @@
   label Description
   textarea.form-control(rows='5', name='description')= get(meetup, 'description')
 
-block scripts
-  script
-    :coffee
-      Number::pad = (digits, signed) ->
-        s = Math.abs(@).toString()
-        s = "0" + s while s.length < digits
-        (if @ < 0 then "-" else (if signed then "+" else "")) + s
+script
+  :coffee
+    Number::pad = (digits, signed) ->
+      s = Math.abs(@).toString()
+      s = "0" + s while s.length < digits
+      (if @ < 0 then "-" else (if signed then "+" else "")) + s
 
-      $ ->
-        $('#js-form-cap')
-          .slider()
-          .on 'slide', (e) -> $('#js-form-cap-out').val e.value
+    $ ->
+      $('#js-form-cap')
+        .slider()
+        .on 'slide', (e) -> $('#js-form-cap-out').val e.value
 
-        $('#js-form-timespan').slider
-          formater: (value) ->
-            value = value.pad 4
-            hours = +(value.slice 0, 2)
-            minutes = +(value.slice 2) / 100 * 60
+      $('#js-form-timespan').slider
+        formater: (value) ->
+          value = value.pad 4
+          hours = +(value.slice 0, 2)
+          minutes = +(value.slice 2) / 100 * 60
 
-            "#{hours.pad 2}:#{minutes.pad 2}"
+          "#{hours.pad 2}:#{minutes.pad 2}"
 
-        $(window)
-          .on 'resize', (e) ->
-            $formCap = $ '#js-form-cap'
-            $formCap.slider('destroy') if $formCap.slider()
-            $formCap.slider()
+      $(window)
+        .on 'resize', (e) ->
+          $formCap = $ '#js-form-cap'
+          $formCap.slider('destroy') if $formCap.slider()
+          $formCap.slider()
