@@ -1,0 +1,75 @@
+.form-group
+  label Meetup Name
+  input#form-name.form-control(type='text', name='name', placeholder='Meetup Name',
+    value=get(meetup, 'name'))
+
+.form-group
+  label Meetup Date
+  .row: .col-sm-3
+    input#form-date.form-control(type='text', name='date', data-provide='datepicker',
+      placeholder=df(now, dateformat), value=df(get(meetup, 'date'), dateformat), data-date-today-highlight='true')
+
+.form-group
+  label Meetup Time
+
+  .row: .col-xs-12.form-horizontal
+    .form-control-static.has-feedback
+      input#js-form-timespan.form-control(type='text', data-slider-min='0', data-slider-max='2400',
+        data-slider-step='25', data-slider-value='[1800,2300]')
+
+.form-group
+  label Maximum Combatants
+  .row
+    .col-sm-2
+      input#js-form-cap-out.form-control(type='text', disabled, value=get(meetup, 'cap', 50))
+
+    .col-sm-10.form-horizontal
+      .form-control-static.has-feedback
+        input#js-form-cap.form-control(type='text', data-slider-min='0', data-slider-max='100',
+          data-slider-value=get(meetup, 'cap', 50), name='cap', value=get(meetup, 'cap'))
+
+.form-group
+  label Registration Dates
+  .col-sm-6.input-daterange.input-group
+    input.form-control(type='text', name='registration.open', data-provide='datepicker',
+      placeholder=df(now, dateformat), data-date-today-highlight='true',
+      value=df(get(meetup, 'registration.open'), dateformat))
+    span.input-group-addon to
+    input.form-control(type='text', name='registration.close', data-provide='datepicker',
+      placeholder=df(now, dateformat), data-date-today-highlight='true',
+      value=df(get(meetup, 'registration.close'), dateformat))
+
+.form-group
+  label Location
+  input#form-location.form-control(type='text', name='location', placeholder='742 Evergreen Terrace',
+    value=get(meetup, 'location'))
+
+.form-group
+  label Description
+  textarea.form-control(rows='5', name='description')= get(meetup, 'description')
+
+script
+  :coffee
+    Number::pad = (digits, signed) ->
+      s = Math.abs(@).toString()
+      s = "0" + s while s.length < digits
+      (if @ < 0 then "-" else (if signed then "+" else "")) + s
+
+    $ ->
+      $('#js-form-cap')
+        .slider()
+        .on 'slide', (e) -> $('#js-form-cap-out').val e.value
+
+      $('#js-form-timespan').slider
+        formater: (value) ->
+          value = value.pad 4
+          hours = +(value.slice 0, 2)
+          minutes = +(value.slice 2) / 100 * 60
+
+          "#{hours.pad 2}:#{minutes.pad 2}"
+
+      $(window)
+        .on 'resize', (e) ->
+          $formCap = $ '#js-form-cap'
+          $formCap.slider('destroy') if $formCap.slider()
+          $formCap.slider()

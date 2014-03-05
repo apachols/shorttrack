@@ -1,0 +1,17 @@
+extends ../layout
+
+block head
+  script(src='/bootstrap-datepicker/js/bootstrap-datepicker.js', type='text/javascript')
+  link(rel='stylesheet', href='/bootstrap-datepicker/css/datepicker3.css')
+
+block content
+  .row: .col-sm-8.col-sm-offset-2
+    form.panel.panel-default(role='form', action='/meetup/#{meetup.name}/update', method='post')
+      .panel-heading: b Edit this meetup
+      .panel-body
+          include form
+
+      .panel-footer.clearfix
+        ul.list-inline.pull-right
+          li: a.btn.btn-default Nevermind
+          li: button.btn.btn-primary Update this meetup

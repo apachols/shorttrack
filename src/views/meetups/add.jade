@@ -1,0 +1,20 @@
+extends ../layout
+
+block head
+  script(src='/bootstrap-datepicker/js/bootstrap-datepicker.js', type='text/javascript')
+  link(rel='stylesheet', href='/bootstrap-datepicker/css/datepicker3.css')
+
+block content
+  .row: .col-sm-8.col-sm-offset-2
+    form.panel.panel-default(role='form', action='/meetups/create', method='post')
+      .panel-heading: b Add a new Meetup
+      .panel-body
+        include form
+
+      .panel-footer.clearfix
+        ul.list-inline.pull-right
+          li: a.btn.btn-default Nevermind
+          li: button.btn.btn-primary Add new meetup
+
+  .row: .col-xs-12
+    pre= inspect(schema.paths)

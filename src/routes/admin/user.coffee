@@ -25,10 +25,7 @@ class User
     {email} = req.params
     UserModel.findOne {email}, (err, user) ->
 
-      if user
-        user.inspect = util.inspect user
-        res.render 'admin/user', {user}
-
+      if user then res.render 'admin/user', {user}
       else
         req.flash 'error', 'User not found: ' + email
         res.redirect '/admin'

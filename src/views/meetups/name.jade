@@ -1,0 +1,39 @@
+extends ../layout
+
+block head
+  script(src='/bootstrap-datepicker/js/bootstrap-datepicker.js', type='text/javascript')
+  link(rel='stylesheet', href='/bootstrap-datepicker/css/datepicker3.css')
+
+block content
+  .row: .col-sm-8.col-sm-offset-2
+    .panel.panel-default
+      .panel-heading: b #{meetup.name}
+      .panel-body
+        .row
+          .col-sm-6.col-md-7.col-lg-8
+            h3.top Location
+            .well.well-sm #{meetup.location}
+
+            h3 Time
+            .row
+              .col-xs-6: .well.well-sm #{meetup.time.stop}
+              .col-xs-6: .well.well-sm #{meetup.time.start}
+
+          .col-sm-6.col-md-5.col-lg-4
+            #js-date(data-date='#{meetup.date}', data-provide='datepicker')
+
+        .row
+          .col-sm-12
+            h3 Description
+            .well.well-sm #{meetup.description}
+
+  pre= inspect(meetup)
+
+block scripts
+  script
+    :coffee
+      $ ->
+        $('#js-date')
+          .datepicker()
+          .find('table').addClass('table')
+

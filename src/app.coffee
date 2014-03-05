@@ -4,6 +4,7 @@ validator = require 'express-validator'
 flash = require 'express-flash'
 tp = require 'tea-properties'
 util = require 'util'
+df = require 'dateformat'
 
 # Passport
 passport = require 'passport'
@@ -53,7 +54,10 @@ app.configure ->
   app.set 'view engine', 'jade'
 
   app.use m for m in middleware
-  app.locals.get = tp.get
+  app.locals
+    get: (obj, path, def = undefined) -> tp.get(obj, path) ? def
+    inspect: util.inspect
+    df: df
 
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}
