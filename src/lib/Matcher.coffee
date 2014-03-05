@@ -72,6 +72,8 @@ class Matcher
         user2: arity[match.user2]
         total: arity[match.user1]+arity[match.user2]
 
+    @meetup.matches = matches
+
     MeetupModel.findOneAndUpdate
       name: @meetup.name
     , matches: matches

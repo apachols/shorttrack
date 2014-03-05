@@ -6,6 +6,7 @@ class Routes
       'login'
       'profile'
       'meetup'
+      'schedule'
       'main'
     ]
 
