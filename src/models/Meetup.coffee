@@ -27,18 +27,21 @@ Meetup = new mongoose.Schema
 
 Meetup.methods.getScheduleAll = (callback) ->
   callback this.matches.sort (a,b)->
-    return -1 if a.round.total < b.round.total
-    return 1 if a.round.total > b.round.total
+    return -1 if a.round < b.round
+    return 1 if a.round > b.round
     return 0
 
 Meetup.methods.getScheduleUser = (username, callback) ->
   filtered = this.matches.filter (match) ->
-    return true if username='janenash@sloganaut.com'
-    # return true if -1 != [match.user1, match.user2].indexOf username
+    console.log match.user1, match.user2
+    if -1 != [match.user1, match.user2].indexOf username
+      console.log 'HERE IT IS'
+      return true
+    return false
 
   callback filtered.sort (a,b)->
-    return -1 if a.round.total < b.round.total
-    return 1 if a.round.total > b.round.total
+    return -1 if a.round < b.round
+    return 1 if a.round > b.round
     return 0
 
 try module.exports = mongoose.model 'Meetup', Meetup

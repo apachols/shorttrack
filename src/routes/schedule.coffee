@@ -11,10 +11,11 @@ class Schedule
 
   displayUser: (req, res) ->
     {name, user} = req.params
-    MeetupModel.findOne name, (err, meetup) ->
+    MeetupModel.findOne {name}, (err, meetup) ->
       return res.send util.inspect err if err
       meetup.getScheduleUser user, (matches) ->
         res.send util.inspect matches
+
 
   display: (req, res) ->
     {name} = req.params
