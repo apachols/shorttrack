@@ -13,6 +13,7 @@ shuffle = require '../../src/lib/shuffle'
 #     meetup.getSchedule(user)
 #       pull all meetups for user by round
 #       insert blanks for user
+#
 # how do we get entire schedule?
 #     meetup.getSchedule()
 #       pull all meetups by round

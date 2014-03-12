@@ -22,7 +22,7 @@ class Matcher
   getUsers: (callback) ->
     console.log '@getUsers'
 
-    # only schedule dates for registered users. 
+    # only schedule dates for registered users.
     # eventually only do this for checked/in paid users
     findSpec =
       email:
@@ -84,7 +84,7 @@ class Matcher
     , matches: matches
     , (err, meetup) ->
       console.log 'MeetupModel.findOneAndUpdate'
-      callback err, matches.length
+      callback err, matches
 
   # returns true if left and right users are both
   # seeking the other's specified gender and age

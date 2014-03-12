@@ -1,33 +1,45 @@
 MeetupModel = require '../models/meetup'
 Matcher = require '../lib/Matcher'
 Scheduler = require '../lib/Scheduler'
-
+util = require 'util'
 
 class Schedule
   constructor: (@app) ->
-    @app.get '/schedule/:name', @get
+    @app.get '/meetup/:name/generate', @generate
+    @app.get '/meetup/:name/schedule', @display
+    @app.get '/meetup/:name/schedule/:user', @displayUser
 
-  get: (req, res) ->
+  displayUser: (req, res) ->
+    {name, user} = req.params
+    MeetupModel.findOne name, (err, meetup) ->
+      return res.send util.inspect err if err
+      meetup.getScheduleUser user, (matches) ->
+        res.send util.inspect matches
+
+  display: (req, res) ->
+    {name} = req.params
+    MeetupModel.findOne {name}, (err, meetup) ->
+      meetup.getScheduleAll (matches) ->
+        res.send util.inspect matches
+
+  generate: (req, res) ->
     {name} = req.params
 
     MeetupModel.findOne {name}, (err, meetup) ->
       m = new Matcher(meetup)
       s = new Scheduler(meetup)
 
-      m.execute (err, count) ->
+      m.execute (err, matches) ->
         console.error err if err
-        console.log 'Created ' + count + ' matches'
+        console.log 'Created ' + matches.length + ' matches'
 
-        s.getMatches (matches) ->
+        s.scheduleRounds matches, (err, result) ->
           console.error err if err
-
-          s.scheduleRounds matches, (err, result) ->
-            console.error err if err
-            console.log result.length + ' rounds'
-            for r in result
-              console.dir r
-            console.log 'Test Schedule Rounds Complete'
-            # redirect to the meetup - db should be up to date!
-            res.redirect "/meetup/#{name}"
+          console.log result.length + ' rounds'
+          for r in result
+            console.dir r
+          console.log 'Test Schedule Rounds Complete'
+          # redirect to the meetup - db should be up to date!
+          res.redirect "/meetup/#{name}"
 
 module.exports = (app) -> new Schedule app
