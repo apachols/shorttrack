@@ -56,6 +56,7 @@ class Meetup
       done = (matches = {}) =>
         res.render "meetups/#{view}", {meetup, matches}
 
+      # This too...
       if meetup
         if user
           meetup.getScheduleUser user, (matches) ->
