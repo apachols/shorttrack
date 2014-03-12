@@ -33,9 +33,9 @@ Meetup.methods.getScheduleAll = (callback) ->
 
 Meetup.methods.getScheduleUser = (username, callback) ->
   filtered = this.matches.filter (match) ->
-    console.log match.user1, match.user2
+    # console.log match.user1, match.user2
     if -1 != [match.user1, match.user2].indexOf username
-      console.log 'HERE IT IS'
+      # console.log 'HERE IT IS'
       return true
     return false
 
