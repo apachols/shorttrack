@@ -11,3 +11,6 @@
 .panel-footer .list-inline {
   margin-bottom: 0;
 }
+.disabled[data-provide=datepicker] {
+  pointer-events: none;
+}

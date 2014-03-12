@@ -7,7 +7,7 @@ class Meetup
   constructor: (@app) ->
 
     @app.get  '/meetups/add', @add
-    @app.post '/meetups/create', @create
+    @app.all  '/meetups/create', @create
 
     @app.get  '/meetup/:name/edit', @edit
     @app.post '/meetup/:name/update', @update

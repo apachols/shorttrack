@@ -7,9 +7,11 @@ Meetup = new mongoose.Schema
   date: Date
   cap: Number
 
-  time:
-    start: String
-    stop: String
+  minutes: Number
+  hours: Number
+  am:
+    default: false
+    type: Boolean
 
   registration:
     open: Date
