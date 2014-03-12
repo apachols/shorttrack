@@ -22,8 +22,13 @@ class Matcher
   getUsers: (callback) ->
     console.log '@getUsers'
 
-    # @meetup.getRegisteredUsers()
-    UserModel.find {}, (err, users) ->
+    # only schedule dates for registered users. 
+    # eventually only do this for checked/in paid users
+    findSpec =
+      email:
+        $in: @meetup.registered
+
+    UserModel.find findSpec, (err, users) ->
       console.log 'model.find callback'
       console.log users.length if users?.length
       callback err, users
