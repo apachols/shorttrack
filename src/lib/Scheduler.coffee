@@ -54,6 +54,10 @@ class Scheduler
       console.error 'ROUND ' + round + ': FIGHT!!!!!!!!!!!!!!!!!!!!!!!'
       roundTotal = 0
 
+      #
+      # BEGIN GreedyStrategy.scheduleRound matches, round
+      #
+
       # list of match records to tag as being part of this round
       toUpdate = []
 
@@ -61,6 +65,7 @@ class Scheduler
       unavailable = []
 
       for match in matches
+
         # set up stats logging for player 1
         if personlog[match.user1]
           person1 = personlog[match.user1]
@@ -68,6 +73,7 @@ class Scheduler
           person1 = personlog[match.user1] =
             arity: match.arity.user1
             datescount: 0
+
         # set up stats logging for player 2
         if personlog[match.user2]
           person2 = personlog[match.user2]
@@ -94,16 +100,16 @@ class Scheduler
             # temporary - while we are entirely in memory we need this
             match.round = round
 
-      # sort the list again by arity descending
-      # matches.sort (left, right) ->
-      #   if left.arity.total > right.arity.total
-      #     return 1
-      #   if left.arity.total < right.arity.total
-      #     return -1
-      #   return 0
+      #
+      # END GreedyStrategy.scheduleRound
+      #
 
       # calculate who sat out during this round
       forgotten = _.difference Object.keys(personlog), _.uniq unavailable
+
+      #
+      #
+      #
 
       # sort by whether they were forgotten, with forgotten people on top
       matches.sort (left, right) ->
@@ -146,18 +152,12 @@ class Scheduler
       meetup.save()
       callback null, result
 
-  # return errors generated during the scheduling process
-  getErrors: () -> @errors
-
-  # create   a new error
-  # left:    a User
-  # right:   a User
-  # message: a string
-  createError: (left, right, message) ->
-    return {
-      user1: left?.email
-      user2: right?.email
-      message: message
-    }
-
 module.exports = Scheduler
+
+      # sort the list again by arity descending
+      # matches.sort (left, right) ->
+      #   if left.arity.total > right.arity.total
+      #     return 1
+      #   if left.arity.total < right.arity.total
+      #     return -1
+      #   return 0
