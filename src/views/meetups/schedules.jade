@@ -13,8 +13,8 @@ block content
       for date in matches
         tr
           td #{date.round}
-          td #{date.user1}
-          td #{date.user2}
+          td: a(href="/meetup/#{meetup.name}/schedule/#{date.user1}") #{date.user1}
+          td: a(href="/meetup/#{meetup.name}/schedule/#{date.user2}") #{date.user2}
           td #{date.score}
 
   pre= matches

@@ -31,7 +31,19 @@ block content
             h3 Description
             .well.well-sm #{meetup.description}
 
-  pre= inspect(meetup)
+        if matches
+          table.table
+            thead
+              tr
+                th Round
+                th Name
+            tbody
+              each round in matches
+                tr
+                  td #{round.round}
+                  td #{round.user2}
+
+  pre= inspect(matches)
 
 block scripts
   script

@@ -21,6 +21,8 @@ class Meetup
     @app.get  '/meetup/:name/schedules', @schedules
     @app.get  '/meetup/:name/generate', @generate
 
+    @app.get  '/meetup/:name/schedule/:user', @name
+
     @app.get  '/meetups', @index
     @app.get  '/meetup/:name', @name
 
@@ -44,10 +46,22 @@ class Meetup
   edit: (args...) => @name args...
   name: (req, res) =>
     {params: {name, user}, route: {path}} = req
+    user ?= req.user
+
+    # This is a little ugly
+    view = @stripView path
+    if view is 'user' then view = 'name'
 
     MeetupModel.findOne {name}, (err, meetup) =>
+      done = (matches = {}) =>
+        res.render "meetups/#{view}", {meetup, matches}
+
       if meetup
-        res.render "meetups/#{@stripView path}", {meetup}
+        if user
+          meetup.getScheduleUser user, (matches) ->
+            done matches
+        else
+          do done
       else
         res.send 404, err
 
@@ -74,7 +88,7 @@ class Meetup
     {name} = req.params
     MeetupModel.findOne {name}, (err, meetup) ->
       meetup.getScheduleAll (matches) ->
-        res.render 'meetups/schedules', {matches}
+        res.render 'meetups/schedules', {matches, meetup}
 
   generate: (req, res) ->
     {name} = req.params
