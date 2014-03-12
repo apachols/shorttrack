@@ -15,12 +15,16 @@ block content
             .well.well-sm #{meetup.location}
 
             h3 Time
-            .row
-              .col-xs-6: .well.well-sm #{meetup.time.stop}
-              .col-xs-6: .well.well-sm #{meetup.time.start}
+            .row: .col-sm-5: .input-group
+              span.form-control.text-center(value='#{meetup.hours}') #{meetup.hours}
+              span.input-group-addon :
+              span.form-control.text-center(value='#{meetup.minutes}') #{meetup.minutes}
+              - var ampm = (meetup.am === true) ? 'PM' : 'PM'
+              span.input-group-addon #{ampm}
 
           .col-sm-6.col-md-5.col-lg-4
-            #js-date(data-date='#{meetup.date}', data-provide='datepicker')
+            #js-date.disabled(data-date='#{meetup.date}', data-provide='datepicker'
+              data-date-today-highlight='true')
 
         .row
           .col-sm-12

@@ -12,10 +12,14 @@
 .form-group
   label Meetup Time
 
-  .row: .col-xs-12.form-horizontal
-    .form-control-static.has-feedback
-      input#js-form-timespan.form-control(type='text', data-slider-min='0', data-slider-max='2400',
-        data-slider-step='25', data-slider-value='[1800,2300]')
+  .row: .col-sm-4: .input-group
+    input#form-hours.form-control.text-center(type='text', name='hours', maxlength=2, placeholder=05)
+    span.input-group-addon :
+    input#form-minutes.form-control.text-center(type='text', name='minutes', maxlength=2, placeholder=30)
+    .input-group-addon
+      label.checkbox-inline
+        input(type='checkbox', name='am' value='1')
+        |  AM
 
 .form-group
   label Maximum Combatants
@@ -30,7 +34,7 @@
 
 .form-group
   label Registration Dates
-  .col-sm-6.input-daterange.input-group
+  .col-sm-5.input-daterange.input-group
     input.form-control(type='text', name='registration.open', data-provide='datepicker',
       placeholder=df(now, dateformat), data-date-today-highlight='true',
       value=df(get(meetup, 'registration.open'), dateformat))
