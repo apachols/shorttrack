@@ -1,19 +1,25 @@
-meetupModel = require '../models/meetup'
-{inspect} = require 'util'
-p = require 'path'
-_ = require 'lodash'
+MeetupModel = require '../models/meetup'
+Matcher     = require '../lib/Matcher'
+Scheduler   = require '../lib/Scheduler'
+
+{inspect}   = require 'util'
+{basename}  = require 'path'
+_           = require 'lodash'
 
 class Meetup
   constructor: (@app) ->
 
     @app.get  '/meetups/add', @add
-    @app.all  '/meetups/create', @create
+    @app.post '/meetups/create', @create
 
     @app.get  '/meetup/:name/edit', @edit
     @app.post '/meetup/:name/update', @update
 
     @app.get  '/meetup/:name/register', @register
     @app.get  '/meetup/:name/unregister', @unregister
+
+    @app.get  '/meetup/:name/schedules', @schedules
+    @app.get  '/meetup/:name/generate', @generate
 
     @app.get  '/meetups', @index
     @app.get  '/meetup/:name', @name
@@ -23,29 +29,29 @@ class Meetup
       timeformat: 'hh:mm TT'
 
   index: (req, res) ->
-    meetupModel.find {}, (err, meetups) ->
+    MeetupModel.find {}, (err, meetups) ->
       res.send 200, {meetups}
 
   add: (req, res) ->
-    res.render 'meetups/add', {schema: meetupModel.schema}
+    res.render 'meetups/add', {schema: MeetupModel.schema}
 
   create: (req, res) ->
-    meetup = new meetupModel req.body
+    meetup = new MeetupModel req.body
     meetup.save (err, m) ->
       if err then res.send err, 400
       else res.redirect "/meetup/#{m.name}"
 
   edit: (args...) => @name args...
   name: (req, res) =>
-    {params: {name}, route: {path}} = req
+    {params: {name, user}, route: {path}} = req
 
-    meetupModel.findOne {name}, (err, meetup) =>
+    MeetupModel.findOne {name}, (err, meetup) =>
       if meetup
         res.render "meetups/#{@stripView path}", {meetup}
       else
         res.send 404, err
 
-  stripView: (path) -> "#{p.basename path}".replace /\:/, ''
+  stripView: (path) -> "#{basename path}".replace /\:/, ''
 
   register: (args...) => @unregister args...
   unregister: (req, res) =>
@@ -57,17 +63,42 @@ class Meetup
       when 'register' then query = {$push: data}
       when 'unregister' then query = {$pull: data}
 
-    meetupModel.findOneAndUpdate {name}
+    MeetupModel.findOneAndUpdate {name}
     , query
     , (err, meetup) ->
       meetup.registered = _.uniq meetup.registered
       meetup.save()
       res.redirect "/meetup/#{name}"
 
+  schedules: (req, res) ->
+    {name} = req.params
+    MeetupModel.findOne {name}, (err, meetup) ->
+      meetup.getScheduleAll (matches) ->
+        res.render 'meetups/schedules', {matches}
+
+  generate: (req, res) ->
+    {name} = req.params
+
+    MeetupModel.findOne {name}, (err, meetup) ->
+      m = new Matcher meetup
+      s = new Scheduler meetup
+
+      m.execute (err, matches) ->
+        console.error err if err
+        console.log 'Created ' + matches.length + ' matches'
+
+        s.scheduleRounds matches, (err, result) ->
+          console.error err if err
+          console.log result.length + ' rounds'
+          console.dir r for r in result
+          console.log 'Test Schedule Rounds Complete'
+          # redirect to the meetup - db should be up to date!
+          res.redirect "/meetup/#{name}"
+
   update: (req, res) ->
     {name} = req.params
 
-    meetupModel.findOneAndUpdate {name}, {$set: req.body}
+    MeetupModel.findOneAndUpdate {name}, {$set: req.body}
     , (err, meetup) ->
       unless err
         meetup.save()

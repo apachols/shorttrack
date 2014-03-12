@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  table.table.table-striped.table-bordered.table-condensed
+    thead
+      tr
+        th Round
+        th User A
+        th User 1
+        th Score
+
+    tbody
+      for date in matches
+        tr
+          td #{date.round}
+          td #{date.user1}
+          td #{date.user2}
+          td #{date.score}
+
+  pre= matches
+
+

@@ -6,7 +6,6 @@ util = require 'util'
 class Schedule
   constructor: (@app) ->
     @app.get '/meetup/:name/generate', @generate
-    @app.get '/meetup/:name/schedule', @display
     @app.get '/meetup/:name/schedule/:user', @displayUser
 
   displayUser: (req, res) ->
@@ -16,15 +15,8 @@ class Schedule
       meetup.getScheduleUser user, (matches) ->
         res.send util.inspect matches
 
-
-  display: (req, res) ->
-    {name} = req.params
-    MeetupModel.findOne {name}, (err, meetup) ->
-      meetup.getScheduleAll (matches) ->
-        res.send util.inspect matches
-
   generate: (req, res) ->
-    {name} = req.params
+    {name} = req
 
     MeetupModel.findOne {name}, (err, meetup) ->
       m = new Matcher(meetup)
