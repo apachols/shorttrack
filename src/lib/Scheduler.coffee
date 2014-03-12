@@ -9,9 +9,6 @@ shuffle = require '../../src/lib/shuffle'
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
-# If we implement the other algorithm too, it may not be easy to do it this way
-# But we can definitely do different versions of greedy!  Perfect.
-#
 # how do we get individual schedules out of here?
 #     meetup.getSchedule(user)
 #       pull all meetups for user by round

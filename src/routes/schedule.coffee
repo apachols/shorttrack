@@ -14,24 +14,20 @@ class Schedule
       m = new Matcher(meetup)
       s = new Scheduler(meetup)
 
-      m.clearMatches (err, count) ->
+      m.execute (err, count) ->
         console.error err if err
-        console.log 'Cleared ' + count + ' matches'
+        console.log 'Created ' + count + ' matches'
 
-        m.execute (err, count) ->
+        s.getMatches (matches) ->
           console.error err if err
-          console.log 'Created ' + count + ' matches'
 
-          s.getMatches (matches) ->
+          s.scheduleRounds matches, (err, result) ->
             console.error err if err
-
-            s.scheduleRounds matches, (err, result) ->
-              console.error err if err
-              console.log result.length + ' rounds'
-              for r in result
-                console.dir r
-              console.log 'Test Schedule Rounds Complete'
-              # redirect to the meetup - db should be up to date!
-              res.redirect "/meetup/#{name}"
+            console.log result.length + ' rounds'
+            for r in result
+              console.dir r
+            console.log 'Test Schedule Rounds Complete'
+            # redirect to the meetup - db should be up to date!
+            res.redirect "/meetup/#{name}"
 
 module.exports = (app) -> new Schedule app
