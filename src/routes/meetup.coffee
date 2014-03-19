@@ -56,15 +56,8 @@ class Meetup
       done = (matches = {}) ->
         res.render "meetups/#{view}", {meetup, matches}
 
-      # This too...
-      if meetup
-        if user
-          meetup.getScheduleUser user, (matches) ->
-            done matches
-        else
-          do done
-      else
-        res.send 404, err
+      return res.send 404, err if err
+      if user then meetup.getScheduleUser user, done else do done
 
   stripView: (path) -> "#{basename path}".replace /\:/, ''
 
