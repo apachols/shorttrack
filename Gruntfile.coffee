@@ -108,7 +108,7 @@ module.exports = (grunt) ->
     'default'
   ]
 
-  grunt.registerTask 'live', [
+  grunt.registerTask 'server', [
     'use-the-force'
     'test'
     'not-the-droids'

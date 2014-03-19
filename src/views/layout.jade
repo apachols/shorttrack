@@ -7,14 +7,13 @@ head
   link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
   link(rel='stylesheet', href='/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css')
   link(rel='stylesheet', href='/font-awesome/css/font-awesome.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
 
   script(src='/jquery/dist/jquery.js')
   script(src='/bootstrap/dist/js/bootstrap.js')
   script(src='/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js')
 
   block head
-
-  link(rel='stylesheet', href='/stylesheets/style.css')
 
 //- body (implicit in HTML5)
 .navbar.navbar-default(role="navigation")
@@ -27,7 +26,7 @@ head
 
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right
-      if (my)
+      if my
         li: a(href="/logout") Log Out
       else
         li: a(href="/register") Register
@@ -43,3 +42,5 @@ head
   block content
 
 block scripts
+
+pre #{my}
