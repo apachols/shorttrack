@@ -46,14 +46,14 @@ class Meetup
   edit: (args...) => @name args...
   name: (req, res) =>
     {params: {name, user}, route: {path}} = req
-    user ?= req.user
+    user ?= req.user?.email
 
     # This is a little ugly
     view = @stripView path
     if view is 'user' then view = 'name'
 
-    MeetupModel.findOne {name}, (err, meetup) =>
-      done = (matches = {}) =>
+    MeetupModel.findOne {name}, (err, meetup) ->
+      done = (matches = {}) ->
         res.render "meetups/#{view}", {meetup, matches}
 
       # This too...
