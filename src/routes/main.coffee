@@ -11,11 +11,11 @@ class Main
     @app.get '/', @index
 
   setup: (req, res, next) ->
-    res.locals {
+    res.locals
       my: req.user
       brand: 'Homepage'
-    }
-    next()
+
+    do next
 
   index: (req, res) ->
     # Meetup.create

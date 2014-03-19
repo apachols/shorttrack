@@ -1,13 +1,13 @@
 class Routes
   constructor: (@app) ->
     modules = [
+      'main'
       'register'
       'admin'
       'login'
       'profile'
       'meetup'
       'schedule'
-      'main'
     ]
 
     require("./#{m}") @app for m in modules
