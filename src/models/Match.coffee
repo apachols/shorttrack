@@ -1,6 +1,7 @@
 mongoose = require 'mongoose'
 
 Match = new mongoose.Schema
+  seat: Number
   user1: String
   user2: String
   round: Number

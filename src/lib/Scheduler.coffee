@@ -4,8 +4,12 @@ _ = require "lodash"
 shuffle = require '../../src/lib/shuffle'
 
 # Maybe the way to make this testable is to have an
-# object be responsible for all stats tracking
-#   for all matches
+# round object be responsible for all stats tracking in a round
+# scheduler object: stats tracking in a schedule (that aren't in a round)
+# strategy object
+# 
+# Do round
+#     for all matches
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
@@ -53,7 +57,7 @@ class Scheduler
       console.error 'ROUND ' + round + ': FIGHT!!!!!!!!!!!!!!!!!!!!!!!'
       roundTotal = 0
 
-      # 
+      #
       # BEGIN GreedyStrategy.scheduleRound matches, roundnumber
       #
 
@@ -62,6 +66,8 @@ class Scheduler
 
       # list of people participating in this round
       unavailable = []
+
+      seatNumber = 1
 
       for match in matches
 
@@ -81,6 +87,8 @@ class Scheduler
             arity: match.arity.user2
             datescount: 0
 
+        # if GreedyStrategy.pick match
+
         if !match.round
           okUser1 = -1 == unavailable.indexOf match.user1
           okUser2 = -1 == unavailable.indexOf match.user2
@@ -98,6 +106,7 @@ class Scheduler
             toUpdate.push match._id
             # temporary - while we are entirely in memory we need this
             match.round = round
+            match.seat = seatNumber++
 
       #
       # END GreedyStrategy.scheduleRound(matches, round)
@@ -108,8 +117,6 @@ class Scheduler
 
       #
       # matches = GreedyStrategy.sortMatches(matches, this.postSort)
-      #
-      # GreedyStrategy.sortMatches(GreedyStrategy.forgottenSort(round.Forgotten))
       #
 
       # sort by whether they were forgotten, with forgotten people on top
