@@ -9,15 +9,9 @@ shuffle = require '../../src/lib/shuffle'
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
-# how do we get individual schedules out of here?
-#     meetup.getSchedule(user)
-#       pull all meetups for user by round
-#       insert blanks for user
-#
-# how do we get entire schedule?
-#     meetup.getSchedule()
-#       pull all meetups by round
-#       display organized by round
+# Seat numbers
+# Program in breaks for popular people (from meetup record)
+# Round limit (from meetup record)
 
 class Scheduler
   constructor: (meetup) ->
@@ -43,6 +37,11 @@ class Scheduler
       return 0
 
   scheduleRounds: (matches, callback) ->
+
+    #
+    # matches = GreedyStrategy.sortMatches(matches, this.preSort)
+    #
+
     # value returned to caller - right now full of gooey debug info
     result = []
 
@@ -54,8 +53,8 @@ class Scheduler
       console.error 'ROUND ' + round + ': FIGHT!!!!!!!!!!!!!!!!!!!!!!!'
       roundTotal = 0
 
-      #
-      # BEGIN GreedyStrategy.scheduleRound matches, round
+      # 
+      # BEGIN GreedyStrategy.scheduleRound matches, roundnumber
       #
 
       # list of match records to tag as being part of this round
@@ -101,14 +100,16 @@ class Scheduler
             match.round = round
 
       #
-      # END GreedyStrategy.scheduleRound
+      # END GreedyStrategy.scheduleRound(matches, round)
       #
 
       # calculate who sat out during this round
       forgotten = _.difference Object.keys(personlog), _.uniq unavailable
 
       #
+      # matches = GreedyStrategy.sortMatches(matches, this.postSort)
       #
+      # GreedyStrategy.sortMatches(GreedyStrategy.forgottenSort(round.Forgotten))
       #
 
       # sort by whether they were forgotten, with forgotten people on top
