@@ -1,100 +1,109 @@
+class Round
+  constructor: (roundnumber) ->
+    @seat = 0
+    @total = 0
+    @daters = []
+    @roundnumber = roundnumber
+
+  # can error check here if we already have daters.  should not!
+  addDate: (user1, user2) ->
+    @total++
+    @daters.push user1, user2
+
+  # returns true if dater did not participate this round
+  includes: (user) ->
+    -1 isnt @daters.indexOf user
+
+  nextSeat: -> ++@seat
+
+  number: -> @roundnumber
+
+class People
+  constructor: () ->
+    @personhash = {}
+    @personlist = []
+
+  addDate: (user1, user2) ->
+    @add user1 if !personhash[user1]
+    @add user2 if !personhash[user2]
+
+    @personhash[user1].datescount++
+    @personhash[user2].datescount++
+
+  add: (user, arity) ->
+    @personhash[user] = {arity, datescount: 0}
+    @personlist.push user
+
+  # sort the keylist from people by arity
+  aritySort: (left, right) ->
+    return -1 if @personhash[left].arity < @personhash[right].arity
+    return  1 if @personhash[left].arity > @personhash[right].arity
+    return  0
+
+  print: ->
+    # print information on people in order of arity
+    for person in @personlist.sort @aritySort
+      console.log 'arity', personhash[person].arity, 
+      'datescount', personhash[person].datescount,
+      'person', person
+    return
 
 class GreedyStrategy
   constructor: () ->
 
-  pickMatch: (user1, user2) ->
-    okUser1 = -1 is unavailable.indexOf user1
-    okUser2 = -1 is unavailable.indexOf user2
-    return okUser1 and okUser2
+  # sort people by whether they were forgotten, with forgotten people on top
+  postSort: (matches, people, round) ->
 
-  # returns a round object
-  scheduleRound: (matches, roundNumber) ->
-    round = {}
+    matches.sort (left, right) ->
+      sumleft =   not round.includes left.user1
+      sumleft +=  not round.includes left.user2
+      sumright =  not round.includes right.user1
+      sumright += not round.includes right.user2
 
-    # list of people participating in this round
-    unavailable = []
+      return  1 if sumleft < sumright
+      return -1 if sumleft > sumright
+      return 0
 
-    seatNumber = 1
+  # are we ready to schedule this match?
+  # also this will check here to see if this user needs a break
+  pickMatch: (round, match) ->
+    not round.includes match.user1 and 
+    not round.includes match.user2
+
+  # assume matches array is changed by reference here
+  schedule: (matches, people, round) ->
 
     for match in matches
 
-      # set up stats logging for player 1
-      if personlog[match.user1]
-        person1 = personlog[match.user1]
-      else
-        person1 = personlog[match.user1] =
-          arity: match.arity.user1
-          datescount: 0
+      if not match.round 
 
-      # set up stats logging for player 2
-      if personlog[match.user2]
-        person2 = personlog[match.user2]
-      else
-        person2 = personlog[match.user2] =
-          arity: match.arity.user2
-          datescount: 0
+        if @pickMatch round, match
 
-      if !match.round and @pickMatch(match.user1, match.user2)
+          people.addDate match.user1, match.user2
+          round.addDate match.user1, match.user2
 
-          # stats!
-          roundTotal++
-          person1.datescount++
-          person2.datescount++
+          match.round = round.number()
+          match.seat = round.nextseat()
 
-          # make these people unavailable for this round, they are on a date
-          unavailable.push match.user1, match.user2
-
-          # temporary - while we are entirely in memory we need this
-          match.round = roundNumber
-          match.seat = seatNumber++
-
-
-    # calculate who sat out during this round
-    forgotten = _.difference Object.keys(personlog), _.uniq unavailable
-
-    #
-    # matches = GreedyStrategy.sortMatches(matches, this.postSort)
-    #
-
-    # sort by whether they were forgotten, with forgotten people on top
-    matches.sort (left, right) ->
-      sumleft =   (-1 != forgotten.indexOf(left.user1))
-      sumleft +=  (-1 != forgotten.indexOf(left.user2))
-      sumright =  (-1 != forgotten.indexOf(right.user1))
-      sumright += (-1 != forgotten.indexOf(right.user2))
-      if sumleft < sumright
-        return 1
-      if sumleft > sumright
-        return -1
-      return 0
-
-    resultstr = "round " + round + " totalMatches " + roundTotal
-    resultstr += ' unavailable ' + unavailable.length
-    resultstr += " forgotten " + forgotten.length
-    result.push resultstr
-    round++
-
-    # while number added during last round > 0
-    break if !roundTotal # or round > 4, need to put round limiting on meetup
-
-  # Display all of our participants at the end of scheduling
-  personarray = Object.keys(personlog).sort (left, right) ->
-    if personlog[left].arity < personlog[right].arity
-      return -1
-    if personlog[left].arity > personlog[right].arity
-      return 1
-    return 0
-
-  for person in personarray
-    console.log 'arity', personlog[person].arity, 'datescount',
-    personlog[person].datescount, 'person', person
-
-  MeetupModel.findOne
-    name: @meetup.name
-  , (err, meetup) ->
-    console.log 'saving matches to the database'
-    meetup.matches = matches
-    meetup.save()
-    callback null, result
+    @postSort matches
 
 module.exports = GreedyStrategy
+
+# this is the new face of Scheduler.coffee
+execute = (matches, maxrounds) ->
+  strategy = new GreedyStrategy
+  people = new People
+
+  while true
+
+    round = new Round ++roundnumber
+
+    matches = strategy.schedule people, matches, round
+
+    do round.print
+
+    break if !round.total or roundnumber > maxrounds
+
+  do people.print
+
+  matches
