@@ -8,14 +8,18 @@ MeetupModel = require '../../../src/models/Meetup'
 
 Scheduler = require '../../../src/lib/Scheduler'
 
-MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
+MeetupModel.findOne {name: 'Segan Says'}, (err, meetup)->
   console.error err if err
+
   s = new Scheduler(meetup)
+
   s.getMatches (matches) ->
     console.error err if err
-    s.scheduleRounds matches, (err, result) ->
-      console.log result.length + ' rounds'
-      for r in result
-        console.dir r
-      console.log 'Test Schedule Rounds Complete'
-      mongoose.connection.close()
+
+    matches = s.executeGreedyStrategy matches, 8
+
+    # console.dir matches
+
+    console.log "FINISH"
+
+    mongoose.connection.close()

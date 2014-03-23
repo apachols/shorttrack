@@ -95,6 +95,11 @@ class Meetup
         console.error err if err
         console.log 'Created ' + matches.length + ' matches'
 
+        matches = matches.sort (a,b)->
+          return -1 if a.arity.total < b.arity.total
+          return 1 if a.arity.total > b.arity.total
+          return 0
+
         s.scheduleRounds matches, (err, result) ->
           console.error err if err
           console.log result.length + ' rounds'

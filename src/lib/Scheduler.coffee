@@ -3,17 +3,20 @@ _ = require "lodash"
 
 shuffle = require '../../src/lib/shuffle'
 
+GreedyStrategy = require './GreedyStrategy'
+People = require './People'
+Round = require './Round'
+
 # Maybe the way to make this testable is to have an
 # round object be responsible for all stats tracking in a round
 # scheduler object: stats tracking in a schedule (that aren't in a round)
 # strategy object
-# 
+#
 # Do round
 #     for all matches
 #     if schedule.pick(match)
 #       schedule.update(match)
 #
-# Seat numbers
 # Program in breaks for popular people (from meetup record)
 # Round limit (from meetup record)
 
@@ -23,22 +26,39 @@ class Scheduler
     @errors = []
 
   execute: (callback) ->
-    console.log '@execute'
-
     @getMatches (err, matches) =>
-      console.log '@getUsers callback'
       callback err, null if err
       @scheduleRounds matches, callback
 
+  # this is the new face of Scheduler.coffee
+  executeGreedyStrategy: (matches, maxrounds) ->
+    strategy = new GreedyStrategy
+    people = new People
+    roundnumber = 1
+
+    while true
+      round = new Round roundnumber++
+
+      matches = strategy.schedule matches, people, round
+
+      do round.print
+
+      break if !round.total or roundnumber > maxrounds
+
+    do people.print
+
+    matches
+
   # pull in all match records in order of
   getMatches: (callback) ->
-    console.log '@getMatches'
 
-    # shuffle.shuffle(@meetup.matches)
-    callback @meetup.matches.sort (a,b)->
-      return -1 if a.arity.total < b.arity.total
-      return 1 if a.arity.total > b.arity.total
-      return 0
+    shuffle.shuffle(@meetup.matches)
+    callback @meetup.matches
+
+    # callback @meetup.matches.sort (a,b)->
+    #   return -1 if a.arity.total < b.arity.total
+    #   return 1 if a.arity.total > b.arity.total
+    #   return 0
 
   scheduleRounds: (matches, callback) ->
 
