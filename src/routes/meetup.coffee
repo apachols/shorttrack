@@ -95,17 +95,9 @@ class Meetup
         console.error err if err
         console.log 'Created ' + matches.length + ' matches'
 
-        matches = matches.sort (a,b)->
-          return -1 if a.arity.total < b.arity.total
-          return 1 if a.arity.total > b.arity.total
-          return 0
-
-        s.scheduleRounds matches, (err, result) ->
-          console.error err if err
-          console.log result.length + ' rounds'
-          console.dir r for r in result
-          console.log 'Test Schedule Rounds Complete'
-          # redirect to the meetup - db should be up to date!
+        meetup.matches = s.executeGreedyStrategy matches, 10
+        meetup.save (err) ->
+          console.log err if err
           res.redirect "/meetup/#{name}"
 
   update: (req, res) ->
