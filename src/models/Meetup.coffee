@@ -25,16 +25,19 @@ Meetup = new mongoose.Schema
   collection: 'meetup'
   strict: 'throw'
 
+Meetup.methods.isRegistered = (email) ->
+  return -1 isnt @registered.indexOf email
+
 Meetup.methods.getScheduleAll = (callback) ->
-  callback this.matches.sort (a,b)->
+  callback @matches.sort (a,b)->
     return -1 if a.round < b.round
     return 1 if a.round > b.round
     return 0
 
-Meetup.methods.getScheduleUser = (username, callback) ->
-  filtered = this.matches.filter (match) ->
+Meetup.methods.getScheduleUser = (email, callback) ->
+  filtered = @matches.filter (match) ->
     # console.log match.user1, match.user2
-    if -1 != [match.user1, match.user2].indexOf username
+    if -1 != [match.user1, match.user2].indexOf email
       # console.log 'HERE IT IS'
       return true
     return false
