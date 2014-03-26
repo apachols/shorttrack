@@ -46,7 +46,6 @@ middleware = [
   flash()
   app.router
   express.static path.join __dirname, '../public'
-  express.static path.join __dirname, '../bower_components'
 ]
 
 app.configure ->

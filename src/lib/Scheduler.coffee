@@ -7,7 +7,7 @@ shuffle = require '../../src/lib/shuffle'
 # round object be responsible for all stats tracking in a round
 # scheduler object: stats tracking in a schedule (that aren't in a round)
 # strategy object
-# 
+#
 # Do round
 #     for all matches
 #     if schedule.pick(match)

@@ -7,8 +7,8 @@ block head
 block content
   .row: .col-sm-8.col-sm-offset-2
     .panel.panel-default
-      .panel-heading: b #{meetup.name}
-      .panel-body
+      header.panel-heading: b #{meetup.name}
+      section.panel-body
         .row
           .col-sm-6.col-md-7.col-lg-8
             h3.top Location
@@ -37,13 +37,23 @@ block content
               tr
                 th Round
                 th Name
+                th Seat
             tbody
               each round in matches
                 tr
                   td #{round.round}
                   td #{round.user2}
+                  td #{round.seat}
 
-  pre= inspect(matches)
+      footer.panel-footer
+        .row
+          .col-sm-12.text-right
+            if registered
+              a.btn.btn-danger(href="#{path}/unregister") Unsubscribe!
+            else
+              a.btn.btn-primary(href="#{path}/register") Sign Me Up
+
+  pre= inspect(meetup)
 
 block scripts
   script

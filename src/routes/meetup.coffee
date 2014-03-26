@@ -52,11 +52,15 @@ class Meetup
     view = @stripView path
     if view is 'user' then view = 'name'
 
-    MeetupModel.findOne {name}, (err, meetup) ->
+
+
+    MeetupModel.findOne {name}, (err, meetup) =>
       done = (matches = {}) ->
         res.render "meetups/#{view}", {meetup, matches}
 
       return res.send 404, err if err
+
+      @app.locals.registered = meetup.isRegistered req.user.email
       if user then meetup.getScheduleUser user, done else do done
 
   stripView: (path) -> "#{basename path}".replace /\:/, ''

@@ -14,6 +14,7 @@ class Main
     res.locals
       my: req.user
       brand: 'Homepage'
+      path: req.path
 
     do next
 
