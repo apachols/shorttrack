@@ -8,12 +8,12 @@ Matcher = require '../../../src/lib/Matcher'
 
 MeetupModel = require '../../../src/models/Meetup'
 
-MeetupModel.findOne {name: 'Meetup 2'}, (err, meetup)->
+MeetupModel.findOne {name: 'Segan Says'}, (err, meetup)->
   m = new Matcher(meetup)
   m.clearMatches (err, count) ->
     console.error err if err
     console.log 'Cleared ' + count + ' matches'
-    m.execute (err, count) ->
+    m.execute (err, matches) ->
       console.error err if err
-      console.log 'Created ' + count + ' matches'
+      console.log 'Created ' + matches.length + ' matches'
       mongoose.connection.close()
