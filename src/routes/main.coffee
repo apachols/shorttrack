@@ -25,18 +25,6 @@ class Main
       return res.send 500, err if err
       res.render 'index', {meetups}
 
-    # Meetup.create
-    #   name: 'String'
-    #   date: new Date()
-    #   cap: 75
-    #   time: [ new Date(), new Date() ]
-    #   registration: [ new Date() ]
-    #   description: 'String'
-    #   location: 'String'
-    #   registered: [ 'String' ]
-
-    res.render 'index'
-
   logout: (req, res) -> req.logout(); res.redirect '/'
 
 module.exports = (app) -> new Main app
