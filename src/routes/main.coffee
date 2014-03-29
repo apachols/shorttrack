@@ -1,3 +1,5 @@
+Meetup = require '../models/Meetup'
+
 class Main
   constructor: (@app) ->
 
@@ -19,6 +21,10 @@ class Main
     do next
 
   index: (req, res) ->
+    Meetup.find {}, (err, meetups) ->
+      return res.send 500, err if err
+      res.render 'index', {meetups}
+
     # Meetup.create
     #   name: 'String'
     #   date: new Date()
