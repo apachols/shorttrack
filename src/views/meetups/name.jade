@@ -38,12 +38,14 @@ block content
                 th Round
                 th Name
                 th Seat
+                th Like
             tbody
               each round in matches
                 tr
                   td #{round.round}
-                  td #{round.user2}
+                  td: a(href="/admin/user/#{round.user2}") #{round.user2}
                   td #{round.seat}
+                  td: a.btn.btn-success(href="#{path}/") Yes
 
       footer.panel-footer
         .row
