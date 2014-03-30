@@ -38,8 +38,8 @@ class Scheduler
 
     # this duplicates a function in People.coffee, DRY brah
     matches = matches.sort (a,b)->
-      return -1 if a.arity.total < b.arity.total
-      return 1 if a.arity.total > b.arity.total
+      return -1 if a.arity < b.arity
+      return 1 if a.arity > b.arity
       return 0
 
     while true

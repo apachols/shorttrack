@@ -66,16 +66,23 @@ class Matcher
           score = @score left, right
           # Save the match info for batch db insert
           matches.push
-            user1: left.email
-            user2: right.email
+            user1:
+              name: left.profile[0].name
+              email: left.email
+              arity: 0
+              vote: 0
+            user2:
+              name: right.profile[0].name
+              email: right.email
+              arity: 0
+              vote: 0
             score: score
             round: 0
 
     for match in matches
-      match.arity =
-        user1: arity[match.user1]
-        user2: arity[match.user2]
-        total: arity[match.user1]+arity[match.user2]
+      match.user1.arity = arity[match.user1.email]
+      match.user2.arity = arity[match.user2.email]
+      match.arity = arity[match.user1.email]+arity[match.user2.email]
 
     @meetup.matches = matches
 
