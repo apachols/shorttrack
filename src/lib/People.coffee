@@ -4,17 +4,17 @@ class People
     @personlist = []
 
   addDate: (match) ->
-    user1 = match.user1
-    user2 = match.user2
+    email1 = match.user1.email
+    email2 = match.user2.email
 
-    if not @personhash[user1]
-      @add user1, match.arity.user1
+    if not @personhash[email1]
+      @add email1, match.user1.arity
 
-    if not @personhash[user2]
-      @add user2, match.arity.user2
+    if not @personhash[email2]
+      @add email2, match.user2.arity
 
-    @personhash[user1].datescount++
-    @personhash[user2].datescount++
+    @personhash[email1].datescount++
+    @personhash[email2].datescount++
 
   add: (user, arity) ->
     @personhash[user] = {arity, datescount: 0}

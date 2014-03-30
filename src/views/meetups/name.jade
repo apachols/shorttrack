@@ -43,9 +43,9 @@ block content
               each round in matches
                 tr
                   td #{round.round}
-                  td: a(href="/admin/user/#{round.user2}") #{round.user2}
+                  td: a(href="/admin/user/#{round.user2.email}") #{round.user2.name}
                   td #{round.seat}
-                  td: a.btn.btn-success(href="#{path}/") Yes
+                  td: a.btn.btn-success(href="#{path}/vote/#{round.user2.email}") Yes
 
       footer.panel-footer
         .row

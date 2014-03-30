@@ -2,13 +2,18 @@ mongoose = require 'mongoose'
 
 Match = new mongoose.Schema
   seat: Number
-  user1: String
-  user2: String
+  user1:
+    name: String
+    email: String
+    arity: Number
+    vote: Number
+  user2:
+    name: String
+    email: String
+    arity: Number
+    vote: Number
   round: Number
-  arity:
-    user1: Number
-    user2: Number
-    total: Number
+  arity: Number
   score:
     type: [ Number ], index: true
 ,
