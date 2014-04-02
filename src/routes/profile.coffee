@@ -40,46 +40,16 @@ class Profile
   like: (req, res) ->
     {email} = req.params
 
-    index = (_.pluck req.user.relations, 'email').indexOf email
-    if -1 isnt index
-      req.user.relations[index].status = 'PLZ'
-      req.user.save (err, thing) ->
-        if err then res.send err, 400
-        else res.send 200, 'updated'
-    else
-      User.findOneAndUpdate {email: req.user.email},
-        $push:
-          relations:
-            email: email
-            status: 'PLZ'
-            date: new Date()
-            notify: 0
-      , (err, user) ->
-        console.log util.inspect user
-        if err then res.send err, 400
-        else res.send 200, 'inserted'
+    req.user.relate email, 'PLZ', (err, wtvz) ->
+      if err then res.send err, 400
+      else res.send 200, 'like'
 
   unlike: (req, res) ->
     {email} = req.params
 
-    index = (_.pluck req.user.relations, 'email').indexOf email
-    if -1 isnt index
-      req.user.relations[index].status = 'KTHXBAI'
-      req.user.save (err, thing) ->
-        if err then res.send err, 400
-        else res.send 200, 'updated'
-    else
-      User.findOneAndUpdate {email: req.user.email},
-        $push:
-          relations:
-            email: email
-            status: 'KTHXBAI'
-            date: new Date()
-            notify: 0
-      , (err, user) ->
-        console.log util.inspect user
-        if err then res.send err, 400
-        else res.send 200, 'inserted'
+    req.user.relate email, 'KTHXBAI', (err, wtvz) ->
+      if err then res.send err, 400
+      else res.send 200, 'unlike'
 
   update: (req, res) ->
     {user, name, value} = req.body

@@ -3,6 +3,7 @@ mongoose = require 'mongoose'
 passportLocalMongoose = require 'passport-local-mongoose'
 
 Profile = require './Profile'
+_ = require 'lodash'
 
 User = new mongoose.Schema {
   email: String
@@ -23,24 +24,19 @@ User.plugin passportLocalMongoose, {
   usernameField: "email"
 }
 
-# User.methods.like = (email, callback) ->
-#   date = new Date()
-#   query =
-#     $push:
-#       like: {email, date}
-#     $pull:
-#       unlike: {email}
+User.methods.relate = (email, status, callback) ->
+  console.log 'poop'
+  index = (_.pluck @relations, 'email').indexOf email
+  if -1 isnt index
+    @relations[index].status = status
+    @save callback
+  else
+    date = new Date()
+    notify = 0
+    @update
+      $push:
+        relations: {email, status, date, notify}
+    , callback
 
-#   User.findOneAndUpdate {email}, query, callback
-
-# User.methods.unlike = (email, callback) ->
-#   date = new Date()
-#   query =
-#     $push:
-#       unlike: {email, date}
-#     $pull:
-#       like: {email}
-
-#   User.findOneAndUpdate {email}, query, callback
-
-module.exports = mongoose.model 'User', User
+try module.exports = mongoose.model 'User', User
+catch e then module.exports = mongoose.model 'User'
