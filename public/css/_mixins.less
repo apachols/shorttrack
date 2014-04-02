@@ -1,0 +1,26 @@
+.center-column() {
+  .make-row();
+  width: 96%;
+  margin: 0 auto;
+}
+
+.vac-unknown() {
+  &.text-center {
+    text-align: center;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -10px; /* Adjusts for spacing */
+    width: 10px;
+  }
+}
+
+.vac-inner() {
+  display: inline-block;
+  vertical-align: middle;
+  float: none !important;
+}

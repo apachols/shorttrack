@@ -8,8 +8,10 @@ block content
   .row: .col-xs-12
     each meetup in meetups
       .media
-        .pull-left
-          .media-object.date-view
+        .pull-left.mdate
+          .mdate-month= df(meetup.date, 'mmmm')
+          .mdate-date= df(meetup.date, 'dd')
+          .mdate-day= df(meetup.date, 'dddd')
 
         .media-body
           h4.media-heading #{meetup.name} - #{meetup.location} - #{meetup.date}
