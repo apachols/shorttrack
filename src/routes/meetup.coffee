@@ -15,8 +15,6 @@ class Meetup
     @app.get  '/meetup/:name/edit', @edit
     @app.post '/meetup/:name/update', @update
 
-    @app.get  '/meetup/:name/vote/:voted', @vote
-
     @app.get  '/meetup/:name/register', @register
     @app.get  '/meetup/:name/unregister', @unregister
 
@@ -100,28 +98,6 @@ class Meetup
       meetup.registered = _.uniq meetup.registered
       meetup.save()
       res.redirect "/meetup/#{name}"
-
-  vote: (req, res) ->
-    {user, params: {name, voted}, route: {path}} = req
-
-    MeetupModel.findOne {name}, (err, meetup) ->
-      console.error err if err
-
-      if meetup.matches
-
-        for match in meetup.matches
-
-          if match.user1.email == user.email and match.user2.email == voted
-            console.log "VOTED", match.user1.email, user.email,
-            match.user2.email, voted
-            match.user1.vote = 1
-          if match.user2.email == user.email and match.user1.email == voted
-            console.log "VOTED", match.user1.email, user.email,
-            match.user2.email, voted
-            match.user2.vote = 1
-
-        meetup.save (err, things)->
-          res.redirect "/meetup/#{name}"
 
   schedules: (req, res) ->
     {name} = req.params

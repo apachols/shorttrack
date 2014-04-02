@@ -23,7 +23,7 @@ block content
               span.input-group-addon #{ampm}
 
           .col-sm-6.col-md-5.col-lg-4
-            #js-date.disabled(data-date='#{meetup.date}', data-provide='datepicker'
+            #js-date.disabled(data-date=df(meetup.date, 'mm/dd/yyyy'), data-provide='datepicker'
               data-date-today-highlight='true')
 
         .row
