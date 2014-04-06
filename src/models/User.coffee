@@ -25,7 +25,6 @@ User.plugin passportLocalMongoose, {
 }
 
 User.methods.relate = (email, status, callback) ->
-  console.log 'poop'
   index = (_.pluck @relations, 'email').indexOf email
   if -1 isnt index
     @relations[index].status = status

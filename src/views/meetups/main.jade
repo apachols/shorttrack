@@ -39,13 +39,15 @@ block content
                 th Name
                 th Seat
                 th Like
+                th Unlike
             tbody
               each round in matches
                 tr
                   td #{round.round}
                   td: a(href="/admin/user/#{round.user2.email}") #{round.user2.name}
                   td #{round.seat}
-                  td: a.btn.btn-success(href="#{path}/vote/#{round.user2.email}") Yes
+                  td: a.btn.btn-success(href="/profile/like/#{round.user2.email}") Like
+                  td: a.btn.btn-danger(href="/profile/unlike/#{round.user2.email}") Unlike
 
       footer.panel-footer
         .row

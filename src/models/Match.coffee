@@ -6,12 +6,10 @@ Match = new mongoose.Schema
     name: String
     email: String
     arity: Number
-    vote: Number
   user2:
     name: String
     email: String
     arity: Number
-    vote: Number
   round: Number
   arity: Number
   score:

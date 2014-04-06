@@ -70,12 +70,10 @@ class Matcher
               name: left.profile[0].name
               email: left.email
               arity: 0
-              vote: 0
             user2:
               name: right.profile[0].name
               email: right.email
               arity: 0
-              vote: 0
             score: score
             round: 0
 
