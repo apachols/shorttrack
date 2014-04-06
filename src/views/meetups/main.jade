@@ -23,7 +23,7 @@ block content
               span.input-group-addon #{ampm}
 
           .col-sm-6.col-md-5.col-lg-4
-            #js-date.disabled(data-date='#{meetup.date}', data-provide='datepicker'
+            #js-date.disabled(data-date=df(meetup.date, 'mm/dd/yyyy'), data-provide='datepicker'
               data-date-today-highlight='true')
 
         .row
@@ -39,13 +39,15 @@ block content
                 th Name
                 th Seat
                 th Like
+                th Unlike
             tbody
               each round in matches
                 tr
                   td #{round.round}
-                  td: a(href="/admin/user/#{round.user2}") #{round.user2}
+                  td: a(href="/admin/user/#{round.user2.email}") #{round.user2.name}
                   td #{round.seat}
-                  td: a.btn.btn-success(href="#{path}/") Yes
+                  td: a.btn.btn-success(href="/profile/like/#{round.user2.email}") Like
+                  td: a.btn.btn-danger(href="/profile/unlike/#{round.user2.email}") Unlike
 
       footer.panel-footer
         .row

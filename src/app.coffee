@@ -2,8 +2,9 @@
 express = require 'express'
 validator = require 'express-validator'
 flash = require 'express-flash'
-tp = require 'tea-properties'
 util = require 'util'
+harp = require 'harp'
+tp = require 'tea-properties'
 df = require 'dateformat'
 
 # Passport
@@ -45,7 +46,6 @@ middleware = [
   passport.session()
   flash()
   app.router
-  express.static path.join __dirname, '../public'
 ]
 
 app.configure ->
@@ -53,8 +53,12 @@ app.configure ->
   app.set 'view engine', 'jade'
 
   app.use m for m in middleware
+
+  app.use '/public', express.static path.resolve __dirname, '../public'
+  app.use '/public', harp.mount path.resolve __dirname, '../public'
+
   app.locals
-    get: (obj, path, def = undefined) -> tp.get(obj, path) ? def
+    get: (obj, loc, def = undefined) -> tp.get(obj, loc) ? def
     inspect: util.inspect
     df: df
 

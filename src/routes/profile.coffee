@@ -11,6 +11,9 @@ class Profile
   constructor: (@app) ->
     @app.all /^\/profile/, @auth, @setup
 
+    @app.get '/profile/like/:email', @like
+    @app.get '/profile/unlike/:email', @unlike
+
     @app.get '/profile', @get
 
     @app.post '/profile/update', @update
@@ -20,7 +23,7 @@ class Profile
     next()
 
   auth: (req, res, next) ->
-    return res.send 'boo-urns', 401 unless req.isAuthenticated()
+    return res.send 401, 'boo-urns' unless req.isAuthenticated()
     next()
 
   get: (req, res) ->
@@ -34,8 +37,22 @@ class Profile
       {genders} = results
       res.render 'profile', {user, genders}
 
+  like: (req, res) ->
+    {email} = req.params
+
+    req.user.relate email, 'PLZ', (err, wtvz) ->
+      if err then res.send err, 400
+      else res.send 200, 'like'
+
+  unlike: (req, res) ->
+    {email} = req.params
+
+    req.user.relate email, 'KTHXBAI', (err, wtvz) ->
+      if err then res.send err, 400
+      else res.send 200, 'unlike'
+
   update: (req, res) ->
-    {name, value} = req.body
+    {user, name, value} = req.body
 
     p = req.user.profile.pop() or new ProfileModel
 

@@ -37,7 +37,14 @@ describe 'src/routes/main.coffee', ->
   describe '#get /index', ->
     it 'should display error if error', (done) ->
       fakeerror = "everything is wrong"
-      gently.expect MeetupModel, 'find', (args, callback) ->
+      fakequery = {}
+      gently.expect MeetupModel, 'find', (arg1) ->
+        fakequery
+
+      gently.expect fakequery, 'sort', (arg1) ->
+        fakequery
+
+      gently.expect fakequery, 'find', (callback) ->
         callback fakeerror, null
 
       res.send = (code, error) ->
@@ -49,7 +56,14 @@ describe 'src/routes/main.coffee', ->
 
     it 'should display meetups if found', (done) ->
       fakemeetups = [{},{}]
-      gently.expect MeetupModel, 'find', (args, callback) ->
+      fakequery = {}
+      gently.expect MeetupModel, 'find', (arg1) ->
+        fakequery
+
+      gently.expect fakequery, 'sort', (arg1) ->
+        fakequery
+
+      gently.expect fakequery, 'find', (callback) ->
         callback null, fakemeetups
 
       res.render = (view, meetups) ->

@@ -43,25 +43,40 @@ class Meetup
       if err then res.send err, 400
       else res.redirect "/meetup/#{m.name}"
 
-  edit: (args...) => @name args...
-  name: (req, res) =>
+  edit: (req, res) =>
     {params: {name, user}, route: {path}} = req
     user ?= req.user?.email
 
-    # This is a little ugly
-    view = @stripView path
-    if view is 'user' then view = 'name'
-
-
-
     MeetupModel.findOne {name}, (err, meetup) =>
       done = (matches = {}) ->
-        res.render "meetups/#{view}", {meetup, matches}
+        res.render "meetups/edit", {meetup, matches}
 
       return res.send 404, err if err
 
-      @app.locals.registered = meetup.isRegistered req.user.email
-      if user then meetup.getScheduleUser user, done else do done
+      @app.locals.registered = meetup.isRegistered user
+      do done
+
+  name: (req, res) =>
+    {params: {name, user}, route: {path}} = req
+
+    if user
+      email = user
+    else
+      email = req.user?.email
+
+    allowed = @app.locals.allowed = !!email
+
+    MeetupModel.findOne {name}, (err, meetup) =>
+      done = (matches = {}) ->
+        res.render "meetups/main", {meetup, matches}
+
+      return res.send 404, err if err
+      registered = @app.locals.registered = meetup.isRegistered email
+
+      if allowed and registered
+        meetup.getScheduleUser email, done
+      else
+        do done
 
   stripView: (path) -> "#{basename path}".replace /\:/, ''
 

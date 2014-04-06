@@ -29,13 +29,13 @@ class BlossomScheduler
     roster = []
 
     for match in matches
-      index1 = roster.indexOf(match.user1)
+      index1 = roster.indexOf(match.user1.email)
       if index1 == -1
-        roster.push match.user1
+        roster.push match.user1.email
 
-      index2 = roster.indexOf(match.user2)
+      index2 = roster.indexOf(match.user2.email)
       if index2 == -1
-        roster.push match.user2
+        roster.push match.user2.email
 
     ii = 0
     while ii < roster.length
@@ -48,26 +48,12 @@ class BlossomScheduler
 
     for match in matches
 
-      index1 = roster.indexOf(match.user1)
-      index2 = roster.indexOf(match.user2)
+      index1 = roster.indexOf(match.user1.email)
+      index2 = roster.indexOf(match.user2.email)
 
       matrix[index1][index2] = 1
       matrix[index2][index1] = 1
 
     callback null, {matrix,roster}
-
-  # return errors generated during the scheduling process
-  getErrors: () -> @errors
-
-  # create   a new error
-  # left:    a User
-  # right:   a User
-  # message: a string
-  createError: (left, right, message) ->
-    return {
-      user1: left?.email
-      user2: right?.email
-      message: message
-    }
 
 module.exports = BlossomScheduler
