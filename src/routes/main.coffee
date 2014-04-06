@@ -21,7 +21,7 @@ class Main
     do next
 
   index: (req, res) ->
-    Meetup.find {}, (err, meetups) ->
+    Meetup.find({}).sort({date: 1}).find (err, meetups) ->
       return res.send 500, err if err
       res.render 'index', {meetups}
 
