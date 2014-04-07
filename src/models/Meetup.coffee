@@ -36,6 +36,8 @@ Meetup.methods.getScheduleAll = (callback) ->
 
 Meetup.methods.getScheduleUser = (email, callback) ->
   filtered = @matches.filter (match) ->
+    if match.round is 0
+      return false
     if -1 != [match.user1.email, match.user2.email].indexOf email
       return true
     return false

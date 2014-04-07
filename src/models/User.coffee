@@ -6,6 +6,7 @@ Profile = require './Profile'
 _ = require 'lodash'
 
 User = new mongoose.Schema {
+  admin: Boolean
   email: String
   profile: [Profile.schema]
   relations: [ new mongoose.Schema {

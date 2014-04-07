@@ -31,7 +31,7 @@ block content
             h3 Description
             .well.well-sm #{meetup.description}
 
-        if matches.length
+        if rounds
           table.table
             thead
               tr
@@ -41,13 +41,20 @@ block content
                 th Like
                 th Unlike
             tbody
-              each round in matches
+              each round in rounds
                 tr
-                  td #{round.round}
-                  td: a(href="/admin/user/#{round.user2.email}") #{round.user2.name}
-                  td #{round.seat}
-                  td: a.btn.btn-success(href="/profile/like/#{round.user2.email}") Like
-                  td: a.btn.btn-danger(href="/profile/unlike/#{round.user2.email}") Unlike
+                  if round.round === '-'
+                    td: z
+                    td: z
+                    td: z
+                    td: z
+                    td: z
+                  else
+                    td #{round.round}
+                    td: a(href="/admin/user/#{round.user2.email}") #{round.partner.name}
+                    td #{round.seat}
+                    td: a.btn.btn-success(href="/profile/like/#{round.partner.email}") Like
+                    td: a.btn.btn-danger(href="/profile/unlike/#{round.partner.email}") Unlike
 
       footer.panel-footer
         .row
