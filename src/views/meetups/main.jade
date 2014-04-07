@@ -49,18 +49,20 @@ block content
                     td #{round.seat}
                     td(colspan=2) -
                   else
-                    td: a(href="/admin/user/#{round.user2.email}") #{round.partner.name}
+                    td: a(href="/admin/user/#{round.partner.email}") #{round.partner.name}
                     td #{round.seat}
-                    td: a.btn.btn-success(href="/profile/like/#{round.partner.email}") Like
-                    td: a.btn.btn-danger(href="/profile/unlike/#{round.partner.email}") Unlike
+                    td(colspan=2, data-partner="#{round.partner.email}")
+                      each vote in round.votes
+                        input(type="radio", name="vote-#{round.round}", value="#{vote.value}", checked=vote.checked)
 
-      footer.panel-footer
-        .row
-          .col-sm-12.text-right
-            if registered
-              a.btn.btn-danger(href="#{path}/unregister") Unsubscribe!
-            else
-              a.btn.btn-primary(href="#{path}/register") Sign Me Up
+      if allowed
+        footer.panel-footer
+          .row
+            .col-sm-12.text-right
+              if registered
+                a.btn.btn-danger(href="#{path}/unregister") Unsubscribe!
+              else
+                a.btn.btn-primary(href="#{path}/register") Sign Me Up
 
   pre= inspect(meetup)
 
@@ -68,7 +70,9 @@ block scripts
   script
     :coffee
       $ ->
-        $('#js-date')
-          .datepicker()
-          .find('table').addClass('table')
+        $('input[name^=vote]').on 'change', ->
+          {parent, val} = $ this
+          partner = $(this).parent().data 'partner'
+          $.getJSON "/profile/vote/#{partner}/#{$(this).val()}", (err, json) ->
+            console.error err if err
 

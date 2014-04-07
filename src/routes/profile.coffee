@@ -11,8 +11,7 @@ class Profile
   constructor: (@app) ->
     @app.all /^\/profile/, @auth, @setup
 
-    @app.get '/profile/like/:email', @like
-    @app.get '/profile/unlike/:email', @unlike
+    @app.get '/profile/vote/:email/:vote', @vote
 
     @app.get '/profile', @get
 
@@ -37,19 +36,12 @@ class Profile
       {genders} = results
       res.render 'profile', {user, genders}
 
-  like: (req, res) ->
-    {email} = req.params
+  vote: (req, res) ->
+    {email, vote} = req.params
 
-    req.user.relate email, 'PLZ', (err, wtvz) ->
-      if err then res.send err, 400
-      else res.send 200, 'like'
-
-  unlike: (req, res) ->
-    {email} = req.params
-
-    req.user.relate email, 'KTHXBAI', (err, wtvz) ->
-      if err then res.send err, 400
-      else res.send 200, 'unlike'
+    req.user.relate email, vote, (err, wtvz) ->
+      if err then res.send 500
+      else res.send 200
 
   update: (req, res) ->
     {user, name, value} = req.body

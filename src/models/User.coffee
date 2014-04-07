@@ -25,6 +25,11 @@ User.plugin passportLocalMongoose, {
   usernameField: "email"
 }
 
+User.methods.relation = (email) ->
+  for person in @relations
+    return person.status if person.email is email
+  null
+
 User.methods.relate = (email, status, callback) ->
   index = (_.pluck @relations, 'email').indexOf email
   if -1 isnt index

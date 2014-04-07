@@ -67,16 +67,22 @@ class Meetup
     allowed = @app.locals.allowed = !!email
 
     MeetupModel.findOne {name}, (err, meetup) =>
-      done = (matches = {}) ->
+      done = (matches = {}) =>
 
         # preprocess matches for display as schedule
         rounds = []
 
         for match in matches
+
           if email is match.user1.email
             match.partner = match.user2
           else
             match.partner = match.user1
+
+          vote = req.user.relation match.partner.email
+
+          match.votes = @buildRadios ['PLZ', 'MEH', 'BAI'], vote
+
           rounds[match.round-1] = match
 
         for round, i in rounds
@@ -91,6 +97,11 @@ class Meetup
         meetup.getScheduleUser email, done
       else
         do done
+
+  buildRadios: (array, vote) ->
+    for value in array
+      checked: vote is value
+      value: value
 
   stripView: (path) -> "#{basename path}".replace /\:/, ''
 
