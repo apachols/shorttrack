@@ -31,7 +31,7 @@ block content
             h3 Description
             .well.well-sm #{meetup.description}
 
-        if rounds
+        if rounds.length
           table.table
             thead
               tr
@@ -43,14 +43,12 @@ block content
             tbody
               each round in rounds
                 tr
-                  if round.round === '-'
-                    td: z
-                    td: z
-                    td: z
-                    td: z
-                    td: z
+                  td #{round.round}
+                  if round.seat === '-'
+                    td Break
+                    td #{round.seat}
+                    td(colspan=2) -
                   else
-                    td #{round.round}
                     td: a(href="/admin/user/#{round.user2.email}") #{round.partner.name}
                     td #{round.seat}
                     td: a.btn.btn-success(href="/profile/like/#{round.partner.email}") Like

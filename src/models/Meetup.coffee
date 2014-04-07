@@ -29,7 +29,12 @@ Meetup.methods.isRegistered = (email) ->
   return -1 isnt @registered.indexOf email
 
 Meetup.methods.getScheduleAll = (callback) ->
-  callback @matches.sort (a,b)->
+  filtered = @matches.filter (match) ->
+    if match.round is 0
+      return false
+    return true
+
+  callback filtered.sort (a,b)->
     return -1 if a.round < b.round
     return 1 if a.round > b.round
     return 0

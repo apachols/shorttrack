@@ -68,28 +68,19 @@ class Meetup
 
     MeetupModel.findOne {name}, (err, meetup) =>
       done = (matches = {}) ->
+
         # preprocess matches for display as schedule
-        round = 1
         rounds = []
+
         for match in matches
-          # console.dir round
-          # console.dir match.round
-
-          # if match.round < round
-          #   rounds.push
-          #     round: "-"
-          #   round++
-          #   continue
-
-          # if match.round is round
           if email is match.user1.email
             match.partner = match.user2
           else
             match.partner = match.user1
+          rounds[match.round-1] = match
 
-          rounds.push match
-
-        console.dir rounds
+        for round, i in rounds
+          rounds[i] = {round:i+1, seat:'-'} unless round
 
         res.render "meetups/main", {meetup, rounds}
 
