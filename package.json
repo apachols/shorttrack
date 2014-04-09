@@ -19,7 +19,8 @@
     "express-flash": "~0.0.2",
     "tea-properties": "~0.1.1",
     "async": "~0.2.10",
-    "dateformat": "~1.0.7-1.2.3"
+    "dateformat": "~1.0.7-1.2.3",
+    "harp": "^0.12.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

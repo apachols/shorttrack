@@ -3,6 +3,7 @@ express = require 'express'
 validator = require 'express-validator'
 flash = require 'express-flash'
 util = require 'util'
+path = require 'path'
 harp = require 'harp'
 tp = require 'tea-properties'
 df = require 'dateformat'
@@ -14,8 +15,6 @@ LocalStrategy = require('passport-local').Strategy
 # Mongodb
 mongoose = require 'mongoose'
 Mongostore = require('connect-mongostore') express
-
-path = require 'path'
 
 # Initalize app
 app = express()
@@ -65,9 +64,13 @@ app.configure ->
 app.configure 'development', ->
   app.use express.errorHandler {dumpExceptions: true, showStack: true}
   app.locals.pretty = true
+  app.set 'domain', 'localhost'
+  app.set 'port', 3000
 
 app.configure 'production', ->
   app.use express.errorHandler()
+  app.set 'domain', 'shorttrack.me'
+  app.set 'port', 80
 
 User = require('./models/user')
 passport.use User.createStrategy()
@@ -76,7 +79,7 @@ passport.deserializeUser User.deserializeUser()
 
 require('./routes') app
 
-app.listen 3000
-console.log 'Listenting on port 3000'
+app.listen (app.get 'port'), (app.get 'domain')
+console.log "Listenting to #{app.get 'domain'}:#{app.get 'port'}"
 
 module.exports = app
