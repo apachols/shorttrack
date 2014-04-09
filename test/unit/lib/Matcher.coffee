@@ -2,11 +2,11 @@
 require 'should'
 gently = new(require 'gently')
 
-Matcher = require '../../../src/lib/Matcher'
-MatchModel = require '../../../src/models/Match'
-MeetupModel = require '../../../src/models/Meetup'
+Matcher = require '../../../src/lib/matcher'
+MatchModel = require '../../../src/models/match'
+MeetupModel = require '../../../src/models/meetup'
 
-describe 'src/lib/Matcher.coffee', ->
+describe 'src/lib/matcher.coffee', ->
 
   testMeetup =
     name: 'blah'

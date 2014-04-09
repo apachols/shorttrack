@@ -12,7 +12,7 @@ app =
   post: ->
 
 # Test route
-UserModel = require '../../../../src/models/User'
+UserModel = require '../../../../src/models/user'
 User = require('../../../../src/routes/admin/user') app
 
 # Test suite

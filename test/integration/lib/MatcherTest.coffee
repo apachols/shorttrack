@@ -4,9 +4,9 @@ mongoose.connect(
   'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
 )
 
-Matcher = require '../../../src/lib/Matcher'
+Matcher = require '../../../src/lib/matcher'
 
-MeetupModel = require '../../../src/models/Meetup'
+MeetupModel = require '../../../src/models/meetup'
 
 MeetupModel.findOne {name: 'Segan Says'}, (err, meetup)->
   m = new Matcher(meetup)

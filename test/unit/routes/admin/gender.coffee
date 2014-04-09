@@ -12,7 +12,7 @@ app =
   post: ->
 
 # Test route
-GenderModel = require '../../../../src/models/Gender'
+GenderModel = require '../../../../src/models/gender'
 Gender = require('../../../../src/routes/admin/gender') app
 
 # Test suite

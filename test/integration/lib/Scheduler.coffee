@@ -4,9 +4,9 @@ mongoose.connect(
   'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
 )
 
-MeetupModel = require '../../../src/models/Meetup'
+MeetupModel = require '../../../src/models/meetup'
 
-Scheduler = require '../../../src/lib/Scheduler'
+Scheduler = require '../../../src/lib/scheduler'
 
 MeetupModel.findOne {name: 'Segan Says'}, (err, meetup)->
   console.error err if err

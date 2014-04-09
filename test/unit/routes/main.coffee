@@ -9,7 +9,7 @@ app =
   get: ->
 
 # Test route
-MeetupModel = require '../../../src/models/Meetup'
+MeetupModel = require '../../../src/models/meetup'
 Main = require('../../../src/routes/main') app
 
 # Test suite
