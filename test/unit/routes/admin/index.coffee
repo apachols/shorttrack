@@ -21,6 +21,8 @@ describe 'src/routes/admin.coffee', ->
   describe 'auth', ->
     it 'should run next() when authenticated', (done) ->
       req.isAuthenticated = -> true
+      req.user =
+        admin: true
 
       Admin.auth req, res, done
 

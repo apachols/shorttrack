@@ -7,7 +7,6 @@ class Routes
       'login'
       'profile'
       'meetup'
-      'schedule'
     ]
 
     require("./#{m}") @app for m in modules

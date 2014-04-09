@@ -17,7 +17,8 @@ class Admin
     Gender = require('./Gender') @app
 
   auth: (req, res, next) ->
-    return res.send 401, 'boo-urns' unless req.isAuthenticated()
+    authenticated = req.isAuthenticated() and req.user?.admin
+    return res.send 401, 'boo-urns' unless authenticated
     next()
 
   home: (req, res) ->
