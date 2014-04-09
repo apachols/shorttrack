@@ -1,5 +1,5 @@
-User = require('../models/User')
-Profile = require('../models/Profile')
+User = require('../models/user')
+Profile = require('../models/profile')
 
 class Register
   constructor: (@app) ->

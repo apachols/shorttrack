@@ -2,7 +2,7 @@ mongoose = require 'mongoose'
 
 passportLocalMongoose = require 'passport-local-mongoose'
 
-Profile = require './Profile'
+Profile = require './profile'
 _ = require 'lodash'
 
 User = new mongoose.Schema {

@@ -1,11 +1,11 @@
-MeetupModel = require '../../src/models/Meetup'
+MeetupModel = require '../../src/models/meetup'
 _ = require "lodash"
 
 shuffle = require '../../src/lib/shuffle'
 
-GreedyStrategy = require './GreedyStrategy'
-People = require './People'
-Round = require './Round'
+GreedyStrategy = require './greedyStrategy'
+People = require './people'
+Round = require './round'
 
 # Maybe the way to make this testable is to have an
 # round object be responsible for all stats tracking in a round

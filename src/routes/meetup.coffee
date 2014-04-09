@@ -1,6 +1,6 @@
 MeetupModel = require '../models/meetup'
-Matcher     = require '../lib/Matcher'
-Scheduler   = require '../lib/Scheduler'
+Matcher     = require '../lib/matcher'
+Scheduler   = require '../lib/scheduler'
 
 {inspect}   = require 'util'
 {basename}  = require 'path'

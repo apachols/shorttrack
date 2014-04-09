@@ -1,6 +1,6 @@
 mongoose = require 'mongoose'
 
-Match = require './Match'
+Match = require './match'
 
 Meetup = new mongoose.Schema
   name: String

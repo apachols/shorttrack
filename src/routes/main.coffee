@@ -1,4 +1,4 @@
-Meetup = require '../models/Meetup'
+Meetup = require '../models/meetup'
 
 class Main
   constructor: (@app) ->

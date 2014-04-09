@@ -1,6 +1,6 @@
-User = require '../models/User'
-Gender = require '../models/Gender'
-ProfileModel = require '../models/Profile'
+User = require '../models/user'
+Gender = require '../models/gender'
+ProfileModel = require '../models/profile'
 
 _ = require 'lodash'
 tp = require 'tea-properties'

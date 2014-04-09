@@ -1,5 +1,5 @@
 mongoose = require 'mongoose'
-Gender = require './Gender'
+Gender = require './gender'
 
 # TODO - make the question schema
 Questions = new mongoose.Schema

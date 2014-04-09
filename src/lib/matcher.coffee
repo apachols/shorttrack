@@ -1,6 +1,6 @@
-UserModel = require '../../src/models/User'
-MatchModel = require '../../src/models/Match'
-MeetupModel = require '../../src/models/Meetup'
+UserModel = require '../../src/models/user'
+MatchModel = require '../../src/models/match'
+MeetupModel = require '../../src/models/meetup'
 
 # The matcher takes a meetup record, pulls all users registered for that meetup,
 # and generates Match records for all users who are able to match

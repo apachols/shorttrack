@@ -1,4 +1,4 @@
-MatchModel = require '../../src/models/Match'
+MatchModel = require '../../src/models/match'
 _ = require "lodash"
 
 shuffle = require '../../src/lib/shuffle'
