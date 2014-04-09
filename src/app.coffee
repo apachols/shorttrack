@@ -69,7 +69,7 @@ app.configure 'development', ->
 app.configure 'production', ->
   app.use express.errorHandler()
 
-User = require('./models/User')
+User = require('./models/user')
 passport.use User.createStrategy()
 passport.serializeUser User.serializeUser()
 passport.deserializeUser User.deserializeUser()
