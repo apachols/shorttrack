@@ -17,22 +17,23 @@ head
 
 
 //- body (implicit in HTML5)
-.navbar.navbar-default(role="navigation")
-  .navbar-header
-    button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    a.navbar-brand(href="/") Short Track Speed Dating
+.navbar.navbar-default.navbar-static-top(role="navigation")
+  .container
+    .navbar-header
+      button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="/") Short Track Speed Dating
 
-  #bs-example-navbar-collapse-1.collapse.navbar-collapse
-    ul.nav.navbar-nav.navbar-right
-      if my
-        li: a(href="/logout") Log Out
-      else
-        li: a(href="/register") Register
-        li.divider
-        li: a(href="/login") Log In
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        if my
+          li: a(href="/logout") Log Out
+        else
+          li: a(href="/register") Register
+          li.divider
+          li: a(href="/login") Log In
 
 .container
   if messages.error

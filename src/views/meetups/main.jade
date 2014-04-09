@@ -38,22 +38,39 @@ block content
                 th Round
                 th Name
                 th Seat
-                th Like
-                th Unlike
+                th Vote
             tbody
               each round in rounds
-                tr
+                tr.vac
                   td #{round.round}
                   if round.seat === '-'
-                    td Break
-                    td #{round.seat}
-                    td(colspan=2) -
+                    td(colspan="3") Break
                   else
                     td: a(href="/admin/user/#{round.partner.email}") #{round.partner.name}
                     td #{round.seat}
-                    td(colspan=2, data-partner="#{round.partner.email}")
-                      each vote in round.votes
-                        input(type="radio", name="vote-#{round.round}", value="#{vote.value}", checked=vote.checked)
+                    td.votes(data-partner="#{round.partner.email}")
+
+                      input.vote(name="vote-#{round.round}", value="plz", id="vote-plz-#{round.round}",
+                        checked=(round.vote === 'plz'), type="radio")
+                      label.fa-stack(for="vote-bai-#{round.round}")
+                        i.fa.fa-heart.fa-stack-2x
+
+                      input.vote(name="vote-#{round.round}", value="meh" id="vote-meh-#{round.round}",
+                        checked=(round.vote === 'meh' || round.vote === null), type="radio")
+                      label.fa-stack(for="vote-plz-#{round.round}")
+                        i.fa.fa-heart-o.fa-stack-2x
+
+                      input.vote(name="vote-#{round.round}", value="bai" id="vote-bai-#{round.round}",
+                        checked=(round.vote === 'bai'), type="radio")
+                      label.fa-stack(for="vote-meh-#{round.round}")
+                        i.fa.fa-heart.fa-stack-2x
+                        i.fa.fa-bolt.fa-stack-2x
+
+
+                      //- each key, i in round.votes
+                      //-   - var vote = round.votes[key]
+                      //-   input(type="radio", id="fav-#{key}" name="vote-#{round.round}", value="#{key}", checked=vote.checked)
+                      //-   label.fa-stack.fa-lg(for="fav-#{vote.target}")!= vote.content
 
       if allowed
         footer.panel-footer
@@ -64,7 +81,7 @@ block content
               else
                 a.btn.btn-primary(href="#{path}/register") Sign Me Up
 
-  pre= inspect(meetup)
+  pre= inspect(rounds)
 
 block scripts
   script

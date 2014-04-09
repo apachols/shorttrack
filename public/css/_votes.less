@@ -1,0 +1,26 @@
+.vote {
+  display: none;
+  margin: 0;
+
+  & + .fa-stack {
+    display: none;
+    margin-bottom: 0;
+  }
+
+  &:checked + .fa-stack {
+    display: inline-block;
+  }
+}
+
+.votes {
+  .user-select(none);
+
+  .fa-heart, .fa-heart-o {
+    color: red;
+  }
+
+  .fa-bolt {
+    color: @gray-dark;
+    margin-left: 2px;
+  }
+}
