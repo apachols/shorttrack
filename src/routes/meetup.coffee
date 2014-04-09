@@ -9,26 +9,35 @@ _           = require 'lodash'
 class Meetup
   constructor: (@app) ->
 
-    @app.get  '/meetups/add', @add
-    @app.post '/meetups/create', @create
+    @app.get  '/meetups/add', @authAdmin, @add
+    @app.post '/meetups/create', @authAdmin, @create
 
-    @app.get  '/meetup/:name/edit', @edit
-    @app.post '/meetup/:name/update', @update
+    @app.get  '/meetup/:name/edit', @auth, @edit
+    @app.post '/meetup/:name/update', @auth, @update
 
-    @app.get  '/meetup/:name/register', @register
-    @app.get  '/meetup/:name/unregister', @unregister
+    @app.get  '/meetup/:name/register', @auth, @register
+    @app.get  '/meetup/:name/unregister', @auth, @unregister
 
-    @app.get  '/meetup/:name/schedules', @schedules
-    @app.get  '/meetup/:name/generate', @generate
+    @app.get  '/meetup/:name/schedules', @authAdmin, @schedules
+    @app.get  '/meetup/:name/generate', @authAdmin, @generate
 
-    @app.get  '/meetup/:name/schedule/:user', @name
+    @app.get  '/meetup/:name/schedule/:user', @authAdmin, @name
 
-    @app.get  '/meetups', @index
-    @app.get  '/meetup/:name', @name
+    @app.get  '/meetups', @authAdmin, @index
+    @app.get  '/meetup/:name', @auth, @name
 
     @app.locals
       dateformat: 'mm/dd/yyyy'
       timeformat: 'hh:mm TT'
+
+  authAdmin: (req, res, next) ->
+    authenticated = req.isAuthenticated() and req.user?.admin
+    return res.send 401, 'boo-urns' unless authenticated
+    next()
+
+  auth: (req, res, next) ->
+    return res.send 401, 'boo-urns' unless req.isAuthenticated()
+    next()
 
   index: (req, res) ->
     MeetupModel.find {}, (err, meetups) ->

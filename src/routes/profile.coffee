@@ -11,11 +11,11 @@ class Profile
   constructor: (@app) ->
     @app.all /^\/profile/, @auth, @setup
 
-    @app.get '/profile/vote/:email/:vote', @vote
+    @app.get '/profile/vote/:email/:vote', @auth, @vote
 
     @app.get '/profile', @get
 
-    @app.post '/profile/update', @update
+    @app.post '/profile/update', @auth, @update
 
   setup: (req, res, next) ->
     res.locals { brand: 'Profile' }
