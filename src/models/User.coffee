@@ -25,6 +25,7 @@ User.plugin passportLocalMongoose, {
   usernameField: "email"
 }
 
+# This is called in a loop!  Should instead return map/object
 User.methods.relation = (email) ->
   for person in @relations
     return person.status if person.email is email

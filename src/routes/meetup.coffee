@@ -24,7 +24,7 @@ class Meetup
     @app.get  '/meetup/:name/schedule/:user', @authAdmin, @name
 
     @app.get  '/meetups', @authAdmin, @index
-    @app.get  '/meetup/:name', @auth, @name
+    @app.get  '/meetup/:name', @name
 
     @app.locals
       dateformat: 'mm/dd/yyyy'
