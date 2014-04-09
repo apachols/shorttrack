@@ -1,4 +1,4 @@
-UserModel = require '../../models/User'
+UserModel = require '../../models/user'
 util = require 'util'
 
 # routes for /admin/user/*

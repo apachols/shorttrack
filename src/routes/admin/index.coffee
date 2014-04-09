@@ -1,4 +1,4 @@
-UserModel = require '../../models/User'
+UserModel = require '../../models/user'
 util = require 'util'
 
 class Admin
@@ -13,8 +13,8 @@ class Admin
     @app.get '/admin', @home
 
     # Set up all the /admin/user routes!
-    User = require('./User') @app
-    Gender = require('./Gender') @app
+    User = require('./user') @app
+    Gender = require('./gender') @app
 
   auth: (req, res, next) ->
     authenticated = req.isAuthenticated() and req.user?.admin
