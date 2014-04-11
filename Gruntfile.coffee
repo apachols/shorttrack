@@ -7,8 +7,10 @@ module.exports = (grunt) ->
 
     targets:
       src: ['src/**/*.coffee']
-      helpers: ['test/helpers/**/*.coffee']
-      unittest: ['test/unit/**/*.coffee']
+      unittest: [
+        'test/unit/**/*.coffee'
+        'test/helpers/**/*.coffee'
+      ]
       integrationtest: ['test/integration/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
 
@@ -51,9 +53,6 @@ module.exports = (grunt) ->
 
       unit:
         src: '<%= targets.unittest %>'
-
-      helpers:
-        src: '<%= targets.helpers %>'
 
     watch:
       src:
@@ -106,7 +105,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'test', [
     'coffeelint'
     'mochaTest:unit'
-    'mochaTest:helpers'
   ]
 
   grunt.registerTask 'dev', [
