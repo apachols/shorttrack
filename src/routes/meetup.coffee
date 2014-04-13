@@ -1,6 +1,7 @@
 MeetupModel = require '../models/meetup'
 Matcher     = require '../lib/matcher'
 Scheduler   = require '../lib/scheduler'
+auth        = require '../helpers/authenticator'
 
 {inspect}   = require 'util'
 {basename}  = require 'path'
@@ -9,35 +10,26 @@ _           = require 'lodash'
 class Meetup
   constructor: (@app) ->
 
-    @app.get  '/meetups/add', @authAdmin, @add
-    @app.post '/meetups/create', @authAdmin, @create
+    @app.get  '/meetups/add', auth.admin, @add
+    @app.post '/meetups/create', auth.admin, @create
 
-    @app.get  '/meetup/:name/edit', @auth, @edit
-    @app.post '/meetup/:name/update', @auth, @update
+    @app.get  '/meetup/:name/edit', auth.user, @edit
+    @app.post '/meetup/:name/update', auth.user, @update
 
-    @app.get  '/meetup/:name/register', @auth, @register
-    @app.get  '/meetup/:name/unregister', @auth, @unregister
+    @app.get  '/meetup/:name/register', auth.user, @register
+    @app.get  '/meetup/:name/unregister', auth.user, @unregister
 
-    @app.get  '/meetup/:name/schedules', @authAdmin, @schedules
-    @app.get  '/meetup/:name/generate', @authAdmin, @generate
+    @app.get  '/meetup/:name/schedules', auth.admin, @schedules
+    @app.get  '/meetup/:name/generate', auth.admin, @generate
 
-    @app.get  '/meetup/:name/schedule/:user', @authAdmin, @name
+    @app.get  '/meetup/:name/schedule/:user', auth.admin, @name
 
-    @app.get  '/meetups', @authAdmin, @index
+    @app.get  '/meetups', auth.admin, @index
     @app.get  '/meetup/:name', @name
 
     @app.locals
       dateformat: 'mm/dd/yyyy'
       timeformat: 'hh:mm TT'
-
-  authAdmin: (req, res, next) ->
-    authenticated = req.isAuthenticated() and req.user?.admin
-    return res.send 401, 'boo-urns' unless authenticated
-    next()
-
-  auth: (req, res, next) ->
-    return res.send 401, 'boo-urns' unless req.isAuthenticated()
-    next()
 
   index: (req, res) ->
     MeetupModel.find {}, (err, meetups) ->

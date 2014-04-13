@@ -55,6 +55,7 @@ app.configure ->
 
   app.use '/public', express.static path.resolve __dirname, '../public'
   app.use '/public', harp.mount path.resolve __dirname, '../public'
+  app.use 'favicon', path.resolve __dirname, '../public/favicon.ico'
 
   app.locals
     get: (obj, loc, def = undefined) -> tp.get(obj, loc) ? def

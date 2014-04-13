@@ -7,7 +7,10 @@ module.exports = (grunt) ->
 
     targets:
       src: ['src/**/*.coffee']
-      unittest: ['test/unit/**/*.coffee']
+      unittest: [
+        'test/unit/**/*.coffee'
+        'test/helpers/**/*.coffee'
+      ]
       integrationtest: ['test/integration/**/*.coffee']
       gruntfile: ['Gruntfile.coffee']
 
@@ -99,7 +102,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'integration', ['coffeelint', 'mochaTest:integration']
 
-  grunt.registerTask 'test', ['coffeelint', 'mochaTest:unit']
+  grunt.registerTask 'test', [
+    'coffeelint'
+    'mochaTest:unit'
+  ]
 
   grunt.registerTask 'dev', [
     'use-the-force'
