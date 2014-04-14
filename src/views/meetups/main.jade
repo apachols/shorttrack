@@ -6,9 +6,16 @@ block head
 
 block content
   .row: .col-sm-8.col-sm-offset-2
-    .panel.panel-default
+    if my && my.admin
+      section.panel.panel-info
+        header.panel-heading: h2 Admin Controls
+        .panel-body
+          ul.list-unstyled
+            li: h4: a(href="#{path}/schedules") Full Schedule
+            li: h4: a(href="#{path}/generate") Generate new schedule
+    section.panel.panel-default
       header.panel-heading: b #{meetup.name}
-      section.panel-body
+      .panel-body
         .row
           .col-sm-6.col-md-7.col-lg-8
             h3.top Location
@@ -32,6 +39,7 @@ block content
             .well.well-sm #{meetup.description}
 
         if rounds.length
+          h4 Schedule for #{email}
           table.table
             thead
               tr
