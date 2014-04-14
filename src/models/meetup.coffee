@@ -20,10 +20,15 @@ Meetup = new mongoose.Schema
   description: String
   location: String
   registered: [ String ]
+  paid: [ String ]
+
   matches: [ Match.schema ]
 ,
   collection: 'meetup'
   strict: 'throw'
+
+Meetup.statics =
+  all: (cb) -> @find().exec cb
 
 Meetup.methods.isRegistered = (email) ->
   return -1 isnt @registered.indexOf email

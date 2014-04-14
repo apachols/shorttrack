@@ -5,28 +5,25 @@ MeetupModel = require '../../src/models/meetup'
 # The matcher takes a meetup record, pulls all users registered for that meetup,
 # and generates Match records for all users who are able to match
 class Matcher
-  constructor: (meetup) ->
-    @meetup = meetup
+  constructor: (@meetup) ->
     @errors = []
 
   # we expect stanadard (error, result) args on callback
-  execute: (callback) ->
+  execute: (pool, callback) ->
     console.log '@execute'
 
-    @getUsers (err, users) =>
+    @getUsers pool, (err, users) =>
       console.log '@getUsers callback'
       callback err, null if err
       @generateMatches users, callback
 
   # find all users (registered for this meetup)
-  getUsers: (callback) ->
+  getUsers: (pool, callback) ->
     console.log '@getUsers'
 
     # only schedule dates for registered users.
     # eventually only do this for checked/in paid users
-    findSpec =
-      email:
-        $in: @meetup.registered
+    findSpec = email: $in: @meetup[pool]
 
     UserModel.find findSpec, (err, users) ->
       console.log 'model.find callback'

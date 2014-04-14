@@ -1,4 +1,4 @@
-pass = require 'passport'
+{authenticate} = require 'passport'
 
 class Login
 
@@ -12,7 +12,7 @@ class Login
       my: req.user
     }
 
-  auth: pass.authenticate 'local', {
+  auth: authenticate 'local', {
     successRedirect: '/'
     failureRedirect: '/login'
   }

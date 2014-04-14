@@ -20,7 +20,7 @@ class Meetup
     @app.get  '/meetup/:name/unregister', auth.user, @unregister
 
     @app.get  '/meetup/:name/schedules', auth.admin, @schedules
-    @app.get  '/meetup/:name/generate', auth.admin, @generate
+    @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
 
     @app.get  '/meetup/:name/schedule/:user', auth.admin, @name
 
@@ -32,7 +32,8 @@ class Meetup
       timeformat: 'hh:mm TT'
 
   index: (req, res) ->
-    MeetupModel.find {}, (err, meetups) ->
+    MeetupModel.all (err, meetups) ->
+      res.send err if err
       res.send 200, {meetups}
 
   add: (req, res) ->
@@ -119,20 +120,25 @@ class Meetup
       meetup.save()
       res.redirect "/meetup/#{name}"
 
+  # Display the schedule for a meetup
   schedules: (req, res) ->
     {name} = req.params
     MeetupModel.findOne {name}, (err, meetup) ->
       meetup.getScheduleAll (matches) ->
         res.render 'meetups/schedules', {matches, meetup}
 
+  # Generate a schedule for a meetup.
   generate: (req, res) ->
-    {name} = req.params
+    {name, pool} = req.params
+
+    # We only have 2 pools of users so far.
+    pool = 'registered' unless pool is 'paid'
 
     MeetupModel.findOne {name}, (err, meetup) ->
       m = new Matcher meetup
       s = new Scheduler meetup
 
-      m.execute (err, matches) ->
+      m.execute pool, (err, matches) ->
         console.error err if err
         console.log 'Created ' + matches.length + ' matches'
 
