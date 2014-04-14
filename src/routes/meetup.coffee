@@ -88,7 +88,7 @@ class Meetup
           rounds[i] = {round:i+1, seat:'-'} unless round
 
         # res.send 200
-        res.render "meetups/main", {meetup, rounds}
+        res.render "meetups/main", {email, meetup, rounds}
 
       return res.send 404, err if err
       registered = @app.locals.registered = meetup.isRegistered email
