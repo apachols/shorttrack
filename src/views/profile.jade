@@ -53,8 +53,26 @@ block content
   script.
     $(function () {
       function postUpdate(name, value, callback) {
-        $.post('/profile/update', {name: name, value: value}).done(callback)
+        $.post('/profile/update', {name: name, value: value})
+          .done(callback)
+          .fail(function() {
+            console.error("Post fail");
+          });
       }
+
+      $('#form-name')
+        .on('change', function (e) {
+          postUpdate('name', $(this).val(), function(data){
+            console.log('Updated');
+          });
+        });
+
+      $('#form-nickname')
+        .on('change', function (e) {
+          postUpdate('nickname', $(this).val(), function(data){
+            console.log('Updated');
+          });
+        });
 
       $('#form-age-my')
         .slider()
