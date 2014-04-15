@@ -7,6 +7,8 @@ req =
 res =
 app =
   get: ->
+  post: ->
+  put: ->
 
 # Test route
 MeetupModel = require '../../../src/models/meetup'
