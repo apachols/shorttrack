@@ -1,5 +1,7 @@
 Meetup = require '../models/meetup'
 
+Question = require '../models/question'
+
 class Main
   constructor: (@app) ->
 
@@ -11,6 +13,22 @@ class Main
 
     # Index
     @app.get '/', @index
+
+    # Index
+    @app.get '/api/question', @getquestions
+    @app.post '/api/question', @createquestion
+
+  createquestion: (req, res, next) ->
+    console.dir req
+    q = new Question req.body
+    q.save (err, newquestion) ->
+      return res.send 500, err if err
+      res.json {newquestion}
+
+  getquestions: (req, res, next) ->
+    Question.find {}, (err, questions) ->
+      return res.send 500, err if err
+      res.json {questions}
 
   setup: (req, res, next) ->
     res.locals
