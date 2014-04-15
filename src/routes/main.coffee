@@ -17,34 +17,33 @@ class Main
     @app.get '/', @index
 
     # Index
-    @app.get '/api/question', auth.admin, @getquestions
-    @app.post '/api/question', auth.admin, @createquestion
+    @app.get '/api/question', @getquestions
+    @app.post '/api/question', @createquestion
     @app.put '/api/question/:id', auth.admin, @updatequestion
     @app.delete '/api/question/:id', @deletequestion
 
   deletequestion: (req, res, next) ->
     {id} = req.params
-    Question.findByIdAndRemove id, (err, q) ->
+    Question.findByIdAndRemove id, (err, doc) ->
       return res.send 500, err if err
-      res.json {q}
+      res.json {doc}
 
   updatequestion: (req, res, next) ->
     {id} = req.params
-    Question.findById id, (err, question) ->
+    Question.findById id, (err, doc) ->
       return res.send 500, err if err
-      question.update req.body, (err, success) ->
+      doc.update req.body, (err, success) ->
         res.json {success}
 
   createquestion: (req, res, next) ->
-    newquestion = new Question req.body
-    newquestion.save (err, q) ->
+    Question.create req.body, (err, doc) ->
       return res.send 500, err if err
-      res.json {q}
+      res.json {doc}
 
   getquestions: (req, res, next) ->
-    Question.find {}, (err, questions) ->
+    Question.find req.query, (err, docs) ->
       return res.send 500, err if err
-      res.json {questions}
+      res.json {docs}
 
   setup: (req, res, next) ->
     res.locals
