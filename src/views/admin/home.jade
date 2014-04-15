@@ -23,8 +23,17 @@ block scripts
     :coffee
       console.log 'HAI DENNY'
 
-      angular.module("admin", ["thing"])
-        .controller "AdminController", ($scope) ->
-          $scope.sometext = "HAI DENNY"
+      angular.module("admin", ["adminServices"])
+        .controller "AdminController", ["$scope", "thing", ($scope, thing) ->
+          $scope.sometext = thing.thang()
+        ]
+
+      # /api/:model POST takes an object for add
+      # /api/:model GET takes an object for query
+      # /api/:model PUT
+      # /api/:model DELETE
+      angular.module("adminServices", ["ngResource"])
         .service "thing", () ->
-          return "a"
+          @thang = () ->
+            return "HAI DENNY"
+          return @
