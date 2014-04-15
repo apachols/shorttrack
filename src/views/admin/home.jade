@@ -23,6 +23,8 @@ block scripts
     :coffee
       console.log 'HAI DENNY'
 
-      angular.module("admin", [])
+      angular.module("admin", ["thing"])
         .controller "AdminController", ($scope) ->
           $scope.sometext = "HAI DENNY"
+        .service "thing", () ->
+          return "a"
