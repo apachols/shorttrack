@@ -1,4 +1,4 @@
-# Express
+cson = require 'season'
 express = require 'express'
 validator = require 'express-validator'
 flash = require 'express-flash'
@@ -19,35 +19,33 @@ Mongostore = require('connect-mongostore') express
 # Initalize app
 app = express()
 
-# @todo hmmm...
-mongoose.connect(
-  'mongodb://adam:password1220@dbh76.mongolab.com:27767/openspeeddating'
-)
+app.configure ->
+  {username, password, host, port, store, secret} =
+    cson.readFileSync "#{__dirname}/../config.cson"
 
-session_settings =
-  secret: 'To live and die in LA'
-  maxAge: new Date Date.now() + 3600000
-  store: new Mongostore
-    'db': mongoose.connection.db
-    , (err) ->
+  mongoose.connect "mongodb://#{username}:#{password}@#{host}:#{port}/#{store}"
+
+  session_settings =
+    secret: 'To live and die in LA'
+    maxAge: new Date Date.now() + 3600000
+    store: new Mongostore 'db': mongoose.connection.db, (err) ->
       console.log err or 'connect-mongodb setup ok'
 
-middleware = [
-  express.favicon()
-  express.logger 'dev'
-  express.json()
-  express.urlencoded()
-  validator()
-  express.methodOverride()
-  express.cookieParser('wow, such secret')
-  express.session session_settings
-  passport.initialize()
-  passport.session()
-  flash()
-  app.router
-]
+  middleware = [
+    express.favicon()
+    express.logger 'dev'
+    express.json()
+    express.urlencoded()
+    validator()
+    express.methodOverride()
+    express.cookieParser(secret)
+    express.session session_settings
+    passport.initialize()
+    passport.session()
+    flash()
+    app.router
+  ]
 
-app.configure ->
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
 
