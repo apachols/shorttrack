@@ -4,35 +4,59 @@ block content
   .row
     .col-sm-2
       ul.nav.nav-pills.nav-stacked
-        li.active: a Users
-        li: a Questions
-        li: a Genders
+        li.active: a(href='/admin/user') Users
+        li: a(href='/admin/question') Questions
+        li: a(href='/admin/gender') Genders
 
     .col-sm-10
-
       div(ng-app="admin")
-        .panel.panel-default
-          .panel-heading Users
-          .panel-body(ng-controller="AdminController")
-            h1 {{sometext}}
-            table.table.table-striped
-              thead
-                tr
-                  th(ng-repeat="field in fields") {{field}}
-                  th edit
-                  th remove
-              tbody
-                tr(ng-repeat="doc in docs")
-                  td(ng-repeat="field in fields") {{doc[field]}}
-                  td: a(href="/admin/edit/{{selected}}/{{doc.id}}") edit
-                  td: a(href="/admin/remove/{{selected}}/{{doc.id}}") remove
+        .panel.panel-default(ng-controller="AdminController")
+          div(ng-view)
+
 
 block scripts
+  script(type="text/ng-template" id="list.html")
+    h1.panel-heading {{sometext}}
+    .panel-body
+      table.table.table-striped
+        thead
+          tr
+            th(ng-repeat="field in fields") {{field}}
+            th edit
+            th remove
+        tbody
+          tr(ng-repeat="doc in docs")
+            td(ng-repeat="field in fields") {{doc[field]}}
+            td: a(href="/admin/edit/{{selected}}/{{doc.id}}") edit
+            td: a(href="/admin/remove/{{selected}}/{{doc.id}}") remove
   script
     :coffee
       console.log 'HAI DENNY'
 
-      angular.module("admin", ["adminServices"])
+      angular.module("admin", ["adminServices", "ngRoute"]).config [
+        '$routeProvider', '$locationProvider',
+        ($routeProvider, $locationProvider) ->
+          $locationProvider.html5Mode true
+          $routeProvider
+
+            .when 'user',
+              controller: 'AdminController'
+              template: 'list.html'
+              usemodel: '/admin/user'
+
+            .when 'question',
+              controller: 'AdminController'
+              template: 'list.html'
+              usemodel: '/admin/question'
+
+            .when 'gender',
+              controller: 'AdminController'
+              template: 'list.html'
+              usemodel: '/admin/gender'
+
+            .otherwise
+              redirectTo: '/admin/user'
+        ]
         .controller "AdminController", [
           "$scope", "user"
           ($scope, user) ->
@@ -45,3 +69,4 @@ block scripts
       angular.module("adminServices", ["ngResource"])
         .factory "user", ($resource) ->
           $resource '/api/user', {}
+
