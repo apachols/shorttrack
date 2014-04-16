@@ -13,10 +13,9 @@ block content
                 th Email
                 th Salt
             tbody
-              each user in users
-                tr
-                  td: a(href="/admin/user/#{user.email}") #{user.email}
-                  td: code #{user.salt}
+              tr(ng-repeat="user in users")
+                td: a(href="/admin/user/{{user.email}}") {{user.email}}
+                td: code {{user.salt}}
 
 block scripts
   script
@@ -24,16 +23,14 @@ block scripts
       console.log 'HAI DENNY'
 
       angular.module("admin", ["adminServices"])
-        .controller "AdminController", ["$scope", "thing", ($scope, thing) ->
-          $scope.sometext = thing.thang()
+        .controller "AdminController", [
+          "$scope", "user"
+          ($scope, user) ->
+            $scope.sometext = "test"
+            userlist = user.query {}, ->
+              $scope.users = userlist
         ]
 
-      # /api/:model POST takes an object for add
-      # /api/:model GET takes an object for query
-      # /api/:model PUT
-      # /api/:model DELETE
       angular.module("adminServices", ["ngResource"])
-        .service "thing", () ->
-          @thang = () ->
-            return "HAI DENNY"
-          return @
+        .factory "user", ($resource) ->
+          $resource '/api/user', {}
