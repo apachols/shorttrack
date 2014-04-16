@@ -20,7 +20,8 @@
     "tea-properties": "~0.1.1",
     "async": "~0.2.10",
     "dateformat": "~1.0.7-1.2.3",
-    "harp": "^0.12.1"
+    "harp": "^0.12.1",
+    "season": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
