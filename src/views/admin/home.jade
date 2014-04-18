@@ -2,31 +2,34 @@ extends ../layout
 
 block content
   .row(ng-app="admin")
-    script(type="text/ng-template" id="list.html")
-      h1.panel-heading {{sometext}}
-      .panel-body
-        table.table.table-striped
-          thead
-            tr
-              th(ng-repeat="field in fields") {{field}}
-              th edit
-              th remove
-          tbody
-            tr(ng-repeat="doc in docs")
-              td(ng-repeat="field in fields") {{doc[field]}}
-              td: a(href="/admin/edit/{{selected}}/{{doc.id}}") edit
-              td: a(href="/admin/remove/{{selected}}/{{doc.id}}") remove
-
     base(href="/admin/")
-    .col-sm-2
-      ul.nav.nav-pills.nav-stacked
-        li.active: a(href='#/user') Users
-        li: a(href='#/question') Questions
-        li: a(href='#/gender') Genders
+    script(type="text/ng-template" id="list.html")
+      .col-sm-2
+        ul.nav.nav-pills.nav-stacked
+          li(ng-class="{active: selected == 'user'}")
+            a(href='#/user') Users
+          li(ng-class="{active: selected == 'question'}")
+            a(href='#/question') Questions
+          li(ng-class="{active: selected == 'gender'}")
+            a(href='#/gender') Genders
 
-    .col-sm-10
-      .panel.panel-default
-        div(ng-view)
+      .col-sm-10
+        .panel.panel-default
+          h1.panel-heading {{tableheader}} {{selected}}
+          .panel-body
+            table.table.table-striped
+              thead
+                tr
+                  th(ng-repeat="field in fields") {{field}}
+                  th edit
+                  th remove
+              tbody
+                tr(ng-repeat="doc in docs")
+                  td(ng-repeat="field in fields") {{doc[field]}}
+                  td: a(href="/admin/edit/{{selected}}/{{doc._id}}") edit
+                  td: a(href="/api/remove/{{selected}}/{{doc._id}}") remove
+
+    div(ng-view)
 
 block scripts
 
@@ -41,34 +44,83 @@ block scripts
           $routeProvider
 
             .when '/user',
-              controller: 'AdminController'
+              controller: 'UserController'
               templateUrl: 'list.html'
-              usemodel: 'user'
 
             .when '/question',
-              controller: 'AdminController'
+              controller: 'QuestionController'
               templateUrl: 'list.html'
-              usemodel: 'question'
 
             .when '/gender',
-              controller: 'AdminController'
+              controller: 'GenderController'
               templateUrl: 'list.html'
-              usemodel: 'gender'
 
+            .otherwise
+              redirectTo: '/user'
         ]
-        .controller "AdminController", [
+        .controller "UserController", [
           "$scope", "user",
           ($scope, user) ->
-            $scope.sometext = "ANGULAR IS WORKING"
+            $scope.selected = "user"
+            $scope.tableheader = "Users"
             $scope.fields = ['email', 'nickname']
 
-            console.log "WHUTUP"
+            docs = user.query {}, ->
+              $scope.docs = docs
+        ]
+        .controller "QuestionController", [
+          "$scope", "question",
+          ($scope, question) ->
+            $scope.selected = "question"
+            $scope.tableheader = "Match Questions"
+            $scope.fields = ['name', 'text']
 
-            userlist = user.query {}, ->
-              $scope.docs = userlist
+            docs = question.query {}, ->
+              $scope.docs = docs
+        ]
+        .controller "GenderController", [
+          "$scope", "gender",
+          ($scope, gender) ->
+            $scope.selected = "gender"
+            $scope.tableheader = "Genders"
+            $scope.fields = ['label', 'code']
+
+            docs = gender.query {}, ->
+              $scope.docs = docs
+        ]
+        .controller "AdminController", [
+          "$scope", "user", "question", "gender",
+          ($scope, user, question, gender) ->
+            $scope.select = (model) ->
+              switch model
+                when "user"
+                  $scope.tableheader = "Users"
+                  $scope.fields = ['email', 'nickname']
+                  resource = user
+                when "question"
+                  $scope.tableheader = "Match Questions"
+                  $scope.fields = ['name', 'text']
+                  resource = question
+                when "gender"
+                  $scope.tableheader = "Genders"
+                  $scope.fields = ['label', 'code']
+                  resource = gender
+
+              docs = resource.query {}, ->
+                $scope.docs = docs
+
+            resource = null
+            $scope.docs = []
+            $scope.fields = []
         ]
 
       angular.module("adminServices", ["ngResource"])
+
         .factory "user", ($resource) ->
           $resource '/api/user', {}
 
+        .factory "question", ($resource) ->
+          $resource '/api/question', {}
+
+        .factory "gender", ($resource) ->
+          $resource '/api/gender', {}
