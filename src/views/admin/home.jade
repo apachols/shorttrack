@@ -3,19 +3,21 @@ extends ../layout
 block content
   .row(ng-app="admin")
     base(href="/admin/")
-    script(type="text/ng-template" id="list.html")
+    div(ng-controller="AdminController")
       .col-sm-2
         ul.nav.nav-pills.nav-stacked
           li(ng-class="{active: selected == 'user'}")
-            a(href='#/user') Users
+            a(ng-click="select('user')") Users
+
           li(ng-class="{active: selected == 'question'}")
-            a(href='#/question') Questions
+            a(ng-click="select('question')") Questions
+
           li(ng-class="{active: selected == 'gender'}")
-            a(href='#/gender') Genders
+            a(ng-click="select('gender')") Genders
 
       .col-sm-10
         .panel.panel-default
-          h1.panel-heading {{tableheader}} {{selected}}
+          h1.panel-heading {{tableheader}}
           .panel-body
             table.table.table-striped
               thead
@@ -29,69 +31,21 @@ block content
                   td: a(href="/admin/edit/{{selected}}/{{doc._id}}") edit
                   td: a(href="/api/remove/{{selected}}/{{doc._id}}") remove
 
-    div(ng-view)
-
 block scripts
 
   script
     :coffee
       console.log 'HAI DENNY'
 
-      angular.module("admin", ["adminServices", "ngRoute"]).config [
-        '$routeProvider', '$locationProvider',
-        ($routeProvider, $locationProvider) ->
-
-          $routeProvider
-
-            .when '/user',
-              controller: 'UserController'
-              templateUrl: 'list.html'
-
-            .when '/question',
-              controller: 'QuestionController'
-              templateUrl: 'list.html'
-
-            .when '/gender',
-              controller: 'GenderController'
-              templateUrl: 'list.html'
-
-            .otherwise
-              redirectTo: '/user'
-        ]
-        .controller "UserController", [
-          "$scope", "user",
-          ($scope, user) ->
-            $scope.selected = "user"
-            $scope.tableheader = "Users"
-            $scope.fields = ['email', 'nickname']
-
-            docs = user.query {}, ->
-              $scope.docs = docs
-        ]
-        .controller "QuestionController", [
-          "$scope", "question",
-          ($scope, question) ->
-            $scope.selected = "question"
-            $scope.tableheader = "Match Questions"
-            $scope.fields = ['name', 'text']
-
-            docs = question.query {}, ->
-              $scope.docs = docs
-        ]
-        .controller "GenderController", [
-          "$scope", "gender",
-          ($scope, gender) ->
-            $scope.selected = "gender"
-            $scope.tableheader = "Genders"
-            $scope.fields = ['label', 'code']
-
-            docs = gender.query {}, ->
-              $scope.docs = docs
-        ]
+      angular.module("admin", ["adminServices"])
         .controller "AdminController", [
           "$scope", "user", "question", "gender",
           ($scope, user, question, gender) ->
+
+            # select a model and fetch records from the db
             $scope.select = (model) ->
+              $scope.selected = model
+              resource = null
               switch model
                 when "user"
                   $scope.tableheader = "Users"
@@ -106,12 +60,13 @@ block scripts
                   $scope.fields = ['label', 'code']
                   resource = gender
 
+              $scope.docs = []
               docs = resource.query {}, ->
                 $scope.docs = docs
 
-            resource = null
             $scope.docs = []
             $scope.fields = []
+            $scope.select 'user'
         ]
 
       angular.module("adminServices", ["ngResource"])
