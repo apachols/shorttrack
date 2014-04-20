@@ -21,7 +21,7 @@ describe 'src/routes/gender.coffee', ->
   describe 'gender', ->
     it 'should 404 without a valid gender', (done) ->
       req.params =
-        code: 'X'
+        _id: 'X'
 
       gently.expect GenderModel, 'findOne', (findSpec, callback) ->
         callback('Gender not found', null)
@@ -33,18 +33,18 @@ describe 'src/routes/gender.coffee', ->
         route.should.equal '/admin'
         done()
 
-      Gender.gender req, res, ->
+      Gender.get req, res, ->
 
     it 'should render the admin/gender view', (done) ->
       req.params =
-        code: 'F'
+        id: 'abcdef0988765'
 
       gender =
         label: 'Female'
         code: 'F'
 
       gently.expect GenderModel, 'findOne', (findSpec, callback) ->
-        findSpec.code.should.equal 'F'
+        findSpec._id.should.equal 'abcdef0988765'
         callback(null, gender)
 
       gently.expect res, 'render', (route, object) ->
@@ -52,4 +52,4 @@ describe 'src/routes/gender.coffee', ->
         object.gender.should.equal(gender)
         done()
 
-      Gender.gender req, res, ->
+      Gender.get req, res, ->
