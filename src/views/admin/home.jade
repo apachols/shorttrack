@@ -29,7 +29,7 @@ block content
                 tr(ng-repeat="doc in docs")
                   td(ng-repeat="field in fields") {{doc[field]}}
                   td: a(href="/admin/edit/{{selected}}/{{doc._id}}") edit
-                  td: a(ng-click="remove(selected, doc._id)") remove
+                  td: a(ng-click="remove($index, selected, doc._id)") remove
 
 block scripts
 
@@ -54,9 +54,10 @@ block scripts
                 else
                   null
 
-            $scope.remove = (model, id) ->
+            $scope.remove = (index, model, id) ->
               resource = $resource '/api/:model/:id', {model, id}
-              do resource.delete
+              resource.delete (err, thing) ->
+                $scope.docs.splice(index)
 
             # select a model and fetch records from the db
             $scope.select = (model) ->
@@ -66,7 +67,7 @@ block scripts
               switch model
                 when "user"
                   $scope.tableheader = "Users"
-                  $scope.fields = ['email', 'nickname']
+                  $scope.fields = ['email', 'admin']
                 when "question"
                   $scope.tableheader = "Match Questions"
                   $scope.fields = ['name', 'text']
