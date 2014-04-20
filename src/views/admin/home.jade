@@ -32,7 +32,7 @@ block content
               tbody
                 tr(ng-repeat="doc in docs")
                   td(ng-repeat="field in fields") {{doc[field]}}
-                  td: a(href="/admin/edit/{{selected}}/{{doc._id}}") edit
+                  td: a(href="/admin/{{selected}}/{{doc._id}}") edit
                   td: a(ng-click="remove($index, selected, doc._id)") remove
 
 block scripts
