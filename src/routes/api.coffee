@@ -8,6 +8,8 @@ auth = require '../helpers/authenticator'
 class Api
   constructor: (@app) ->
 
+    @app.get '/api/test', @test
+
     @app.get '/api/user', @getusers
 
     @app.get '/api/question', @getquestions
@@ -19,6 +21,18 @@ class Api
     @app.post '/api/gender', @creategender
     @app.put '/api/gender/:id', auth.admin, @updategender
     @app.delete '/api/gender/:id', @deletegender
+
+  #
+  # test
+  #
+  test: (req, res, next) ->
+    User.find req.query, (err, docs) ->
+      return res.send 500, err if err
+
+      for doc in docs
+        console.log doc.get "email"
+
+      res.json docs
 
   #
   # User
