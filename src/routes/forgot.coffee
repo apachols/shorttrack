@@ -7,6 +7,7 @@ module.exports = (app) ->
   # Generate a token, and expiration date for a user.
   app.post '/forgot', (req, res) ->
     {email} = req.body
+
     async.waterfall [
       (done) ->
         crypto.randomBytes 20, (err, buf) ->
@@ -14,7 +15,8 @@ module.exports = (app) ->
 
       (token, done) ->
         User.findOne {email}, (err, user) ->
-          done err, user, token
+          return done err, user, token if user
+          done 'User does not exist!'
 
       (user, token, done) ->
           user.resetToken = token
@@ -23,7 +25,7 @@ module.exports = (app) ->
 
     ], (err) ->
       return res.send 500, err if err
-      res.send user
+      res.send 200
 
   # Verify a user token, and reset the password
   app.post '/reset', (req, res) ->

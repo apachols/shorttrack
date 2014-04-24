@@ -10,16 +10,18 @@ block content
 
       h1 Log In
 
-      form(action="/login",method="post", role="form")
+      form(action="/login" method="post" role="form")
         .form-group
           label(for="form-email") E-Mail Address
-          input#form-email.form-control(type="email", name="email", placeholder="E-Mail Address")
+          input#form-email.form-control(type="email" name="email" placeholder="someone@example.com")
 
         .form-group
           label(for="form-password") Password
-          input#form-password.form-control(type="password", name="password" placeholder="Password")
+          input#form-password.form-control(type="password" name="password" placeholder="•••••••••")
 
-        .row
-          .col-xs-6.col-xs-offset-3
-            button.btn.btn-primary.btn-large.btn-block(type="submit") Login
+        .clearfix
+          .pull-left(ng-controller="forgotPassword")
+            button.btn.btn-primary(type="button" ng-click="startProcess()") Forgot Password
+          .pull-right
+            button.btn.btn-primary.btn-large(type="submit") Login
 

@@ -11,16 +11,29 @@ head
   link(rel='stylesheet' href='/public/components/font-awesome/css/font-awesome.css')
   link(rel='stylesheet' href='/public/css/style.css')
 
+  //- jQuery and Bootstrap
   script(src='/public/components/jquery/dist/jquery.js')
   script(src='/public/components/bootstrap/dist/js/bootstrap.js')
   script(src='/public/components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js')
   script(src='/public/components/bootstrap-datepicker/js/bootstrap-datepicker.js')
 
+  //- Angular
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-resource.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js")
+
+  //- Angular Plugins
+  script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js")
+
+  //- Angular App
+  script(src="/public/js/app.js")
+  script(src="/public/js/forgot.js")
+
   block headerscripts
 
-//- body (implicit in HTML5)
-.navbar.navbar-default.navbar-static-top(role="navigation")
-  .container-fluid
+body(ng-app='sting')
+  .navbar.navbar-default.navbar-static-top(role="navigation")
     .navbar-header
       button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
         span.icon-bar
@@ -43,20 +56,19 @@ head
           li.divider
           li: a(href="/login") Log In
 
-.container
-  if messages.error
-    .row
-      .col-xs-12
-        pre.alert-danger #{messages.error}
+  .container
+    if messages.error
+      .row
+        .col-xs-12
+          pre.alert-danger #{messages.error}
 
-  block content
+    block content
 
-script
-  :coffee
-    $ ->
-      $('.disabled[data-provide=datepicker]')
-        .datepicker()
-        .find('table').addClass 'table'
+  script
+    :coffee
+      $ ->
+        $('.disabled[data-provide=datepicker]')
+          .datepicker()
+          .find('table').addClass 'table'
 
-block scripts
-
+  block scripts
