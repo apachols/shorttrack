@@ -8,9 +8,9 @@ block content
   .row: .col-xs-12
     .panel.panel-default(ng-app="edit")
       base(href="/admin/")
-      div(ng-init="config={ 'id': '#{gender._id}', collection:'gender', fields:['label','code']}")
+      div(ng-init="config={ '_id': '#{gender._id}', collection:'gender', fields:['label','code']}")
         div(ng-controller="EditController")
-          .panel-heading Gender <b>#{gender.label}</b>
+          .panel-heading Gender: <b>{{doc.label}}</b>
           .panel-body
               form.js-form.form-horizontal(role='form')
                 .form-group.has-feedback

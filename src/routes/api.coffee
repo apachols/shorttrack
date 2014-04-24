@@ -13,13 +13,13 @@ class Api
     @app.get '/api/user', @getusers
 
     @app.get '/api/question', @getquestions
+    @app.post '/api/question/:_id', @updatequestion
     @app.post '/api/question', @createquestion
-    @app.put '/api/question/:id', auth.admin, @updatequestion
     @app.delete '/api/question/:id', @deletequestion
 
-    @app.get '/api/gender/:_id', @getgender
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
+    @app.post '/api/gender', @createquestion
     @app.delete '/api/gender/:id', @deletegender
 
   #
@@ -52,11 +52,10 @@ class Api
       res.json {doc}
 
   updatequestion: (req, res, next) ->
-    {id} = req.params
-    Question.findById id, (err, doc) ->
+    {_id} = req.params
+    Question.update {_id}, req.body, (err, success) ->
       return res.send 500, err if err
-      doc.update req.body, (err, success) ->
-        res.json {success}
+      res.send 200
 
   createquestion: (req, res, next) ->
     Question.create req.body, (err, doc) ->
@@ -79,9 +78,7 @@ class Api
 
   updategender: (req, res, next) ->
     {_id} = req.params
-    console.log req.body, _id
-    Gender.update {_id}, req.body, (err, success, third) ->
-      console.log "inside", err, success, third
+    Gender.update {_id}, req.body, (err, success) ->
       return res.send 500, err if err
       res.send 200
 
@@ -94,12 +91,6 @@ class Api
     Gender.find req.query, (err, docs) ->
       return res.send 500, err if err
       res.json docs
-
-  getgender: (req, res, next) ->
-    {_id} = req.params
-    Gender.findOne {_id}, (err, doc) ->
-      return res.send 500, err if err
-      res.json doc
 
 
 module.exports = (app) -> new Api app
