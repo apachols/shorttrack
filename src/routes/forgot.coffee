@@ -6,14 +6,14 @@ module.exports = (app) ->
 
   # Generate a token, and expiration date for a user.
   app.post '/forgot', (req, res) ->
-    {_id} = req.body
+    {email} = req.body
     async.waterfall [
       (done) ->
         crypto.randomBytes 20, (err, buf) ->
           done err, buf.toString 'hex'
 
       (token, done) ->
-        User.findOne {_id}, (err, user) ->
+        User.findOne {email}, (err, user) ->
           done err, user, token
 
       (user, token, done) ->
@@ -27,7 +27,7 @@ module.exports = (app) ->
 
   # Verify a user token, and reset the password
   app.post '/reset', (req, res) ->
-    {_id, password, confirm, token} = req.body
+    {email, password, confirm, token} = req.body
 
     async.waterfall [
       (done) ->
@@ -35,7 +35,7 @@ module.exports = (app) ->
         done "Password Mismatch"
 
       (done) ->
-        User.findOne {_id}, done
+        User.findOne {email}, done
 
       (user, done) ->
         return done null, user if token is user.resetToken
