@@ -66,6 +66,7 @@ class Api
     Question.find req.query, (err, docs) ->
       return res.send 500, err if err
       res.json docs
+      console.log docs
 
   #
   # Genders
