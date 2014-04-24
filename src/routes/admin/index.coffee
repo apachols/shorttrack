@@ -15,6 +15,7 @@ class Admin
     # Set up all the /admin/user routes!
     User = require('./user') @app
     Gender = require('./gender') @app
+    Question = require('./question') @app
 
   auth: (req, res, next) ->
     authenticated = req.isAuthenticated() and req.user?.admin
