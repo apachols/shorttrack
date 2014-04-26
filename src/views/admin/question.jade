@@ -35,7 +35,7 @@ block content
                 .form-group
                   .col-xs-12
                     ul.list-inline.pull-right
-                      li: span.btn.btn-danger(ng-show="!editform.$pristine" ng-click="undo()") Undo
+                      li: span.btn.btn-danger(ng-show="editform.$dirty" ng-click="undo()") Undo
                       li: button.btn.btn-primary(ng-click="save()") Save
 
 block scripts

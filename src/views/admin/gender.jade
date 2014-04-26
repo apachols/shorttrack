@@ -12,7 +12,7 @@ block content
         div(ng-controller="EditController")
           .panel-heading Gender: <b>{{doc.label}}</b>
           .panel-body
-              form.js-form.form-horizontal(role='form')
+              form.js-form.form-horizontal(name='editform' role='form')
                 .form-group.has-feedback
                   label.col-sm-2.col-sm-offset-1.control-label(for='form-label') Label
                   .col-sm-8
@@ -26,7 +26,7 @@ block content
                 .form-group
                   .col-xs-12
                     ul.list-inline.pull-right
-                      li: span.btn.btn-danger(ng-show="dirty()" ng-click="undo()") Undo
+                      li: span.btn.btn-danger(ng-show="editform.$dirty" ng-click="undo()") Undo
                       li: button.btn.btn-primary(ng-click="save()") Save
 
 block scripts
