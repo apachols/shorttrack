@@ -19,7 +19,8 @@ angular.module("edit", ["ngResource"])
         resource = $resource '/api/:collection/:_id', {collection, _id}
 
         resource.save setQuery, ->
-          $scope.original = $scope.doc
+          $scope.original = angular.copy $scope.doc
+          $scope.editform.$setPristine()
 
       $scope.undo = () ->
         $scope.doc = angular.copy $scope.original
