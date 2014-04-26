@@ -12,13 +12,6 @@ class Question
   # display a single question for editing
   get: (req, res) ->
     {_id} = req.params
-
-    QuestionModel.findOne { _id }, (err, question) ->
-      if question
-        res.render 'admin/question', {question}
-
-      else
-        req.flash 'error', 'Question not found: ' + id
-        res.redirect '/admin'
+    res.render 'admin/question', {_id}
 
 module.exports = (app) -> new Question app

@@ -8,7 +8,7 @@ block content
   .row: .col-xs-12
     .panel.panel-default(ng-app="edit")
       base(href="/admin/")
-      div(ng-init="config={ '_id': '#{gender._id}', collection:'gender', fields:['label','code']}")
+      div(ng-init="config={ '_id': '#{_id}', collection:'gender', fields:['label','code']}")
         div(ng-controller="EditController")
           .panel-heading Gender: <b>{{doc.label}}</b>
           .panel-body
@@ -26,7 +26,7 @@ block content
                 .form-group
                   .col-xs-12
                     ul.list-inline.pull-right
-                      li: span.btn.btn-danger(ng-click="undo()") Undo
+                      li: span.btn.btn-danger(ng-show="dirty()" ng-click="undo()") Undo
                       li: button.btn.btn-primary(ng-click="save()") Save
 
 block scripts

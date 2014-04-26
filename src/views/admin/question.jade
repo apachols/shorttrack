@@ -8,34 +8,34 @@ block content
   .row: .col-xs-12
     .panel.panel-default(ng-app="edit")
       base(href="/admin/")
-      div(ng-init="config={ '_id': '#{question._id}', collection:'question', fields:['text','name','answers']}")
+      div(ng-init="config={ '_id': '#{_id}', collection:'question', fields:['text','name','answers']}")
         div(ng-controller="EditController")
           .panel-heading Match Question: <b>{{doc.name}}</b>
           .panel-body
-              form.js-form.form-horizontal(role='form')
+              form.js-form.form-horizontal(name='editform' role='form')
                 .form-group.has-feedback
                   label.col-sm-2.col-sm-offset-1.control-label(for='form-name') Name
                   .col-sm-8
-                    input#form-name.form-control.js-input(ng-model='doc.name' type='text', name='name' )
+                    input#form-name.form-control(ng-model='doc.name' type='text', name='name' )
 
                 .form-group
                   label.col-sm-2.col-sm-offset-1.control-label(for='#form-text') Question Text
                   .col-sm-8
-                    input#form-nickname.form-control.js-input(ng-model='doc.text' type='text', name='text' )
+                    input#form-nickname.form-control(ng-model='doc.text' type='text', name='text' )
 
                 .form-group
                   label.col-sm-2.col-sm-offset-1.control-label(for='#form-importance') Answers
                   .col-sm-8
-                    a.btn.btn-info(ng-click="doc.answers.push('')") Add
-                    ul(ng-repeat="answer in doc.answers")
+                    a.fa.fa-plus-square.fa-2x(ng-click="doc.answers.push('')")
+                    ul.list-unstyled(ng-cloak ng-repeat="answer in doc.answers track by $index")
                       li
-                        a.btn.btn-info(ng-click="doc.answers.splice($index)") Rmv
-                        input.form-control.js-input(ng-model="doc.answers[$index]")
+                        input.form-control(type='text' name="question{{$index}}" ng-model="doc.answers[$index]")
+                        a.fa.fa-minus-square.fa-2x(ng-click="doc.answers.splice($index)")
 
                 .form-group
                   .col-xs-12
                     ul.list-inline.pull-right
-                      li: span.btn.btn-danger(ng-click="undo()") Undo
+                      li: span.btn.btn-danger(ng-show="!editform.$pristine" ng-click="undo()") Undo
                       li: button.btn.btn-primary(ng-click="save()") Save
 
 block scripts
