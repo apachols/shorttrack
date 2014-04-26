@@ -19,7 +19,7 @@ Gender = require('../../../../src/routes/admin/gender') app
 describe 'src/routes/gender.coffee', ->
 
   describe 'gender', ->
-    it 'should 404 without a valid gender', (done) ->
+    xit 'should 404 without a valid gender', (done) ->
       req.params =
         _id: 'X'
 
@@ -35,7 +35,7 @@ describe 'src/routes/gender.coffee', ->
 
       Gender.get req, res, ->
 
-    it 'should render the admin/gender view', (done) ->
+    xit 'should render the admin/gender view', (done) ->
       req.params =
         id: 'abcdef0988765'
 
