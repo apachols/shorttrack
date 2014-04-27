@@ -22,7 +22,7 @@ block content
       .col-sm-10
         .panel.panel-default
           .panel-heading
-            a.fa.fa-plus-square-3x.pull-right(ng-click="add(selected)")
+            a.pull-right(href="/admin/{{selected}}") Add
             h1: {{tableheader}}
           .panel-body
             table.table.table-striped
@@ -59,6 +59,11 @@ block scripts
                   gender
                 else
                   null
+
+            $scope.add = (model) ->
+              resource = $resource '/api/:model', {model}
+              resource.delete (err, thing) ->
+                $scope.docs.splice(index)
 
             $scope.remove = (index, model, id) ->
               resource = $resource '/api/:model/:id', {model, id}

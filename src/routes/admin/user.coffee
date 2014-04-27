@@ -7,23 +7,12 @@ class User
     @locals =
       brand: 'Edit User'
 
-    @app.get '/admin/user/:email', @validate, @user
-
-  # validate that url parameter email is valid
-  validate: (req, res, next) ->
-    req.assert('email', 'Must supply a valid email').isEmail()
-    errors = req.validationErrors()
-
-    if errors
-      req.flash 'error', util.inspect errors
-      res.redirect '/admin'
-
-    else next()
+    @app.get '/admin/user/:_id', @user
 
   # display a single user for editing - /admin/user/:email
   user: (req, res) ->
-    {email} = req.params
-    UserModel.findOne {email}, (err, user) ->
+    {_id} = req.params
+    UserModel.findOne {_id}, (err, user) ->
 
       if user
         res.render 'admin/user', {user, description: util.inspect user}

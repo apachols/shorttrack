@@ -19,7 +19,7 @@ class Api
 
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
-    @app.post '/api/gender', @createquestion
+    @app.post '/api/gender', @creategender
     @app.delete '/api/gender/:id', @deletegender
 
   #
@@ -84,6 +84,7 @@ class Api
       res.send 200
 
   creategender: (req, res, next) ->
+    console.log req.body
     Gender.create req.body, (err, doc) ->
       return res.send 500, err if err
       res.json {doc}

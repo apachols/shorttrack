@@ -9,6 +9,8 @@ class Gender
 
     @app.get '/admin/gender/:_id', @get
 
+    @app.get '/admin/gender', @get
+
   # display a single gender for editing - /admin/gender
   get: (req, res) ->
     {_id} = req.params
