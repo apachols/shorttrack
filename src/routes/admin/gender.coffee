@@ -7,20 +7,13 @@ class Gender
     @locals =
       brand: 'Edit Gender'
 
-    @app.get '/admin/gender/:code', @gender
+    @app.get '/admin/gender/:_id', @get
 
-  # display a single gender for editing - /admin/gender/:code
-  gender: (req, res) ->
-    {code} = req.params
+    @app.get '/admin/gender', @get
 
-    GenderModel.findOne {code}, (err, gender) ->
-
-      if gender
-        gender.inspect = util.inspect gender
-        res.render 'admin/gender', {gender}
-
-      else
-        req.flash 'error', 'Gender not found: ' + code
-        res.redirect '/admin'
+  # display a single gender for editing - /admin/gender
+  get: (req, res) ->
+    {_id} = req.params
+    res.render 'admin/gender', {_id}
 
 module.exports = (app) -> new Gender app

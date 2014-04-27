@@ -1,17 +1,107 @@
 extends ../layout
 
+block headerscripts
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js')
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js')
+
 block content
-  .row:.col-xs-12
-    .panel.panel-default
-      .panel-heading Users
-      .panel-body
-        table.table.table-striped
-          thead
-            tr
-              th Email
-              th Salt
-          tbody
-            each user in users
-              tr
-                td: a(href="/admin/user/#{user.email}") #{user.email}
-                td: code #{user.salt}
+  .row(ng-app="admin")
+    base(href="/admin/")
+    div(ng-controller="AdminController")
+      .col-sm-2
+        ul.nav.nav-pills.nav-stacked
+          li(ng-class="{active: selected == 'user'}")
+            a(ng-click="select('user')") Users
+
+          li(ng-class="{active: selected == 'question'}")
+            a(ng-click="select('question')") Questions
+
+          li(ng-class="{active: selected == 'gender'}")
+            a(ng-click="select('gender')") Genders
+
+      .col-sm-10
+        .panel.panel-default
+          .panel-heading
+            a.pull-right(href="/admin/{{selected}}") Add
+            h1: {{tableheader}}
+          .panel-body
+            table.table.table-striped
+              thead
+                tr
+                  th(ng-repeat="field in fields") {{field}}
+                  th edit
+                  th remove
+              tbody
+                tr(ng-repeat="doc in docs")
+                  td(ng-repeat="field in fields") {{doc[field]}}
+                  td: a(href="/admin/{{selected}}/{{doc._id}}") edit
+                  td: a(ng-click="remove($index, selected, doc._id)") remove
+
+block scripts
+
+  script
+    :coffee
+      console.log 'HAI DENNY'
+
+      angular.module("admin", ["adminServices", "ngResource"])
+        .controller "AdminController", [
+          "$scope", "user", "question", "gender", "$resource"
+          ($scope, user, question, gender, $resource) ->
+
+            $scope.getResource = (model) ->
+              console.log "getResource", model
+              switch model
+                when "user"
+                  user
+                when "question"
+                  question
+                when "gender"
+                  gender
+                else
+                  null
+
+            $scope.add = (model) ->
+              resource = $resource '/api/:model', {model}
+              resource.delete (err, thing) ->
+                $scope.docs.splice(index)
+
+            $scope.remove = (index, model, id) ->
+              resource = $resource '/api/:model/:id', {model, id}
+              resource.delete (err, thing) ->
+                $scope.docs.splice(index)
+
+            # select a model and fetch records from the db
+            $scope.select = (model) ->
+              $scope.selected = model
+
+              resource = $scope.getResource(model)
+              switch model
+                when "user"
+                  $scope.tableheader = "Users"
+                  $scope.fields = ['email', 'admin']
+                when "question"
+                  $scope.tableheader = "Match Questions"
+                  $scope.fields = ['name', 'text']
+                when "gender"
+                  $scope.tableheader = "Genders"
+                  $scope.fields = ['label', 'code']
+
+              $scope.docs = []
+              docs = resource.query {}, ->
+                $scope.docs = docs
+
+            $scope.docs = []
+            $scope.fields = []
+            $scope.select 'user'
+        ]
+
+      angular.module("adminServices", ["ngResource"])
+
+        .factory "user", ($resource) ->
+          $resource '/api/user', {}
+
+        .factory "question", ($resource) ->
+          $resource '/api/question', {}
+
+        .factory "gender", ($resource) ->
+          $resource '/api/gender', {}

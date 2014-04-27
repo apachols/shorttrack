@@ -1,4 +1,8 @@
+User = require '../models/user'
 Meetup = require '../models/meetup'
+Question = require '../models/question'
+
+auth = require '../helpers/authenticator'
 
 class Main
   constructor: (@app) ->
