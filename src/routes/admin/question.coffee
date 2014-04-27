@@ -9,6 +9,8 @@ class Question
 
     @app.get '/admin/question/:_id', @get
 
+    @app.get '/admin/question', @get
+
   # display a single question for editing
   get: (req, res) ->
     {_id} = req.params

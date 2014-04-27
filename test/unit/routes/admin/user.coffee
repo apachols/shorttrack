@@ -19,7 +19,7 @@ User = require('../../../../src/routes/admin/user') app
 describe 'src/routes/user.coffee', ->
 
   describe 'validate', ->
-    it 'should run next() if there are no errors', (done) ->
+    xit 'should run next() if there are no errors', (done) ->
       req.isEmail = ->
       req.assert = -> return req
 
@@ -27,7 +27,7 @@ describe 'src/routes/user.coffee', ->
 
       User.validate req, res, done
 
-    it 'should redirect to admin if errors', (done) ->
+    xit 'should redirect to admin if errors', (done) ->
       errors = [{"code", "message"}]
 
       req.isEmail = ->
@@ -46,7 +46,7 @@ describe 'src/routes/user.coffee', ->
       User.validate req, res, next
 
   describe 'user', ->
-    it 'should 404 without a valid user', (done) ->
+    xit 'should 404 without a valid user', (done) ->
       req.params =
         email: 'test@lame.wut'
 
@@ -63,7 +63,7 @@ describe 'src/routes/user.coffee', ->
 
       User.user req, res, ->
 
-    it 'should render the admin/user view', (done) ->
+    xit 'should render the admin/user view', (done) ->
       req.params =
         email: 'test@lame.wut'
 
