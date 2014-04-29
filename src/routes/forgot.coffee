@@ -1,12 +1,17 @@
 async = require 'async'
 crypto = require 'crypto'
+
 User = require '../models/user'
+nodemailer = require 'nodemailer'
+transport = nodemailer.createTransport 'sendmail'
 
 module.exports = (app) ->
 
   # Generate a token, and expiration date for a user.
   app.post '/forgot', (req, res) ->
     {email} = req.body
+    domain = "localhost"
+    port = 3000
 
     async.waterfall [
       (done) ->
@@ -21,11 +26,31 @@ module.exports = (app) ->
       (user, token, done) ->
           user.resetToken = token
           user.tokenExpires = Date.now() + 1000 * 60 * 60 # 1 Hour.
-          user.save done
+          user.save ->
+            done null, user, token
+
+      (user, token, done) ->
+        text = """
+          To reset your password, please click on this link.
+          http://#{domain}#{':' + port if port isnt 80}/reset/#{user.email}/#{token}
+          Password reset token: #{token}
+        """
+        transport.sendMail
+          from: 'forgot@shorttrack.me'
+          to: user.email
+          subject: 'Password Reset Instructions'
+          text: text
+        , done
 
     ], (err) ->
       return res.send 500, err if err
       res.send 200
+
+
+  # Show the form to enter your confirmation passwords.
+  app.get '/reset/:email?/:token?', (req, res) ->
+    {email, token} = req.params
+    res.render 'forgot', {email, token}
 
   # Verify a user token, and reset the password
   app.post '/reset', (req, res) ->
