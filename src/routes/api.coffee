@@ -26,13 +26,7 @@ class Api
   # test
   #
   test: (req, res, next) ->
-    User.find req.query, (err, docs) ->
-      return res.send 500, err if err
-
-      for doc in docs
-        console.log doc.get "email"
-
-      res.json docs
+    res.json req.user._id
 
   #
   # User

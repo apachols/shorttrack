@@ -22,7 +22,7 @@ class Meetup
     @app.get  '/meetup/:name/schedules', auth.admin, @schedules
     @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
 
-    @app.get  '/meetup/:name/schedule/:user', auth.admin, @name
+    @app.get  '/meetup/:name/schedule/:userid', auth.admin, @name
 
     @app.get  '/meetups', auth.admin, @index
     @app.get  '/meetup/:name', @name
@@ -47,7 +47,8 @@ class Meetup
 
   edit: (req, res) =>
     {params: {name, user}, route: {path}} = req
-    user ?= req.user?.email
+
+    userid = req.user?._id
 
     MeetupModel.findOne {name}, (err, meetup) =>
       done = (matches = {}) ->
@@ -55,18 +56,18 @@ class Meetup
 
       return res.send 404, err if err
 
-      @app.locals.registered = meetup.isRegistered user
+      @app.locals.registered = meetup.isRegistered userid
       do done
 
   name: (req, res) =>
-    {params: {name, user}, route: {path}} = req
+    {params: {name, userid}, route: {path}} = req
 
-    if user
-      email = user
+    if userid
+      userid = userid
     else
-      email = req.user?.email
+      userid = req.user?._id
 
-    allowed = @app.locals.allowed = !!email
+    allowed = @app.locals.allowed = !!userid
 
     MeetupModel.findOne {name}, (err, meetup) =>
       done = (matches = {}) ->
@@ -76,25 +77,25 @@ class Meetup
 
         for match in matches
 
-          if email is match.user1.email
+          if userid is match.user1.userid
             match.partner = match.user2
           else
             match.partner = match.user1
 
-          match.vote = req.user.relation match.partner.email
+          match.vote = req.user.relation match.partner.userid
           rounds[match.round - 1] = match
 
         for round, i in rounds
           rounds[i] = {round:i+1, seat:'-'} unless round
 
         # res.send 200
-        res.render "meetups/main", {email, meetup, rounds}
+        res.render "meetups/main", {userid, meetup, rounds}
 
       return res.send 404, err if err
-      registered = @app.locals.registered = meetup.isRegistered email
+      registered = @app.locals.registered = meetup.isRegistered userid
 
       if allowed and registered
-        meetup.getScheduleUser email, done
+        meetup.getScheduleUser userid, done
       else
         do done
 
@@ -107,7 +108,7 @@ class Meetup
   unregister: (req, res) =>
     {user, params: {name}, route: {path}} = req
 
-    data = {registered: user.email}
+    data = {registered: user._id}
 
     switch @stripView path
       when 'register' then query = {$push: data}

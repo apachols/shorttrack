@@ -10,6 +10,7 @@ User = new mongoose.Schema {
   email: String
   profile: [Profile.schema]
   relations: [ new mongoose.Schema {
+    # When email2id is complete, fix db and replace this email with userid
     email: String
     status: String
     date: Date
@@ -26,13 +27,13 @@ User.plugin passportLocalMongoose, {
 }
 
 # This is called in a loop!  Should instead return map/object
-User.methods.relation = (email) ->
+User.methods.relation = (userid) ->
   for person in @relations
-    return person.status if person.email is email
+    return person.status if person.userid is userid
   null
 
-User.methods.relate = (email, status, callback) ->
-  index = (_.pluck @relations, 'email').indexOf email
+User.methods.relate = (userid, status, callback) ->
+  index = (_.pluck @relations, 'userid').indexOf userid
   if -1 isnt index
     @relations[index].status = status
     @save callback
@@ -41,7 +42,7 @@ User.methods.relate = (email, status, callback) ->
     notify = 0
     @update
       $push:
-        relations: {email, status, date, notify}
+        relations: {userid, status, date, notify}
     , callback
 
 try module.exports = mongoose.model 'User', User

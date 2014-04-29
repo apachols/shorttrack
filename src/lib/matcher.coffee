@@ -1,6 +1,7 @@
 UserModel = require '../../src/models/user'
 MatchModel = require '../../src/models/match'
 MeetupModel = require '../../src/models/meetup'
+mongoose = require 'mongoose'
 
 # The matcher takes a meetup record, pulls all users registered for that meetup,
 # and generates Match records for all users who are able to match
@@ -21,9 +22,14 @@ class Matcher
   getUsers: (pool, callback) ->
     console.log '@getUsers'
 
+    userids = []
+    for userid in @meetup[pool]
+      console.log userid
+      userids.push mongoose.Types.ObjectId userid
+
     # only schedule dates for registered users.
     # eventually only do this for checked/in paid users
-    findSpec = email: $in: @meetup[pool]
+    findSpec = _id: $in: userids
 
     UserModel.find findSpec, (err, users) ->
       console.log 'model.find callback'
@@ -45,19 +51,19 @@ class Matcher
       left = users.pop()
       iter = users.length
 
-      if !arity[left.email] then arity[left.email] = 0
+      if !arity[left._id] then arity[left._id] = 0
 
       # right side: each of the remaining users in the list
       while iter--
         right = users[iter]
 
-        if !arity[right.email] then arity[right.email] = 0
+        if !arity[right._id] then arity[right._id] = 0
 
         # if our left side is ok to match with our right side
         if @okToMatch left, right
 
-          arity[left.email]++
-          arity[right.email]++
+          arity[left._id]++
+          arity[right._id]++
 
           # Calculate match percent score
           score = @score left, right
@@ -65,19 +71,19 @@ class Matcher
           matches.push
             user1:
               name: left.profile[0].name
-              email: left.email
+              userid: left._id
               arity: 0
             user2:
               name: right.profile[0].name
-              email: right.email
+              userid: right._id
               arity: 0
             score: score
             round: 0
 
     for match in matches
-      match.user1.arity = arity[match.user1.email]
-      match.user2.arity = arity[match.user2.email]
-      match.arity = arity[match.user1.email]+arity[match.user2.email]
+      match.user1.arity = arity[match.user1.userid]
+      match.user2.arity = arity[match.user2.userid]
+      match.arity = arity[match.user1.userid]+arity[match.user2.userid]
 
     @meetup.matches = matches
 

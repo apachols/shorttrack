@@ -8,7 +8,7 @@ class Round
   # can error check here if we already have daters.  should not!
   addDate: (match) ->
     @total++
-    @daters.push match.user1.email, match.user2.email
+    @daters.push match.user1.userid, match.user2.userid
 
   # returns true if dater did not participate this round
   includes: (user) ->

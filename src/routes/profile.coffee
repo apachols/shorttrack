@@ -11,7 +11,7 @@ class Profile
   constructor: (@app) ->
     @app.all /^\/profile/, @auth, @setup
 
-    @app.get '/profile/vote/:email/:vote', @auth, @vote
+    @app.get '/profile/vote/:_id/:vote', @auth, @vote
 
     @app.get '/profile', @get
 
@@ -37,9 +37,9 @@ class Profile
       res.render 'profile', {user, genders}
 
   vote: (req, res) ->
-    {email, vote} = req.params
+    {_id, vote} = req.params
 
-    req.user.relate email, vote, (err, wtvz) ->
+    req.user.relate _id, vote, (err, wtvz) ->
       if err then res.send 500
       else res.send 200
 

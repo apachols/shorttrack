@@ -4,11 +4,11 @@ Match = new mongoose.Schema
   seat: Number
   user1:
     name: String
-    email: String
+    userid: String
     arity: Number
   user2:
     name: String
-    email: String
+    userid: String
     arity: Number
   round: Number
   arity: Number
