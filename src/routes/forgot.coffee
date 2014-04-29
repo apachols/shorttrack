@@ -37,11 +37,15 @@ module.exports = (app) ->
         done "Password Mismatch"
 
       (done) ->
-        User.findOne {email}, done
+        User.findOne {email}, (err, user) ->
+          return done err, user if user
+          done 'User does not exist!'
 
       (user, done) ->
         return done null, user if token is user.resetToken
         done "Token Mismatch"
+
+      #@todo  check token expiration
 
       (user, done) ->
         user.setPassword password, done
