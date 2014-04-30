@@ -65,7 +65,9 @@ class Meetup
     if userid
       userid = userid
     else
-      userid = req.user?._id
+      userid = req.user?._id.toString()
+
+    console.log userid
 
     allowed = @app.locals.allowed = !!userid
 
