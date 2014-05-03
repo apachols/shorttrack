@@ -39,7 +39,6 @@ block content
             .well.well-sm #{meetup.description}
 
         if rounds.length
-          h4 Schedule for #{email}
           table.table
             thead
               tr
@@ -54,9 +53,9 @@ block content
                   if round.seat === '-'
                     td(colspan="3") Break
                   else
-                    td: a(href="/admin/user/#{round.partner.email}") #{round.partner.name}
+                    td: a(href="/admin/user/#{round.partner.userid}") #{round.partner.name}
                     td #{round.seat}
-                    td.votes(data-partner="#{round.partner.email}")
+                    td.votes(data-partner="#{round.partner.userid}")
 
                       input.vote(name="vote-#{round.round}", value="plz", id="vote-plz-#{round.round}",
                         checked=(round.vote === 'plz'), type="radio")

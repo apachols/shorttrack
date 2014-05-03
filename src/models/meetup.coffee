@@ -30,8 +30,8 @@ Meetup = new mongoose.Schema
 Meetup.statics =
   all: (cb) -> @find().exec cb
 
-Meetup.methods.isRegistered = (email) ->
-  return -1 isnt @registered.indexOf email
+Meetup.methods.isRegistered = (userid) ->
+  return -1 isnt @registered.indexOf userid
 
 Meetup.methods.getScheduleAll = (callback) ->
   filtered = @matches.filter (match) ->
@@ -44,11 +44,11 @@ Meetup.methods.getScheduleAll = (callback) ->
     return 1 if a.round > b.round
     return 0
 
-Meetup.methods.getScheduleUser = (email, callback) ->
+Meetup.methods.getScheduleUser = (userid, callback) ->
   filtered = @matches.filter (match) ->
     if match.round is 0
       return false
-    if -1 != [match.user1.email, match.user2.email].indexOf email
+    if -1 != [match.user1.userid, match.user2.userid].indexOf userid
       return true
     return false
 

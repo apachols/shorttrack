@@ -9,10 +9,10 @@ class GreedyStrategy
   sortForgottenToTheFront: (matches, round) ->
 
     matches.sort (left, right) ->
-      sumleft =   not round.includes left.user1.email
-      sumleft +=  not round.includes left.user2.email
-      sumright =  not round.includes right.user1.email
-      sumright += not round.includes right.user2.email
+      sumleft =   not round.includes left.user1.userid
+      sumleft +=  not round.includes left.user2.userid
+      sumright =  not round.includes right.user1.userid
+      sumright += not round.includes right.user2.userid
 
       return  1 if sumleft < sumright
       return -1 if sumleft > sumright
@@ -21,8 +21,8 @@ class GreedyStrategy
   # are we ready to schedule this match?
   # also this will check here to see if this user needs a break
   pickMatch: (round, match) ->
-    return false if round.includes(match.user1.email)
-    return false if round.includes(match.user2.email)
+    return false if round.includes(match.user1.userid)
+    return false if round.includes(match.user2.userid)
     return true
 
   # assume matches array is changed by reference here
