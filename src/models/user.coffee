@@ -8,6 +8,8 @@ _ = require 'lodash'
 User = new mongoose.Schema {
   admin: Boolean
   email: String
+  resetToken: String
+  tokenExpires: Date
   profile: [Profile.schema]
   relations: [ new mongoose.Schema {
     userid: String
