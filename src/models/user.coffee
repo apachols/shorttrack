@@ -10,8 +10,7 @@ User = new mongoose.Schema {
   email: String
   profile: [Profile.schema]
   relations: [ new mongoose.Schema {
-    # When email2id is complete, fix db and replace this email with userid
-    email: String
+    userid: String
     status: String
     date: Date
     notify: Number
