@@ -10,6 +10,10 @@ class Api
 
     @app.get '/api/test', @test
 
+    @app.get '/api/profile', auth.user, @getprofile
+
+    @app.post '/api/profile', auth.user, @updateprofile
+
     @app.get '/api/user', @getusers
 
     @app.get '/api/question', @getquestions
@@ -21,6 +25,19 @@ class Api
     @app.post '/api/gender/:_id', @updategender
     @app.post '/api/gender', @creategender
     @app.delete '/api/gender/:id', @deletegender
+
+  getprofile: (req,res,next) ->
+    email = req.user.email
+    profile = req.user.profile[0]
+    res.json {email, profile}
+
+  updateprofile: (req,res,next) ->
+    console.log req.body
+    req.user.profile = req.body
+
+    req.user.save (err, p, n) ->
+      if err then res.send err, 400
+      else res.send 200
 
   #
   # test
