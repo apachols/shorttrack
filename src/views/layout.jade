@@ -47,6 +47,7 @@ body(ng-app='sting')
           li: a(href="/admin") Admin tools
         if my
           if my.profile[0]
+            li: a #{my.resetToken}
             li: a(href="/profile") #{my.profile[0].name}
           else
             li: a(href="/profile") Fill out your profile!

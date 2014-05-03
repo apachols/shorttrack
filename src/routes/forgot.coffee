@@ -1,5 +1,6 @@
 async = require 'async'
 crypto = require 'crypto'
+request = require 'request'
 
 User = require '../models/user'
 nodemailer = require 'nodemailer'
@@ -30,9 +31,10 @@ module.exports = (app) ->
             done null, user, token
 
       (user, token, done) ->
+        port = "#{':' + port if port isnt 80}"
         text = """
           To reset your password, please click on this link.
-          http://#{domain}#{':' + port if port isnt 80}/reset/#{user.email}/#{token}
+          http://#{domain}#{port}/reset/#{user.email}/#{token}
           Password reset token: #{token}
         """
         transport.sendMail
@@ -70,14 +72,23 @@ module.exports = (app) ->
         return done null, user if token is user.resetToken
         done "Token Mismatch"
 
-      #@todo  check token expiration
+      (user, done) ->
+        if user.tokenExpires.getTime() + 1000 * 60 * 60 > Date.now()
+          return done null, user
+        done "Token Expired"
 
       (user, done) ->
         user.setPassword password, done
 
       (user, done) ->
-        user.save done
+        user.save done null, user
 
     ], (err) ->
       return res.send 400, err if err
-      res.send 200
+
+      request.post
+        url:'http://localhost:3000/login'
+        form: {email, password}
+      , (err, response, body) ->
+        if response.statusCode == 302
+          res.redirect response.headers.location
