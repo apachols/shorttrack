@@ -1,22 +1,32 @@
-angular.module("sting.profile", ["ngResource"])
+angular.module("sting.profile", ["ngResource", "checklist-model"])
   .controller "ProfileController", [
     "$scope", "$resource",
     ( $scope, $resource ) ->
       console.log "ProfileController"
 
-      $scope.doc = {}
+      $scope.getGenders = () ->
+        resource = $resource '/api/gender'
+        genders = resource.query {}, ->
+          $scope.genders = genders
 
-      resource = $resource '/api/profile'
+      $scope.getProfile = () ->
+        resource = $resource '/api/profile'
+        response = resource.get {}, ->
+          $scope.doc =
+            email: response.email
+            profile: response.profile
+
+          console.log $scope.doc
+
       $scope.save = (newdoc, olddoc) ->
         console.log 'directive save', newdoc, olddoc
+        resource = $resource '/api/profile'
         resource.save newdoc
 
-      response = resource.get {}, ->
-        $scope.doc =
-          email: response.email
-          profile: response.profile
+      $scope.doc = {}
+      $scope.getGenders()
+      $scope.getProfile()
 
-        console.log $scope.doc
   ]
   .directive "autosave", [ () ->
     return {

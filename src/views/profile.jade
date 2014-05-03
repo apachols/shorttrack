@@ -10,106 +10,35 @@ block content
           fieldset
             legend Profile
             .form-group.has-feedback
-              label.col-sm-2.col-sm-offset-1.control-label(for='form-name') Name
+              label.col-sm-2.col-sm-offset-1.control-label Name
               .col-sm-8
                 input#form-name.form-control(type='text', name='name', ng-model="doc.profile.name")
 
             .form-group
-              label.col-sm-2.col-sm-offset-1.control-label(for='#form-nickname') Nickname
+              label.col-sm-2.col-sm-offset-1.control-label Nickname
               .col-sm-8
                 input#form-nickname.form-control(type='text', name='nickname', ng-model="doc.profile.nickname")
 
             .form-group
-              label.col-sm-2.col-sm-offset-1.control-label(for='#form-age-my') Age
+              label.col-sm-2.col-sm-offset-1.control-label Age
               .col-sm-8: .row
-                .col-sm-2.has-feedback
-                  input#js-age-my-output.form-control(type='text', disabled, value=get(user, 'profile[0].age.my'))
-                  .fa.fa-check.form-control-feedback
-
-                .col-sm-10
-                  .form-control-static.has-feedback
-                    input#form-age-my.form-control(type='text', data-slider-min='18', data-slider-max='100',
-                      data-slider-value=get(user, 'profile[0].age.my'), name='age.my')
+                .col-sm-3
+                  input.form-control(type='number', ng-model="doc.profile.age.my")
 
             .form-group
               label.col-sm-2.col-sm-offset-1.control-label Gender
               .col-sm-8
-                each gender in genders
-                  .checkbox: label
-                    input(type='checkbox', value='#{gender.code}')
-                    | #{gender.label}
+                ul.list-unstyled(ng-repeat="gender in genders track by $index")
+                  li.checkbox: label
+                    input(type='checkbox', ng-true-value="{{gender.code}}" ng-model="doc.profile.gender.my")
+                    | {{gender.label}}
 
-  .row: .col-xs-12
-    .panel.panel-default
-      .panel-heading DEBUG
-      .panel-body
-        pre.
-          #{user.profile[0]}
-        pre#js-debug-panel.
-          #{user}
-
-  //- script.
-  //-   $(function () {
-  //-     function postUpdate(name, value, callback) {
-  //-       $.post('/profile/update', {name: name, value: value})
-  //-         .done(callback)
-  //-         .fail(function() {
-  //-           console.error("Post fail");
-  //-         });
-  //-     }
-
-  //-     $('#form-name')
-  //-       .on('change', function (e) {
-  //-         postUpdate('name', $(this).val(), function(data){
-  //-           console.log('Updated');
-  //-         });
-  //-       });
-
-  //-     $('#form-nickname')
-  //-       .on('change', function (e) {
-  //-         postUpdate('nickname', $(this).val(), function(data){
-  //-           console.log('Updated');
-  //-         });
-  //-       });
-
-  //-     $('#form-age-my')
-  //-       .slider()
-  //-       .on('slideStop', function (e) {
-  //-         var $this = $(this);
-
-  //-         postUpdate($this.attr('name'), $this.val(), function () {
-  //-           console.log('success');
-  //-         });
-  //-       }).on('slide', function (e) {
-  //-         $('#js-age-my-output').val(e.value)
-  //-       });
-
-      //- $('.js-input').on('focus', function (e) {
-      //-   $(this)
-      //-     .parent().addClass('input-group').end()
-      //-     .siblings('.input-group-btn').removeClass('hide')
-      //- });
-
-      //- $('.js-update').on('click', function (e) {
-      //-   $this = $(this);
-      //-   $input = $this.parent().siblings('input')
-      //-   $.post('/profile/update/', {name: $input.attr('name'), value: $input.val()})
-      //-     .done(function () {
-      //-       $input
-      //-         .siblings('.form-control-feedback').removeClass('hide').end()
-      //-         .parents('.form-group').addClass('has-success').end()
-      //-         .parent().removeClass('input-group').end()
-      //-         .siblings('.input-group-btn').addClass('hide')
-
-      //-       setTimeout(function () {
-      //-         $input
-      //-           .siblings('.form-control-feedback').addClass('hide').end()
-      //-           .parents('.form-group').removeClass('has-success');
-      //-       }, 3000);
-      //-     });
-      //- });
-
-      //- $('.js-form').on('submit', function (e) {
-      //-   e.preventDefault();
-      //- });
-    //- });
+          fieldset
+            legend Seeking
+            .form-group
+              label.col-sm-2.col-sm-offset-1.control-label Gender
+              .col-sm-8
+                ul.list-unstyled(ng-repeat="gender in genders track by $index")
+                  li.checkbox: label
+                    input(type='checkbox', checklist-value="gender.code" checklist-model="doc.profile.gender.seeking")
+                    | {{gender.label}}
