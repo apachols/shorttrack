@@ -1,12 +1,8 @@
 extends ../layout
 
-block headerscripts
-  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js')
-  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js')
-
 block content
   .row: .col-xs-12
-    .panel.panel-default(ng-app="edit")
+    .panel.panel-default
       base(href="/admin/")
       div(ng-init="config={ '_id': '#{_id}', collection:'gender', fields:['label','code']}")
         div(ng-controller="EditController")
@@ -28,6 +24,3 @@ block content
                     ul.list-inline.pull-right
                       li: span.btn.btn-danger(ng-show="editform.$dirty" ng-click="undo()") Undo
                       li: button.btn.btn-primary(ng-click="save()") Save
-
-block scripts
-  script(src='/public/js/edit.js')

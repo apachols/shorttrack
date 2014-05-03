@@ -1,4 +1,4 @@
-angular.module("edit", ["ngResource"])
+angular.module("sting.edit", ["ngResource"])
   .controller "EditController", [
     "$scope", "$resource", '$window',
     ($scope, $resource, $window) ->
