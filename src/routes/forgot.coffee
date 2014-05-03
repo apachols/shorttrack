@@ -85,10 +85,10 @@ module.exports = (app) ->
 
     ], (err) ->
       return res.send 400, err if err
-
-      request.post
-        url:'http://localhost:3000/login'
-        form: {email, password}
-      , (err, response, body) ->
-        if response.statusCode == 302
-          res.redirect response.headers.location
+      res.redirect "/login"
+      #   request.post
+      #   url:'http://localhost:3000/login'
+      #   form: {email, password}
+      # , (err, response, body) ->
+      #   if response.statusCode == 302
+      #      response.headers.location
