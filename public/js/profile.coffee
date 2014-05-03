@@ -8,7 +8,7 @@ angular.module("sting.profile", ["ngResource"])
 
       resource = $resource '/api/profile'
       $scope.save = (newdoc, olddoc) ->
-        console.log 'directive save', olddoc, newdoc
+        console.log 'directive save', newdoc, olddoc
         resource.save newdoc
 
       response = resource.get {}, ->
@@ -22,6 +22,6 @@ angular.module("sting.profile", ["ngResource"])
     return {
       restrict: 'A'
       link: (scope, element, attrs) ->
-        scope.$watch 'doc.profile', scope.save, true
+        scope.$watch attrs.model, _.debounce(scope.save, 1000), true
     }
   ]

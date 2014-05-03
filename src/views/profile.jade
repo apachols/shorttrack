@@ -5,19 +5,19 @@ block content
     .panel.panel-default(ng-controller="ProfileController")
       .panel-heading <b>#{user.email} Still express, should be ng</b>
       .panel-body
-        form.js-form.form-horizontal(name="profile" role='form')
+        form.js-form.form-horizontal(name="profile" role='form' autosave model='doc.profile')
 
           fieldset
             legend Profile
             .form-group.has-feedback
               label.col-sm-2.col-sm-offset-1.control-label(for='form-name') Name
               .col-sm-8
-                input#form-name.form-control(autosave type='text', name='name', ng-model="doc.profile.name")
+                input#form-name.form-control(type='text', name='name', ng-model="doc.profile.name")
 
             .form-group
               label.col-sm-2.col-sm-offset-1.control-label(for='#form-nickname') Nickname
               .col-sm-8
-                input#form-nickname.form-control.js-input(type='text', name='nickname', value=get(user, 'profile[0].nickname'))
+                input#form-nickname.form-control(type='text', name='nickname', ng-model="doc.profile.nickname")
 
             .form-group
               label.col-sm-2.col-sm-offset-1.control-label(for='#form-age-my') Age
