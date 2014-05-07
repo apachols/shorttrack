@@ -4,6 +4,12 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
     ( $scope, $resource ) ->
       console.log "ProfileController"
 
+      $scope.getQuestions = () ->
+        resource = $resource '/api/question'
+        questions = resource.query {}, ->
+          $scope.questions = questions
+          console.log questions
+
       $scope.getGenders = () ->
         resource = $resource '/api/gender'
         genders = resource.query {}, ->
@@ -25,6 +31,7 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
         resource.save newdoc
 
       $scope.doc = {}
+      $scope.getQuestions()
       $scope.getGenders()
       $scope.getProfile()
 
@@ -33,7 +40,9 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
     return {
       restrict: 'A'
       link: (scope, element, attrs) ->
-        scope.$watch attrs.model, _.debounce(scope.save, 1000), true
+        savefn = (newdoc, olddoc) ->
+          scope.save(newdoc, olddoc) if olddoc
+        scope.$watch attrs.model, _.debounce(savefn, 1000), true
     }
   ]
   .directive 'slider', ['$parse', ($parse) ->

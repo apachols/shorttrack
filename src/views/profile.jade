@@ -51,14 +51,26 @@ block content
                     | {{gender.label}}
 
             .form-group
-              label.col-sm-2.col-sm-offset-1.control-label Age
+              label.col-sm-2.col-sm-offset-1.control-label Ages
               .col-sm-8: .row
                 .col-sm-3.has-feedback
-                  input.form-control(type='text' disabled ng-model="doc.profile.age.seeking")
-                  .fa.fa-check.form-control-feedback
+                  div: {{doc.profile.age.seeking[0]}} to {{doc.profile.age.seeking[1]}}
 
                 .col-sm-9
                   .form-control-static.has-feedback
                     input#form-age-my.form-control(
                       slider ng-if="doc.profile" model='doc.profile.age.seeking' type='text' name='age.seeking'
                       data-slider-min='18' data-slider-max='100' data-slider-step='1' data-slider-range='true' )
+
+          fieldset
+            legend Match Questions
+            .form-group
+              ul.list-unstyled(ng-repeat="question in questions track by $index")
+                li.col-sm-12: .row
+                  label.col-sm-3.control-label {{question.name}}
+                  .col-sm-9
+                    div: {{question.text}}
+                    ul.list-unstyled(ng-repeat="answer in question.answers track by $index")
+                      li.checkbox: label
+                        input(type='checkbox')
+                        | {{answer}}

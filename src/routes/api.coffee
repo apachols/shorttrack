@@ -1,5 +1,6 @@
 User = require '../models/user'
 Meetup = require '../models/meetup'
+Profile = require '../models/profile'
 Question = require '../models/question'
 Gender = require '../models/gender'
 
@@ -28,7 +29,10 @@ class Api
 
   getprofile: (req,res,next) ->
     email = req.user.email
-    profile = req.user.profile[0]
+    # req.user.profile.pop() or
+    profile = new Profile
+      age: seeking: [20,40]
+    console.log profile
     res.json {email, profile}
 
   updateprofile: (req,res,next) ->
