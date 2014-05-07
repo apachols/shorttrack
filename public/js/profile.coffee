@@ -16,6 +16,8 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
             email: response.email
             profile: response.profile
 
+          console.log response.profile.age.my
+
           console.log $scope.doc
 
       $scope.save = (newdoc, olddoc) ->
@@ -35,3 +37,18 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
         scope.$watch attrs.model, _.debounce(scope.save, 1000), true
     }
   ]
+  .directive 'slider', ['$parse', ($parse) ->
+    return {
+      restrict: 'A'
+      link: ($scope, element, attrs) ->
+        model = $parse attrs.model
+
+        slider = $(element[0]).slider
+          'value': model($scope)
+
+        slider.on 'slide', (ev) ->
+          model.assign $scope, ev.value
+          $scope.$apply()
+    }
+  ]
+
