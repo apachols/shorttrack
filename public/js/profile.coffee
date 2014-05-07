@@ -4,6 +4,14 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
     ( $scope, $resource ) ->
       console.log "ProfileController"
 
+      # idea:  merge the ANSWERED questions from profile with the NEW questions
+      #        from question, after both are retrieved.  Put these in profile.questions.
+      #
+      # http://lodash.com/docs#uniq
+      #
+      # Can a user get skip a question?  skip button -> clear answer
+      # Can a user get rid of an unanswered question? unanswered questions aren't saved
+
       $scope.getQuestions = () ->
         resource = $resource '/api/question'
         questions = resource.query {}, ->
