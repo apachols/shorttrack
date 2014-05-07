@@ -12,11 +12,10 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       $scope.getProfile = () ->
         resource = $resource '/api/profile'
         response = resource.get {}, ->
+
           $scope.doc =
             email: response.email
             profile: response.profile
-
-          console.log response.profile.age.my
 
           console.log $scope.doc
 
