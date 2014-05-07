@@ -11,6 +11,17 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       #
       # Can a user get skip a question?  skip button -> clear answer
       # Can a user get rid of an unanswered question? unanswered questions aren't saved
+      # How to tell if a particular answer is checked?
+      # What if answers change?  Could have stranded records for users.
+      # This needs some help.  Maybe changing answers is really bad, even if it were normalized.
+      # OK - NEED
+      #   questions section is a question pager directive(ng-repeat!), fetches own records on page-turn
+      #   answer is populated from user's answers (keep a key-value store in memory?)
+      #   when user changes question (answer (ng-repeat!), importance(ng-repeat!), acceptable(ng-repeat!))
+      #     updates the profile record's matching question
+      #
+      #   Cannot do question answering via separate ajax, updating same profile record.  in memory.
+      #
 
       $scope.getQuestions = () ->
         resource = $resource '/api/question'
@@ -31,7 +42,7 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
             email: response.email
             profile: response.profile
 
-          console.log $scope.doc
+        $scope.getQuestions()
 
       $scope.save = (newdoc, olddoc) ->
         console.log 'directive save', newdoc, olddoc
@@ -39,7 +50,6 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
         resource.save newdoc
 
       $scope.doc = {}
-      $scope.getQuestions()
       $scope.getGenders()
       $scope.getProfile()
 
