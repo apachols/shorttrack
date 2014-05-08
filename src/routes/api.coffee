@@ -29,7 +29,9 @@ class Api
 
   getprofile: (req,res,next) ->
     email = req.user.email
-    profile = req.user.profile.pop() or new Profile age: seeking: [20,40]
+    # req.user.profile.pop() or
+    profile = new Profile
+      age: seeking: [20,40]
     console.log profile
     res.json {email, profile}
 
