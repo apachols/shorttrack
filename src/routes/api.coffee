@@ -17,22 +17,19 @@ class Api
 
     @app.get '/api/user', @getusers
 
+    @app.get '/api/question/new', @createquestion
     @app.get '/api/question', @getquestions
     @app.post '/api/question/:_id', @updatequestion
-    @app.post '/api/question', @createquestion
     @app.delete '/api/question/:id', @deletequestion
 
+    @app.get '/api/gender/new', @creategender
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
-    @app.post '/api/gender', @creategender
     @app.delete '/api/gender/:id', @deletegender
 
   getprofile: (req,res,next) ->
     email = req.user.email
-    # req.user.profile.pop() or
-    profile = new Profile
-      age: seeking: [20,40]
-    console.log profile
+    req.user.profile.pop() or profile = new Profile age: seeking: [20,40]
     res.json {email, profile}
 
   updateprofile: (req,res,next) ->
@@ -47,7 +44,10 @@ class Api
   # test
   #
   test: (req, res, next) ->
-    res.json req.user._id
+    # res.json req.user._id
+    q = new Question
+    res.json q
+
 
   #
   # User
@@ -73,9 +73,8 @@ class Api
       res.send 200
 
   createquestion: (req, res, next) ->
-    Question.create req.body, (err, doc) ->
-      return res.send 500, err if err
-      res.json {doc}
+    doc = new Question
+    res.json doc
 
   getquestions: (req, res, next) ->
     Question.find req.query, (err, docs) ->
@@ -84,7 +83,7 @@ class Api
       console.log docs
 
   #
-  # Genders
+  # Gender
   #
   deletegender: (req, res, next) ->
     {id} = req.params

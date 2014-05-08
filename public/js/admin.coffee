@@ -1,64 +1,92 @@
 console.log 'HAI DENNY'
 
-angular.module("sting.admin", ["sting.adminServices", "ngResource"])
-  .controller "AdminController", [
-    "$scope", "user", "question", "gender", "$resource"
-    ($scope, user, question, gender, $resource) ->
+angular.module("sting.admin", ["ngResource", "ngRoute"])
+  .config [
+    '$routeProvider', '$locationProvider',
+    ($routeProvider, $locationProvider) ->
+      $routeProvider
 
-      $scope.getResource = (model) ->
-        console.log "getResource", model
-        switch model
-          when "user"
-            user
-          when "question"
-            question
-          when "gender"
-            gender
-          else
-            null
+        .when '/user',
+          controller: 'UserController'
+          templateUrl: 'list.html'
 
-      $scope.add = (model) ->
-        resource = $resource '/api/:model', {model}
+        .when '/question',
+          controller: 'QuestionController'
+          templateUrl: 'list.html'
+
+        .when '/gender',
+          controller: 'GenderController'
+          templateUrl: 'list.html'
+
+        .otherwise
+          controller: 'UserController'
+          templateUrl: 'list.html'
+    ]
+  .controller "UserController", [
+    "$scope", "$resource"
+    ($scope, $resource) ->
+
+      $scope.add = () ->
+        console.log "user add"
+
+      $scope.remove = (index, id) ->
+        resource = $resource '/api/user/:id', {id}
         resource.delete (err, thing) ->
           $scope.docs.splice(index)
 
-      $scope.remove = (index, model, id) ->
-        resource = $resource '/api/:model/:id', {model, id}
-        resource.delete (err, thing) ->
-          $scope.docs.splice(index)
-
-      # select a model and fetch records from the db
-      $scope.select = (model) ->
-        $scope.selected = model
-
-        resource = $scope.getResource(model)
-        switch model
-          when "user"
-            $scope.tableheader = "Users"
-            $scope.fields = ['email', 'admin']
-          when "question"
-            $scope.tableheader = "Match Questions"
-            $scope.fields = ['name', 'text']
-          when "gender"
-            $scope.tableheader = "Genders"
-            $scope.fields = ['label', 'code']
-
-        $scope.docs = []
-        docs = resource.query {}, ->
-          $scope.docs = docs
+      resource = $resource '/api/user', {}
 
       $scope.docs = []
-      $scope.fields = []
-      $scope.select 'user'
+      docs = resource.query {}, ->
+        $scope.docs = docs
+
+      $scope.tableheader = "Users"
+      $scope.fields = ['email', 'admin']
+      $scope.selected = "user"
   ]
+  .controller "QuestionController", [
+    "$scope", "$resource"
+    ($scope, $resource) ->
 
-angular.module("sting.adminServices", ["ngResource"])
+      $scope.add = () ->
+        resource = $resource '/api/question/new'
+        doc = resource.get {}, () ->
+          console.log "add complete", doc
 
-  .factory "user", ($resource) ->
-    $resource '/api/user', {}
+      $scope.remove = (index, id) ->
+        resource = $resource '/api/question/:id', {id}
+        resource.delete (err, thing) ->
+          $scope.docs.splice(index)
 
-  .factory "question", ($resource) ->
-    $resource '/api/question', {}
+      resource = $resource '/api/question', {}
 
-  .factory "gender", ($resource) ->
-    $resource '/api/gender', {}
+      $scope.docs = []
+      docs = resource.query {}, ->
+        $scope.docs = docs
+
+      $scope.tableheader = "Match Questions"
+      $scope.fields = ['name', 'text']
+      $scope.selected = "question"
+  ]
+  .controller "GenderController", [
+    "$scope", "$resource"
+    ($scope, $resource) ->
+
+      $scope.add = () ->
+        console.log "gender add"
+
+      $scope.remove = (index, id) ->
+        resource = $resource '/api/gender/:id', {id}
+        resource.delete (err, thing) ->
+          $scope.docs.splice(index)
+
+      resource = $resource '/api/gender', {}
+
+      $scope.docs = []
+      docs = resource.query {}, ->
+        $scope.docs = docs
+
+      $scope.tableheader = "Genders"
+      $scope.fields = ['label', 'code']
+      $scope.selected = "gender"
+  ]

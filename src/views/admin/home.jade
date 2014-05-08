@@ -1,34 +1,39 @@
 extends ../layout
 
 block content
+
+  script(type="text/ng-template" id="list.html")
+    .col-sm-2
+      ul.nav.nav-pills.nav-stacked
+        li(ng-class="{active: selected == 'user'}")
+          a(ng-href="#/user" ) Users
+
+        li(ng-class="{active: selected == 'question'}")
+          a(ng-href="#/question" ) Questions
+
+        li(ng-class="{active: selected == 'gender'}")
+          a(ng-href="#/gender") Genders
+
+    .col-sm-10
+      .panel.panel-default
+        .panel-heading
+          a.pull-right(ng-click="add()") Add
+          h1 {{tableheader}}
+        .panel-body
+          table.table.table-striped
+            thead
+              tr
+                th(ng-repeat="field in fields") {{field}}
+                th edit
+                th remove
+            tbody
+              tr(ng-repeat="doc in docs")
+                td(ng-repeat="field in fields") {{doc[field]}}
+                td: a(href="/admin/{{selected}}/{{doc._id}}") edit
+                td: a(ng-click="remove($index, selected, doc._id)") remove
+
   .row
     base(href="/admin/")
-    div(ng-controller="AdminController")
-      .col-sm-2
-        ul.nav.nav-pills.nav-stacked
-          li(ng-class="{active: selected == 'user'}")
-            a(ng-click="select('user')") Users
+    div(ng-app="sting.admin")
+      div(ng-view)
 
-          li(ng-class="{active: selected == 'question'}")
-            a(ng-click="select('question')") Questions
-
-          li(ng-class="{active: selected == 'gender'}")
-            a(ng-click="select('gender')") Genders
-
-      .col-sm-10
-        .panel.panel-default
-          .panel-heading
-            a.pull-right(href="/admin/{{selected}}") Add
-            h1 {{tableheader}}
-          .panel-body
-            table.table.table-striped
-              thead
-                tr
-                  th(ng-repeat="field in fields") {{field}}
-                  th edit
-                  th remove
-              tbody
-                tr(ng-repeat="doc in docs")
-                  td(ng-repeat="field in fields") {{doc[field]}}
-                  td: a(href="/admin/{{selected}}/{{doc._id}}") edit
-                  td: a(ng-click="remove($index, selected, doc._id)") remove
