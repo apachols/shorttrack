@@ -1,7 +1,6 @@
 mongoose = require 'mongoose'
 Gender = require './gender'
 
-# TODO - make the question schema
 Questions = new mongoose.Schema
 
 Profile = new mongoose.Schema
@@ -16,7 +15,10 @@ Profile = new mongoose.Schema
 
   age: {
     my: Number
-    seeking: [Number]
+    seeking: [
+      type: Number
+      default: 18
+    ]
   }
 
   questions: [Questions.schema]

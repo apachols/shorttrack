@@ -1,5 +1,6 @@
 User = require '../models/user'
 Meetup = require '../models/meetup'
+Profile = require '../models/profile'
 Question = require '../models/question'
 Gender = require '../models/gender'
 
@@ -9,6 +10,10 @@ class Api
   constructor: (@app) ->
 
     @app.get '/api/test', @test
+
+    @app.get '/api/profile', auth.user, @getprofile
+
+    @app.post '/api/profile', auth.user, @updateprofile
 
     @app.get '/api/user', @getusers
 
@@ -21,6 +26,20 @@ class Api
     @app.post '/api/gender/:_id', @updategender
     @app.post '/api/gender', @creategender
     @app.delete '/api/gender/:id', @deletegender
+
+  getprofile: (req,res,next) ->
+    email = req.user.email
+    profile = req.user.profile.pop() or new Profile age: seeking: [20,40]
+    console.log profile
+    res.json {email, profile}
+
+  updateprofile: (req,res,next) ->
+    console.log req.body
+    req.user.profile = req.body
+
+    req.user.save (err, p, n) ->
+      if err then res.send err, 400
+      else res.send 200
 
   #
   # test

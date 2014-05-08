@@ -3,4 +3,5 @@ angular.module 'sting', [
   'sting.forgot'
   'sting.admin'
   'sting.edit'
+  'sting.profile'
 ]

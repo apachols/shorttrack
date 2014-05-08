@@ -27,14 +27,7 @@ class Profile
 
   get: (req, res) ->
     {user} = req
-
-    async.parallel
-      # easy mode future proof.
-      # questions, events, whatever else we want goes here.
-      genders: (cb) -> Gender.find {}, cb
-    , (err, results) ->
-      {genders} = results
-      res.render 'profile', {user, genders}
+    res.render 'profile', {user}
 
   vote: (req, res) ->
     {_id, vote} = req.params
