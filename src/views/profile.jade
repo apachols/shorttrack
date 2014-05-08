@@ -3,7 +3,7 @@ extends layout
 block content
   .row: .col-xs-12
     .panel.panel-default(ng-controller="ProfileController")
-      .panel-heading <b>#{user.email} Still express should be ng</b>
+      .panel-heading <b>{{doc.email}}</b>
       .panel-body
         form.js-form.form-horizontal(name="profile" role='form' autosave model='doc.profile')
 
