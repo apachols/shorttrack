@@ -12,7 +12,7 @@ class Login
       my: req.user
     }
 
-  auth: passport.authenticate 'local', 
+  auth: passport.authenticate 'local',
     successRedirect: '/'
     failureRedirect: '/login'
   
