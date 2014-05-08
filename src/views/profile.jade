@@ -43,7 +43,7 @@ block content
           fieldset
             legend Seeking
             .form-group
-              label.col-sm-2.col-sm-offset-1.control-label Gender
+              label.col-sm-2.col-sm-offset-1.control-label Genders
               .col-sm-8
                 ul.list-unstyled(ng-repeat="gender in genders track by $index")
                   li.checkbox: label
@@ -62,15 +62,15 @@ block content
                       slider ng-if="doc.profile" model='doc.profile.age.seeking' type='text' name='age.seeking'
                       data-slider-min='18' data-slider-max='100' data-slider-step='1' data-slider-range='true' )
 
-          fieldset
-            legend Match Questions
-            .form-group
-              ul.list-unstyled(ng-repeat="question in questions track by $index")
-                li.col-sm-12: .row
-                  label.col-sm-3.control-label {{question.name}}
-                  .col-sm-9
-                    div: {{question.text}}
-                    ul.list-unstyled(ng-repeat="answer in question.answers track by $index")
-                      li.checkbox: label
-                        input(type='checkbox')
-                        | {{answer}}
+          //- fieldset
+          //-   legend Match Questions
+          //-   .form-group
+          //-     ul.list-unstyled(ng-repeat="question in questions track by $index")
+          //-       li.col-sm-12: .row
+          //-         label.col-sm-3.control-label {{question.name}}
+          //-         .col-sm-9
+          //-           div: {{question.text}}
+          //-           ul.list-unstyled(ng-repeat="answer in question.answers track by $index")
+          //-             li.checkbox: label
+          //-               input(type='checkbox')
+          //-               | {{answer}}
