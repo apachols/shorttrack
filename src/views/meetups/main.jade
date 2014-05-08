@@ -11,9 +11,9 @@ block content
         header.panel-heading: h2 Admin Controls
         .panel-body
           ul.list-unstyled
-            li: h4: a(href="#{path}/schedules") Full Schedule
-            li: h4: a(href="#{path}/generate") Generate new schedule
-            li: h4: a(href="#{path}/edit") Edit this meetup
+            li: h4: a(href="/meetup/#{meetup.name}/schedules") Full Schedule
+            li: h4: a(href="/meetup/#{meetup.name}/generate") Generate new schedule
+            li: h4: a(href="/meetup/#{meetup.name}/edit") Edit this meetup
     section.panel.panel-default
       header.panel-heading: b #{meetup.name}
       .panel-body
@@ -73,12 +73,6 @@ block content
                       label.fa-stack(for="vote-meh-#{round.round}")
                         i.fa.fa-heart.fa-stack-2x
                         i.fa.fa-bolt.fa-stack-2x
-
-
-                      //- each key, i in round.votes
-                      //-   - var vote = round.votes[key]
-                      //-   input(type="radio", id="fav-#{key}" name="vote-#{round.round}", value="#{key}", checked=vote.checked)
-                      //-   label.fa-stack.fa-lg(for="fav-#{vote.target}")!= vote.content
 
       if allowed
         footer.panel-footer
