@@ -13,6 +13,7 @@ block content
           ul.list-unstyled
             li: h4: a(href="#{path}/schedules") Full Schedule
             li: h4: a(href="#{path}/generate") Generate new schedule
+            li: h4: a(href="#{path}/edit") Edit this meetup
     section.panel.panel-default
       header.panel-heading: b #{meetup.name}
       .panel-body
@@ -87,8 +88,6 @@ block content
                 a.btn.btn-danger(href="#{path}/unregister") Unsubscribe!
               else
                 a.btn.btn-primary(href="#{path}/register") Sign Me Up
-
-  pre= inspect(rounds)
 
 block scripts
   script

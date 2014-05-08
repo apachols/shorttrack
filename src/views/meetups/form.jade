@@ -13,12 +13,12 @@
   label Meetup Time
 
   .row: .col-sm-4: .input-group
-    input#form-hours.form-control.text-center(type='text', name='hours', maxlength=2, placeholder=05)
+    input#form-hours.form-control.text-center(type='text' name='hours' value=get(meetup,'hours') maxlength=2 placeholder=05)
     span.input-group-addon :
-    input#form-minutes.form-control.text-center(type='text', name='minutes', maxlength=2, placeholder=30)
+    input#form-minutes.form-control.text-center(type='text' name='minutes' value=get(meetup,'hours') maxlength=2 placeholder=30)
     .input-group-addon
       label.checkbox-inline
-        input(type='checkbox', name='am' value='1')
+        input(type='checkbox', name='am' value='1' checked=get(meetup,'am'))
         |  AM
 
 .form-group
