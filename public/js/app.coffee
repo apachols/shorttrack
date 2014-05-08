@@ -4,4 +4,5 @@ angular.module 'sting', [
   'sting.admin'
   'sting.edit'
   'sting.profile'
+  'ui-rangeSlider'
 ]

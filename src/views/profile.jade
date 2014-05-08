@@ -28,9 +28,8 @@ block content
 
                 .col-sm-9
                   .form-control-static.has-feedback
-                    input#form-age-my.form-control(
-                      slider ng-if="doc.profile" model='doc.profile.age.my' type='text' name='age.my'
-                      data-slider-min='18' data-slider-max='100' data-slider-step='1' )
+                    div(range-slider ng-if="doc.profile" min="18" max="100" model-max="doc.profile.age.my" pin-handle="min" show-values="false")
+
 
             .form-group
               label.col-sm-2.col-sm-offset-1.control-label Gender
@@ -58,10 +57,9 @@ block content
 
                 .col-sm-9
                   .form-control-static.has-feedback
-                    input#form-age-my.form-control(
-                      slider ng-if="doc.profile" model='doc.profile.age.seeking' type='text' name='age.seeking'
-                      data-slider-min='18' data-slider-max='100' data-slider-step='1' data-slider-range='true' )
+                      div(range-slider ng-if="doc.profile" min="18" max="100" model-min="doc.profile.age.seeking[0]" model-max="doc.profile.age.seeking[1]")
 
+                    
           fieldset
             legend Match Questions
             .form-group

@@ -14,7 +14,9 @@ Profile = new mongoose.Schema
   }
 
   age: {
-    my: Number
+    my:
+      type: Number
+      default: 18
     seeking: [
       type: Number
       default: 18
