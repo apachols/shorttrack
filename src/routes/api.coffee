@@ -48,7 +48,6 @@ class Api
     q = new Question
     res.json q
 
-
   #
   # User
   #
@@ -74,7 +73,9 @@ class Api
 
   createquestion: (req, res, next) ->
     doc = new Question
-    res.json doc
+    doc.save ->
+      console.log doc
+      res.json doc
 
   getquestions: (req, res, next) ->
     Question.find req.query, (err, docs) ->

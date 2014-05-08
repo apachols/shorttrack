@@ -14,6 +14,10 @@ angular.module("sting.admin", ["ngResource", "ngRoute"])
           controller: 'QuestionController'
           templateUrl: 'list.html'
 
+        .when '/question/:id',
+          controller: 'GenderController'
+          templateUrl: 'list.html'
+
         .when '/gender',
           controller: 'GenderController'
           templateUrl: 'list.html'
@@ -45,14 +49,27 @@ angular.module("sting.admin", ["ngResource", "ngRoute"])
       $scope.selected = "user"
   ]
   .controller "QuestionController", [
-    "$scope", "$resource"
-    ($scope, $resource) ->
+    "$scope", "$resource", "$location"
+    ($scope, $resource, $location) ->
 
+      # For this one may need an edit data service to carry
+      # the edited object to the next controller without ajax
+      #
+      # May want to also reload object?? announce conflict?  hard.
+      # Yeah and in the controller, we want to know whether we
+      # navigated here, or whether we were loaded from list screen.
+      #
+      # If we were loaded from the list screen, use that, and compare
+      # against data from server.  if nothing from list screen, just use
+      # server.  If differences between original and ajax'd, user can
+      # choose the server copy, but UNDO to go back to the memory copy,
+      # and save to blow it all away.  Neat!
       $scope.add = () ->
         resource = $resource '/api/question/new'
         doc = resource.get {}, () ->
-          console.log "add complete", doc
+          $location.path '/question/'+doc._id
 
+      # Problem with splice?!  removes last two records
       $scope.remove = (index, id) ->
         resource = $resource '/api/question/:id', {id}
         resource.delete (err, thing) ->
