@@ -29,7 +29,7 @@ class Api
 
   getprofile: (req,res,next) ->
     email = req.user.email
-    req.user.profile.pop() or profile = new Profile age: seeking: [20,40]
+    profile = req.user.profile.pop() or new Profile age: seeking: [20,40]
     res.json {email, profile}
 
   updateprofile: (req,res,next) ->

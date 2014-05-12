@@ -24,10 +24,10 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       #
 
       $scope.getQuestions = () ->
-        resource = $resource '/api/question'
-        questions = resource.query {}, ->
-          $scope.questions = questions
-          console.log questions
+        # resource = $resource '/api/question'
+        # questions = resource.query {}, ->
+        #   $scope.questions = questions
+        #   console.log questions
 
       $scope.getGenders = () ->
         resource = $resource '/api/gender'
@@ -41,6 +41,8 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
           $scope.doc =
             email: response.email
             profile: response.profile
+
+        console.log $scope.doc
 
         $scope.getQuestions()
 
