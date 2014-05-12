@@ -23,8 +23,6 @@ class Admin
     next()
 
   home: (req, res) ->
-    UserModel.find {}, (err, users) ->
-      if users then res.render 'admin/home', {users}
-      else res.send 500, err
+    res.render 'admin/home'
 
 module.exports = (app) -> new Admin app

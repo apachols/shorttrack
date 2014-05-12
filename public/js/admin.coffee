@@ -1,30 +1,30 @@
 console.log 'HAI DENNY'
 
-angular.module("sting.admin", ["ngResource", "ngRoute"])
+angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
   .config [
     '$routeProvider', '$locationProvider',
     ($routeProvider, $locationProvider) ->
       $routeProvider
 
+        .when '/question/:id',
+          controller: 'EditController'
+          templateUrl: '/../public/templates/admin/question.html'
+
         .when '/user',
           controller: 'UserController'
-          templateUrl: 'list.html'
+          templateUrl: '/../public/templates/admin/list.html'
 
         .when '/question',
           controller: 'QuestionController'
-          templateUrl: 'list.html'
-
-        .when '/question/:id',
-          controller: 'GenderController'
-          templateUrl: 'list.html'
+          templateUrl: '/../public/templates/admin/list.html'
 
         .when '/gender',
           controller: 'GenderController'
-          templateUrl: 'list.html'
+          templateUrl: '/../public/templates/admin/list.html'
 
         .otherwise
           controller: 'UserController'
-          templateUrl: 'list.html'
+          templateUrl: '/../public/templates/admin/list.html'
     ]
   .controller "UserController", [
     "$scope", "$resource"
@@ -36,7 +36,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute"])
       $scope.remove = (index, id) ->
         resource = $resource '/api/user/:id', {id}
         resource.delete (err, thing) ->
-          $scope.docs.splice(index)
+          $scope.docs.splice(index,1)
 
       resource = $resource '/api/user', {}
 
@@ -69,11 +69,10 @@ angular.module("sting.admin", ["ngResource", "ngRoute"])
         doc = resource.get {}, () ->
           $location.path '/question/'+doc._id
 
-      # Problem with splice?!  removes last two records
       $scope.remove = (index, id) ->
         resource = $resource '/api/question/:id', {id}
         resource.delete (err, thing) ->
-          $scope.docs.splice(index)
+          $scope.docs.splice(index,1)
 
       resource = $resource '/api/question', {}
 
@@ -95,7 +94,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute"])
       $scope.remove = (index, id) ->
         resource = $resource '/api/gender/:id', {id}
         resource.delete (err, thing) ->
-          $scope.docs.splice(index)
+          $scope.docs.splice(index,1)
 
       resource = $resource '/api/gender', {}
 

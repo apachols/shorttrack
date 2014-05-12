@@ -3,19 +3,15 @@ angular.module("sting.edit", ["ngResource"])
     "$scope", "$resource", '$window',
     ($scope, $resource, $window) ->
 
+      $scope.config =
+        '_id': '535c5e532f1169ab615d1ac9'
+        collection: 'question'
+        fields: ['text','name','answers']
+
       {collection, fields, _id} = $scope.config
 
       $scope.doc = $scope.original = {}
 
-      # What we should do at this point:
-      # - Add route provider
-      # - Put the edit screens where the list lives
-      # - Pass selected object between scopes on edit
-      # - On add, create object and then edit it
-      # - For user, EVENTUALLY use new user edit template for profile page :D
-
-      # Bad!  We are parsing the jade file with no id, and so it comes out
-      # as string 'undefined'... fix with actual single pageness
       if _id isnt 'undefined'
         console.log "id = ", _id
         resource = $resource '/api/:collection', {collection, _id}
