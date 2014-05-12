@@ -1,15 +1,31 @@
 angular.module("sting.edit", ["ngResource"])
+
+  .factory "EditService", ($location) ->
+    record = undefined
+    return {
+      haveDocument: () -> record?
+
+      getDocument: () -> return record
+
+      edit: (doc, config) ->
+        record = doc
+        $location.path config.update + record._id
+   }
+
   .controller "EditController", [
-    "$scope", "$resource", '$window', 'config'
-    ($scope, $resource, $window, config) ->
-      console.log "config", config
+    "$scope", "$resource", '$window', 'config', 'EditService'
+    ($scope, $resource, $window, config, EditService) ->
 
       {collection, fields, _id} = config
 
-      $scope.doc = $scope.original = {}
+      if EditService.haveDocument()
+        $scope.doc = $scope.original = EditService.getDocument()
+      else
+        $scope.doc = $scope.original = {}
 
       resource = $resource '/api/:collection', {collection, _id}
       docs = resource.query {}, ->
+        # can check here if db copy is different from edit service copy
         $scope.doc = angular.copy $scope.original = angular.copy docs[0]
 
       $scope.save = () ->
@@ -17,7 +33,6 @@ angular.module("sting.edit", ["ngResource"])
         for field in fields
           setQuery[field] = $scope.doc[field]
 
-        console.log 'have id', _id
         resource = $resource '/api/:collection/:_id', {collection, _id}
 
         resource.save setQuery, ->

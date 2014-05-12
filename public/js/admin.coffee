@@ -1,13 +1,20 @@
 angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
-  .factory "EditService", () ->
-    return {
-      pacholski: () ->
-        console.log 'EditService'
-   }
   .config [
     '$routeProvider', '$locationProvider'
     ($routeProvider, $locationProvider) ->
       $routeProvider
+
+        .when '/user/:id',
+          controller: 'EditController'
+          # Template not implemented yet, beware!
+          templateUrl: '/../public/templates/admin/user.html'
+          resolve:
+            config: ($route) ->
+              return {
+                '_id': $route.current.params.id
+                collection: 'user'
+                fields: ['email','relations']
+              }
 
         .when '/question/:id',
           controller: 'EditController'
@@ -32,97 +39,76 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
               }
 
         .when '/user',
-          controller: 'UserController'
+          controller: 'ListController'
           templateUrl: '/../public/templates/admin/list.html'
+          resolve:
+            config: () ->
+              return {
+                # Edit template not implmented yet, beware!
+                update: '/user/'
+                api: '/api/user'
+                tableheader: "Users"
+                fields: ['email', 'admin']
+              }
 
         .when '/question',
-          controller: 'QuestionController'
+          controller: 'ListController'
           templateUrl: '/../public/templates/admin/list.html'
+          resolve:
+            config: () ->
+              return {
+                update: '/question/'
+                api: '/api/question'
+                create: 'api/question/new'
+                tableheader: "Match Questions"
+                fields: ['name', 'text']
+              }
 
         .when '/gender',
-          controller: 'GenderController'
+          controller: 'ListController'
           templateUrl: '/../public/templates/admin/list.html'
+          resolve:
+            config: () ->
+              return {
+                update: '/gender/'
+                api: '/api/gender'
+                create: '/api/gender/new'
+                tableheader: "Genders"
+                fields: ['label', 'code']
+              }
 
         .otherwise
           redirectTo: '/user'
     ]
-  .controller "UserController", [
-    '$scope', '$resource', 'EditService'
-    ($scope, $resource, EditService) ->
 
-      $scope.add = () ->
-        console.log "user add"
+  # Get rid of fields in edit / update query
+  # Fix 'selected' -> active class in list.jade
+  #
+  # Consolidate configs in provider/value/whatever
+  # Use same configs for list and edit
+  # Have EditService handle config, but do _id separately
+  #   so that user can navigate to /collection/:id
+  .controller "ListController", [
+    '$scope', '$resource', 'config', 'EditService'
+    ($scope, $resource, config, EditService) ->
 
-      $scope.remove = (index, id) ->
-        resource = $resource '/api/user/:id', {id}
-        resource.delete (err, thing) ->
-          $scope.docs.splice(index,1)
-
-      resource = $resource '/api/user', {}
+      $scope.config = config
 
       $scope.docs = []
+      resource = $resource config.api, {}
       docs = resource.query {}, ->
         $scope.docs = docs
 
-      $scope.tableheader = "Users"
-      $scope.fields = ['email', 'admin']
-      $scope.selected = "user"
-  ]
-  .controller "QuestionController", [
-    "$scope", "$resource", "$location"
-    ($scope, $resource, $location) ->
+      $scope.update = (doc) ->
+        EditService.edit doc, config
 
-      # For this one may need an edit data service to carry
-      # the edited object to the next controller without ajax
-      #
-      # May want to also reload object?? announce conflict?  hard.
-      # Yeah and in the controller, we want to know whether we
-      # navigated here, or whether we were loaded from list screen.
-      #
-      # If we were loaded from the list screen, use that, and compare
-      # against data from server.  if nothing from list screen, just use
-      # server.  If differences between original and ajax'd, user can
-      # choose the server copy, but UNDO to go back to the memory copy,
-      # and save to blow it all away.  Neat!
       $scope.add = () ->
-        resource = $resource '/api/question/new'
+        resource = $resource config.api + '/new'
         doc = resource.get {}, () ->
-          $location.path '/question/'+doc._id
+          EditService.edit doc, config
 
       $scope.remove = (index, id) ->
-        resource = $resource '/api/question/:id', {id}
+        resource = $resource config.api + '/:id', {id}
         resource.delete (err, thing) ->
           $scope.docs.splice(index,1)
-
-      resource = $resource '/api/question', {}
-
-      $scope.docs = []
-      docs = resource.query {}, ->
-        $scope.docs = docs
-
-      $scope.tableheader = "Match Questions"
-      $scope.fields = ['name', 'text']
-      $scope.selected = "question"
-  ]
-  .controller "GenderController", [
-    "$scope", "$resource"
-    ($scope, $resource) ->
-
-      $scope.add = () ->
-        console.log "gender add"
-
-      $scope.remove = (index, id) ->
-        resource = $resource '/api/gender/:id', {id}
-        resource.delete (err, thing) ->
-          $scope.docs.splice(index,1)
-
-      resource = $resource '/api/gender', {}
-
-      $scope.docs = []
-      docs = resource.query {}, ->
-        $scope.docs = docs
-
-      $scope.tableheader = "Genders"
-      $scope.fields = ['label', 'code']
-      $scope.selected = "gender"
   ]

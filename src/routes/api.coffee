@@ -99,10 +99,10 @@ class Api
       res.send 200
 
   creategender: (req, res, next) ->
-    console.log req.body
-    Gender.create req.body, (err, doc) ->
-      return res.send 500, err if err
-      res.json {doc}
+    doc = new Gender
+    doc.save ->
+      console.log doc
+      res.json doc
 
   getgenders: (req, res, next) ->
     Gender.find req.query, (err, docs) ->
