@@ -1,23 +1,21 @@
 .col-sm-10
   .panel.panel-default
-    base(href="/admin/")
-    div(ng-init="config={ '_id': '#{_id}', collection:'gender', fields:['label','code']}")
-      div(ng-controller="EditController")
-        .panel-heading Gender: <b>{{doc.label}}</b>
-        .panel-body
-            form.js-form.form-horizontal(name='editform' role='form')
-              .form-group.has-feedback
-                label.col-sm-2.col-sm-offset-1.control-label(for='form-label') Label
-                .col-sm-8
-                  input#form-name.form-control.js-input(ng-model='doc.label' type='text', name='label' )
+    div
+      .panel-heading Gender: <b>{{doc.label}}</b>
+      .panel-body
+          form.js-form.form-horizontal(name='editform' role='form')
+            .form-group.has-feedback
+              label.col-sm-2.col-sm-offset-1.control-label(for='form-label') Label
+              .col-sm-8
+                input#form-name.form-control.js-input(ng-model='doc.label' type='text', name='label' )
 
-              .form-group
-                label.col-sm-2.col-sm-offset-1.control-label(for='#form-code') Code
-                .col-sm-8
-                  input#form-nickname.form-control.js-input(ng-model='doc.code' type='text', name='code' )
+            .form-group
+              label.col-sm-2.col-sm-offset-1.control-label(for='#form-code') Code
+              .col-sm-8
+                input#form-nickname.form-control.js-input(ng-model='doc.code' type='text', name='code' )
 
-              .form-group
-                .col-xs-12
-                  ul.list-inline.pull-right
-                    li: span.btn.btn-danger(ng-show="editform.$dirty" ng-click="undo()") Undo
-                    li: button.btn.btn-primary(ng-click="save()") Save
+            .form-group
+              .col-xs-12
+                ul.list-inline.pull-right
+                  li: span.btn.btn-danger(ng-show="editform.$dirty" ng-click="undo()") Undo
+                  li: button.btn.btn-primary(ng-click="save()") Save

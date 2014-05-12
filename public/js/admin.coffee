@@ -1,14 +1,35 @@
-console.log 'HAI DENNY'
-
 angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
+  .factory "EditService", () ->
+    return {
+      pacholski: () ->
+        console.log 'EditService'
+   }
   .config [
-    '$routeProvider', '$locationProvider',
+    '$routeProvider', '$locationProvider'
     ($routeProvider, $locationProvider) ->
       $routeProvider
 
         .when '/question/:id',
           controller: 'EditController'
           templateUrl: '/../public/templates/admin/question.html'
+          resolve:
+            config: ($route) ->
+              return {
+                '_id': $route.current.params.id
+                collection: 'question'
+                fields: ['text','name','answers']
+              }
+
+        .when '/gender/:id',
+          controller: 'EditController'
+          templateUrl: '/../public/templates/admin/gender.html'
+          resolve:
+            config: ($route) ->
+              return {
+                '_id': $route.current.params.id
+                collection: 'gender'
+                fields: ['label','code']
+              }
 
         .when '/user',
           controller: 'UserController'
@@ -23,12 +44,11 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
           templateUrl: '/../public/templates/admin/list.html'
 
         .otherwise
-          controller: 'UserController'
-          templateUrl: '/../public/templates/admin/list.html'
+          redirectTo: '/user'
     ]
   .controller "UserController", [
-    "$scope", "$resource"
-    ($scope, $resource) ->
+    '$scope', '$resource', 'EditService'
+    ($scope, $resource, EditService) ->
 
       $scope.add = () ->
         console.log "user add"
