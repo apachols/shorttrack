@@ -13,7 +13,6 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
               return {
                 '_id': $route.current.params.id
                 collection: 'user'
-                fields: ['email','relations']
               }
 
         .when '/question/:id',
@@ -24,7 +23,6 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
               return {
                 '_id': $route.current.params.id
                 collection: 'question'
-                fields: ['text','name','answers']
               }
 
         .when '/gender/:id',
@@ -35,7 +33,6 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
               return {
                 '_id': $route.current.params.id
                 collection: 'gender'
-                fields: ['label','code']
               }
 
         .when '/user',
@@ -45,6 +42,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
             config: () ->
               return {
                 # Edit template not implmented yet, beware!
+                collection: 'user'
                 update: '/user/'
                 api: '/api/user'
                 tableheader: "Users"
@@ -57,6 +55,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
           resolve:
             config: () ->
               return {
+                collection: 'question'
                 update: '/question/'
                 api: '/api/question'
                 create: 'api/question/new'
@@ -70,6 +69,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
           resolve:
             config: () ->
               return {
+                collection: 'gender'
                 update: '/gender/'
                 api: '/api/gender'
                 create: '/api/gender/new'
@@ -81,7 +81,6 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
           redirectTo: '/user'
     ]
 
-  # Get rid of fields in edit / update query
   # Fix 'selected' -> active class in list.jade
   #
   # Consolidate configs in provider/value/whatever
@@ -96,8 +95,8 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
 
       $scope.docs = []
       resource = $resource config.api, {}
-      docs = resource.query {}, ->
-        $scope.docs = docs
+      response = resource.get {}, ->
+        $scope.docs = response.docs
 
       $scope.update = (doc) ->
         EditService.edit doc, config
@@ -111,4 +110,42 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
         resource = $resource config.api + '/:id', {id}
         resource.delete (err, thing) ->
           $scope.docs.splice(index,1)
+  ]
+  .constant "models", {
+    user:
+      list: '#/user'
+      collection: 'user'
+      update: '/user/'
+      api: '/api/user'
+      tableheader: "Users"
+      fields: ['email', 'admin']
+    question:
+      list: '#/question'
+      collection: 'question'
+      update: '/question/'
+      api: '/api/question'
+      create: 'api/question/new'
+      tableheader: "Match Questions"
+      fields: ['name', 'text']
+    gender:
+      list: '#/gender'
+      collection: 'gender'
+      update: '/gender/'
+      api: '/api/gender'
+      create: '/api/gender/new'
+      tableheader: "Genders"
+      fields: ['label', 'code']
+   }
+  .factory "ListService", ($location, models) ->
+    current = undefined
+    return {
+      displayCollection: (name) ->
+        current = models[name]
+        $location.path current.list
+   }
+  .controller "AdminController", [
+    '$scope', 'ListService'
+    ($scope, ListService) ->
+      $scope.goList = (name) ->
+        ListService.displayCollection name
   ]

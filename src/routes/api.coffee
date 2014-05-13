@@ -9,7 +9,7 @@ auth = require '../helpers/authenticator'
 class Api
   constructor: (@app) ->
 
-    @app.get '/api/test', @test
+    @app.post '/api/test/:_id', @test
 
     @app.get '/api/profile', auth.user, @getprofile
 
@@ -33,7 +33,6 @@ class Api
     res.json {email, profile}
 
   updateprofile: (req,res,next) ->
-    console.log req.body
     req.user.profile = req.body
 
     req.user.save (err, p, n) ->
@@ -44,9 +43,12 @@ class Api
   # test
   #
   test: (req, res, next) ->
-    # res.json req.user._id
-    q = new Question
-    res.json q
+    {_id} = req.params
+    delete req.body.__v
+    delete req.body._id
+    Gender.update {_id}, req.body, (err, success) ->
+      return res.send 500, err if err
+      res.send 200
 
   #
   # User
@@ -54,7 +56,7 @@ class Api
   getusers: (req, res, next) ->
     User.find req.query, (err, docs) ->
       return res.send 500, err if err
-      res.json docs
+      res.json {docs}
 
   #
   # Question
@@ -67,6 +69,8 @@ class Api
 
   updatequestion: (req, res, next) ->
     {_id} = req.params
+    delete req.body.__v
+    delete req.body._id
     Question.update {_id}, req.body, (err, success) ->
       return res.send 500, err if err
       res.send 200
@@ -74,14 +78,12 @@ class Api
   createquestion: (req, res, next) ->
     doc = new Question
     doc.save ->
-      console.log doc
       res.json doc
 
   getquestions: (req, res, next) ->
     Question.find req.query, (err, docs) ->
       return res.send 500, err if err
-      res.json docs
-      console.log docs
+      res.json {docs}
 
   #
   # Gender
@@ -94,6 +96,8 @@ class Api
 
   updategender: (req, res, next) ->
     {_id} = req.params
+    delete req.body.__v
+    delete req.body._id
     Gender.update {_id}, req.body, (err, success) ->
       return res.send 500, err if err
       res.send 200
@@ -101,13 +105,12 @@ class Api
   creategender: (req, res, next) ->
     doc = new Gender
     doc.save ->
-      console.log doc
       res.json doc
 
   getgenders: (req, res, next) ->
     Gender.find req.query, (err, docs) ->
       return res.send 500, err if err
-      res.json docs
+      res.json {docs}
 
 
 module.exports = (app) -> new Api app

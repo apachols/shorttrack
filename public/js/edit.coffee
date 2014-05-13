@@ -16,7 +16,7 @@ angular.module("sting.edit", ["ngResource"])
     "$scope", "$resource", '$window', 'config', 'EditService'
     ($scope, $resource, $window, config, EditService) ->
 
-      {collection, fields, _id} = config
+      {collection, _id} = config
 
       if EditService.haveDocument()
         $scope.doc = $scope.original = EditService.getDocument()
@@ -24,18 +24,15 @@ angular.module("sting.edit", ["ngResource"])
         $scope.doc = $scope.original = {}
 
       resource = $resource '/api/:collection', {collection, _id}
-      docs = resource.query {}, ->
+      response = resource.get {}, ->
         # can check here if db copy is different from edit service copy
-        $scope.doc = angular.copy $scope.original = angular.copy docs[0]
+        doc = response.docs[0]
+        $scope.doc = angular.copy $scope.original = angular.copy doc
 
       $scope.save = () ->
-        setQuery = {}
-        for field in fields
-          setQuery[field] = $scope.doc[field]
-
         resource = $resource '/api/:collection/:_id', {collection, _id}
 
-        resource.save setQuery, ->
+        resource.save $scope.doc, ->
           $scope.original = angular.copy $scope.doc
           $scope.editform.$setPristine()
 
