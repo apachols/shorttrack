@@ -41,12 +41,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
           resolve:
             config: () ->
               return {
-                # Edit template not implmented yet, beware!
                 collection: 'user'
-                update: '/user/'
-                api: '/api/user'
-                tableheader: "Users"
-                fields: ['email', 'admin']
               }
 
         .when '/question',
@@ -56,11 +51,6 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
             config: () ->
               return {
                 collection: 'question'
-                update: '/question/'
-                api: '/api/question'
-                create: 'api/question/new'
-                tableheader: "Match Questions"
-                fields: ['name', 'text']
               }
 
         .when '/gender',
@@ -70,57 +60,53 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
             config: () ->
               return {
                 collection: 'gender'
-                update: '/gender/'
-                api: '/api/gender'
-                create: '/api/gender/new'
-                tableheader: "Genders"
-                fields: ['label', 'code']
               }
 
         .otherwise
           redirectTo: '/user'
     ]
 
-  # Fix 'selected' -> active class in list.jade
+  # Change so as to not default to user upon navigation
+  # I feel dumb lol, waiting till morning to figure this out.
   #
-  # Consolidate configs in provider/value/whatever
   # Use same configs for list and edit
   # Have EditService handle config, but do _id separately
   #   so that user can navigate to /collection/:id
   .controller "ListController", [
-    '$scope', '$resource', 'config', 'EditService'
-    ($scope, $resource, config, EditService) ->
+    '$scope', '$resource', 'ListService', 'EditService'
+    ($scope, $resource, ListService, EditService) ->
 
-      $scope.config = config
+      $scope.config = ListService.getCurrent()
+      console.log $scope.config
 
       $scope.docs = []
-      resource = $resource config.api, {}
+      resource = $resource $scope.config.api, {}
       response = resource.get {}, ->
         $scope.docs = response.docs
 
       $scope.update = (doc) ->
-        EditService.edit doc, config
+        EditService.edit doc, $scope.config
 
       $scope.add = () ->
-        resource = $resource config.api + '/new'
+        resource = $resource $scope.config.api + '/new'
         doc = resource.get {}, () ->
-          EditService.edit doc, config
+          EditService.edit doc, $scope.config
 
       $scope.remove = (index, id) ->
-        resource = $resource config.api + '/:id', {id}
+        resource = $resource $scope.config.api + '/:id', {id}
         resource.delete (err, thing) ->
           $scope.docs.splice(index,1)
   ]
   .constant "models", {
     user:
-      list: '#/user'
+      list: '/user'
       collection: 'user'
       update: '/user/'
       api: '/api/user'
       tableheader: "Users"
       fields: ['email', 'admin']
     question:
-      list: '#/question'
+      list: '/question'
       collection: 'question'
       update: '/question/'
       api: '/api/question'
@@ -128,7 +114,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
       tableheader: "Match Questions"
       fields: ['name', 'text']
     gender:
-      list: '#/gender'
+      list: '/gender'
       collection: 'gender'
       update: '/gender/'
       api: '/api/gender'
@@ -139,13 +125,21 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
   .factory "ListService", ($location, models) ->
     current = undefined
     return {
+      hasCurrent: () -> current?
+
+      getCurrent: () -> current
+
       displayCollection: (name) ->
         current = models[name]
+        console.log 'current', current
         $location.path current.list
    }
   .controller "AdminController", [
     '$scope', 'ListService'
     ($scope, ListService) ->
       $scope.goList = (name) ->
+        $scope.selected = name
         ListService.displayCollection name
+
+      $scope.goList 'user' if not ListService.hasCurrent()
   ]
