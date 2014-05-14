@@ -31,18 +31,17 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
       $scope.getGenders = () ->
         resource = $resource '/api/gender'
-        genders = resource.query {}, ->
-          $scope.genders = genders
+        response = resource.get {}, ->
+          $scope.genders = response.docs
 
       $scope.getProfile = () ->
         resource = $resource '/api/profile'
         response = resource.get {}, ->
-
+          console.log response
           $scope.doc =
             email: response.email
             profile: response.profile
-
-        console.log $scope.doc
+          console.log $scope.doc
 
         $scope.getQuestions()
 
@@ -52,8 +51,11 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
         resource.save newdoc
 
       $scope.doc = {}
+      $scope.genders = []
+
       $scope.getGenders()
       $scope.getProfile()
+      console.log $scope.doc
 
   ]
   .directive "autosave", [ () ->

@@ -20,13 +20,11 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     '$scope', '$resource', 'models','EditService', '$routeParams'
     ($scope, $resource, models, EditService, $routeParams) ->
 
-      console.log $routeParams
       {collection} = $routeParams
 
       $scope.selected = collection
 
       $scope.config = models[collection]
-      console.log $scope.config
 
       $scope.docs = []
       resource = $resource $scope.config.api, {}
