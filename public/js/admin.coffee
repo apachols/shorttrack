@@ -4,79 +4,28 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     ($routeProvider, $locationProvider) ->
       $routeProvider
 
-        .when '/user/:id',
+        .when '/:collection/:_id',
           controller: 'EditController'
-          # Template not implemented yet, beware!
-          templateUrl: '/../public/templates/admin/user.html'
-          resolve:
-            config: ($route) ->
-              return {
-                '_id': $route.current.params.id
-                collection: 'user'
-              }
+          template: '<div ng-include src="templateUrl"></div>'
 
-        .when '/question/:id',
-          controller: 'EditController'
-          templateUrl: '/../public/templates/admin/question.html'
-          resolve:
-            config: ($route) ->
-              return {
-                '_id': $route.current.params.id
-                collection: 'question'
-              }
-
-        .when '/gender/:id',
-          controller: 'EditController'
-          templateUrl: '/../public/templates/admin/gender.html'
-          resolve:
-            config: ($route) ->
-              return {
-                '_id': $route.current.params.id
-                collection: 'gender'
-              }
-
-        .when '/user',
+        .when '/:collection',
           controller: 'ListController'
           templateUrl: '/../public/templates/admin/list.html'
-          resolve:
-            config: () ->
-              return {
-                collection: 'user'
-              }
-
-        .when '/question',
-          controller: 'ListController'
-          templateUrl: '/../public/templates/admin/list.html'
-          resolve:
-            config: () ->
-              return {
-                collection: 'question'
-              }
-
-        .when '/gender',
-          controller: 'ListController'
-          templateUrl: '/../public/templates/admin/list.html'
-          resolve:
-            config: () ->
-              return {
-                collection: 'gender'
-              }
 
         .otherwise
           redirectTo: '/user'
     ]
 
-  # Change so as to not default to user upon navigation
-  # I feel dumb lol, waiting till morning to figure this out.
-  #
-  # Use same configs for list and edit
-  # Have EditService handle config, but do _id separately
-  #   so that user can navigate to /collection/:id
   .controller "ListController", [
-    '$scope', '$resource', 'ListService', 'EditService'
-    ($scope, $resource, ListService, EditService) ->
+    '$scope', '$resource', 'models','EditService', '$routeParams'
+    ($scope, $resource, models, EditService, $routeParams) ->
 
-      $scope.config = ListService.getCurrent()
+      console.log $routeParams
+      {collection} = $routeParams
+
+      $scope.selected = collection
+
+      $scope.config = models[collection]
       console.log $scope.config
 
       $scope.docs = []
@@ -122,24 +71,3 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
       tableheader: "Genders"
       fields: ['label', 'code']
    }
-  .factory "ListService", ($location, models) ->
-    current = undefined
-    return {
-      hasCurrent: () -> current?
-
-      getCurrent: () -> current
-
-      displayCollection: (name) ->
-        current = models[name]
-        console.log 'current', current
-        $location.path current.list
-   }
-  .controller "AdminController", [
-    '$scope', 'ListService'
-    ($scope, ListService) ->
-      $scope.goList = (name) ->
-        $scope.selected = name
-        ListService.displayCollection name
-
-      $scope.goList 'user' if not ListService.hasCurrent()
-  ]

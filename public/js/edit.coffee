@@ -13,10 +13,13 @@ angular.module("sting.edit", ["ngResource"])
    }
 
   .controller "EditController", [
-    "$scope", "$resource", '$window', 'config', 'EditService'
-    ($scope, $resource, $window, config, EditService) ->
+    "$scope", "$resource", '$routeParams', 'EditService'
+    ($scope, $resource, $routeParams, EditService) ->
 
-      {collection, _id} = config
+      {collection, _id} = $routeParams
+      $scope.selected = collection
+
+      $scope.templateUrl = '/../public/templates/admin/' + collection + '.html'
 
       if EditService.haveDocument()
         $scope.doc = $scope.original = EditService.getDocument()
@@ -34,9 +37,7 @@ angular.module("sting.edit", ["ngResource"])
 
         resource.save $scope.doc, ->
           $scope.original = angular.copy $scope.doc
-          $scope.editform.$setPristine()
 
       $scope.undo = () ->
         $scope.doc = angular.copy $scope.original
-        $scope.editform.$setPristine()
   ]

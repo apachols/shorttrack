@@ -5,15 +5,4 @@ block content
   .row
     base(href="/admin/")
     div(ng-app="sting.admin")
-    .col-sm-2(ng-init="selected='user'" ng-controller="AdminController")
-      ul.nav.nav-pills.nav-stacked
-        li(ng-class="{active: selected == 'user'}")
-          a(ng-click="goList('user')" ) Users
-
-        li(ng-class="{active: selected == 'question'}")
-          a(ng-click="goList('question')" ) Questions
-
-        li(ng-class="{active: selected == 'gender'}")
-          a(ng-click="goList('gender')" ) Genders
-
     div(ng-view)
