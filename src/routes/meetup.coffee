@@ -1,11 +1,12 @@
-MeetupModel = require '../models/meetup'
-Matcher     = require '../lib/matcher'
-Scheduler   = require '../lib/scheduler'
-auth        = require '../helpers/authenticator'
+MeetupModel   = require '../models/meetup'
+Matcher       = require '../lib/matcher'
+Scheduler     = require '../lib/scheduler'
+auth          = require '../helpers/authenticator'
 
-{inspect}   = require 'util'
-{basename}  = require 'path'
-_           = require 'lodash'
+angularBridge = require 'angular-bridge'
+{inspect}     = require 'util'
+{basename}    = require 'path'
+_             = require 'lodash'
 
 class Meetup
   constructor: (@app) ->
@@ -30,6 +31,10 @@ class Meetup
     @app.locals
       dateformat: 'mm/dd/yyyy'
       timeformat: 'hh:mm TT'
+
+    urlPrefix = '/api2/'
+    bridge = new angularBridge @app, {urlPrefix}
+    bridge.addResource 'meetups', MeetupModel
 
   index: (req, res) ->
     MeetupModel.all (err, meetups) ->

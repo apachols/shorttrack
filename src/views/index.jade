@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .content(ng-app="sting.index")
+  .content(ng-app="sting.homepage")
     if !my
       .jumbotron
         h1 Short Track
@@ -10,18 +10,16 @@ block content
       .col-sm-10
         h2.top Upcoming Meetups
         hr.top
-        ul.list-unstyled
-          each meetup in meetups
-            li.media
+        ul.list-unstyled(ng-controller="upcoming")
+            li.media(ng-cloak ng-repeat="meetup in meetups")
               .pull-left.mdate
-                .mdate-month= df(meetup.date, 'mmmm')
-                .mdate-date= df(meetup.date, 'dd')
-                .mdate-day= df(meetup.date, 'dddd')
+                .mdate-month {{meetup.date | date: 'MMMM'}}
+                .mdate-date {{meetup.date | date: 'dd'}}
 
               .media-body
                 h4.media-heading
-                  a(href="/meetup/#{meetup.name}") #{meetup.name} - #{meetup.location}
-                | #{meetup.description}
+                  a(href="/meetup/{{meetup.name}}") {{meetup.name}} - {{meetup.location}}
+                | {{meetup.description}}
 
       .col-sm-2
         if my && my.admin
