@@ -11,6 +11,7 @@ block content
         header.panel-heading: h2 Admin Controls
         .panel-body
           ul.list-unstyled
+            li: h4: a(href="/meetup/#{meetup.name}/checkin") Registered / Paid List
             li: h4: a(href="/meetup/#{meetup.name}/schedules") Full Schedule
             li: h4: a(href="/meetup/#{meetup.name}/generate") Generate new schedule
             li: h4: a(href="/meetup/#{meetup.name}/edit") Edit this meetup

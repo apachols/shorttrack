@@ -6,23 +6,29 @@ include admin
     .panel-body
       form.js-form.form-horizontal(name='edit' role='form')
         .form-group.has-feedback
-          label.col-sm-2.col-sm-offset-1.control-label(for='form-name') Name
-          .col-sm-8
+          label.col-sm-3.control-label(for='form-name') Name
+          .col-sm-9
             input#form-name.form-control(ng-model='doc.name' type='text', name='name' )
 
         .form-group
-          label.col-sm-2.col-sm-offset-1.control-label(for='#form-text') Question Text
-          .col-sm-8
+          label.col-sm-3.control-label(for='#form-text') Question Text
+          .col-sm-9
             input#form-nickname.form-control(ng-model='doc.text' type='text', name='text' )
 
         .form-group
-          label.col-sm-2.col-sm-offset-1.control-label(for='#form-importance') Answers
-          .col-sm-8
-            a.fa.fa-plus-square.fa-2x(ng-click="edit.$dirty = true && doc.answers.push('')")
-            ul.list-unstyled(ng-cloak ng-repeat="answer in doc.answers track by $index")
-              li
+          label.col-sm-3.control-label(for='#form-importance') Answers
+          .col-sm-9
+            ul.list-unstyled
+              li.input-group(style="margin-bottom: 1em" ng-cloak ng-repeat="answer in doc.answers track by $index")
                 input.form-control(type='text' name="question{{$index}}" ng-model="doc.answers[$index]")
-                a.fa.fa-minus-square.fa-2x(ng-click="edit.$dirty = true && doc.answers.splice($index,1)")
+                .input-group-btn
+                  a.btn.btn-danger(ng-click="edit.$dirty = true && doc.answers.splice($index,1)")
+                    i.fa.fa-minus.fa-lg
+
+              li
+                a.btn.btn-primary(ng-click="edit.$dirty = true && doc.answers.push('')")
+                  i.fa.fa-plus.fa-lg(style="margin-right: .5em")
+                  | Add another answer
 
         .form-group
           .col-xs-12
