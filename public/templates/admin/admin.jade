@@ -1,0 +1,10 @@
+.col-sm-2
+  ul.nav.nav-pills.nav-stacked
+    li(ng-class="{active: selected == 'user'}")
+      a(ng-href="#/user" ) Users
+
+    li(ng-class="{active: selected == 'question'}")
+      a(ng-href="#/question" ) Questions
+
+    li(ng-class="{active: selected == 'gender'}")
+      a(ng-href="#/gender" ) Genders
