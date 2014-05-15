@@ -11,22 +11,22 @@ _             = require 'lodash'
 class Meetup
   constructor: (@app) ->
 
-    @app.get  '/meetups/add', auth.admin, @add
-    @app.post '/meetups/create', auth.admin, @create
+    # @app.get  '/meetups/add', auth.admin, @add
+    # @app.post '/meetups/create', auth.admin, @create
 
-    @app.get  '/meetup/:name/edit', auth.user, @edit
-    @app.post '/meetup/:name/update', auth.user, @update
+    # @app.get  '/meetup/:name/edit', auth.user, @edit
+    # @app.post '/meetup/:name/update', auth.user, @update
 
-    @app.get  '/meetup/:name/register', auth.user, @register
-    @app.get  '/meetup/:name/unregister', auth.user, @unregister
+    # @app.get  '/meetup/:name/register', auth.user, @register
+    # @app.get  '/meetup/:name/unregister', auth.user, @unregister
 
-    @app.get  '/meetup/:name/schedules', auth.admin, @schedules
-    @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
+    # @app.get  '/meetup/:name/schedules', auth.admin, @schedules
+    # @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
 
-    @app.get  '/meetup/:name/schedule/:userid', auth.admin, @name
+    # @app.get  '/meetup/:name/schedule/:userid', auth.admin, @name
 
-    @app.get  '/meetups', auth.admin, @index
-    @app.get  '/meetup/:name', @name
+    # # @app.get  '/meetups', auth.admin, @index
+    # @app.get  '/meetup/:name', @name
 
     @app.locals
       dateformat: 'mm/dd/yyyy'
@@ -35,11 +35,12 @@ class Meetup
     urlPrefix = '/api2/'
     bridge = new angularBridge @app, {urlPrefix}
     bridge.addResource 'meetups', MeetupModel
+    @app.get '/meetups', (req, res) -> res.render 'meetups/index'
 
-  index: (req, res) ->
-    MeetupModel.all (err, meetups) ->
-      res.send err if err
-      res.send 200, {meetups}
+  # index: (req, res) ->
+  #   MeetupModel.all (err, meetups) ->
+  #     res.send err if err
+  #     res.send 200, {meetups}
 
   add: (req, res) ->
     res.render 'meetups/add', {schema: MeetupModel.schema}
