@@ -6,6 +6,8 @@ block content
       h1 Short Track
 
   .row: .col-xs-12
+    if my && my.admin
+      h4: a(href='meetups/add') Add a meetup
     each meetup in meetups
       .media
         .pull-left.mdate
