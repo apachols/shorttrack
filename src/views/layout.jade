@@ -53,7 +53,7 @@ body(ng-app='sting')
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
           if my && my.admin
-            li: a(href="/admin") Admin tools
+            li: a(href="/admin/") Admin tools
           if my
             if my.profile[0]
               li: a(href="/profile") #{my.profile[0].name}
