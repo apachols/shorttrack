@@ -1,3 +1,8 @@
+if process.env.NODE_ENV is 'staging'
+  domain = 'localhost'
+  appPort = 3000
+  process.env.NODE_ENV = 'production'
+
 cson = require 'season'
 express = require 'express'
 validator = require 'express-validator'
@@ -68,9 +73,8 @@ app.configure 'development', ->
   app.set 'port', 3000
 
 app.configure 'production', ->
-  app.use express.errorHandler()
-  app.set 'domain', 'shorttrack.me'
-  app.set 'port', 80
+  app.set 'domain', (domain ?= 'shorttrack.me')
+  app.set 'port', (appPort ?= 80)
 
 User = require('./models/user')
 passport.use User.createStrategy()
