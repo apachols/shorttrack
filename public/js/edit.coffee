@@ -1,44 +1,43 @@
 angular.module("sting.edit", ["ngResource"])
+
+  .factory "EditService", ($location) ->
+    record = undefined
+    return {
+      haveDocument: () -> record?
+
+      getDocument: () -> return record
+
+      edit: (doc, config) ->
+        record = doc
+        $location.path config.update + record._id
+   }
+
   .controller "EditController", [
-    "$scope", "$resource", '$window',
-    ($scope, $resource, $window) ->
+    "$scope", "$resource", '$routeParams', 'EditService'
+    ($scope, $resource, $routeParams, EditService) ->
 
-      {collection, fields, _id} = $scope.config
+      {collection, _id} = $routeParams
+      $scope.selected = collection
 
-      $scope.doc = $scope.original = {}
+      $scope.templateUrl = '/../public/templates/admin/' + collection + '.html'
 
-      # What we should do at this point:
-      # - Add route provider
-      # - Put the edit screens where the list lives
-      # - Pass selected object between scopes on edit
-      # - On add, create object and then edit it
-      # - For user, EVENTUALLY use new user edit template for profile page :D
+      if EditService.haveDocument()
+        $scope.doc = $scope.original = EditService.getDocument()
+      else
+        $scope.doc = $scope.original = {}
 
-      # Bad!  We are parsing the jade file with no id, and so it comes out
-      # as string 'undefined'... fix with actual single pageness
-      if _id isnt 'undefined'
-        console.log "id = ", _id
-        resource = $resource '/api/:collection', {collection, _id}
-        docs = resource.query {}, ->
-          $scope.doc = angular.copy $scope.original = angular.copy docs[0]
+      resource = $resource '/api/:collection', {collection, _id}
+      response = resource.get {}, ->
+        # can check here if db copy is different from edit service copy
+        doc = response.docs[0]
+        $scope.doc = angular.copy $scope.original = angular.copy doc
 
       $scope.save = () ->
-        setQuery = {}
-        for field in fields
-          setQuery[field] = $scope.doc[field]
+        resource = $resource '/api/:collection/:_id', {collection, _id}
 
-        if _id isnt 'undefined'
-          console.log 'have id', _id
-          resource = $resource '/api/:collection/:_id', {collection, _id}
-        else
-          console.log 'new record'
-          resource = $resource '/api/:collection', {collection}
-
-        resource.save setQuery, ->
+        resource.save $scope.doc, ->
           $scope.original = angular.copy $scope.doc
-          $scope.editform.$setPristine()
 
       $scope.undo = () ->
         $scope.doc = angular.copy $scope.original
-        $scope.editform.$setPristine()
   ]

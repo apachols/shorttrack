@@ -1,64 +1,71 @@
-console.log 'HAI DENNY'
+angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
+  .config [
+    '$routeProvider', '$locationProvider'
+    ($routeProvider, $locationProvider) ->
+      $routeProvider
 
-angular.module("sting.admin", ["sting.adminServices", "ngResource"])
-  .controller "AdminController", [
-    "$scope", "user", "question", "gender", "$resource"
-    ($scope, user, question, gender, $resource) ->
+        .when '/:collection/:_id',
+          controller: 'EditController'
+          template: '<div ng-include src="templateUrl"></div>'
 
-      $scope.getResource = (model) ->
-        console.log "getResource", model
-        switch model
-          when "user"
-            user
-          when "question"
-            question
-          when "gender"
-            gender
-          else
-            null
+        .when '/:collection',
+          controller: 'ListController'
+          templateUrl: '/../public/templates/admin/list.html'
 
-      $scope.add = (model) ->
-        resource = $resource '/api/:model', {model}
-        resource.delete (err, thing) ->
-          $scope.docs.splice(index)
+        .otherwise
+          redirectTo: '/user'
+    ]
 
-      $scope.remove = (index, model, id) ->
-        resource = $resource '/api/:model/:id', {model, id}
-        resource.delete (err, thing) ->
-          $scope.docs.splice(index)
+  .controller "ListController", [
+    '$scope', '$resource', 'models','EditService', '$routeParams'
+    ($scope, $resource, models, EditService, $routeParams) ->
 
-      # select a model and fetch records from the db
-      $scope.select = (model) ->
-        $scope.selected = model
+      {collection} = $routeParams
 
-        resource = $scope.getResource(model)
-        switch model
-          when "user"
-            $scope.tableheader = "Users"
-            $scope.fields = ['email', 'admin']
-          when "question"
-            $scope.tableheader = "Match Questions"
-            $scope.fields = ['name', 'text']
-          when "gender"
-            $scope.tableheader = "Genders"
-            $scope.fields = ['label', 'code']
+      $scope.selected = collection
 
-        $scope.docs = []
-        docs = resource.query {}, ->
-          $scope.docs = docs
+      $scope.config = models[collection]
 
       $scope.docs = []
-      $scope.fields = []
-      $scope.select 'user'
+      resource = $resource $scope.config.api, {}
+      response = resource.get {}, ->
+        $scope.docs = response.docs
+
+      $scope.update = (doc) ->
+        EditService.edit doc, $scope.config
+
+      $scope.add = () ->
+        resource = $resource $scope.config.api + '/new'
+        doc = resource.get {}, () ->
+          EditService.edit doc, $scope.config
+
+      $scope.remove = (index, id) ->
+        resource = $resource $scope.config.api + '/:id', {id}
+        resource.delete (err, thing) ->
+          $scope.docs.splice(index,1)
   ]
-
-angular.module("sting.adminServices", ["ngResource"])
-
-  .factory "user", ($resource) ->
-    $resource '/api/user', {}
-
-  .factory "question", ($resource) ->
-    $resource '/api/question', {}
-
-  .factory "gender", ($resource) ->
-    $resource '/api/gender', {}
+  .constant "models", {
+    user:
+      list: '/user'
+      collection: 'user'
+      update: '/user/'
+      api: '/api/user'
+      tableheader: "Users"
+      fields: ['email', 'admin']
+    question:
+      list: '/question'
+      collection: 'question'
+      update: '/question/'
+      api: '/api/question'
+      create: 'api/question/new'
+      tableheader: "Match Questions"
+      fields: ['name', 'text']
+    gender:
+      list: '/gender'
+      collection: 'gender'
+      update: '/gender/'
+      api: '/api/gender'
+      create: '/api/gender/new'
+      tableheader: "Genders"
+      fields: ['label', 'code']
+   }
