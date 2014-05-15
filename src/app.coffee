@@ -57,7 +57,7 @@ app.configure ->
 
   app.use m for m in middleware
 
-  app.use '/public', express.static path.resolve __dirname, '../public'
+  # app.use '/public', express.static path.resolve __dirname, '../public'
   app.use '/public', harp.mount path.resolve __dirname, '../public'
   app.use 'favicon', path.resolve __dirname, '../public/favicon.ico'
 
