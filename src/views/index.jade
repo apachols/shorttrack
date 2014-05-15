@@ -1,29 +1,30 @@
 extends layout
 
 block content
-  if !my
-    .jumbotron
-      h1 Short Track
+  .content(ng-app="sting.index")
+    if !my
+      .jumbotron
+        h1 Short Track
 
-  .row
-    .col-sm-10
-      h2.top Upcoming Meetups
-      hr.top
-      ul.list-unstyled
-        each meetup in meetups
-          li.media
-            .pull-left.mdate
-              .mdate-month= df(meetup.date, 'mmmm')
-              .mdate-date= df(meetup.date, 'dd')
-              .mdate-day= df(meetup.date, 'dddd')
+    .row
+      .col-sm-10
+        h2.top Upcoming Meetups
+        hr.top
+        ul.list-unstyled
+          each meetup in meetups
+            li.media
+              .pull-left.mdate
+                .mdate-month= df(meetup.date, 'mmmm')
+                .mdate-date= df(meetup.date, 'dd')
+                .mdate-day= df(meetup.date, 'dddd')
 
-            .media-body
-              h4.media-heading
-                a(href="/meetup/#{meetup.name}") #{meetup.name} - #{meetup.location}
-              | #{meetup.description}
+              .media-body
+                h4.media-heading
+                  a(href="/meetup/#{meetup.name}") #{meetup.name} - #{meetup.location}
+                | #{meetup.description}
 
-    .col-sm-2
-      if my && my.admin
-        a.btn(href='meetups/add').btn-primary.pull-right.btn-block
-          | Add a meetup
+      .col-sm-2
+        if my && my.admin
+          a.btn(href='meetups/add').btn-primary.pull-right.btn-block
+            | Add a meetup
 
