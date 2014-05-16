@@ -3,17 +3,13 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     '$routeProvider', '$locationProvider'
     ($routeProvider, $locationProvider) ->
       $routeProvider
-
-        .when '/:collection/:_id',
+        .when '/admin/:collection/:_id',
           controller: 'EditController'
           template: '<div ng-include src="templateUrl"></div>'
 
-        .when '/:collection',
+        .when '/admin/:collection?',
           controller: 'ListController'
           templateUrl: '/../public/templates/admin/list.html'
-
-        .otherwise
-          redirectTo: '/user'
     ]
 
   .controller "ListController", [
@@ -21,6 +17,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     ($scope, $resource, models, EditService, $routeParams) ->
 
       {collection} = $routeParams
+      collection = collection || 'user'
 
       $scope.selected = collection
 
