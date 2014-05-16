@@ -1,25 +1,14 @@
 extends layout
 
 block content
-  .content(ng-app="sting.homepage")
+  .content
     if !my
       .jumbotron
         h1 Short Track
 
     .row
       .col-sm-10
-        h2.top Upcoming Meetups
-        hr.top
-        ul.list-unstyled(ng-controller="upcoming")
-            li.media(ng-cloak ng-repeat="meetup in meetups")
-              .pull-left.mdate
-                .mdate-month {{meetup.date | date: 'MMMM'}}
-                .mdate-date {{meetup.date | date: 'dd'}}
-
-              .media-body
-                h4.media-heading
-                  a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
-                | {{meetup.description}}
+        div(ng-view)
 
       .col-sm-2
         if my && my.admin

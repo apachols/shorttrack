@@ -1,6 +1,5 @@
 angular.module 'sting.forgot', [
   'ngResource'
-  'ngRoute'
 ]
 
 .controller 'forgotPassword', ($scope, $modal) ->

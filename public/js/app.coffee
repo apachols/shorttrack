@@ -4,20 +4,27 @@ angular.module 'sting', [
   # 'sting.admin'
   # 'sting.edit'
   # 'sting.profile'
-  'sting.homepage'
   'sting.meetups'
   'ui-rangeSlider'
 ]
 
-angular.module 'sting.homepage', ['ngResource']
+angular.module 'sting.meetups', ['ngResource', 'ngRoute']
+.config ($routeProvider) ->
+  $routeProvider
+    .when '/meetup/:id',
+      controller: 'meetup'
+      templateUrl: '/public/templates/meetup.html'
+
+    .otherwise
+      controller: 'upcoming'
+      templateUrl: '/public/templates/upcoming.html'
+
 .controller 'upcoming', ($scope, $resource) ->
   $resource('/api2/meetups').query (meetups) ->
     $scope.meetups = meetups
 
-
-angular.module 'sting.meetups', ['ngResource', 'ngRoute']
-.controller 'meetups', ($scope, $resource) ->
-
-  id = '536aed82a8fe4cadae8249a3'
+.controller 'meetup', ($scope, $resource, $routeParams) ->
+  {id} = $routeParams
   $resource('/api2/meetups/:id', {id}).get (meetup) ->
     $scope.meetup = meetup
+    console.log meetup

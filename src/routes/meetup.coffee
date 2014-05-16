@@ -35,7 +35,7 @@ class Meetup
     urlPrefix = '/api2/'
     bridge = new angularBridge @app, {urlPrefix}
     bridge.addResource 'meetups', MeetupModel
-    @app.get '/meetups', (req, res) -> res.render 'meetups/index'
+    # @app.get '/meetups', (req, res) -> res.render 'meetups/index'
 
   # index: (req, res) ->
   #   MeetupModel.all (err, meetups) ->
