@@ -49,7 +49,9 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       _.pull dbPaid, doc._id
     console.log dbPaid, $scope.paid
 
-    # PUT $RESOURCE AJAX CALL TO OVERWRITE MEETUP.PAID RIGHT HERE NAO
+    paid = dbPaid
+    $resource('/api2/meetups/:id', {id}).save {paid}, (response) ->
+      console.log response
 
   $resource('/api/userlist/:id', {id}).get (response) ->
     $scope.registered = response.registered
