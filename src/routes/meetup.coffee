@@ -34,7 +34,7 @@ class Meetup
       timeformat: 'hh:mm TT'
 
     # Reads are free
-    @app.post '/api2/meetups', auth.admin
+    # @app.post '/api2/meetups', auth.admin
     @app.put '/api2/meetups', auth.admin
     @app.delete '/api2/meetups', auth.admin
 

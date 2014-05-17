@@ -12,6 +12,7 @@ block content
 
       .col-sm-2
         if my && my.admin
-          a.btn(href='meetups/add').btn-primary.pull-right.btn-block
-            | Add a meetup
+          div(ng-controller='meetupModal')
+            a(ng-click='open()').btn.btn-primary.pull-right.btn-block.
+              Add a meetup
 

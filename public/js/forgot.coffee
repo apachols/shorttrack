@@ -6,7 +6,7 @@ angular.module 'sting.forgot', [
 
   $scope.startProcess = ->
     modalInstance = $modal.open
-      templateUrl: '/public/templates/forgotPassword.html'
+      templateUrl: '/public/templates/forgot-password.html'
       controller: 'modalController'
 
 .controller 'modalController', ($scope, $modalInstance, $http) ->
