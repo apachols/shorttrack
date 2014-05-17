@@ -45,14 +45,14 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     user:
       list: '/user'
       collection: 'user'
-      update: '/user/'
+      update: '/admin/user/'
       api: '/api/user'
       tableheader: "Users"
       fields: ['email', 'admin']
     question:
       list: '/question'
       collection: 'question'
-      update: '/question/'
+      update: '/admin/question/'
       api: '/api/question'
       create: 'api/question/new'
       tableheader: "Match Questions"
@@ -60,7 +60,7 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
     gender:
       list: '/gender'
       collection: 'gender'
-      update: '/gender/'
+      update: '/admin/gender/'
       api: '/api/gender'
       create: '/api/gender/new'
       tableheader: "Genders"
