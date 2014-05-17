@@ -2,3 +2,24 @@
   button(type='button' class='close' ng-click='cancel()' aria-hidden='true').
     &times;
   h3.modal-title Create a new Meetup
+
+.modal-body
+  .form-group
+    label Meetup Name
+    input.form-control(type='text' ng-model="meetup.name"
+      placeholder='Meetup Name')
+
+  .form-group
+    label Location
+    input.form-control(type='text' ng-model='meetup.location'
+      placeholder='742 Evergreen Terrace')
+
+  .form-group
+    label Description
+    textarea.form-control(rows='5' ng-model='meetup.description')
+
+.modal-footer
+  .pull-right
+    ul.list-inline
+      li: a.btn.btn-danger(ng-click='cancel()') Cancel
+      li: a.btn.btn-success(ng-click='save()') Save

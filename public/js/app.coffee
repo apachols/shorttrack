@@ -72,11 +72,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $scope.meetup = {}
 
   $scope.open = ->
-    # $resource('/api2/meetups').save {name: ''}, (meetup) ->
-    #   $scope.meetup = meetup
-
-    id = '5376be1429aa94b283508e6d'
-    $resource('/api2/meetups/:id', {id}).get (meetup) ->
+    $resource('/api2/meetups').save {name: ''}, (meetup) ->
       $scope.meetup = meetup
 
     modalInstance = $modal.open
@@ -84,5 +80,15 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       controller: 'meetupModify'
       scope: $scope
 
-.controller 'meetupModify', ($scope, $modalInstance) ->
-  $scope.cancel = -> $modalInstance.dismiss('cancel')
+.controller 'meetupModify', ($scope, $resource, $modalInstance) ->
+  $modalInstance.result.then ->
+    console.log 'close'
+    {_id} = $scope.meetup
+    $resource("/api2/meetups/#{_id}").save($scope.meetup)
+  , ->
+    console.log 'dismiss'
+    {_id} = $scope.meetup
+    $resource("/api2/meetups/#{_id}").delete()
+
+  $scope.cancel = -> $modalInstance.dismiss()
+  $scope.save = -> $modalInstance.close()
