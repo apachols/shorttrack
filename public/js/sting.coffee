@@ -6,6 +6,7 @@ angular.module 'sting', [
   'sting.profile'
   'sting.meetups'
   'ui-rangeSlider'
+  'vr.directives.slider'
 ]
 
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
@@ -68,30 +69,27 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     dbPaid = response.paid
     $scope.paid[uid] = true for uid in dbPaid
 
-.controller 'meetupModal', ($scope, $modal, $resource, $routeParams) ->
+.controller 'meetupCreate', ($scope, $modal, $resource) ->
+
   $scope.meetup = {}
+
+  modalController = ($scope, $resource, $modalInstance) ->
+    $scope.minDate = new Date()
+    $scope.cancel = -> $modalInstance.dismiss()
+    $scope.save = -> $modalInstance.close()
+
+    $modalInstance.result.then (reason) ->
+      console.log 'close', reason
+      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup
+    , (reason) ->
+      console.log 'dismiss', reason
+      $resource("/api2/meetups/#{$scope.meetup._id}").delete()
 
   $scope.open = ->
     $resource('/api2/meetups').save {name: ''}, (meetup) ->
       $scope.meetup = meetup
 
     modalInstance = $modal.open
-      templateUrl: '/public/templates/meetups/modal.html'
-      controller: 'meetupModify'
       scope: $scope
-
-.controller 'meetupModify', ($scope, $resource, $modalInstance) ->
-
-  $scope.minDate = new Date()
-  $scope.cancel = -> $modalInstance.dismiss()
-  $scope.save = -> $modalInstance.close()
-
-  $modalInstance.result.then ->
-    console.log 'close'
-    {_id} = $scope.meetup
-    $resource("/api2/meetups/#{_id}").save($scope.meetup)
-  , ->
-    console.log 'dismiss'
-    {_id} = $scope.meetup
-    $resource("/api2/meetups/#{_id}").delete()
-
+      templateUrl: '/public/templates/meetups/modal.html'
+      controller: modalController

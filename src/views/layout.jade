@@ -8,15 +8,12 @@ head
   link(rel='shortcut icon' href='/public/favicon.ico')
 
   link(rel='stylesheet' href='/public/components/angular-rangeslider/angular.rangeSlider.css')
-  link(rel='stylesheet' href='/public/components/bootstrap-datepicker/css/datepicker3.css')
   link(rel='stylesheet' href='/public/components/font-awesome/css/font-awesome.css')
   link(rel='stylesheet' href='/public/css/style.css')
-  link(rel='stylesheet' href='/public/components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css')
 
   //- jQuery and Bootstrap
   script(src='/public/components/jquery/dist/jquery.js')
   script(src='/public/components/bootstrap/dist/js/bootstrap.js')
-  script(src='/public/components/bootstrap-datepicker/js/bootstrap-datepicker.js')
 
   //- Lodash
   script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
@@ -26,15 +23,16 @@ head
   script(src="/public/components/angular-route/angular-route.js")
   script(src="/public/components/angular-resource/angular-resource.js")
   script(src="/public/components/angular-sanitize/angular-sanitize.js")
+  script(src="/public/components/angular-touch/angular-touch.js")
 
   //- Angular Plugins
   script(src="/public/components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js")
   script(src='/public/components/angular-rangeslider/angular.rangeSlider.js')
   script(src='/public/components/checklist-model/checklist-model.js')
-  script(src='/public/components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js')
+  script(src='/public/components/angular-slider-venturocket/build/angular-slider.js')
 
   //- Angular App
-  script(src="/public/js/app.js")
+  script(src="/public/js/sting.js")
   script(src='/public/js/profile.js')
   script(src="/public/js/forgot.js")
   script(src='/public/js/admin.js')
@@ -66,26 +64,6 @@ body(ng-app='sting')
             li: a(href="/login") Log In
 
   .container
-    if messages.error
-      .row
-        .col-xs-12
-          pre.alert-danger #{messages.error}
-
-
-
-
     block content
-
-
-
-
-
-
-  script
-    :coffee
-      $ ->
-        $('.disabled[data-provide=datepicker]')
-          .datepicker()
-          .find('table').addClass 'table'
 
   block scripts

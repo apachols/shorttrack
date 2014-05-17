@@ -7,7 +7,14 @@ ul.list-unstyled
         .mdate-month {{meetup.date | date: 'MMMM'}}
         .mdate-date {{meetup.date | date: 'dd'}}
 
+      //- if my && my.admin
+      //-   .pull-right
+      //-     a.btn.btn-warning edit
+
       .media-body
         h4.media-heading
           a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
         | {{meetup.description}}
+        | {{meetup.cap}}
+
+      //- if my && my.admin
