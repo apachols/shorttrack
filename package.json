@@ -14,7 +14,7 @@
     "passport-local-mongoose": "^0.2.6",
     "connect-mongostore": "~0.0.10",
     "jade": "^1.1.5",
-    "coffee-script": "^1.6.3",
+    "coffee-script": "^1.7.1",
     "lodash": "~2.4.1",
     "express-flash": "~0.0.2",
     "tea-properties": "~0.1.1",
@@ -23,7 +23,8 @@
     "harp": "^0.12.1",
     "season": "^2.0.0",
     "request": "^2.34.0",
-    "nodemailer": "^0.6.3"
+    "nodemailer": "^0.6.3",
+    "angular-bridge": "^0.3.6"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

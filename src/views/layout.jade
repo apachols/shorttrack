@@ -22,8 +22,8 @@ head
   script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
 
   //- Angular
-  script(src="/public/components/angular/angular.min.js")
-  script(src="/public/components/angular-route/angular-route.min.js")
+  script(src="/public/components/angular/angular.js")
+  script(src="/public/components/angular-route/angular-route.js")
   script(src="/public/components/angular-resource/angular-resource.js")
   script(src="/public/components/angular-sanitize/angular-sanitize.js")
 
@@ -48,7 +48,7 @@ body(ng-app='sting')
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href="/") Short Track Speed Dating
+        a.navbar-brand(href="/#/") Short Track Speed Dating
 
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
@@ -71,7 +71,15 @@ body(ng-app='sting')
         .col-xs-12
           pre.alert-danger #{messages.error}
 
+
+
+
     block content
+
+
+
+
+
 
   script
     :coffee

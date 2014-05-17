@@ -1,13 +1,12 @@
 angular.module 'sting.forgot', [
   'ngResource'
-  'ngRoute'
 ]
 
 .controller 'forgotPassword', ($scope, $modal) ->
 
   $scope.startProcess = ->
     modalInstance = $modal.open
-      templateUrl: '/public/templates/forgotPassword.html'
+      templateUrl: '/public/templates/forgot-password.html'
       controller: 'modalController'
 
 .controller 'modalController', ($scope, $modalInstance, $http) ->

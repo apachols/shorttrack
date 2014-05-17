@@ -1,0 +1,12 @@
+//- .content
+h2.top Meetup:  {{meetup.name}}
+hr.top
+.media
+  .pull-left.mdate
+    .mdate-month {{meetup.date | date: 'MMMM'}}
+    .mdate-date {{meetup.date | date: 'dd'}}
+
+  .media-body
+    h4.media-heading
+      a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
+    | {{meetup.description}}
