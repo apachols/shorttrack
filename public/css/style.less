@@ -7,23 +7,16 @@
 
 // Components
 @import "_mdate.less";
-
-//
 @import "_votes.less";
 
-.input-daterange .form-control { text-align: left; }
-.top { margin-top: 0; }
-.datepicker-inline { width: auto; }
-.input-timerange .input-group-addon.input-group-joiner {
-  border-left-width: 0; border-right-width: 0;
-  padding: 4px 5px;
-}
-.list-inline.pull-right > li:last-child {
-  padding-right: 0;
-}
-.panel-footer .list-inline {
-  margin-bottom: 0;
-}
-.disabled[data-provide=datepicker] {
-  pointer-events: none;
+.datepicker-block {
+  -webkit-user-select: none;
+          user-select: none;
+  table {
+    width: 100%;
+  }
+
+  .btn[disabled] {
+    background: @gray-lighter;
+  }
 }

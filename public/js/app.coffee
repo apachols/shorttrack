@@ -81,6 +81,11 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       scope: $scope
 
 .controller 'meetupModify', ($scope, $resource, $modalInstance) ->
+
+  $scope.minDate = new Date()
+  $scope.cancel = -> $modalInstance.dismiss()
+  $scope.save = -> $modalInstance.close()
+
   $modalInstance.result.then ->
     console.log 'close'
     {_id} = $scope.meetup
@@ -90,5 +95,3 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     {_id} = $scope.meetup
     $resource("/api2/meetups/#{_id}").delete()
 
-  $scope.cancel = -> $modalInstance.dismiss()
-  $scope.save = -> $modalInstance.close()

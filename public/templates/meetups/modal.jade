@@ -18,6 +18,17 @@
     label Description
     textarea.form-control(rows='5' ng-model='meetup.description')
 
+  .row
+    .col-sm-6
+      .form-group
+        label Date
+        datepicker.datepicker-block(ng-model='meetup.date' show-weeks='false' min-date='minDate')
+
+    .col-sm-6
+      .form-group
+        label Time
+        timepicker(ng-model='meetup.date' hour-step='1' minute-step='15')
+
 .modal-footer
   .pull-right
     ul.list-inline
