@@ -31,7 +31,7 @@ class Api
 
   getuserlist: (req,res,next) ->
     {id} = req.params
-    Meetup.findOne({_id: id}).populate('registered').exec (err, meetup) ->
+    Meetup.findOne({_id: id}).populate('registered', 'email profile').exec (err, meetup) ->
       return res.send 500, err if err
       console.log meetup
       {registered, paid} = meetup
