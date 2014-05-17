@@ -25,7 +25,7 @@ class Matcher
     userids = []
     for userid in @meetup[pool]
       console.log userid
-      userids.push mongoose.Types.ObjectId userid
+      userids.push mongoose.Types.ObjectId userid.toString()
 
     # only schedule dates for registered users.
     # eventually only do this for checked/in paid users

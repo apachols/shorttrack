@@ -36,12 +36,25 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 
 .controller 'userlist', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
+
+  dbPaid = []
+
   $scope.paid = {}
+
+  $scope.togglePaid = (doc) ->
+    $scope.paid[doc._id]=!$scope.paid[doc._id]
+    if ($scope.paid[doc._id])
+      dbPaid.push doc._id
+    else
+      _.pull dbPaid, doc._id
+    console.log dbPaid, $scope.paid
+
+    # PUT $RESOURCE AJAX CALL TO OVERWRITE MEETUP.PAID RIGHT HERE NAO
+
   $resource('/api/userlist/:id', {id}).get (response) ->
     $scope.registered = response.registered
-    for uid in response.paid
-      $scope.paid[response.paid]
-    console.log $scope.registered, $scope.paid
+    dbPaid = response.paid
+    $scope.paid[uid] = true for uid in dbPaid
 
 .controller 'meetupModal', ($scope, $modal, $resource, $routeParams) ->
   $scope.meetup = {}

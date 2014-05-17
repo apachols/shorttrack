@@ -22,7 +22,7 @@ class Meetup
     @app.get  '/meetup/:name/register', auth.user, @register
     @app.get  '/meetup/:name/unregister', auth.user, @unregister
 
-    # @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
+    @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
 
     # @app.get  '/meetup/:name/schedules', auth.admin, @schedules
     # @app.get  '/meetup/:name/schedule/:userid', auth.admin, @name
