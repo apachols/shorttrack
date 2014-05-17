@@ -24,6 +24,13 @@ Profile = new mongoose.Schema
   }
 
   questions: [Questions.schema]
+
+  answers: [
+    question: { type: mongoose.Schema.ObjectId, ref: 'Question' }
+    answers: [ String ]
+    acceptable: [ String ]
+    importance: Number
+    ]
 ,
   collection: 'profile'
   strict: 'throw'

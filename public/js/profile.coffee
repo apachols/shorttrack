@@ -24,10 +24,11 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       #
 
       $scope.getQuestions = () ->
-        # resource = $resource '/api/question'
-        # questions = resource.query {}, ->
-        #   $scope.questions = questions
-        #   console.log questions
+        resource = $resource '/api/question'
+        response = resource.get {}, ->
+          $scope.questions = response.docs
+
+          $scope.getNewQuestion()
 
       $scope.getGenders = () ->
         resource = $resource '/api/gender'
@@ -45,6 +46,36 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
         $scope.getQuestions()
 
+      $scope.getNewQuestion = () ->
+        console.log "getNewQuestion called"
+        $scope.questionIndex++
+        # TODO here we do some logic to make sure we don't have an answered question
+        #console.log $scope.questions
+        $scope.currentQuestion = $scope.questions[$scope.questionIndex]
+
+        currentAnswer = 
+          question: $scope.currentQuestion._id
+          answer: null
+          acceptable: []
+          importance: null
+
+        $scope.currentAnswer = currentAnswer
+
+      $scope.saveAnswer = () ->
+        # handle question skipping
+        if $scope.currentAnswer.answer
+          # TODO this should never happen if the model is set up correctly
+          $scope.doc.answers = [] unless $scope.doc.answers
+
+          # filter out nulls
+          $scope.currentAnswer.acceptable = (txt for txt in $scope.currentAnswer.acceptable when txt) 
+          $scope.doc.answers.push($scope.currentAnswer)
+        # else
+        #   console.log 'skipped!'
+
+        $scope.getNewQuestion()
+
+
       $scope.save = (newdoc, olddoc) ->
         console.log 'directive save', newdoc, olddoc
         resource = $resource '/api/profile'
@@ -52,10 +83,13 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
       $scope.doc = {}
       $scope.genders = []
+      #$scope.currentQuestion = "some question"
+
+      $scope.questionIndex = -1
+      #$scope.currentAnswer = null
 
       $scope.getGenders()
       $scope.getProfile()
-      console.log $scope.doc
 
   ]
   .directive "autosave", [ () ->

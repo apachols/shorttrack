@@ -60,6 +60,46 @@ block content
                       div(range-slider ng-if="doc.profile" min="18" max="100" model-min="doc.profile.age.seeking[0]" model-max="doc.profile.age.seeking[1]")
 
 
+          fieldset
+            legend Unanswered Match Question
+            .form-group
+              //- {{currentQuestion}}
+              //- {{currentQuestion.text}}
+              h3 My Answer
+              //- p My answer is: {{currentAnswer.answer}}
+              ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
+                      li.checkbox: label
+                        input(type='radio' ng-value="answer" ng-model="currentAnswer.answer")
+                        | {{answer}}
+
+              h3 Acceptable Answers
+              //- p My answers are: {{currentAnswer.acceptable}}
+              ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
+                      li.checkbox: label
+                        input(type='checkbox' ng-true-value="{{answer}}" ng-model="currentAnswer.acceptable[$index]")
+                        | {{answer}}
+
+              h3 How important is this question to you?
+              //- p {{currentAnswer.importance}}
+              ul.list-unstyled
+                  li
+                    input(type='radio' ng-model="currentAnswer.importance" value="2")
+                    | Very important
+                  li
+                    input(type='radio' ng-model="currentAnswer.importance" value="1")
+                    | Somewhat important
+                  li
+                    input(type='radio' ng-model="currentAnswer.importance" value="0")
+                    | Not at all important
+
+
+              //- button(ng-click="getNewQuestion()") Skip This Question
+              button(ng-click="saveAnswer()") Next Question!
+
+              h3 DEBUG: here are all the answers.
+              {{doc.answers}}
+              
+
           //- fieldset
           //-   legend Match Questions
           //-   .form-group
