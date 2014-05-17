@@ -2,6 +2,8 @@ MeetupModel   = require '../models/meetup'
 Matcher       = require '../lib/matcher'
 Scheduler     = require '../lib/scheduler'
 auth          = require '../helpers/authenticator'
+mongoose      = require 'mongoose'
+
 
 angularBridge = require 'angular-bridge'
 {inspect}     = require 'util'
@@ -17,8 +19,8 @@ class Meetup
     # @app.get  '/meetup/:name/edit', auth.user, @edit
     # @app.post '/meetup/:name/update', auth.user, @update
 
-    # @app.get  '/meetup/:name/register', auth.user, @register
-    # @app.get  '/meetup/:name/unregister', auth.user, @unregister
+    @app.get  '/meetup/:name/register', auth.user, @register
+    @app.get  '/meetup/:name/unregister', auth.user, @unregister
 
     # @app.get  '/meetup/:name/generate/:pool?', auth.admin, @generate
 
@@ -116,7 +118,8 @@ class Meetup
   unregister: (req, res) =>
     {user, params: {name}, route: {path}} = req
 
-    data = {registered: user._id}
+    uid = mongoose.Types.ObjectId user._id.toString()
+    data = { registered: uid }
 
     switch @stripView path
       when 'register' then query = {$push: data}

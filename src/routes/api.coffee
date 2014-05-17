@@ -11,6 +11,8 @@ class Api
 
     @app.post '/api/test/:_id', @test
 
+    @app.get '/api/userlist/:id', auth.admin, @getuserlist
+
     @app.get '/api/profile', auth.user, @getprofile
 
     @app.post '/api/profile', auth.user, @updateprofile
@@ -26,6 +28,14 @@ class Api
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
     @app.delete '/api/gender/:id', @deletegender
+
+  getuserlist: (req,res,next) ->
+    {id} = req.params
+    Meetup.findOne({_id: id}).populate('registered').exec (err, meetup) ->
+      return res.send 500, err if err
+      console.log meetup
+      {registered, paid} = meetup
+      res.json {registered, paid}
 
   getprofile: (req,res,next) ->
     email = req.user.email

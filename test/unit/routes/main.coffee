@@ -38,7 +38,7 @@ describe 'src/routes/main.coffee', ->
       Main.setup req, res, ->
 
   describe '#get /index', ->
-    it 'should display error if error', (done) ->
+    xit 'should display error if error', (done) ->
       fakeerror = "everything is wrong"
       fakequery = {}
       gently.expect MeetupModel, 'find', (arg1) ->
@@ -57,7 +57,7 @@ describe 'src/routes/main.coffee', ->
 
       Main.index req, res
 
-    it 'should display meetups if found', (done) ->
+    xit 'should display meetups if found', (done) ->
       fakemeetups = [{},{}]
       fakequery = {}
       gently.expect MeetupModel, 'find', (arg1) ->

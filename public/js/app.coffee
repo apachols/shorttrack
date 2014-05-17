@@ -11,6 +11,11 @@ angular.module 'sting', [
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .config ($routeProvider) ->
   $routeProvider
+
+    .when '/meetup/:id/userlist',
+      controller: 'userlist'
+      templateUrl: '/public/templates/meetups/userlist.html'
+
     .when '/meetup/:id',
       controller: 'meetup'
       templateUrl: '/public/templates/meetup.html'
@@ -28,6 +33,15 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $resource('/api2/meetups/:id', {id}).get (meetup) ->
     $scope.meetup = meetup
     console.log meetup
+
+.controller 'userlist', ($scope, $resource, $routeParams) ->
+  {id} = $routeParams
+  $scope.paid = {}
+  $resource('/api/userlist/:id', {id}).get (response) ->
+    $scope.registered = response.registered
+    for uid in response.paid
+      $scope.paid[response.paid]
+    console.log $scope.registered, $scope.paid
 
 .controller 'meetupModal', ($scope, $modal, $resource, $routeParams) ->
   $scope.meetup = {}

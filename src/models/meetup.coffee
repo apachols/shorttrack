@@ -19,7 +19,7 @@ Meetup = new mongoose.Schema
 
   description: String
   location: String
-  registered: [ String ]
+  registered: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
   paid: [ String ]
 
   matches: [ Match.schema ]

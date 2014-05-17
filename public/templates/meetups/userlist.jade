@@ -1,0 +1,14 @@
+.col-sm-10
+  .panel.panel-default
+    .panel-heading
+      h1 Users
+    .panel-body
+      table.table.table-striped
+        thead
+          tr
+            th.col-sm-4 Registered
+            th.col-sm-4 Paid
+        tbody
+          tr(ng-repeat="doc in registered")
+            td: {{doc.email}}
+            td: a(ng-click="paid[doc._id]=!paid[doc._id]") {{ {true: 'Yes', false:'No'}[!!paid[doc._id]] }}
