@@ -8,5 +8,6 @@ module.exports = (app) ->
     'meetup'
     'forgot'
     'api'
+    'schedule'
   ]
   require("./#{r}") app for r in routes
