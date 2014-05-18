@@ -61,43 +61,57 @@ block content
 
 
           fieldset
-            legend Unanswered Match Questions
+            legend Match Questions
             .form-group
-              button(ng-click="saveAnswer()") Next Question!
-              //- {{currentQuestion}}
-              h2 {{currentQuestion.text}}
-              h3 My Answer
-              //- p My answer is: {{currentAnswer.answer}}
-              ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
-                      li.checkbox: label
-                        input(type='radio' ng-value="answer" ng-model="currentAnswer.answer")
-                        | {{answer}}
+              .col-sm-8: .row
+                .col-sm-4.col-sm-offset-4
+                  button.btn-primary(ng-click="swapEditState()") {{editLabel()}}
+                .col-sm-4
+                  button.btn-primary(ng-click="saveAnswer()") Skip This Question
 
-              h3 Acceptable Answers
-              //- p My answers are: {{currentAnswer.acceptable}}
-              ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
-                      li.checkbox: label
-                        input(type='checkbox' ng-true-value="{{answer}}" ng-model="currentAnswer.acceptable[$index]")
-                        | {{answer}}
+              .row#my-answer
+                label.col-sm-4.col-sm-offset-1.control-label {{currentQuestion.text}}
+                //- h3 My Answer
+                //- p My answer is: {{currentAnswer.answer}}
+                .col-sm-7
+                  ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
+                    li.checkbox: label
+                      input(type='radio' ng-value="answer" ng-model="currentAnswer.answer")
+                      | {{answer}}
 
-              h3 How important is this question to you?
-              //- p {{currentAnswer.importance}}
-              ul.list-unstyled
-                  li
-                    input(type='radio' ng-model="currentAnswer.importance" value="2")
-                    | Very important
-                  li
-                    input(type='radio' ng-model="currentAnswer.importance" value="1")
-                    | Somewhat important
-                  li
-                    input(type='radio' ng-model="currentAnswer.importance" value="0")
-                    | Not at all important
+              .row#acceptable-answers(ng-show="currentAnswer.answer")
+                label.col-sm-4.col-sm-offset-1.control-label Answers I'll Accept
+                //- My answers are: {{currentAnswer.acceptable}}
+                .col-sm-7
+                  ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
+                    li.checkbox: label
+                      input(type='checkbox' ng-true-value="{{answer}}" ng-model="currentAnswer.acceptable[$index]")
+                      | {{answer}}
+              .row#importance(ng-show="currentAnswer.acceptable.length > 0")
+                label.col-sm-4.col-sm-offset-1.control-label How important is this question to me?
+                //- p {{currentAnswer.importance}}
+                .col-sm-7
+                  ul.list-unstyled
+                    li
+                      input(type='radio' ng-model="currentAnswer.importance" value="2")
+                      | Very important
+                    li
+                      input(type='radio' ng-model="currentAnswer.importance" value="1")
+                      | Somewhat important
+                    li
+                      input(type='radio' ng-model="currentAnswer.importance" value="0")
+                      | Not at all important
+
+              .row#next(ng-show="currentAnswer.answer")
+                .col-sm-4.col-sm-offset-4.control-label
+                  button.btn-primary(ng-click="saveAnswer()") Next Question
 
 
              
-
-              h3 DEBUG: here are all the answers.
-              {{doc.profile.answers}}
+              .row#debug
+                .col-sm-12
+                  h3 DEBUG: here are all the answers.
+                  p {{doc.profile.answers}}
               
 
           //- fieldset

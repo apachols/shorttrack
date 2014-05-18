@@ -23,8 +23,26 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       #   Cannot do question answering via separate ajax, updating same profile record.  in memory.
       #
 
-      $scope.status =
-        allQuestionsSeen: false
+      # state.edit:
+      #   when edit is true, user is trying to edit previous answers
+      #   when edit is false, user gets new questions only
+      # switching edit to true then false will cause the user to see
+      # questions zhe skipped previously while on this screen.
+      $scope.state =
+        edit: false
+
+      # this is for the 'swap editing state' button.
+      $scope.editLabel = () ->
+        if $scope.state.edit
+          "Answer New Questions"
+        else
+          "Edit Your Answers"
+      
+
+      $scope.swapEditState = () ->
+        $scope.state.edit = !$scope.state.edit
+        $scope.questionIndex = -1
+        $scope.getNewQuestion()
 
       $scope.getQuestions = () ->
         resource = $resource '/api/question'
@@ -56,7 +74,7 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
         next = $scope.nextQuestion()
         if next == -1
-          $scope.status.allQuestionsSeen = true
+          $scope.state.edit = true
           $scope.questionIndex = -1
           next = $scope.nextQuestion()
 
@@ -82,7 +100,7 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
           # if user hasn't seen all the questions, return the first
           # non-matching question. else, return the first question the user's
           # already answered.
-          if !$scope.status.allQuestionsSeen
+          if !$scope.state.edit
             return question if matchingAnswer.length == 0
           else
             return question if matchingAnswer.length > 0
@@ -106,6 +124,8 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
         $scope.getNewQuestion()
 
+      $scope.toggleEditMode = () ->
+        $scope.edit
 
       $scope.save = (newdoc, olddoc) ->
         console.log 'directive save', newdoc, olddoc
