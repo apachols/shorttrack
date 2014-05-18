@@ -23,6 +23,9 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
       #   Cannot do question answering via separate ajax, updating same profile record.  in memory.
       #
 
+      $scope.status =
+        allQuestionsSeen: false
+
       $scope.getQuestions = () ->
         resource = $resource '/api/question'
         response = resource.get {}, ->
@@ -48,11 +51,19 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
       $scope.getNewQuestion = () ->
         console.log "getNewQuestion called"
-        $scope.questionIndex++
-        # TODO here we do some logic to make sure we don't have an answered question
-        #console.log $scope.questions
-        $scope.currentQuestion = $scope.questions[$scope.questionIndex]
+        # $scope.questionIndex++
+        # here we do some logic to make sure we don't have an answered question
 
+        next = $scope.nextQuestion()
+        if next == -1
+          $scope.status.allQuestionsSeen = true
+          $scope.questionIndex = -1
+          next = $scope.nextQuestion()
+
+        $scope.currentQuestion = next
+
+        # set up current answer object
+        # TODO need to fix this for previously answered questions
         currentAnswer = 
           question: $scope.currentQuestion._id
           answer: null
@@ -61,15 +72,35 @@ angular.module("sting.profile", ["ngResource", "checklist-model"])
 
         $scope.currentAnswer = currentAnswer
 
+      $scope.nextQuestion = () ->
+
+        $scope.questionIndex++
+
+        for question in $scope.questions[$scope.questionIndex..]
+          matchingAnswer = $scope.doc.profile.answers.filter (x) -> x.question == question._id
+
+          # if user hasn't seen all the questions, return the first
+          # non-matching question. else, return the first question the user's
+          # already answered.
+          if !$scope.status.allQuestionsSeen
+            return question if matchingAnswer.length == 0
+          else
+            return question if matchingAnswer.length > 0
+
+          # only increment on questions we already answered.
+          # otherwise, we increment next time we come through this function
+          $scope.questionIndex++
+        return -1
+
       $scope.saveAnswer = () ->
         # handle question skipping
         if $scope.currentAnswer.answer
           # TODO this should never happen if the model is set up correctly
-          $scope.doc.answers = [] unless $scope.doc.answers
+          $scope.doc.profile.answers = [] unless $scope.doc.profile.answers
 
           # filter out nulls
           $scope.currentAnswer.acceptable = (txt for txt in $scope.currentAnswer.acceptable when txt) 
-          $scope.doc.answers.push($scope.currentAnswer)
+          $scope.doc.profile.answers.push($scope.currentAnswer)
         # else
         #   console.log 'skipped!'
 

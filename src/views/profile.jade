@@ -61,10 +61,11 @@ block content
 
 
           fieldset
-            legend Unanswered Match Question
+            legend Unanswered Match Questions
             .form-group
+              button(ng-click="saveAnswer()") Next Question!
               //- {{currentQuestion}}
-              //- {{currentQuestion.text}}
+              h2 {{currentQuestion.text}}
               h3 My Answer
               //- p My answer is: {{currentAnswer.answer}}
               ul.list-unstyled(ng-repeat="answer in currentQuestion.answers track by $index")
@@ -93,11 +94,10 @@ block content
                     | Not at all important
 
 
-              //- button(ng-click="getNewQuestion()") Skip This Question
-              button(ng-click="saveAnswer()") Next Question!
+             
 
               h3 DEBUG: here are all the answers.
-              {{doc.answers}}
+              {{doc.profile.answers}}
               
 
           //- fieldset
