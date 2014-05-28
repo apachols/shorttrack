@@ -31,11 +31,13 @@ class Api
 
   getuserlist: (req,res,next) ->
     {id} = req.params
-    Meetup.findOne({_id: id}).populate('registered', 'email profile').exec (err, meetup) ->
-      return res.send 500, err if err
-      console.log meetup
-      {registered, paid} = meetup
-      res.json {registered, paid}
+    Meetup.findOne({_id: id})
+      .populate('registered', 'email profile')
+      .exec (err, meetup) ->
+        return res.send 500, err if err
+        console.log meetup
+        {registered, paid} = meetup
+        res.json {registered, paid}
 
   getprofile: (req,res,next) ->
     email = req.user.email
