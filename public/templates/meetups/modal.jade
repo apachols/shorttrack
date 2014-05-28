@@ -1,44 +1,40 @@
 .modal-header
-  button(type='button' class='close' ng-click='cancel()' aria-hidden='true').
+  button(type="button" class="close" ng-click="cancel()" aria-hidden="true").
     &times;
   h3.modal-title Create a new Meetup
 
 .modal-body
   .form-group
     label Meetup Name
-    input.form-control(type='text' ng-model="meetup.name"
-      placeholder='Meetup Name')
+    input.form-control(type="text" ng-model="meetup.name"
+      placeholder="Meetup Name")
 
   .form-group
     label Location
-    input.form-control(type='text' ng-model='meetup.location'
-      placeholder='742 Evergreen Terrace')
+    input.form-control(type="text" ng-model="meetup.location"
+      placeholder="742 Evergreen Terrace")
 
   .form-group
     label Description
-    textarea.form-control(rows='5' ng-model='meetup.description')
+    textarea.form-control(rows="5" ng-model="meetup.description")
 
   .form-group
-    label People
-    //- slider(ng-model='meetup.cap' floor='0' ceiling='100')
-    progressbar(value=50)
-    //- .progress
-    //-   .progress-bar(aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: {{50 | percent}};')
+    label Number of People
+    div(range-slider min="0" max="100" model-max="meetup.cap" pin-handle="min" showValues="false")
 
   .row
     .col-sm-6
       .form-group
         label Date
-        datepicker.datepicker-block(ng-model='meetup.date' show-weeks='false' min-date='minDate')
+        datepicker.datepicker-block(ng-model="meetup.date" show-weeks="false" min-date="minDate")
 
     .col-sm-6
       .form-group
         label Time
-        timepicker(ng-model='meetup.date' hour-step='1' minute-step='15')
-
+        timepicker(ng-model="meetup.date" hour-step="1" minute-step="15")
 
 .modal-footer
   .pull-right
     ul.list-inline
-      li: a.btn.btn-danger(ng-click='cancel()') Cancel
-      li: a.btn.btn-success(ng-click='save()') Save
+      li: a.btn.btn-danger(ng-click="cancel()") Cancel
+      li: a.btn.btn-success(ng-click="save()") Save

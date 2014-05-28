@@ -6,7 +6,6 @@ angular.module 'sting', [
   'sting.profile'
   'sting.meetups'
   'ui-rangeSlider'
-  'vr.directives.slider'
 ]
 
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']

@@ -7,7 +7,7 @@ Meetup = new mongoose.Schema
   description: String
   location: String
   date: {type: Date, default: Date.now}
-  cap: Number
+  cap: {type: Number, default: 50}
   registration:
     open: Date
     close: Date
