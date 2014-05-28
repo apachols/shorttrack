@@ -11,10 +11,10 @@ class Api
 
     @app.post '/api/test/:_id', @test
 
+    @app.get '/api/fullschedule/:_id', auth.admin, @fullschedule
     @app.get '/api/userlist/:id', auth.admin, @getuserlist
 
     @app.get '/api/profile', auth.user, @getprofile
-
     @app.post '/api/profile', auth.user, @updateprofile
 
     @app.get '/api/user', @getusers
@@ -28,6 +28,13 @@ class Api
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
     @app.delete '/api/gender/:id', @deletegender
+
+  # Display the schedule for a meetup
+  fullschedule: (req, res) ->
+    {_id} = req.params
+    Meetup.findOne {_id}, (err, meetup) ->
+      meetup.getScheduleAll (dates) ->
+        res.json {dates}
 
   getuserlist: (req,res,next) ->
     {id} = req.params

@@ -13,7 +13,7 @@ Match = new mongoose.Schema
   round: Number
   arity: Number
   score:
-    type: [ Number ], index: true
+    type: Number, index: true
 ,
   collection: 'match'
   strict: 'throw'

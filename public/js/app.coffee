@@ -12,6 +12,10 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .config ($routeProvider) ->
   $routeProvider
 
+    .when '/meetup/:id/fullschedule',
+      controller: 'fullschedule'
+      templateUrl: '/public/templates/meetups/fullschedule.html'
+
     .when '/meetup/:id/userlist',
       controller: 'userlist'
       templateUrl: '/public/templates/meetups/userlist.html'
@@ -33,6 +37,12 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $resource('/api2/meetups/:id', {id}).get (meetup) ->
     $scope.meetup = meetup
     console.log meetup
+
+.controller 'fullschedule', ($scope, $resource, $routeParams) ->
+  {id} = $routeParams
+
+  $resource('/api/fullschedule/:id', {id}).get (response) ->
+    $scope.dates = response.dates
 
 .controller 'userlist', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
