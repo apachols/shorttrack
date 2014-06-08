@@ -1,31 +1,31 @@
-.col-sm-10
-  .panel.panel-default
-    .panel-heading
-      h1 Schedule
-    .panel-body
-      table.table.table-striped.table-condensed
-        thead
-          tr
-            th Round
-            th Name
-            th Seat
-            th Vote
-        tbody
-          tr.vac(ng-repeat="R in rounds")
-            td(ng-if=" R.break" colspan="4") Break
-            td(ng-if="!R.break") {{R.round}}
-            td(ng-if="!R.break") {{R.partner.name}}
-            td(ng-if="!R.break") {{R.seat}}
-            td.votes(ng-if="!R.break")
+.panel.panel-default
+  .panel-heading
+    h3 Schedule
 
-              div(ng-switch="R.vote")
-                div(ng-switch-when="plz" ng-click="vote(R)")
-                  label.fa-stack: i.fa.fa-heart.fa-stack-2x
+  .panel-body
+    table.table.table-striped.table-condensed
+      thead
+        tr
+          th Round
+          th Name
+          th Seat
+          th Vote
+      tbody
+        tr.vac(ng-repeat="R in rounds")
+          td(ng-if=" R.break" colspan="4") Break
+          td(ng-if="!R.break") {{R.round}}
+          td(ng-if="!R.break") {{R.partner.name}}
+          td(ng-if="!R.break") {{R.seat}}
+          td.votes(ng-if="!R.break")
 
-                div(ng-switch-when="meh" ng-click="vote(R)")
-                  label.fa-stack: i.fa.fa-heart-o.fa-stack-2x
+            div(ng-switch="R.vote")
+              div(ng-switch-when="plz" ng-click="vote(R)")
+                label.fa-stack: i.fa.fa-heart.fa-stack-2x
 
-                div(ng-switch-when="bai" ng-click="vote(R)")
-                  label.fa-stack
-                    i.fa.fa-heart.fa-stack-2x
-                    i.fa.fa-bolt.fa-stack-2x
+              div(ng-switch-when="meh" ng-click="vote(R)")
+                label.fa-stack: i.fa.fa-heart-o.fa-stack-2x
+
+              div(ng-switch-when="bai" ng-click="vote(R)")
+                label.fa-stack
+                  i.fa.fa-heart.fa-stack-2x
+                  i.fa.fa-bolt.fa-stack-2x

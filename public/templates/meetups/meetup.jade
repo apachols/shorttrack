@@ -40,6 +40,9 @@
               .col-xs-1: .fa.fa-clock-o.fa-lg.fa-fw
               .col-xs-11 {{meetup.date | date: 'HH:mm'}}
 
+  div(ng-if="fullView")
+    user-schedule(meetup-id="{{meetup._id}}" ng-hide="!rounds.length")
+
       //- .pull-left.mdate
       //-   .mdate-month {{meetup.date | date: 'MMMM'}}
       //-   .mdate-date {{meetup.date | date: 'dd'}}

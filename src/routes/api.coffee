@@ -36,9 +36,7 @@ class Api
     {_id} = req.params
 
     Meetup.findOne { _id }, (err, meetup) ->
-      console.log req.user._id
       meetup.getScheduleUser req.user._id.toString(), (matches) ->
-        console.log matches
         rounds = []
 
         for match in matches
@@ -57,7 +55,6 @@ class Api
           R = {round:i+1, seat:'-', break:true}
           rounds[i] = R unless round
 
-        console.log rounds
         res.json {rounds}
 
   # Display the schedule for a meetup

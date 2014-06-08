@@ -14,14 +14,19 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $resource('/api/fullschedule/:id', {id}).get (response) ->
     $scope.dates = response.dates
 
-.directive 'userSchedule', ->
+.directive 'userSchedule', ($resource, $routeParams)->
   restrict: 'E'
   templateUrl: '/public/templates/meetups/userschedule.html'
   link: ($scope, elem, attrs) ->
-    console.log 'LINK!'
-  controller: ($scope, $resource, $routeParams) ->
-    console.log 'CONTROLLER!'
-    {id} = $routeParams
+    $scope.rounds = []
+    meetupId = attrs.meetupId || $routeParams.id
+
+    console.log meetupId
+    if meetupId?
+      $resource('/api/userschedule/:meetupId', {meetupId}).get (response) ->
+        $scope.rounds = response.rounds
+        for R in $scope.rounds
+          R.vote = "meh" unless R.vote
 
     $scope.vote = (round)->
       if round.vote == 'meh'
@@ -33,13 +38,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 
       id = round.partner.userid
       vote = round.vote
-      $resource('/profile/vote/:id/:vote', {id, vote}).save (rval) ->
-        console.log rval
-
-    $resource('/api/userschedule/:id', {id}).get (response) ->
-      $scope.rounds = response.rounds
-      for R in $scope.rounds
-        R.vote = "meh" unless R.vote
+      $resource('/profile/vote/:id/:vote', {id, vote}).save()
 
 .controller 'userlist', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
