@@ -30,6 +30,10 @@ head
   script(src='/public/components/angular-rangeslider/angular.rangeSlider.js')
   script(src='/public/components/checklist-model/checklist-model.js')
 
+  if my && my.admin
+    script.
+      window.sting = {admin:true}
+
   //- Angular App
   script(src="/public/js/sting.js")
   script(src='/public/js/profile.js')
