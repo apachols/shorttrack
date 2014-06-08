@@ -40,3 +40,12 @@ angular.module 'sting', [
       string = "#{$filter('limitTo') string, custom}..."
 
     else return string
+
+.controller 'adminList', ($scope, $location) ->
+  $scope.$on '$routeChangeSuccess', ->
+    $scope.selected = 'home'
+    for path in ['user', 'gender', 'meetup', 'question']
+      if -1 isnt $location.path().indexOf path
+        $scope.selected = path
+        console.log path
+        break

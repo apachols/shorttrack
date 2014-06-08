@@ -1,12 +1,42 @@
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
-.controller 'upcoming', ($scope, $resource) ->
+.controller 'upcoming', ($scope, $resource, meetupService) ->
+  meetupService.setDocument null
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
 
-.controller 'meetup', ($scope, $resource, $routeParams) ->
+.controller 'meetup', ($scope, $resource, $routeParams, meetupService) ->
   {id} = $routeParams
   $resource('/api2/meetups/:id', {id}).get (meetup) ->
     $scope.meetup = meetup
+    meetupService.setDocument meetup
+
+.controller 'meetupCommands', ($scope, meetupService) ->
+
+  $scope.generate = () ->
+    meetup = meetupService.getDocument(meetup)
+    console.log 'GENERATE', meetup
+
+  $scope.userlist = () ->
+    meetup = meetupService.getDocument(meetup)
+    console.log 'USERLIST', meetup
+
+  $scope.fullschedule = () ->
+    meetup = meetupService.getDocument(meetup)
+    console.log 'FULLSCHEDULE', meetup
+
+.factory "meetupService", () ->
+  record = null
+  return {
+    haveDocument: () -> record?
+
+    getDocument: () ->
+      console.log 'PACHOLSKI GET'
+      return record
+
+    setDocument: (doc) ->
+      console.log 'PACHOLSKI SET'
+      record = doc
+ }
 
 .controller 'fullschedule', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
