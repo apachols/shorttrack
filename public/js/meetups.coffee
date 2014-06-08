@@ -26,6 +26,12 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     else if round.vote == 'bai'
       round.vote = 'meh'
 
+    id = round.partner.userid
+    vote = round.vote
+    $resource('/profile/vote/:id/:vote', {id, vote}).save (rval) ->
+      console.log rval
+
+
   $resource('/api/userschedule/:id', {id}).get (response) ->
     $scope.rounds = response.rounds
     for R in $scope.rounds
