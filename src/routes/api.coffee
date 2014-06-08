@@ -39,30 +39,22 @@ class Api
 
       meetup.getScheduleUser userid, (matches) ->
 
-        # preprocess matches for display as schedule
         rounds = []
-        # foos = []
-        asdf = {}
 
-        for match, i in matches
-          # for prop in Object.keys match
-          #   if match.hasOwnProperty prop
-          #     asdf[prop] = match[prop]
+        for match in matches
+          r = match.toObject()
 
-          asdf = match
-          matches[i].partner = 'foo'
-
-          if userid is match.user1.userid
-            asdf.partner = match.user2
+          if userid is r.user1.userid
+            r.partner = r.user2
           else
-            asdf.partner = match.user1
+            r.partner = r.user1
 
-          asdf.vote = req.user.relation asdf.partner.userid
+          r.vote = req.user.relation r.partner.userid
 
-          rounds[asdf.round - 1] = asdf
+          rounds[r.round - 1] = r
 
-        # for round, i in rounds
-        #   foos[i] = {round:i+1, seat:'-'} unless round
+        for round, i in rounds
+          rounds[i] = {round:i+1, seat:'-'} unless round
 
         res.json rounds
 
