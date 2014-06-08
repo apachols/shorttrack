@@ -10,6 +10,10 @@ angular.module 'sting', [
 
 .config ($routeProvider) ->
   $routeProvider
+    .when '/meetup/:id/userschedule',
+      controller: 'userschedule'
+      templateUrl: '/public/templates/meetups/userschedule.html'
+
     .when '/meetup/:id/fullschedule',
       controller: 'fullschedule'
       templateUrl: '/public/templates/meetups/fullschedule.html'
@@ -27,7 +31,7 @@ angular.module 'sting', [
       templateUrl: '/public/templates/upcoming.html'
 
 .run ($window, $rootScope) ->
-  if $window.sting.admin
+  if $window.sting && $window.sting.admin
     $rootScope.isAdmin = true
 
 .filter 'addEllipsis', ($filter) ->

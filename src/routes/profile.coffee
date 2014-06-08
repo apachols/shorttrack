@@ -1,6 +1,7 @@
 User = require '../models/user'
 Gender = require '../models/gender'
 ProfileModel = require '../models/profile'
+auth = require '../helpers/authenticator'
 
 _ = require 'lodash'
 tp = require 'tea-properties'
@@ -9,20 +10,16 @@ util = require 'util'
 
 class Profile
   constructor: (@app) ->
-    @app.all /^\/profile/, @auth, @setup
+    @app.all /^\/profile/, auth.user, @setup
 
-    @app.get '/profile/vote/:_id/:vote', @auth, @vote
+    @app.post '/profile/vote/:_id/:vote', auth.user, @vote
+
+    @app.post '/profile/update', auth.user, @update
 
     @app.get '/profile', @get
 
-    @app.post '/profile/update', @auth, @update
-
   setup: (req, res, next) ->
     res.locals { brand: 'Profile' }
-    next()
-
-  auth: (req, res, next) ->
-    return res.send 401, 'boo-urns' unless req.isAuthenticated()
     next()
 
   get: (req, res) ->
