@@ -1,0 +1,41 @@
+// templates/meetups/meetup
+.directive
+  header.meetup-header(ng-if="!listView")
+    .pull-right(ng-if="isAdmin" ng-controller="meetupModal")
+      a.btn.btn-warning(ng-click="open()") edit
+
+    h2.top
+      a.meetup-back(href="/#/")
+       i.fa.fa-angle-left.fa-fw
+
+      | {{meetup.name}}
+
+    hr(style="clear: both").top
+
+  .media
+    a.pull-left.mdate(href="/#/meetup/{{meetup._id}}")
+      .mdate-month {{meetup.date | date: 'MMMM'}}
+      .mdate-date {{meetup.date | date: 'dd'}}
+
+    .pull-right(ng-if="isAdmin && listView" ng-controller="meetupModal")
+      a.btn.btn-warning(ng-click="open()") edit
+
+    .media-body
+
+      h4.media-heading(ng-if="listView")
+        a(href="/#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
+
+
+      .well.media-description(ng-if="!listView") {{meetup.description}}
+
+      //- .pull-left.mdate
+      //-   .mdate-month {{meetup.date | date: 'MMMM'}}
+      //-   .mdate-date {{meetup.date | date: 'dd'}}
+
+      //- .media-body
+      //-   h4.media-heading
+      //-     a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
+      //-   | {{meetup.description}}
+      //-   | {{meetup.cap}}
+
+  hr(ng-if="listView")

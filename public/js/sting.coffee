@@ -19,7 +19,7 @@ angular.module 'sting', [
 
     .when '/meetup/:id',
       controller: 'meetup'
-      templateUrl: '/public/templates/meetup.html'
+      templateUrl: '/public/templates/meetups/one.html'
 
     .otherwise
       controller: 'upcoming'

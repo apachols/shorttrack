@@ -1,5 +1,4 @@
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
-
 .controller 'upcoming', ($scope, $resource) ->
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
@@ -40,10 +39,17 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     $scope.paid[uid] = true for uid in dbPaid
 
 .controller 'meetupModal', ($scope, $modal, $resource) ->
-  # This could be inherited.
-  $scope.meetup ?= {}
+  $parent = $scope.$parent
 
   modalController = ($scope, $resource, $modalInstance) ->
+
+    rmMeetup = (meetup) ->
+      for m, i in $parent.meetups
+        if angular.equals meetup, m
+          $parent.meetups.splice i, 1
+          break
+
+      delete $scope.meetup
 
     modalClose = (reason) ->
       console.log 'close', reason
@@ -58,6 +64,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       # if we're requesting deletion.
       if (!$scope.meetup.saved) or reason is 'delete'
         $resource("/api2/meetups/#{$scope.meetup._id}").delete()
+        rmMeetup $scope.meetup
 
     $scope.minDate = new Date()
     $scope.delete = -> $modalInstance.dismiss('delete')
@@ -77,3 +84,9 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       scope: $scope
       templateUrl: '/public/templates/meetups/modal.html'
       controller: modalController
+
+.directive 'meetup', ->
+  restrict: 'E'
+  templateUrl: '/public/templates/meetups/meetup.html'
+  link: ($scope, elem, attrs) ->
+    $scope["#{attrs.view}View"] = true
