@@ -1,13 +1,13 @@
-  .form-group
-    label Meetup Name
-    input.form-control(type='text', name='meetup.name',
-      ng-model="meetup.name" placeholder='Meetup Name')
+.form-group
+  label Meetup Name
+  input.form-control(type='text', name='meetup.name',
+    ng-model="meetup.name" placeholder='Meetup Name')
 
-  .form-group
-    label Meetup Date
-    .row: .col-sm-3
-      input.form-control(type='text', name='date', data-provide='datepicker',
-        placeholder=df(now, dateformat), value=df(get(meetup, 'date'), dateformat), data-date-today-highlight='true')
+  //- .form-group
+  //-   label Meetup Date
+  //-   .row: .col-sm-3
+  //-     input.form-control(type='text', name='date', data-provide='datepicker',
+  //-       placeholder=df(now, dateformat), value=df(get(meetup, 'date'), dateformat), data-date-today-highlight='true')
 
   //- .form-group
   //-   label Meetup Time

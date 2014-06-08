@@ -68,21 +68,27 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     dbPaid = response.paid
     $scope.paid[uid] = true for uid in dbPaid
 
-.controller 'meetupModal', ($scope, $modal, $resource, $routeParams) ->
+.controller 'meetupCreate', ($scope, $modal, $resource) ->
+
   $scope.meetup = {}
 
-  $scope.open = ->
-    # $resource('/api2/meetups').save {name: ''}, (meetup) ->
-    #   $scope.meetup = meetup
+  modalController = ($scope, $resource, $modalInstance) ->
+    $scope.minDate = new Date()
+    $scope.cancel = -> $modalInstance.dismiss()
+    $scope.save = -> $modalInstance.close()
 
-    id = '5376be1429aa94b283508e6d'
-    $resource('/api2/meetups/:id', {id}).get (meetup) ->
+    $modalInstance.result.then (reason) ->
+      console.log 'close', reason
+      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup
+    , (reason) ->
+      console.log 'dismiss', reason
+      $resource("/api2/meetups/#{$scope.meetup._id}").delete()
+
+  $scope.open = ->
+    $resource('/api2/meetups').save {name: ''}, (meetup) ->
       $scope.meetup = meetup
 
     modalInstance = $modal.open
-      templateUrl: '/public/templates/meetups/modal.html'
-      controller: 'meetupModify'
       scope: $scope
-
-.controller 'meetupModify', ($scope, $modalInstance) ->
-  $scope.cancel = -> $modalInstance.dismiss('cancel')
+      templateUrl: '/public/templates/meetups/modal.html'
+      controller: modalController
