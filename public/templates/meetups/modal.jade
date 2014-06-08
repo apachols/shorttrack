@@ -1,5 +1,5 @@
 .modal-header
-  button(type="button" class="close" ng-click="cancel()" aria-hidden="true").
+  button(type="button" class="close" ng-click="cancel('times')" aria-hidden="true").
     &times;
   h3.modal-title Create a new Meetup
 
@@ -52,11 +52,11 @@
 
 
 .modal-footer
-  .pull-left
+  .pull-left(ng-if="meetup.saved")
     ul.list-inline
       li: a.btn.btn-danger(ng-click="delete()") Delete
   
   .pull-right
     ul.list-inline
-      li: a.btn.btn-default(ng-click="cancel()") Cancel
-      li: a.btn.btn-success(ng-click="save()") Save
+      li: a.btn.btn-default(ng-click="cancel('cancel')") Cancel
+      li: a.btn.btn-success(ng-click="save('save')") Save
