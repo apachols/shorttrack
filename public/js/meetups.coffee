@@ -18,8 +18,18 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .controller 'userschedule', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
 
+  $scope.vote = (round)->
+    if round.vote == 'meh'
+      round.vote = 'plz'
+    else if round.vote == 'plz'
+      round.vote = 'bai'
+    else if round.vote == 'bai'
+      round.vote = 'meh'
+
   $resource('/api/userschedule/:id', {id}).get (response) ->
     $scope.rounds = response.rounds
+    for R in $scope.rounds
+      R.vote = "meh" unless R.vote
 
 .controller 'userlist', ($scope, $resource, $routeParams) ->
   {id} = $routeParams

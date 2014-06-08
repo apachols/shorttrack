@@ -18,18 +18,14 @@
             td(ng-if="!R.break") {{R.seat}}
             td.votes(ng-if="!R.break")
 
-              input.vote(name="vote-{{R.round}}" value="plz" ng-model="R.vote"
-                id="vote-bai-{{R.round}}" type="radio")
-              label.fa-stack(for="vote-bai-{{R.round}}")
-                i.fa.fa-heart.fa-stack-2x
+              div(ng-switch="R.vote")
+                div(ng-switch-when="plz" ng-click="vote(R)")
+                  label.fa-stack: i.fa.fa-heart.fa-stack-2x
 
-              input.vote(name="vote-{{R.round}}" value="meh" ng-model="R.vote"
-                id="vote-plz-{{R.round}}" type="radio")
-              label.fa-stack(for="vote-plz-{{R.round}}")
-                i.fa.fa-heart-o.fa-stack-2x
+                div(ng-switch-when="meh" ng-click="vote(R)")
+                  label.fa-stack: i.fa.fa-heart-o.fa-stack-2x
 
-              input.vote(name="vote-{{R.round}}" value="bai" ng-model="R.vote"
-                id="vote-meh-{{R.round}}" type="radio")
-              label.fa-stack(for="vote-meh-{{R.round}}")
-                i.fa.fa-heart.fa-stack-2x
-                i.fa.fa-bolt.fa-stack-2x
+                div(ng-switch-when="bai" ng-click="vote(R)")
+                  label.fa-stack
+                    i.fa.fa-heart.fa-stack-2x
+                    i.fa.fa-bolt.fa-stack-2x
