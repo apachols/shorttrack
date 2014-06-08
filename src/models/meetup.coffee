@@ -15,6 +15,7 @@ Meetup = new mongoose.Schema
   registered: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
   paid: [ String ]
   matches: [ Match.schema ]
+  saved: {type: Boolean, default: false}
 ,
   collection: 'meetup'
   strict: 'throw'

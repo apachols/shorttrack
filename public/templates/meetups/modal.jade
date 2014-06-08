@@ -52,7 +52,11 @@
 
 
 .modal-footer
+  .pull-left
+    ul.list-inline
+      li: a.btn.btn-danger(ng-click="delete()") Delete
+  
   .pull-right
     ul.list-inline
-      li: a.btn.btn-danger(ng-click="cancel()") Cancel
+      li: a.btn.btn-default(ng-click="cancel()") Cancel
       li: a.btn.btn-success(ng-click="save()") Save

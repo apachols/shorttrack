@@ -12,7 +12,12 @@ block content
 
       .col-sm-2
         if my && my.admin
-          div(ng-controller='meetupCreate')
-            a(ng-click='open()').btn.btn-primary.pull-right.btn-block.
-              Add a meetup
+          h4.top Admin Actions
+          .list-group(ng-controller='meetupModal')
+            a(ng-click='open()').list-group-item Add a meetup
 
+          h4 Admin Tools
+          .list-group()
+            a(ng-href="#/admin/user" ng-class="{active: selected == 'user'}").list-group-item Users
+            a(ng-href="#/admin/question" ng-class="{active: selected == 'question'}").list-group-item Questions
+            a(ng-href="#/admin/gender" ng-class="{active: selected == 'gender'}").list-group-item Genders

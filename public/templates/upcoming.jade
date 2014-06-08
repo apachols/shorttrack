@@ -2,19 +2,16 @@
 h2.top Upcoming Meetups
 hr.top
 ul.list-unstyled
-    li.media(ng-cloak ng-repeat="meetup in meetups")
-      .pull-left.mdate
-        .mdate-month {{meetup.date | date: 'MMMM'}}
-        .mdate-date {{meetup.date | date: 'dd'}}
+  li.media(ng-cloak ng-repeat="meetup in meetups")
+    .pull-left.mdate
+      .mdate-month {{meetup.date | date: 'MMMM'}}
+      .mdate-date {{meetup.date | date: 'dd'}}
 
-      //- if my && my.admin
-      //-   .pull-right
-      //-     a.btn.btn-warning edit
+    .pull-right(ng-if="isAdmin" ng-controller="meetupModal")
+      a.btn.btn-warning(ng-click="open()") edit
 
-      .media-body
-        h4.media-heading
-          a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
-        | {{meetup.description}}
-        | {{meetup.cap}}
-
-      //- if my && my.admin
+    .media-body
+      h4.media-heading
+        a(href="#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
+      | {{meetup.description}}
+      | {{meetup.cap}}
