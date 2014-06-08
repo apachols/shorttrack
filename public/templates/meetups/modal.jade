@@ -19,8 +19,15 @@
     textarea.form-control(rows="5" ng-model="meetup.description")
 
   .form-group
-    label Number of People
-    div(range-slider min="0" max="100" model-max="meetup.cap" pin-handle="min" showValues="false")
+    .row
+      .col-xs-12
+        label Number of People
+    .row
+      .col-sm-2
+        input.form-control(type="text" ng-model="meetup.cap")
+
+      .col-sm-10
+        .form-control(range-slider min="0" max="100" model-max="meetup.cap" pin-handle="min" show-values="false")
 
   .row
     .col-sm-6
@@ -32,6 +39,17 @@
       .form-group
         label Time
         timepicker(ng-model="meetup.date" hour-step="1" minute-step="15")
+
+  .row
+    .col-sm-6
+      .form-group
+        label Registration Open
+        datepicker.datepicker-block(ng-model="meetup.registration.open" show-weeks="false" min-date="minDate")
+    .col-sm-6
+      .form-group
+        label Registration Close
+        datepicker.datepicker-block(ng-model="meetup.registration.close" show-weeks="false" min-date="minDate")
+
 
 .modal-footer
   .pull-right

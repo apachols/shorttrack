@@ -9,8 +9,8 @@ Meetup = new mongoose.Schema
   date: {type: Date, default: Date.now}
   cap: {type: Number, default: 50}
   registration:
-    open: Date
-    close: Date
+    open: {type: Date, default: Date.now}
+    close: {type: Date, default: Date.now}
 
   registered: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
   paid: [ String ]
