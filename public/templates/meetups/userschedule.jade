@@ -3,7 +3,7 @@
     .panel-heading
       h1 Schedule
     .panel-body
-      table.table
+      table.table.table-striped.table-condensed
         thead
           tr
             th Round
@@ -11,28 +11,25 @@
             th Seat
             th Vote
         tbody
-          each round in rounds
-            tr.vac
-              td #{round.round}
-              if round.seat === '-'
-                td(colspan="3") Break
-              else
-                td: a(href="/admin/user/#{round.partner.userid}") #{round.partner.name}
-                td #{round.seat}
-                td.votes(data-partner="#{round.partner.userid}")
+          tr.vac(ng-repeat="R in rounds")
+            td(ng-if=" R.break" colspan="4") Break
+            td(ng-if="!R.break") {{R.round}}
+            td(ng-if="!R.break") {{R.partner.name}}
+            td(ng-if="!R.break") {{R.seat}}
+            td.votes(ng-if="!R.break")
 
-                  input.vote(name="vote-#{round.round}", value="plz", id="vote-plz-#{round.round}",
-                    checked=(round.vote === 'plz'), type="radio")
-                  label.fa-stack(for="vote-bai-#{round.round}")
-                    i.fa.fa-heart.fa-stack-2x
+              input.vote(name="vote-{{R.round}}" value="plz" ng-model="R.vote"
+                id="vote-bai-{{R.round}}" type="radio")
+              label.fa-stack(for="vote-bai-{{R.round}}")
+                i.fa.fa-heart.fa-stack-2x
 
-                  input.vote(name="vote-#{round.round}", value="meh" id="vote-meh-#{round.round}",
-                    checked=(round.vote === 'meh' || round.vote === null), type="radio")
-                  label.fa-stack(for="vote-plz-#{round.round}")
-                    i.fa.fa-heart-o.fa-stack-2x
+              input.vote(name="vote-{{R.round}}" value="meh" ng-model="R.vote"
+                id="vote-plz-{{R.round}}" type="radio")
+              label.fa-stack(for="vote-plz-{{R.round}}")
+                i.fa.fa-heart-o.fa-stack-2x
 
-                  input.vote(name="vote-#{round.round}", value="bai" id="vote-bai-#{round.round}",
-                    checked=(round.vote === 'bai'), type="radio")
-                  label.fa-stack(for="vote-meh-#{round.round}")
-                    i.fa.fa-heart.fa-stack-2x
-                    i.fa.fa-bolt.fa-stack-2x
+              input.vote(name="vote-{{R.round}}" value="bai" ng-model="R.vote"
+                id="vote-meh-{{R.round}}" type="radio")
+              label.fa-stack(for="vote-meh-{{R.round}}")
+                i.fa.fa-heart.fa-stack-2x
+                i.fa.fa-bolt.fa-stack-2x

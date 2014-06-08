@@ -12,7 +12,7 @@ class Api
 
     @app.post '/api/test/:_id', @test
 
-    @app.get '/api/userschedule/:meetupid/:userid', auth.user, @userschedule
+    @app.get '/api/userschedule/:_id', auth.user, @userschedule
 
     @app.get '/api/fullschedule/:_id', auth.admin, @fullschedule
     @app.get '/api/userlist/:id', auth.admin, @getuserlist
@@ -33,18 +33,18 @@ class Api
     @app.delete '/api/gender/:id', @deletegender
 
   userschedule: (req, res) ->
-    {meetupid, userid} = req.params
+    {_id} = req.params
 
-    Meetup.findOne { _id : meetupid }, (err, meetup) ->
-
-      meetup.getScheduleUser userid, (matches) ->
-
+    Meetup.findOne { _id }, (err, meetup) ->
+      console.log req.user._id
+      meetup.getScheduleUser req.user._id.toString(), (matches) ->
+        console.log matches
         rounds = []
 
         for match in matches
           r = match.toObject()
 
-          if userid is r.user1.userid
+          if req.user._id is r.user1.userid
             r.partner = r.user2
           else
             r.partner = r.user1
@@ -54,9 +54,11 @@ class Api
           rounds[r.round - 1] = r
 
         for round, i in rounds
-          rounds[i] = {round:i+1, seat:'-'} unless round
+          R = {round:i+1, seat:'-', break:true}
+          rounds[i] = R unless round
 
-        res.json rounds
+        console.log rounds
+        res.json {rounds}
 
   # Display the schedule for a meetup
   fullschedule: (req, res) ->

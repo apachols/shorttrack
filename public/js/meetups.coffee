@@ -15,6 +15,12 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $resource('/api/fullschedule/:id', {id}).get (response) ->
     $scope.dates = response.dates
 
+.controller 'userschedule', ($scope, $resource, $routeParams) ->
+  {id} = $routeParams
+
+  $resource('/api/userschedule/:id', {id}).get (response) ->
+    $scope.rounds = response.rounds
+
 .controller 'userlist', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
 
