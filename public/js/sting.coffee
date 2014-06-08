@@ -37,7 +37,7 @@ angular.module 'sting', [
 .filter 'addEllipsis', ($filter) ->
   (string = '', truncate, custom = 300) ->
 
-    if string and string.length > custom and truncate
+    if truncate and string and string.length > custom
       string = "#{$filter('limitTo') string, custom}..."
 
     else return string
