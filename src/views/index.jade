@@ -17,7 +17,7 @@ block content
             a(ng-click='open()').list-group-item Add a meetup
 
           h4 Admin Tools
-          .list-group()
+          .list-group(ng-controller='adminList')
             a(ng-href="#/admin/user" ng-class="{active: selected == 'user'}").list-group-item Users
             a(ng-href="#/admin/question" ng-class="{active: selected == 'question'}").list-group-item Questions
             a(ng-href="#/admin/gender" ng-class="{active: selected == 'gender'}").list-group-item Genders

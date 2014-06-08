@@ -31,7 +31,7 @@ angular.module 'sting', [
 
 .run ($window, $rootScope) ->
   if $window.sting && $window.sting.admin
-    $rootScope.isAdmin = true
+    $rootScope.isAdmin = truncate
 
 .filter 'addEllipsis', ($filter) ->
   (string = '', truncate, custom = 300) ->
@@ -40,3 +40,11 @@ angular.module 'sting', [
       string = "#{$filter('limitTo') string, custom}..."
 
     else return string
+
+.controller 'adminList', ($scope, $location) ->
+  $scope.$on '$routeChangeSuccess', ->
+    for path in ['user', 'gender', 'meetup', 'question']
+      if -1 isnt $location.path().indexOf path
+        $scope.selected = path
+        console.log path
+        break
