@@ -7,6 +7,7 @@ angular.module 'sting', [
   'sting.meetups'
   'ui-rangeSlider'
 ]
+
 .config ($routeProvider) ->
   $routeProvider
     .when '/meetup/:id/fullschedule',
@@ -28,3 +29,8 @@ angular.module 'sting', [
 .run ($window, $rootScope) ->
   if $window.sting.admin
     $rootScope.isAdmin = true
+
+.filter 'addEllipsis', -> (string) ->
+  if string.length is 300
+    "#{string}..."
+  else string

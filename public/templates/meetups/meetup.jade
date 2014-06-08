@@ -1,6 +1,8 @@
 // templates/meetups/meetup
 .directive
-  header.meetup-header(ng-if="!listView")
+
+  //- Show the meetup header.
+  header.meetup-header(ng-if="fullView")
     .pull-right(ng-if="isAdmin" ng-controller="meetupModal")
       a.btn.btn-warning(ng-click="open()") edit
 
@@ -12,6 +14,7 @@
 
     hr(style="clear: both").top
 
+
   .media
     a.pull-left.mdate(href="/#/meetup/{{meetup._id}}")
       .mdate-month {{meetup.date | date: 'MMMM'}}
@@ -21,13 +24,11 @@
       a.btn.btn-warning(ng-click="open()") edit
 
     .media-body
-
       h4.media-heading(ng-if="listView")
         a(href="/#/meetup/{{meetup._id}}") {{meetup.name}} - {{meetup.location}}
 
-
-      .well.media-description(ng-if="!listView") {{meetup.description}}
-
+      .well.media-description(ng-if="fullView") {{meetup.description}}
+      .media-description(ng-if="listView") {{meetup.description | limitTo: 300 | addEllipsis}}
       //- .pull-left.mdate
       //-   .mdate-month {{meetup.date | date: 'MMMM'}}
       //-   .mdate-date {{meetup.date | date: 'dd'}}
