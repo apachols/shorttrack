@@ -5,11 +5,14 @@ Question = require '../models/question'
 Gender = require '../models/gender'
 
 auth = require '../helpers/authenticator'
+util = require 'util'
 
 class Api
   constructor: (@app) ->
 
     @app.post '/api/test/:_id', @test
+
+    @app.get '/api/userschedule/:meetupid/:userid', auth.user, @userschedule
 
     @app.get '/api/fullschedule/:_id', auth.admin, @fullschedule
     @app.get '/api/userlist/:id', auth.admin, @getuserlist
@@ -28,6 +31,40 @@ class Api
     @app.get '/api/gender', @getgenders
     @app.post '/api/gender/:_id', @updategender
     @app.delete '/api/gender/:id', @deletegender
+
+  userschedule: (req, res) ->
+    {meetupid, userid} = req.params
+
+    Meetup.findOne { _id : meetupid }, (err, meetup) ->
+
+      meetup.getScheduleUser userid, (matches) ->
+
+        # preprocess matches for display as schedule
+        rounds = []
+        # foos = []
+        asdf = {}
+
+        for match, i in matches
+          # for prop in Object.keys match
+          #   if match.hasOwnProperty prop
+          #     asdf[prop] = match[prop]
+
+          asdf = match
+          matches[i].partner = 'foo'
+
+          if userid is match.user1.userid
+            asdf.partner = match.user2
+          else
+            asdf.partner = match.user1
+
+          asdf.vote = req.user.relation asdf.partner.userid
+
+          rounds[asdf.round - 1] = asdf
+
+        # for round, i in rounds
+        #   foos[i] = {round:i+1, seat:'-'} unless round
+
+        res.json rounds
 
   # Display the schedule for a meetup
   fullschedule: (req, res) ->

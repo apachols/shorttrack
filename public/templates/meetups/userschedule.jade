@@ -1,0 +1,38 @@
+.col-sm-10
+  .panel.panel-default
+    .panel-heading
+      h1 Schedule
+    .panel-body
+      table.table
+        thead
+          tr
+            th Round
+            th Name
+            th Seat
+            th Vote
+        tbody
+          each round in rounds
+            tr.vac
+              td #{round.round}
+              if round.seat === '-'
+                td(colspan="3") Break
+              else
+                td: a(href="/admin/user/#{round.partner.userid}") #{round.partner.name}
+                td #{round.seat}
+                td.votes(data-partner="#{round.partner.userid}")
+
+                  input.vote(name="vote-#{round.round}", value="plz", id="vote-plz-#{round.round}",
+                    checked=(round.vote === 'plz'), type="radio")
+                  label.fa-stack(for="vote-bai-#{round.round}")
+                    i.fa.fa-heart.fa-stack-2x
+
+                  input.vote(name="vote-#{round.round}", value="meh" id="vote-meh-#{round.round}",
+                    checked=(round.vote === 'meh' || round.vote === null), type="radio")
+                  label.fa-stack(for="vote-plz-#{round.round}")
+                    i.fa.fa-heart-o.fa-stack-2x
+
+                  input.vote(name="vote-#{round.round}", value="bai" id="vote-bai-#{round.round}",
+                    checked=(round.vote === 'bai'), type="radio")
+                  label.fa-stack(for="vote-meh-#{round.round}")
+                    i.fa.fa-heart.fa-stack-2x
+                    i.fa.fa-bolt.fa-stack-2x

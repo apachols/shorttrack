@@ -10,6 +10,10 @@ angular.module 'sting', [
 
 .config ($routeProvider) ->
   $routeProvider
+    .when '/meetup/:id/userschedule',
+      controller: 'userschedule'
+      templateUrl: '/public/templates/meetups/userschedule.html'
+
     .when '/meetup/:id/fullschedule',
       controller: 'fullschedule'
       templateUrl: '/public/templates/meetups/fullschedule.html'
