@@ -30,7 +30,10 @@ angular.module 'sting', [
   if $window.sting.admin
     $rootScope.isAdmin = true
 
-.filter 'addEllipsis', -> (string) ->
-  if string.length is 300
-    "#{string}..."
-  else string
+.filter 'addEllipsis', ($filter) ->
+  (string = '', truncate, custom = 300) ->
+
+    if string and string.length > custom and truncate
+      string = "#{$filter('limitTo') string, custom}..."
+
+    else return string

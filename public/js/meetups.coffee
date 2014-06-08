@@ -2,6 +2,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .controller 'upcoming', ($scope, $resource) ->
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
+    $scope.truncate = true
 
 .controller 'meetup', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
