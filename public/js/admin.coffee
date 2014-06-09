@@ -1,4 +1,5 @@
-angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
+angular
+  .module "sting.admin", ["ngResource", "ngRoute", "sting.edit"]
   .config [
     '$routeProvider', '$locationProvider'
     ($routeProvider, $locationProvider) ->
@@ -41,6 +42,14 @@ angular.module("sting.admin", ["ngResource", "ngRoute", "sting.edit"])
         resource.delete (err, thing) ->
           $scope.docs.splice(index,1)
   ]
+
+  .controller 'adminList', ($scope, $location) ->
+    $scope.$on '$routeChangeSuccess', ->
+      for path in ['user', 'gender', 'meetup', 'question']
+        if -1 isnt $location.path().indexOf path
+          $scope.selected = path
+          break
+
   .constant "models", {
     user:
       list: '/user'
