@@ -11,16 +11,17 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   {id} = $routeParams
   $scope.registered = false
   $resource('/api/meetup/:id', {id}).get (response) ->
-    $scope.meetup = response.meetup
-    $scope.registered = response.registered
-    $scope.paid = $scope.meetup.paid.length > 0
+    meetup = response.meetup
+    $scope.meetup = meetup
+    $scope.registered = !!response.registered
+    $scope.canRegister = not (meetup.paid.length or meetup.matches.length)
     meetupService.setDocument $scope.meetup
 
   $scope.unregister = ()->
     $http.get("/api/unregister/#{id}")
       .success (response) ->
         console.log 'Unregister', response
-        $scope.registered = true
+        $scope.registered = false
         return
       .error (response) ->
         console.error 'Unregister', response
@@ -29,7 +30,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
     $http.get("/api/register/#{id}")
       .success (response) ->
         console.log 'Register', response
-        $scope.registered = false
+        $scope.registered = true
         return
       .error (response) ->
         console.error 'Register', response
