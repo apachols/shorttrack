@@ -43,13 +43,6 @@ angular
           $scope.docs.splice(index,1)
   ]
 
-  .controller 'adminList', ($scope, $location) ->
-    $scope.$on '$routeChangeSuccess', ->
-      for path in ['user', 'gender', 'meetup', 'question']
-        if -1 isnt $location.path().indexOf path
-          $scope.selected = path
-          break
-
   .constant "models", {
     user:
       list: '/user'

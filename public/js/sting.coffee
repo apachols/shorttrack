@@ -41,11 +41,13 @@ angular.module 'sting', [
 
     else return string
 
-.controller 'adminList', ($scope, $location) ->
+.controller 'adminList', ($scope, $location, meetupService) ->
+  $scope.$on 'meetupSelected', (emitted, meetup)->
+    $scope.meetup = meetup
+
   $scope.$on '$routeChangeSuccess', ->
     $scope.selected = 'home'
-    for path in ['user', 'gender', 'meetup', 'question']
+    for path in ['admin/user', 'admin/gender', 'admin/question']
       if -1 isnt $location.path().indexOf path
         $scope.selected = path
-        console.log path
         break

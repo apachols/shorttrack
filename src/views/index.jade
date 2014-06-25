@@ -17,14 +17,15 @@ block content
             .list-group(ng-controller='meetupModal')
               a(ng-click='open()').list-group-item Add a meetup
 
-            .list-group(ng-controller='meetupCommands' ng-if="selected == 'meetup'")
+            .list-group(ng-controller='meetupCommands' ng-if="meetup != null")
+              a(ng-click='view()').list-group-item View Meetup
               a(ng-click='generate()').list-group-item Generate Schedule
               a(ng-click='userlist()').list-group-item User Registration
               a(ng-click='fullschedule()').list-group-item Full Schedule
 
             h4 Admin Tools
             .list-group
-              a(ng-href="/#/admin/user" ng-class="{active: selected == 'user'}").list-group-item Users
-              a(ng-href="/#/admin/question" ng-class="{active: selected == 'question'}").list-group-item Questions
-              a(ng-href="/#/admin/gender" ng-class="{active: selected == 'gender'}").list-group-item Genders
+              a(ng-href="/#/admin/user" ng-class="{active: selected == 'admin/user'}").list-group-item Users
+              a(ng-href="/#/admin/question" ng-class="{active: selected == 'admin/question'}").list-group-item Questions
+              a(ng-href="/#/admin/gender" ng-class="{active: selected == 'admin/gender'}").list-group-item Genders
               a(ng-href="/#/" ng-class="{active: selected == 'home'}").list-group-item Meetups

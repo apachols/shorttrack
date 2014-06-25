@@ -40,6 +40,10 @@
               .col-xs-1: .fa.fa-clock-o.fa-lg.fa-fw
               .col-xs-11 {{meetup.date | date: 'HH:mm'}}
 
+          a.btn.btn-danger(ng-click="unregister()" ng-hide="!registered") Unsubscribe!
+          a.btn.btn-primary(ng-click="register()" ng-hide="registered") Sign Me Up
+          {{registered}}
+
   div(ng-if="fullView")
     user-schedule(meetup-id="{{meetup._id}}" ng-hide="!rounds.length")
 

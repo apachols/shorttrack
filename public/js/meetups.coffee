@@ -1,30 +1,59 @@
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .controller 'upcoming', ($scope, $resource, meetupService) ->
+  $scope.$on 'addMeetup', (emitted, meetup) ->
+    $scope.meetups.push meetup
+
   meetupService.setDocument null
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
 
-.controller 'meetup', ($scope, $resource, $routeParams, meetupService) ->
+.controller 'meetup', ($scope, $resource, $routeParams, meetupService, $http) ->
   {id} = $routeParams
-  $resource('/api2/meetups/:id', {id}).get (meetup) ->
-    $scope.meetup = meetup
-    meetupService.setDocument meetup
+  $scope.registered = false
+  $resource('/api/meetup/:id', {id}).get (response) ->
+    $scope.meetup = response.meetup
+    $scope.registered = response.registered
+    $scope.paid = $scope.meetup.paid.length > 0
+    meetupService.setDocument $scope.meetup
 
-.controller 'meetupCommands', ($scope, meetupService) ->
+  $scope.unregister = ()->
+    $http.get("/api/unregister/#{id}")
+      .success (response) ->
+        console.log 'Unregister', response
+        $scope.registered = true
+        return
+      .error (response) ->
+        console.error 'Unregister', response
+
+  $scope.register = ()->
+    $http.get("/api/register/#{id}")
+      .success (response) ->
+        console.log 'Register', response
+        $scope.registered = false
+        return
+      .error (response) ->
+        console.error 'Register', response
+
+.controller 'meetupCommands', ($scope, $location, meetupService, $http) ->
+
+  $scope.view = () ->
+    meetup = meetupService.getDocument(meetup)
+    $location.path "/meetup/#{meetup._id}"
 
   $scope.generate = () ->
     meetup = meetupService.getDocument(meetup)
-    console.log 'GENERATE', meetup
+    $http.get("/api/generate/#{meetup._id}/").success (response) ->
+      console.log 'GENERATE CALLBACK', response
 
   $scope.userlist = () ->
     meetup = meetupService.getDocument(meetup)
-    console.log 'USERLIST', meetup
+    $location.path "/meetup/#{meetup._id}/userlist"
 
   $scope.fullschedule = () ->
     meetup = meetupService.getDocument(meetup)
-    console.log 'FULLSCHEDULE', meetup
+    $location.path "/meetup/#{meetup._id}/fullschedule"
 
-.factory "meetupService", () ->
+.factory "meetupService", ($rootScope) ->
   record = null
   return {
     haveDocument: () -> record?
@@ -34,8 +63,8 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       return record
 
     setDocument: (doc) ->
-      console.log 'PACHOLSKI SET'
       record = doc
+      $rootScope.$broadcast 'meetupSelected', record
  }
 
 .controller 'fullschedule', ($scope, $resource, $routeParams) ->
@@ -97,7 +126,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .controller 'meetupModal', ($scope, $modal, $resource) ->
   $parent = $scope.$parent
 
-  modalController = ($scope, $resource, $modalInstance) ->
+  modalController = ($scope, $resource, $modalInstance, $rootScope) ->
 
     rmMeetup = (meetup) ->
       for m, i in $parent.meetups
@@ -111,7 +140,8 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       console.log 'close', reason
 
       $scope.meetup.saved = true
-      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup
+      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup, (meetup) ->
+        $rootScope.$broadcast 'addMeetup', meetup
 
     modalDismiss = (reason) ->
       console.log 'dismiss', reason
