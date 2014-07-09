@@ -7,7 +7,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
 
-.controller 'meetup', ($scope, $resource, $routeParams, meetupService, $http) ->
+.controller 'meetup', ($scope, $resource, $routeParams, meetupService, $http, $window) ->
   {id} = $routeParams
   $scope.registered = false
   $resource('/api/meetup/:id', {id}).get (response) ->
@@ -33,7 +33,13 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
         $scope.registered = true
         return
       .error (response) ->
-        console.error 'Register', response
+        # NOTE - This is hacky, should do one of:
+        #        - let angular know user is logged in via window object
+        #        - interrupting cow for all unauthorized requests, does this thing
+        if response is 'Unauthorized'
+          $window.location.href = "/register"
+        else
+          console.error 'Register', response
 
 .controller 'meetupCommands', ($scope, $location, meetupService, $http) ->
 

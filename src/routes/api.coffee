@@ -91,7 +91,7 @@ class Api
         console.error err if err
         console.log 'Created ' + matches.length + ' matches'
 
-        meetup.matches = s.executeGreedyStrategy matches, 10
+        meetup.matches = s.executeGreedyStrategy matches, meetup.cap
         meetup.save (err) ->
           res.send 500, err if err
           res.send 200
