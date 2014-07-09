@@ -1,8 +1,12 @@
 User = require '../models/user'
 Meetup = require '../models/meetup'
+Matcher = require '../lib/matcher'
+Scheduler = require '../lib/scheduler'
 Profile = require '../models/profile'
 Question = require '../models/question'
 Gender = require '../models/gender'
+mongoose = require 'mongoose'
+_ = require 'lodash'
 
 auth = require '../helpers/authenticator'
 util = require 'util'
@@ -14,11 +18,17 @@ class Api
 
     @app.get '/api/userschedule/:_id', auth.user, @userschedule
 
+    @app.get '/api/generate/:_id/:pool?', auth.user, @generate
+
     @app.get '/api/fullschedule/:_id', auth.admin, @fullschedule
     @app.get '/api/userlist/:id', auth.admin, @getuserlist
 
     @app.get '/api/profile', auth.user, @getprofile
     @app.post '/api/profile', auth.user, @updateprofile
+
+    @app.get '/api/meetup/:_id', @getmeetup
+    @app.get '/api/register/:_id', auth.user, @register
+    @app.get '/api/unregister/:_id', auth.user, @unregister
 
     @app.get '/api/user', @getusers
 
@@ -32,6 +42,60 @@ class Api
     @app.post '/api/gender/:_id', @updategender
     @app.delete '/api/gender/:id', @deletegender
 
+  register: (req, res) ->
+    {_id} = req.params
+    Meetup.findOne {_id}, (err, meetup) ->
+      return res.send 500, err if err
+      for regid in meetup.registered
+        if regid.toString() == req.user._id.toString()
+          found = true
+      if !found
+        meetup.registered.push req.user._id
+        meetup.save (err, thing)->
+          return res.send 500, err if err
+          res.send 200, thing
+      else
+        res.send 400, 'Already registered'
+
+  unregister: (req, res) ->
+    {_id} = req.params
+    Meetup.findOne {_id}, (err, meetup) ->
+      return res.send 500, err if err
+      for regid, ii in meetup.registered
+        if regid.toString() == req.user._id.toString()
+          meetup.registered.splice ii, 1
+          return meetup.save (err, thing)->
+            return res.send 500, err if err
+            res.send 200, thing
+      res.send 400, 'Not Registered'
+
+  getmeetup: (req, res)->
+    {_id} = req.params
+    Meetup.findOne {_id}, (err, meetup) ->
+      registered = false
+      if req.isAuthenticated()
+        registered = meetup.isRegistered req.user._id.toString()
+      res.json {meetup, registered}
+
+  generate: (req, res) ->
+    {_id, pool} = req.params
+
+    # We only have 2 pools of users so far.
+    pool = 'registered' unless pool is 'paid'
+
+    Meetup.findOne {_id}, (err, meetup) ->
+      m = new Matcher meetup
+      s = new Scheduler meetup
+
+      m.execute pool, (err, matches) ->
+        console.error err if err
+        console.log 'Created ' + matches.length + ' matches'
+
+        meetup.matches = s.executeGreedyStrategy matches, meetup.cap
+        meetup.save (err) ->
+          res.send 500, err if err
+          res.send 200
+
   userschedule: (req, res) ->
     {_id} = req.params
 
@@ -42,7 +106,10 @@ class Api
         for match in matches
           r = match.toObject()
 
-          if req.user._id is r.user1.userid
+          # if the logged in user is the person whose schedule we are fetching,
+          # set the 'partner' key on each round to be the other person, whether
+          # the other person happens to be user1 or user2 in the match
+          if req.user._id.toString() is r.user1.userid
             r.partner = r.user2
           else
             r.partner = r.user1
@@ -51,6 +118,8 @@ class Api
 
           rounds[r.round - 1] = r
 
+        # After all the rounds have had their partners and votes fetched,
+        # fill in the gaps with break rounds (seat === '-')
         for round, i in rounds
           R = {round:i+1, seat:'-', break:true}
           rounds[i] = R unless round

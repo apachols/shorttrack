@@ -1,12 +1,78 @@
 angular.module 'sting.meetups', ['ngResource', 'ngRoute']
-.controller 'upcoming', ($scope, $resource) ->
+.controller 'upcoming', ($scope, $resource, meetupService) ->
+  $scope.$on 'addMeetup', (emitted, meetup) ->
+    $scope.meetups.push meetup
+
+  meetupService.setDocument null
   $resource('/api2/meetups/').query (meetups) ->
     $scope.meetups = meetups
 
-.controller 'meetup', ($scope, $resource, $routeParams) ->
+.controller 'meetup', ($scope, $resource, $routeParams, meetupService, $http, $window) ->
   {id} = $routeParams
-  $resource('/api2/meetups/:id', {id}).get (meetup) ->
+  $scope.registered = false
+  $resource('/api/meetup/:id', {id}).get (response) ->
+    meetup = response.meetup
     $scope.meetup = meetup
+    $scope.registered = !!response.registered
+    $scope.canRegister = not (meetup.paid.length or meetup.matches.length)
+    meetupService.setDocument $scope.meetup
+
+  $scope.unregister = ()->
+    $http.get("/api/unregister/#{id}")
+      .success (response) ->
+        console.log 'Unregister', response
+        $scope.registered = false
+        return
+      .error (response) ->
+        console.error 'Unregister', response
+
+  $scope.register = ()->
+    $http.get("/api/register/#{id}")
+      .success (response) ->
+        console.log 'Register', response
+        $scope.registered = true
+        return
+      .error (response) ->
+        # NOTE - This is hacky, should do one of:
+        #        - let angular know user is logged in via window object
+        #        - interrupting cow for all unauthorized requests, does this thing
+        if response is 'Unauthorized'
+          $window.location.href = "/register"
+        else
+          console.error 'Register', response
+
+.controller 'meetupCommands', ($scope, $location, meetupService, $http) ->
+
+  $scope.view = () ->
+    meetup = meetupService.getDocument(meetup)
+    $location.path "/meetup/#{meetup._id}"
+
+  $scope.generate = () ->
+    meetup = meetupService.getDocument(meetup)
+    $http.get("/api/generate/#{meetup._id}/").success (response) ->
+      console.log 'GENERATE CALLBACK', response
+
+  $scope.userlist = () ->
+    meetup = meetupService.getDocument(meetup)
+    $location.path "/meetup/#{meetup._id}/userlist"
+
+  $scope.fullschedule = () ->
+    meetup = meetupService.getDocument(meetup)
+    $location.path "/meetup/#{meetup._id}/fullschedule"
+
+.factory "meetupService", ($rootScope) ->
+  record = null
+  return {
+    haveDocument: () -> record?
+
+    getDocument: () ->
+      console.log 'PACHOLSKI GET'
+      return record
+
+    setDocument: (doc) ->
+      record = doc
+      $rootScope.$broadcast 'meetupSelected', record
+ }
 
 .controller 'fullschedule', ($scope, $resource, $routeParams) ->
   {id} = $routeParams
@@ -67,7 +133,7 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
 .controller 'meetupModal', ($scope, $modal, $resource) ->
   $parent = $scope.$parent
 
-  modalController = ($scope, $resource, $modalInstance) ->
+  modalController = ($scope, $resource, $modalInstance, $rootScope) ->
 
     rmMeetup = (meetup) ->
       for m, i in $parent.meetups
@@ -81,7 +147,8 @@ angular.module 'sting.meetups', ['ngResource', 'ngRoute']
       console.log 'close', reason
 
       $scope.meetup.saved = true
-      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup
+      $resource("/api2/meetups/#{$scope.meetup._id}").save $scope.meetup, (meetup) ->
+        $rootScope.$broadcast 'addMeetup', meetup
 
     modalDismiss = (reason) ->
       console.log 'dismiss', reason
